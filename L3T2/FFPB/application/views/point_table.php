@@ -24,36 +24,41 @@
       <div class="col-md-6">
 		<table class="table table-striped">
           <thead>
-            <th>Time</th>
-            <th>Team 1</th>
-            <th>Team 2</th>
+            <th>Team Name</th>
+            <th>Played</th>
+            <th>Won</th>
+			<th>Points</th>
+			<th>Net Run Rate</th>
           </thead>
           <tbody>
 			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
+              <td>Dhaka Warriors</td>
+              <td>4</td>
+              <td>2</td>
+			  <td>4</td>
+			  <td>-2.34</td>
             </tr>
 			
 			<tr>
-              <td>01-02-2016 05:00 PM</td>
-              <td>India</td>
-              <td>Pakistan</td>
+              <td>Khulna Royal</td>
+              <td>4</td>
+              <td>2</td>
+			  <td>4</td>
+			  <td>-2.34</td>
             </tr>
 			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
+              <td>Chittagong Kings</td>
+              <td>4</td>
+              <td>2</td>
+			  <td>4</td>
+			  <td>-2.34</td>
             </tr>
 			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
-            </tr>
-			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
+              <td>Barishal Burners</td>
+              <td>4</td>
+              <td>3</td>
+			  <td>6</td>
+			  <td>+2.34</td>
             </tr>
 			
 		</tbody>

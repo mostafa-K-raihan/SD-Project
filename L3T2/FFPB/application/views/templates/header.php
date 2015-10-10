@@ -47,7 +47,6 @@
           <a href="<?php echo site_url('home/rules'); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?php echo site_url('home/howToPlay'); ?>">How to play</a></li>
-            <li><a href="<?php echo site_url('home/rules'); ?>">Rules</a></li>
             <li><a href="<?php echo site_url('home/scoring'); ?>">Scoring</a></li>
           </ul>
         </li>

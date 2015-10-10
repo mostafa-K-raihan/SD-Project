@@ -1,66 +1,82 @@
-<?php
-	//Show a random match (manual data); I will merge with back-end later
-?>
-
 <div class="container" class="row-fluid PageHead"> <!-- Description Start -->
     <div class="span12">
-      <h1 style="color:#180000"><?php echo $team_name;?></h1>
-      <h3> . . .</h3>
+      <h1 style="color:#180000">Incredible XI</h1>
     </div>
-  </div> <!-- Description End -->
+</div> <!-- Description End -->
+
 <div class="row" >
-	<div class="col-md-4">
-		<a href="#" class="btn btn-primary btn-lg active" role="button" style="float:right">Captain </a>
-	</div>
-	
-  <div class="col-md-8" style="float:right">
-  <table>
+	<div class="col-md-8" style="float:right">
+	<table>
 	<tr>
+		<!--
 		<td>
-			<div class="dropdown" >
-		  
-			  <select name="captain" id="captain_select" role="menu" aria-labelledby="dLabel">
-				<?php
-					echo '<option value="'.$captain_id.'">'.$captain_name.'</option>';
-				?>
-			  </select>
-			  
+			<div class="col-md-4">
+				<a href="#" class="btn btn-primary btn-lg active" role="button" style="float:right">Captain </a>
 			</div>
 		</td>
+		-->
+		<form action="#" method="POST">
+		
+		<td>
+			Captain:
+		</td>
+		
+		<td width="10"> </td>
+		
+		<td>
+			<div class="dropdown">
+			  <select name="captain" id="captain_select" role="menu" aria-labelledby="dLabel">
+				<option value="#" selected>Shakib Al Hasan</option>
+				<option value="#" >Player1</option>
+				<option value="#" >Player2</option>
+			  </select>
+			</div>
+		</td>
+		
+		<td width="50"> </td>
+		
+		<td>
+			  <input type="submit" class="btn btn-primary btn-lg active" value="Change Captain" action="#" style="float:right">
+		</td>
+		
+		</form>
 		
 		<td width="200"></td>
 		
 		<td>
-			<td>Overall Points: <?php echo $o_point; ?> </td>
+			<td>Overall Points: 567 </td>
 		</td>
+		
 		<td></td>
 	</tr>
+	
 	</table>
   </div>
-	<!--<div class="col-md-4">
-		<a href="#" class="btn btn-primary btn-lg active" role="button" style="float:right">Change Team </a>
-	</div>-->
+	
 </div>
+
+
 <div class="col-xs-12" class="container-fluid">
    
 </div>
-  <div class="container-fluid class="row-fluid">
-  <!-- Row2 start -->
+
+<div class="container-fluid class="row-fluid">
+<!-- Row2 start -->
   
- <?php
-	foreach($user_team as $u)
+<?php
+	for($i=0;$i<11;$i++)
 	{
     echo '<div class="span3 PlanPricing template4" style="width:180px">  <!-- Price template4 Starts -->
-      <div class="planName"> <span class="price">'.$u['point'].'</span>
-        <h4>'.$u['name'].'</h4>
-        <p>'.$u['team_name'].'</p>
+      <div class="planName"> <span class="price">546</span>
+        <h4>Taskin Ahmed</h4>
+        <p>Bangladesh</p>
       </div>
       <div class="planFeatures">
         <ul>
           <li><img src="'.base_url('images/e1.png/').'" height="80" width="80" class="img-circle" alt="Circular Image"></li>
         </ul>
       </div>
-      <p> <a href="#" role="button" data-toggle="modal" class="btn btn-success btn-large" height="50" width="50">'.$u['player_cat'].' </a> </p>
+      <p> <a href="#" role="button" data-toggle="modal" class="btn btn-success btn-large" height="50" width="50">Bowler</a> </p>
     </div>';
 	}
 ?>

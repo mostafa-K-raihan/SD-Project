@@ -25,11 +25,11 @@
 </head>
 
 <body style = "background-color:">
- <div class="container" style = "margin: 5%">
+ <div class="container" style = "margin: 5%;">
     <div class="row">
         <form name="registrationForm" method = "post" action="<?php echo site_url('home/register_proc'); ?>" role="form">
             <div class="col-lg-6">
-                <div class="well well-sm"><span class="glyphicon glyphicon-asterisk"></span>Required Field</div>
+                <div class="well well-sm"  style="background-color:red"><span class="glyphicon glyphicon-asterisk"></span>Required Field</div>
                 <div class="form-group">
                     <label for="InputName">Enter Name</label>
                     <div class="input-group">

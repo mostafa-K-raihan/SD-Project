@@ -18,6 +18,21 @@
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
+	<style>
+		.navbar-inverse{
+			background : #c4c4c4;
+		}
+		.navbar-inverse .navbar-brand{
+			color : Navy; 
+		}
+		.navbar-inverse .navbar-nav > li > a {
+			color: #000;
+		}
+		body{
+			background-color: #f9f9f9;
+		}
+	</style>
+	
 </head>
 </head>
 <body style="height=800;">
@@ -39,15 +54,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo site_url('user'); ?>">HOME <span class="sr-only">(current)</span></a></li>
-		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
+		<li class><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">How To Play</a></li>
-            <li><a href="#">Rules</a></li>
-            <li><a href="#">Scoring</a></li>
+            <li><a href="<?php echo site_url('home/howToPlay'); ?>">How To Play</a></li>
+            <li><a href="<?php echo site_url('home/howToPlay'); ?>">Scoring</a></li>
           </ul>
         </li>
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
@@ -55,13 +69,6 @@
         <li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!--
-        <li>
-            <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
-                <img style="max-width:100px; margin-top: -7px;" src="download.png">
-            </a>
-        </li>
-    -->
         <li class="dropdown">
           <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
