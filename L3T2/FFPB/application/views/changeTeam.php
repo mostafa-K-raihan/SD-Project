@@ -1,42 +1,12 @@
- 
-<?php
-  
-	//Show Team Status //Needs to be modified
+	<!--Show Team Status //Needs to be modified -->
 			
-	if(isset($_SESSION['user_team']))
-	{
-		$user_team=$_SESSION['user_team'];
-		
-		$team_value=0;
-		$bat=0;
-		$bowl=0;
-		$all=0;
-		$wk=0;
-		$number_of_players=0;
-		
-		$ft=$free_transfers;
-		
-		foreach($user_team as $u)
-		{
-			$team_value+=$u['price'];
-			if($u['player_cat']==='BAT') $bat++;
-			else if($u['player_cat']==='BOWL') $bowl++;
-			else if($u['player_cat']==='ALL') $all++;
-			else if($u['player_cat']==='WK') $wk++;
-			
-			$number_of_players++;
-		}
-		echo '<pre>Number Of Players : '.$number_of_players.'</pre>';
-		echo'<pre>Batsman: '.$bat.'    Bowlers: '.$bowl.'    Allrounders: '.$all.'    Wicket Keeper: '.$wk.'</pre>';
-		echo '<pre>Team Value : '.$team_value.'</pre>';
-		
-		echo '<pre>Free Transfers : '.$ft.'</pre>';
-	}
-	
-	//Show Team Value
+	<pre>Number Of Players : 10 </pre>
+	<pre>Batsman: 3    Bowlers: 3    Allrounders: 4    Wicket Keeper: 1</pre>
+	<pre>Team Value : 9780 </pre>
+	<pre>Free Transfers : 36 </pre>
 	
   
-  echo'<table>
+	<table>
     <tr>
       <td width="300"></td>
       <td>
@@ -59,11 +29,12 @@
       <td>
         <select name="team_id" >
 			<option value="">---</option>';
-            foreach ($teams as $t) {
-            echo'<option value='.$t['team_id'].'> '.$t['team_name'].' </option>';
-          }
-      echo'
-          </select>
+            <?php 
+			for($i=0;$i<3;$i++) {
+				echo '<option value=""> Team'.$i.' </option>';
+			}
+		  ?>
+        </select>
       </td>
       <td width="10"></td>
       <td>
@@ -86,7 +57,8 @@
 				<th colspan="3"></th>
 			  
 			  </thead>
-			  <tbody>';
+			  <tbody>
+			  <?php
 			  $c1="active";
 			  $c3="success";
 			  $c2="info";
@@ -94,8 +66,7 @@
 			  $c5="danger";
 			  $c=1;$d="";
 			  
-			$user_team=$_SESSION['user_team'];
-			foreach($user_team as $u)
+			for($i=0;$i<5;$i++)
 			{
 				if($c%5==0)$d=$c1;
 				else if($c%5==1)$d=$c2;
@@ -104,27 +75,54 @@
 				else if($c%5==4)$d=$c5;
 				echo '<tr class='.$d.'>
 				
-			<form method="post" action="remove_transfered_player">
-
-            
-            <input type="hidden" name="name" value="'.$u['player_name'].'"><td width="12%" >'.$u['player_name'].'</td></input>
-            <input type="hidden" name="cat" value="'.$u['player_cat'].'"><td width="8%">'.$u['player_cat'].'</td></input>
-            <input type="hidden" name="price" value="'.$u['price'].'"><td width="10%">$'.$u['price'].'</td></input>
-			<input type="hidden" name="player_id" value="'.$u['player_id'].'"></input>
-            <input type="hidden" name="points" value="'.$u['total_points'].'"><td width="10%">'.$u['total_points'].'</td></input>
-			<td width="5%"><input type="submit" name="submit" id="submit" value="REMOVE" class="btn btn-danger "></td>
-            
-          </form>
+				<form method="post" action="#">
+					<input type="hidden" name="name" value="Shakib"><td width="12%" >Shakib Al Hasan</td></input>
+					<input type="hidden" name="cat" value="ALL-Rounder"><td width="8%">All-Rounder</td></input>
+					<input type="hidden" name="price" value="980"><td width="10%">$980</td></input>
+					<input type="hidden" name="points" value="200"><td width="10%">200</td></input>
+					<td width="5%"><input type="submit" name="submit" id="submit" value="REMOVE" class="btn btn-danger "></td>
+					
+				</form>
 			  
 			  </tr>';
 			  $c++;
 			}
-		  
-		  
-        echo '<tbody>
-        
+			?>
+	  <tbody>
     </table>
+	
+		<table>
+		  <form method="post" action="changeTeam_check">
+	  
+		  <tr height="20"></tr>
+		  <tr>
+		  <td><strong><h4>Select Captain: </h4></strong></td>
+		  <td ></td>
+		  <td>
+			<select name="captain" required>';
+				<?php
+				for($i=0;$i<5;$i++)
+				{
+					echo '<option value="#" selected>Player'.$i.'</option>';
+				}
+				?>
+				
+				
+			</select>
+		</tr>
+			
+		  
+		<tr height="10">
+			<td> <br> </td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="submit" id="submit" value="COMPLETE TRANSFER" class="btn btn-danger "></td>
+			</td>
+		</tr>
+		</table>
     </div>
+	
     <div class="col-md-6">
       <table class="table table-bordered">
       <thead>
@@ -138,62 +136,26 @@
           
           </tr>
         </thead>
-        <tbody>';
+        <tbody>
+		<?php
         $index =0;
-        foreach ($players as $p) {
+        for($i=0;$i<10;$i++) {
           echo'
           <tr >
           <form method="post" action="add_transfered_player">
 
             <td width="5%"><input type="submit" name="submit" id="submit" value="ADD" class="btn btn-primary "></td>
-            <input type="hidden" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
-            <input type="hidden" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
-            <input type="hidden" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
-			<input type="hidden" name="player_id" value="'.$p['Player_id'].'"></input>
-            <input type="hidden" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
+            <input type="hidden" name="name" value="#"><td width="12%" >AB De Villeiers</td></input>
+            <input type="hidden" name="cat" value="#"><td width="8%">Batsman</td></input>
+            <input type="hidden" name="price" value="#"><td width="10%">$1100</td></input>
+			<input type="hidden" name="points" value="#"><td width="10%">278</td></input>
             
           </form>
           </tr>';
           $index++;
-        }		  
-        echo '</tbody>
+        }
+		?>		
+        </tbody>
     </table>
     </div>
   </div>
-
-  <table>
-    
-	  <form method="post" action="changeTeam_check">
-	  
-	  <tr height="20"></tr>
-      <tr>
-      <td><strong><h4>Select Captain: </h4></strong></td>
-      <td ></td>
-      <td>
-        <select name="captain" required>';
-			
-			foreach($user_team as $u)
-			{
-				if($u['player_id']===$captain)
-				{
-					echo '<option value="'.$u['player_id'].'" selected>'.$u['player_name'].'</option>';
-				}
-				else
-				{
-					echo '<option value="'.$u['player_id'].'">'.$u['player_name'].'</option>';
-				}
-			}
-			
-            
-          echo '</select>
-				</tr>
-		<tr>
-			<td width="200"></td>
-			<td width="100"></td>
-			<td></td>
-			<td><input type="submit" name="submit" id="submit" value="COMPLETE TRANSFER" class="btn btn-danger "></td>
-			</td>
-      </tr>
-	  <tr height="50"></tr>
-  </table>';
-  ?>

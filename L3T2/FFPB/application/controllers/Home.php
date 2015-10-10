@@ -58,35 +58,42 @@ class Home extends CI_Controller {
 		$this->load->view('registration',$data);
 	}
 	
-	
-	public function schedules()		//LATER
+	public function register_proc()
 	{
-		echo "Schedule Test";
+		echo 'Registration Complete';
 	}
 	
-	public function results()		//LATER
+	
+	public function schedules()		
 	{
-		echo "Result Test";
+		// <Implement>
+		$this->load->view('schedule');
 	}
 	
-	public function pointTable()	//LATER
+	public function results()		
 	{
-		echo "pointTable Test";
+		// <Implement>
+		$this->load->view('results');
 	}
 	
-	public function howToPlay()		//LATER
+	public function pointTable()	
 	{
-		echo "howToPlay Test";
+		// <Implement>
 	}
 	
-	public function rules()			//LATER
+	public function howToPlay()		
 	{
-		echo "Rules Test";
+		// <Implement>
 	}
 	
-	public function scoring()		//LATER
+	public function rules()			
 	{
-		echo "scorings Test";
+		// <Implement>
+	}
+	
+	public function scoring()		
+	{
+		// <Implement>
 	}
 	
 }

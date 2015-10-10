@@ -18,6 +18,21 @@
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
+	<style>
+		.navbar-inverse{
+			background : #c4c4c4;
+		}
+		.navbar-inverse .navbar-brand{
+			color : Navy; 
+		}
+		.navbar-inverse .navbar-nav > li > a {
+			color: #000;
+		}
+		body{
+			background-color: #f9f9f9;
+		}
+	</style>
+	
 </head>
 </head>
 <body style="height=800;">
@@ -55,13 +70,6 @@
         <li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!--
-        <li>
-            <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
-                <img style="max-width:100px; margin-top: -7px;" src="download.png">
-            </a>
-        </li>
-    -->
         <li class="dropdown">
           <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

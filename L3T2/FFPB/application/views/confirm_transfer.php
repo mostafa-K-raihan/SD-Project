@@ -1,48 +1,59 @@
-<?php
-	echo '<table>
-			<tr>
-				<td>
-					<tr>Transfer Outs: </tr>
-					<hr>
-					<tr> </tr>';
-			foreach($transfer_outs as $p)
-			{
-				echo'<tr><pre>'.$p['name'].'</pre></tr>';	
-			}
-					
-	echo'			</td>
-				
-				<td>
-					
-				</td>
-				
-				<td>
-					<tr>Transfer Ins: </tr>
-					<hr>
-					<tr> </tr>';
-			foreach($transfer_ins as $p)
-			{
-				echo'<tr><pre>'.$p['name'].'</pre></tr>';	
-			}
-	echo'			</td>
-			</tr>
-			
+<table>
+	<tr>
+		<td>
+			<tr>Transfer Outs: </tr>
+			<hr>
 			<tr> </tr>
-			<tr>';
-				echo'Deducted Transfers: '.$used_transfers.'
-			</tr>
-		</table>';
-?>
+			<?php
+			for($i=0;$i<3;$i++)
+			{
+				echo'<tr><pre>Player'.$i.'</pre></tr>';	
+			}?>
+					
+		</td>
+				
+		<td>
+					
+			<tr>Transfer Ins: </tr>
+			<hr>
+			<tr> </tr>
+					
+			<?php
+			for($i=0;$i<3;$i++)
+			{
+				echo'<tr><pre>Player'.$i.'</pre></tr>';	
+			}?>
+			
+		</td>
+			
+		<tr height="30"> <br> </tr>
+		<tr height>
+				Deducted Transfers: 3
+		</tr>
+	</tr>
+</table>
 
-<form action="changeTeam" method="POST" >
+<div>
+	<table>
+		<tr height="1"> </tr>
+		<tr>
+			<td>
+			<form action="changeTeam" method="POST" >
 
-	<input type="submit" name="reject_transfer" value="BACK">
-	
-</form>
+				<input type="submit" name="reject_transfer" value="BACK">
+				
+			</form>
+			</td>
 
-<form action="changeTeam_proc" method="POST" >
+			<td width="50"> </td>
+			
+			<td>
+			<form action="changeTeam_proc" method="POST" >
 
-	<input type="submit" name="confirm_transfer" value="CONFIRM">
-	
-</form>
-
+				<input type="submit" name="confirm_transfer" value="CONFIRM">
+				
+			</form>
+			</td>
+		</tr>
+	<table>
+</div>
