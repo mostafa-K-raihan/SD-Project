@@ -4,7 +4,7 @@
         <h1><span class="label label-danger">Current Tournament </span></h1>
       </div>
       <div class="col-xs-3">
-        <h1><span class="label label-success"><?php echo $tournament_name;?> </span></h1>
+        <h1><span class="label label-success"> Bangladesh Premier League 2015-16 </span></h1>
       </div>
       <div class="col-xs-3"></div>
     </div>
@@ -15,85 +15,35 @@
       <div class="col-xs-3" style="text-align:center !important;float:left;">
         <h2><span class="label label-default" > Upcoming Match </span></h2>
       </div>
-      <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-primary" > <?php echo $home_team; ?> </span><span class="label label-warning">Vs </span><span class="label label-primary"> <?php echo $away_team; ?> </span></h2>
-      </div>
-      <?php
-	  echo '<form method="POST" action="admin/start_match_action/'.$match_id.'">
-      <div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
-        <br><input type="submit" value="Initialize Match Data" class="btn btn-info">  </input><br>
-      </div>
-	  </form>';
-	  ?>
-	  <!--
-      <div class="col-xs-3" >
-          <br><button type="button" class="btn btn-warning">End </button><br>
-      </div>
-	  -->
-    </div>
-	<!--
-    <hr>
-    <hr>
-    <div style="height:60px"> 
-      <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-default" >  Match 2 </span></h2>
-      </div>
-      <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-primary"> India </span><span class="label label-warning">Vs </span><span class="label label-primary">South Africa </span></h2>
+      <div class="col-xs-3" style="text-align:center;">
+        <h2><span class="label label-primary" > Chittagong Kings </span><span class="label label-warning">Vs </span><span class="label label-primary"> Dhaka Gladiators </span></h2>
       </div>
       
-      <div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
-        <br><button type="button" class="btn btn-info" >Start </button><br>
+	  <form method="POST" action="#">
+      <div class="col-xs-3" style="text-align:center !important; float:right; vertical-align:top; padding:left">
+        <br><input type="submit" value="Initialize Match Data" class="btn btn-info">  </input><br>
       </div>
-      <div class="col-xs-3" >
-          <br><button type="button" class="btn btn-warning">End </button><br>
-      </div>
+	  </form>
+	  
     </div>
-	-->
-
+	
     <hr>
     <div style="height:60px"> 
       <div class="col-xs-3" style="text-align:center !important;float:left;">
         <h2><span class="label label-default" > Upcoming Phase </span></h2>
       </div>
-	  <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-primary"> <?php echo $upcoming_phase ;?> </span></h2>
+	  <div class="col-xs-3" style="text-align:center;">
+        <h2><span class="label label-primary"> Group Stage </span></h2>
       </div>
 	  
-	  <?php
-	  echo '<form method="POST" action="admin/start_phase_action/'.$phase_id.'">
-				<div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
+	  <form method="POST" action="#">
+				<div class="col-xs-3" style="text-align:center !important; float:right; vertical-align:top; padding:left">
 					<br><input type="submit" value="Initialize Phase Data" class="btn btn-info">  </input><br>
 				</div>
-	  </form>';
-	  ?>
+	  </form>
 	  
-      <!--
-      <div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
-        <br><button type="button" class="btn btn-info">Start </button><br>
-      </div>
-	  -->
     </div>
-	<!--
-    <hr>
-    <div style="height:60px"> 
-      <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-default" > Latest Phase </span></h2>
-      </div>
-      <div class="col-xs-3" style="text-align:center !important;float:left;">
-        <h2><span class="label label-primary"> <?php echo $completed_phase ;?> </span></h2>
-      </div>
-      <!--
-      <div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
-        <br><button type="button" class="btn btn-info">Start </button><br>
-      </div>
-	  -->
-	  <!--
-      <div class="col-xs-3" style="text-align:center !important; float:left; vertical-align:top; padding:left">
-          <br><button type="button" class="btn btn-success"> Finalize Phase Data</button><br>
-      </div>
-    </div>
-	-->
+
 	<hr>
 
   </body>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <meta charset="UTF-8">
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Cricket</title>
+	
+	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
+	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
     <title>Admin Login</title>
     
     
@@ -34,7 +37,7 @@
 			background-image: url(<?php echo base_url('images/back2.jpg'); ?>);
 			/*background-image: url(http;//i62.tinypic.com/nmj4p0.jpg);*/
 			background-size: cover;
-			-webkit-filter: blur(5px);
+			/*-webkit-filter: blur(5px);*/
 			z-index: 0;
 		}
 
@@ -56,7 +59,8 @@
 			top: calc(50% - 55px);
 			left: calc(50% - 280px);
 			z-index: 2;
-		}
+			font-size: 20px;
+			}
 		.header2{
 			position: absolute;
 			top: calc(50% - 155px);
@@ -67,20 +71,20 @@
 		.header{
 			position: absolute;
 			top: calc(50% - 35px);
-			left: calc(50% - 280px);
+			left: calc(50% - 380px);
 			z-index: 2;
 		}
 
 		.header div{
 			float: left;
 			color: #fff;
-			font-family: 'Exo', sans-serif;
+			font-family: 'Exo', verdana;
 			font-size: 35px;
-			font-weight: 200;
+			font-weight: 255;
 		}
 
 		.header div span{
-			color: #5379fa !important;
+			color:  !important;
 		}
 
 		.login{
@@ -164,6 +168,53 @@
 		::-moz-input-placeholder{
 		   color: rgba(255,255,255,0.6);
 		}
+		
+		
+<!--amar kaj-->		
+		
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+  background-color:#fff;
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+.container {
+    padding: 25px;
+    position: fixed;
+	
+}
+
+.form-login {
+	margin-top: 60%;
+	background-color: #aaa;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+body{
+	background-color: teal;
+}
     </style>
 
 
@@ -172,7 +223,7 @@
 
 <body>
 
-    <div class="body"></div>
+    <!--<div class="body"></div>
     <div class="header1">Admin</div>
 	<div class="grad"></div>
 	<div class="header">
@@ -180,39 +231,48 @@
 	</div>
 		
 	<br>
-	
-	<!--
-	<form name = "loginForm" method = "post" action="<?php echo site_url('home/login'); ?>" class="navbar-form navbar-left" role="search">
-		
-		<div class="form-group" class="login">
-			<input type="text" name ="admin_id" class="form-control" placeholder="Admin ID:" required>
-		</div>
-		
-		<div class="form-group" class="login">
-			<input type="password" name ="password" class="form-control" placeholder="Password:" required>
-		</div>
-		
-		<button type="submit" class="btn btn-default" class="login">Sign-In</button>
-	
-	</form>
 	-->
-	
-	<form name = "loginForm" method = "post" action="<?php echo site_url('home/login'); ?>" class="navbar-form navbar-left" role="search">
-	
-		<div class="login">
-			<input type="text" placeholder="username" name ="admin_id"><br>
-			<input type="password" placeholder="password" name="password"><br>
-			<button type="submit" class="btn btn-default">Sign-In</button>
-		</div>
+		<div class="body">
+	<div class = "container">
+    <div class="row" >
+
+        <div class="col-md-offset-5 col-md-3">
 		
-	</form>
+		<form name="loginForm" method="post" action="<?php echo site_url('home/login');?>" >
+            <div class="form-login" >
+            <div class="header1">Admin</div>
+			<div class="header">	
+	<div>Fantasy<span>Cricket</span></div>
+	</div>
+			<h4>Welcome back Admin.</h4>
+          
+		  <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" required/>
+            </br>
+            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required/>
+            </br>
+            
+			<button type="submit" class="btn btn-default">Sign-In</button>
+			<!--
+			<input type="submit" class="btn btn-primary btn-md" value="Sign-In">
+			-->
+            
+			<!--<span class="group-btn">     
+                <a href="" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+			-->
+            
+            </div>
+        </form>
+        </div>
+    </div>
+	</div>
 	
 	<?php
-		if($login_error==true)
+	/*	if($login_error==true)
 		{
 			echo '<div class="header2" style="color:red" ><h1><strong> Login Failed! Username and password didn\'t match </strong></h1></div>';
-			//echo '<div class="header2">Login Failed</div>';
 		}
+		*/
 	?>
 	
 	<script src="<?php echo base_url("assets/js/prefixfree.min.js"); ?>"></script>

@@ -1,6 +1,3 @@
-	<?php
-		$this->load->model('team_model');
-	?>
     <div height="200">
       <div class="col-xs-12" style="text-align:center !important;float:left;">
          <h1> <span class="label label-primary" >Update Tournament Teams </span> </h1>
@@ -10,7 +7,8 @@
 	<?php
 		if($step==0)
 		{
-			echo '<div height="100">
+			echo'
+			<div height="100">
 				<form method="POST" action="updateTournamentTeam_1">
 				<table>
 					<tr height="50"></tr>
@@ -19,15 +17,18 @@
 						<td width="60"><h4> <strong style="font-family:Cursive; font-size:1.25em">Tournament Name:  </strong> </h4></td>
 						<td>
 							<div class="dropdown" >
-							  <select name="tournament_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
-									foreach ($tournaments as $t)
+								<select name="tournament_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
+									
+									for($i=2013;$i<2016;$i++)
 									{
-										echo '<option value='.$t["tournament_id"].' > '. $t["tournament_name"].' </option>';
+										echo '<option value="#">BPL - '.$i.'</option>';
 									}
-			echo 				'</select>
+									
+			echo'					</select>
 							</div>
 						</td>
 					</tr>
+					
 					<tr height="30"></tr>
 					<tr>
 						<td width="200"></td>
@@ -39,13 +40,12 @@
 				</form>
 			</div>';
 		}
-		
-		else if($step==1)
+		if($step==1)
 		{
 			echo'<tr height="60"></tr>
 					<tr>
 					<td width="400"></td>
-					<td><strong>Tournament Name: </strong><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
+					<td><strong>Tournament Name: </strong><h4 style="color:#0000CC"> Selected Tournament ? </h4></td>
 				</tr>
 				<hr><hr>
 				
@@ -70,25 +70,22 @@
 								<strong style="font-family:Cursive; font-size:1.25em">Select </strong>
 							</td>
 						</tr>
-					<form method="post" action="updateTournamentTeam_2">';
-			$count=1;			
-			foreach($teams as $tm)
+					<form method="post" action="updateTournamentTeam_proc">';
+			
+			for($j=0;$j<10;$j++)
 			{
-				$team="team".$count;
-
 				echo '<tr height="20"></tr>
 					<tr>
 					<td width="200"></td>
 					<td>
-						<strong>'.$this->team_model->get_team_name($tm['team_id']).' </strong>
+						<strong> Team '.$j.'</strong>
 					</td>
 					
 					<td width="150"></td>
 					<td>
-						<input type="checkbox" name='.$tm['team_id'].' value="1"><br>
+						<input type="checkbox" name="#" value="1"><br>
 					</td>
 					</tr> ';
-					$count++;
 			}
 
 			echo '
@@ -105,11 +102,8 @@
 			</div>
 			<hr><hr>';
 		}
-		
-		?>
+	?>
 
 
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
