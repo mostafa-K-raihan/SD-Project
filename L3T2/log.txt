@@ -1,3 +1,5 @@
 1.copy the previous project
 2.delete the model
 3.starts from user end
+4.11.10.15 UI almost done. some bug fixed, some new bug arose
+5.class diagram done

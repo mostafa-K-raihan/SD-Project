@@ -27,11 +27,17 @@
   clear:both;
   padding-top:20px;
 } 
-
+{
+	background-color: orange;
+}
 .footer ul{
 	margin-top: 2%;
 }
-.footer ul li a{color: LightGray;}
+.footer ul li a{color: yellow;}
+.footer ul li a:hover{color: blue;}
+.footer ul li a:focus{color: magenta;}
+.footer ul li a:active{color: orange;}
+
   </style>
   </head> 
   <body>
@@ -131,12 +137,11 @@
 
 </div>
 
-
 <footer class="footer">
 	<ul class="nav navbar-nav navbar-left">
-                <li><a>About Us</a></li>
-                <li><a>Services Provided</a></li>
-                <li><a>Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services Provided</a></li>
+                <li><a href="#">Contact Us</a></li>
 	</ul>
     
 </footer>

@@ -42,8 +42,13 @@
 		
 		<div class="tabbable">      
       <ul id="mainTabs" class="nav nav-tabs">
-        <li class="active"><a href="#howToPlay" data-toggle="tab">How to Play</a></li>
-        <li><a href="#Scoring" data-toggle="tab">Scoring</a></li>
+       
+			<li class="active"><a href="#howToPlay" data-toggle="tab">How to Play</a></li>
+			<li><a href="#Scoring" data-toggle="tab">Scoring</a></li>
+		
+		
+		
+		
       </ul>
       <div class="tab-content">
 				<div class="tab-pane active" id="howToPlay" style="color: white">

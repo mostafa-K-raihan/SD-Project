@@ -20,7 +20,7 @@ class Home extends CI_Controller {
 		  //< load model >
 		  
 		  //3. Load Template
-		  $this->load->view('templates/header');
+		  
      }
 	 
 	public function index()	
@@ -32,12 +32,18 @@ class Home extends CI_Controller {
 		else
 		{
 			
-			$data = array(
+			$loginData = array(
                'login_error' => false,
 			   'registration_success' => false
 			);
+			$data=array(
+				'id' => 1,
+				'HOWTOPLAY' => false,
+				'SIGNUP' => false
+			);
 			
-			$this->load->view('home',$data);
+			$this->load->view('templates/header',$data);
+			$this->load->view('home', $loginData);
 		}
 		
 	}
@@ -51,11 +57,18 @@ class Home extends CI_Controller {
 	
 	public function register()	
 	{
-		$data=array(
+		$regData=array(
 			'password_match_error' => false,
 			'already_exist_error'=> false
 		);
-		$this->load->view('registration',$data);
+		$data=array(
+				'id' => -1,
+				'SIGNUP' => true,
+				'HOWTOPLAY' => false
+			);
+		$this->load->view('templates/header',$data);
+		$this->load->view('registration',$regData);
+		
 	}
 	
 	public function register_proc()
@@ -67,27 +80,51 @@ class Home extends CI_Controller {
 	public function schedules()		
 	{
 		// <Implement>
-		$this->load->view('schedule');
+		$data=array(
+			'id' => 2,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => false
+		);
+		$this->load->view('templates/header',$data);
+		$this->load->view('schedule',$data);
 	}
 	
 	public function results()		
 	{
 		// <Implement>
-		$this->load->view('results');
+		$data=array(
+			'id' => 3,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => false
+		);
+		$this->load->view('templates/header',$data);
+		$this->load->view('results',$data);
 	}
 	
 	public function pointTable()	
 	{
 		// <Implement>
-		$this->load->view('point_table');
+		$data=array(
+			'id' => 4,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => false
+		);
+		$this->load->view('templates/header',$data);
+		$this->load->view('point_table',$data);
 	}
 	
 	public function howToPlay()		
 	{
 		// <Implement>
-		$this->load->view('how_to_play');
+		$data=array(
+			'id'=> -1,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => true
+		);
+		$this->load->view('templates/header',$data);
+		$this->load->view('how_to_play',$data);
 	}
-	
+	//eita most probably dorkar nai confirmation needed
 	public function rules()			
 	{
 		// <Implement>
@@ -96,6 +133,14 @@ class Home extends CI_Controller {
 	public function scoring()		
 	{
 		// <Implement>
+				$data=array(
+			'id'=> -1,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => true,
+			
+		);
+		$this->load->view('templates/header',$data);
+		$this->load->view('how_to_play',$data);
 	}
 	
 }

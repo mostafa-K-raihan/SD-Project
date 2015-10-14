@@ -116,9 +116,8 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <p class="navbar-brand">   This website is under construction. Any type of feedback from you will be appriciated.</p>  
-      <a class="navbar-brand" class="col-lg-12" href="#"><p>Copyright &copy; Your Website 2015</p></a>
+    <div class="navbar-header"> 
+      <a class="navbar-brand" class="col-md-12" href="#" style=""><p>Copyright &copy; FantasyCricket.com 2015</p></a>
     </div>
   </div>
 </nav>
