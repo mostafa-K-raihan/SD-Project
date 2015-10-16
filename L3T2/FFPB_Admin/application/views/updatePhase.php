@@ -10,12 +10,12 @@
 						<td width="60"><h4> <strong style="font-family:Cursive; font-size:1.25em">Select Tournament:  </strong> </h4></td>
 						<td>
 							<div class="dropdown" >';
-									foreach ($tournaments as $t)
+									for($i=0;$i<5;$i++)
 									{
 										echo '<table>
 												<tr>
 													<td> 
-														<input type="radio" name="tournament_id" required value='.$t["tournament_id"].'>'.$t["tournament_name"].'
+														<input type="radio" name="tournament_id" required value="#">Tournament'.$i.'
 													</td>
 												</tr>
 											</table>';
@@ -45,97 +45,39 @@
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4><strong>Selected Tournament: </strong></h4></td>
-						<td><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
+						<td><h4 style="color:#0000CC">Selected Tournament ?</h4></td>
 						<hr><hr>
 					</tr>
-					<!--
-					<tr>
-						<td width="565"></td>
-						<td><h4 style="color:#">'.$match.'</h4></td>
-						<td><h4 style="color:#"> VS </h4></td>
-						<td><h4 style="color:#">'.$match.'</h4></td>
-					</tr>
-					-->
+			
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4> Start Date: </strong></h4></td>
-						<td><h4 style="color:#">'.$start_date.'</h4></td>
+						<td><h4 style="color:#">28-05-15 03:00 PM</h4></td>
 					</tr>
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4> End Date: </strong></h4></td>
-						<td><h4 style="color:#">'.$end_date.'</h4></td>
+						<td><h4 style="color:#">31-05-15 01:00 AM</h4></td>
 					</tr>
 				</table>
 				<hr><hr>
 				
 				<form method="POST" action="updatePhases_proc2">	';
 					
-					///////////
-	$count=0;				
-	foreach($phases as $p){
-		$count++;
-        $name_var="name".$count;
-		$ft_var="ft".$count;
-		$start_day_var="start_day".$count;
-		$start_month_var="start_month".$count;
-		$start_year_var="start_year".$count;
-		$start_hour_var="start_hour".$count;
-		$start_min_var="start_min".$count;
-		$start_am_pm_var="start_am_pm".$count;
-		$end_day_var="end_day".$count;
-		$end_month_var="end_month".$count;
-		$end_year_var="end_year".$count;
-		$end_hour_var="end_hour".$count;
-		$end_min_var="end_min".$count;
-		$end_am_pm_var="end_am_pm".$count;
-		
-		$phase_name=$p['phase_name'];
-		$ft=$p['free_transfers'];
-		
-		$start = explode(" ",$p['start_time']);
-		$end = explode(" ",$p['finish_time']);
-		
-		
-		$start_date = $start[0];
-		$start_time = $start[1];
-		//$start_am_pm = $start[2];
-		$end_date = $end[0];
-		$end_time = $end[1];
-		//$end_am_pm = $end[2];
-		
-		
-		$form1 = explode("-",$start_date);
-		$start_year = $form1[0];
-		$start_month = $form1[1];
-		$start_day = $form1[2];
-		
-		$form2 = (explode(":",$start_time));
-		$start_hour = $form2[0];
-		$start_min = $form2[1];
-		
-		$form3 = explode("-",$end_date);
-		$end_year = $form3[0];
-		$end_month = $form3[1];
-		$end_day = $form3[2];
-		
-		$form4 = (explode(":",$end_time));
-		$end_hour = $form4[0];
-		$end_min = $form4[1];
-
-        echo'
+	for($j=0;$j<3;$j++){
+		echo'
 		  <hr><hr>
 		  <table>
-		  <tr>#'.$count.'<br></tr>
+		  <tr>#'.($j+1).'<br></tr>
           <tr>
 			<td>Phase Name: </td>
-			<td><input width="50" type="text" name= "'.$name_var.'" value="'.$p['phase_name'].'" ></td>
+			<td><input width="50" type="text" name= "#" value="Phase ?" ></td>
 		  </tr>
 		  
 		  <tr height="10"> </tr>
           <tr>
 			<td>Free Transfers: </td>
-			<td><input width="50" type="number" name="'.$ft_var.'" min="-1" max="100" value="'.$ft.'"></td>
+			<td><input width="50" type="number" name="#" min="-1" max="100" value="'.$j.'"></td>
 		  </tr>
 		  
 		  <tr height="10"> </tr>
@@ -146,8 +88,10 @@
 				
 				<td>
 				Start Day:
-					<select name="'.$start_day_var.'" required>';	
+					<select name="#" required>';	
 					
+							$start_day="03";
+							
 							if($start_day==="01") echo '<option value="01" selected>01</option>';
 							else echo '<option value="01">01</option>';
 
@@ -247,7 +191,9 @@
 							</td>
 							<td>
 								Month:
-								<select name="'.$start_month_var.'" required>';				
+								<select name="#" required>';
+									$start_month = "04";
+									
 									if($start_month==="01") echo '<option value="01" selected>JAN</option>';
 									else echo '<option value="01" >JAN</option>';
 
@@ -290,7 +236,9 @@
 							</td>
 							<td>									
 								Year:
-								<select name="'.$start_year_var.'" required>';
+								<select name="#" required>';
+									$start_year="2016";
+									
 									if($start_year==="2015") echo '<option value="2015" selected>2015</option>';
 									else echo '<option value="2015" >2015</option>';
 
@@ -348,7 +296,9 @@
 							<td width="30"> </td>
 							<td>
 								Hour:
-								<select name="'.$start_hour_var.'" required>';			
+								<select name="#" required>';
+										$start_hour = "03";
+										
 										if($start_hour==="00") echo '<option value="00" selected>00</option>';
 										else echo '<option value="00">00</option>';
 
@@ -429,9 +379,9 @@
 							
 							<td>
 								Min:
-								<select name="'.$start_min_var.'" required>';
+								<select name="#" required>';
 								
-									//print_r($end_time);
+									$start_min = "00";
 									
 									if($start_min==="00") echo '<option value="00" selected>00</option>';
 									else echo '<option value="00">00</option>';
@@ -626,8 +576,10 @@
 				
 				<td>
 				End Day:
-					<select name="'.$end_day_var.'" required>';	
+					<select name="#" required>';	
 					
+							$end_day = "14";
+							
 							if($end_day==="01") echo '<option value="01" selected>01</option>';
 							else echo '<option value="01">01</option>';
 
@@ -727,7 +679,9 @@
 							</td>
 							<td>
 								Month:
-								<select name="'.$end_month_var.'" required>';				
+								<select name="#" required>';
+									$end_month = "02";
+									
 									if($end_month==="01") echo '<option value="01" selected>JAN</option>';
 									else echo '<option value="01" >JAN</option>';
 
@@ -770,7 +724,9 @@
 							</td>
 							<td>									
 								Year:
-								<select name="'.$end_year_var.'" required>';
+								<select name="#" required>';
+									$end_year = "2016";
+									
 									if($end_year==="2015") echo '<option value="2015" selected>2015</option>';
 									else echo '<option value="2015" >2015</option>';
 
@@ -828,7 +784,9 @@
 							<td width="30"> </td>
 							<td>
 								Hour:
-								<select name="'.$end_hour_var.'" required>';			
+								<select name="#" required>';
+									$end_hour="00";
+									
 										if($end_hour==="00") echo '<option value="00" selected>00</option>';
 										else echo '<option value="00">00</option>';
 
@@ -909,9 +867,9 @@
 							
 							<td>
 								Min:
-								<select name="'.$end_min_var.'" required>';
+								<select name="#" required>';
 								
-									//print_r($end_time);
+									$end_min="00";
 									
 									if($end_min==="00") echo '<option value="00" selected>00</option>';
 									else echo '<option value="00">00</option>';

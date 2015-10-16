@@ -181,21 +181,6 @@
 		
 	<br>
 	
-	<!--
-	<form name = "loginForm" method = "post" action="<?php echo site_url('home/login'); ?>" class="navbar-form navbar-left" role="search">
-		
-		<div class="form-group" class="login">
-			<input type="text" name ="admin_id" class="form-control" placeholder="Admin ID:" required>
-		</div>
-		
-		<div class="form-group" class="login">
-			<input type="password" name ="password" class="form-control" placeholder="Password:" required>
-		</div>
-		
-		<button type="submit" class="btn btn-default" class="login">Sign-In</button>
-	
-	</form>
-	-->
 	
 	<form name = "loginForm" method = "post" action="<?php echo site_url('home/login'); ?>" class="navbar-form navbar-left" role="search">
 	
@@ -211,7 +196,6 @@
 		if($login_error==true)
 		{
 			echo '<div class="header2" style="color:red" ><h1><strong> Login Failed! Username and password didn\'t match </strong></h1></div>';
-			//echo '<div class="header2">Login Failed</div>';
 		}
 	?>
 	

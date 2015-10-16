@@ -21,9 +21,9 @@
                 <td><strong>Tournament Name: <br></strong>
 				<select name="tournament_name" required>';
 				//OPTIONS
-				foreach($tournaments as $a)
+				for($i=0;$i<4;$i++)
                 {
-                    echo '<option value='.$a['tournament_id'].'> '.$a['tournament_name'].'</option>';
+                    echo '<option value="#"> Tournament '.$i.' </option>';
                 }
 				
 			echo	'</select>
@@ -45,6 +45,7 @@
                 </tr>';
         }?>
       </form>
+	  
       <form method="POST" action="addPhases_proc">
       <?php
 		if($phases>0)
@@ -57,7 +58,7 @@
 			<tr>
 				<td><strong>Tournament Name: </strong></td>
 				<td width="40"> </td>
-				<td><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
+				<td><h4 style="color:#0000CC">Tournament ?</h4></td>
 			<tr>
 				<td width="100"><strong>No. of Phases: </strong></td>
 				<td width="40"> </td>
@@ -71,32 +72,19 @@
 
       for($count=1;$count<=$phases;$count++){
 	  
-        $name_var="name".$count;
-		$ft_var="ft".$count;
-		$start_day_var="start_day".$count;
-		$start_month_var="start_month".$count;
-		$start_year_var="start_year".$count;
-		$start_hour_var="start_hour".$count;
-		$start_min_var="start_min".$count;
-		$end_day_var="end_day".$count;
-		$end_month_var="end_month".$count;
-		$end_year_var="end_year".$count;
-		$end_hour_var="end_hour".$count;
-		$end_min_var="end_min".$count;
-
         echo'
 		  <hr><hr>
 		  <table>
 		  <tr>#'.$count.'<br></tr>
           <tr>
 			<td>Phase Name: </td>
-			<td><input width="50" type="text" name= '.$name_var.' required></td>
+			<td><input width="50" type="text" name= "#" required></td>
 		  </tr>
 		  
 		  <tr height="10"> </tr>
           <tr>
 			<td>Free Transfers: </td>
-			<td><input width="50" type="number" name='.$ft_var.' min="-1" max="100" required></td>
+			<td><input width="50" type="number" name="#" min="-1" max="100" required></td>
 		  </tr>
 		  
 		  <tr height="10"> </tr>
@@ -107,7 +95,7 @@
 				
 				<td>
 				Start Day:
-					<select name='.$start_day_var.' required>
+					<select name="#" required>
 							
 						<option value="01">1</option>
 						<option value="02">2</option>
@@ -144,7 +132,7 @@
 							</td>
 							<td>
 								Month:
-								<select name='.$start_month_var.' required>
+								<select name="#" required>
 									<option value="01">January</option>
 									<option value="02">Febuary</option>
 									<option value="03">March</option>
@@ -162,7 +150,7 @@
 							</td>
 							<td>
 								Year:
-								<select name='.$start_year_var.' required>
+								<select name="#" required>
 									<option value="2015">2015</option>
 									<option value="2016">2016</option>
 									<option value="2017">2017</option>
@@ -185,7 +173,7 @@
 							<td width="30"> </td>
 							<td>
 								Hour:
-								<select name='.$start_hour_var.' required>
+								<select name="#" required>
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>
@@ -214,7 +202,7 @@
 							</td>
 							<td>
 								Min:
-								<select name='.$start_min_var.' required>
+								<select name="#" required>
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>
@@ -288,7 +276,7 @@
 				
 				<td>
 				End Day:
-					<select name='.$end_day_var.' required>
+					<select name="#" required>
 							
 						<option value="01">1</option>
 						<option value="02">2</option>
@@ -325,7 +313,7 @@
 							</td>
 							<td>
 								Month:
-								<select name='.$end_month_var.' required>
+								<select name="#" required>
 									<option value="01">January</option>
 									<option value="02">Febuary</option>
 									<option value="03">March</option>
@@ -343,7 +331,7 @@
 							</td>
 							<td>
 								Year:
-								<select name='.$end_year_var.' required>
+								<select name="#" required>
 									<option value="2015">2015</option>
 									<option value="2016">2016</option>
 									<option value="2017">2017</option>
@@ -366,7 +354,7 @@
 							<td width="30"> </td>
 							<td>
 								Hour:
-								<select name='.$end_hour_var.' required>
+								<select name="#" required>
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>
@@ -395,7 +383,7 @@
 							</td>
 							<td>
 								Min:
-								<select name='.$end_min_var.' required>
+								<select name="#" required>
 									<option value="00">00</option>
 									<option value="01">01</option>
 									<option value="02">02</option>

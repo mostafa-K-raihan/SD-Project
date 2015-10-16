@@ -1,68 +1,71 @@
-
- 		<?php
-			echo'<tr height="60"></tr>
-				
-				<div>
-					<table>
-						<tr>
-							<td width="400"></td>
-							<td width="150"></td>
+<tr height="60"></tr>
+	<div>
+		<table>
+			<tr>
+				<td width="400"></td>
+				<td width="150"></td>
 							
-							<td>
-								<h3> <span class="label label-success" style="font-family:sans-serif">   Existing Tournament List  </span> </h3>
-							</td>
-						</tr>
-						<tr height="20"></tr>';
-						
-			foreach($tournaments as $pl)
+				<td>
+					<h3> <span class="label label-success" style="font-family:sans-serif">   Existing Tournament List  </span> </h3>
+				</td>
+			</tr>
+			
+			<tr height="20"></tr>';
+			
+			<?php			
+			for($i=0;$i<3;$i++)
 			{
 				echo '<tr height="20"></tr>
 					<tr>
 					<td width="200"></td>
 					<td></td>
 					<td>
-						<strong style="font-size:1.15em">'.$pl['tournament_name'].' </strong>
+						<strong style="font-size:1.15em">Tournament'.$i.'</strong>
 					</td>
 					
 					</tr> ';
 			}
+			?>
 
-			echo '</table>
-				</div>
-			<hr><hr>
+		</table>
+		
+	</div>
+	
+	<hr><hr>
 			
-				<div>
-					<form method="POST" action="createTournament_proc">
+	<div>
+		<form method="POST" action="createTournament_proc">
 					
-					<table>
-						<tr height="30"></tr>
-						<tr>
-							<td></td>
-							<td width="170"></td>
-							<td>
-								<h3><span class="label label-success" >Create A New Tournament </span></h3>
-							</td>
-						</tr>
+		<table>
+			<tr height="30"></tr>
+			<tr>
+				<td></td>
+				<td width="170"></td>
+				<td>
+					<h3><span class="label label-success" >Create A New Tournament </span></h3>
+				</td>
+			</tr>
 						
-						<tr height="20"></tr>
-						<tr>
-							<td width="400"></td>
-							<td><strong>Tournament Name: </strong></td>
+			<tr height="20"></tr>
+			<tr>
+				<td width="400"></td>
+				<td><strong>Tournament Name: </strong></td>
 							
-							<td>
-								<input type="text" name="tournament_name" required></td>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr height="30"></tr>
-						<tr>
-							<td width="400"></td>
-							<td><strong>Start Date: </strong></td>
-							<td width="20"></td>
-							<td></td>
-							<td>
-								<select name="start_day">
+				<td>
+					<input type="text" name="tournament_name" required></td>
+					</td>
+				</tr>
+		</table>
+		
+		<table>
+			<tr height="30"></tr>
+			<tr>
+				<td width="400"></td>
+				<td><strong>Start Date: </strong></td>
+				<td width="20"></td>
+				<td></td>
+				<td>
+					<select name="start_day">
 									<option> - Day - </option>
 									<option value="01">1</option>
 									<option value="02">2</option>
@@ -95,10 +98,11 @@
 									<option value="29">29</option>
 									<option value="30">30</option>
 									<option value="31">31</option>
-								</select>
-							</td>
-							<td>
-								<select name="start_month">
+					</select>
+				</td>
+				
+				<td>
+					<select name="start_month">
 									<option> - Month - </option>
 									<option value="01">January</option>
 									<option value="02">Febuary</option>
@@ -112,11 +116,12 @@
 									<option value="10">October</option>
 									<option value="11">November</option>
 									<option value="12">December</option>
-								</select>
+					</select>
 
-							</td>
-							<td>
-								<select name="start_year">
+				</td>
+				
+				<td>
+					<select name="start_year">
 									<option> - Year - </option>
 									<option value="2015">2015</option>
 									<option value="2016">2016</option>
@@ -134,19 +139,19 @@
 									<option value="2028">2028</option>
 									<option value="2029">2029</option>
 									<option value="2030">2030</option>
-								</select>
-							</td>
-						</tr>
+					</select>
+				</td>
+			</tr>
 						
 			  
-						<tr height="30"></tr>
-						<tr>
-							<td width="400"></td>
-							<td><strong>End Date: <strong></td>
-							<td width="20"></td>
-							<td></td>
-							<td>
-								<select name="end_day">
+			<tr height="30"></tr>
+			<tr>
+				<td width="400"></td>
+				<td><strong>End Date: <strong></td>
+				<td width="20"></td>
+				<td></td>
+				<td>
+					<select name="end_day">
 									<option> - Day - </option>
 									<option value="01">1</option>
 									<option value="02">2</option>
@@ -179,10 +184,11 @@
 									<option value="29">29</option>
 									<option value="30">30</option>
 									<option value="31">31</option>
-								</select>
-							</td>
-							<td>
-								<select name="end_month">
+					</select>
+				</td>
+				
+				<td>
+					<select name="end_month">
 									<option> - Month - </option>
 									<option value="01">January</option>
 									<option value="02">Febuary</option>
@@ -196,11 +202,12 @@
 									<option value="10">October</option>
 									<option value="11">November</option>
 									<option value="12">December</option>
-								</select>
+					</select>
 
-							</td>
-							<td>
-								<select name="end_year">
+				</td>
+				
+				<td>
+					<select name="end_year">
 									<option> - Year - </option>
 									<option value="2015">2015</option>
 									<option value="2016">2016</option>
@@ -218,25 +225,25 @@
 									<option value="2028">2028</option>
 									<option value="2029">2029</option>
 									<option value="2030">2030</option>
-								</select>
-							</td>
-						</tr>
+					</select>
+				</td>
+				
+			</tr>
 						
-						<tr height="30"></tr>
-						<tr>
-							<td width="300"></td>
-							<td></td>
-							<td width="100">
-							  <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
-							</td>
-						</tr>
-						<tr height="40"></tr>
-					</table>
+			<tr height="30"></tr>
+			<tr>
+				<td width="300"></td>
+				<td></td>
+				<td width="100">
+					<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+				</td>
+			</tr>
+			
+			<tr height="40"></tr>
+		</table>
 					
-					</form>
-				</div>';
-		
-		?>
+		</form>
+	</div>
 		
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

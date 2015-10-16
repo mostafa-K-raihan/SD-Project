@@ -18,9 +18,9 @@
 						<td>
 							<div class="dropdown" >
 							  <select name="team_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
-									foreach ($teams as $t)
+									for($i=0;$i<5;$i++)
 									{
-										echo '<option value='.$t["team_id"].' > '. $t["team_name"].' </option>';
+										echo '<option value="#" > Team '.$i.' </option>';
 									}
 			echo 				'</select>
 							</div>
@@ -45,7 +45,7 @@
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4><strong>Team Name: </strong></h4></td>
-						<td><h4 style="color:#0000CC">'.$team_name.'</h4></td>
+						<td><h4 style="color:#0000CC">Selected Team ?</h4></td>
 					</tr>
 				</table>
 				<hr><hr>
@@ -76,22 +76,22 @@
 							</td>
 						</tr>';
 						
-			foreach($players as $pl)
+			for($i=0;$i<5;$i++)
 			{
 				echo '<tr height="20"></tr>
 					<tr>
 					<td width="200"></td>
 					<td>
-						<strong>'.$pl['name'].' </strong>
+						<strong>Player'.$i.' </strong>
 					</td>
 					
 					<td width="150"></td>
 					<td>
-						<strong>'.$pl['player_cat'].'</strong>
+						<strong>Batsman</strong>
 					</td>
 					<td width="150"></td>
 					<td>
-						<strong>'.$pl['price'].'</strong>
+						<strong>'.($i*100).'</strong>
 					</td>
 					</tr> ';
 			}
@@ -127,7 +127,6 @@
 							<td>Category: </td>
 							<td width="20"></td>
 							<td>
-								<!-- <input type="text" name="player_cat" required></td> -->
 								<select name="player_cat" role="menu" aria-labelledby="dLabel" required width="50">
 									<option value="BAT">Batsman</option>
 									<option value="BOWL">Bowler</option>

@@ -6,19 +6,6 @@
     </div>
 	
 	<?php
-		if($sameTeam)
-		{
-			echo 	'<table>
-						<tr height="20"> </tr>
-						<tr>
-							<td width="500"> </td>
-							<td class="alert alert-danger">
-								<strong><span class="glyphicon glyphicon-remove"></span> A Match Must Contain Two Different Teams </strong>
-							</td>
-						</tr>
-					</table>';
-		}
-		
 		echo '<div height="100">
 				
 				<table>
@@ -26,7 +13,7 @@
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4><strong>Running Tournament: </strong></h4></td>
-						<td><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
+						<td><h4 style="color:#0000CC">BPL 2015-16</h4></td>
 					</tr>
 				</table>
 				<hr>
@@ -40,9 +27,9 @@
 						<td>
 							<div class="dropdown" >
 							  <select name="home_team_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
-									foreach ($teams as $t)
+									for($i=0;$i<5;$i++)
 									{
-										echo '<option value='.$t["team_id"].' > '. $t["team_name"].' </option>';
+										echo '<option value="#" > Team'.$i.' </option>';
 									}
 			echo 				'</select>
 							</div>
@@ -54,9 +41,9 @@
 						<td>
 							<div class="dropdown" >
 							  <select name="away_team_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
-									foreach ($teams as $t)
+									for($i=0;$i<5;$i++)
 									{
-										echo '<option value='.$t["team_id"].' > '. $t["team_name"].' </option>';
+										echo '<option value="#" > Team'.$i.' </option>';
 									}
 			echo 				'</select>
 							</div>
