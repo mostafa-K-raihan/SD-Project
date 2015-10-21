@@ -6,16 +6,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 	  
-	 public function __construct()
+	 public function __construct()	//C
      {
-        parent::__construct();
+          parent::__construct();
 		  
-		//Load Necessary Libraries and helpers
-        $this->load->library('session');
-        $this->load->helper('form');
-        $this->load->helper('url');
-        $this->load->helper('html');
-		$this->load->library('form_validation');
+		  //Load Necessary Libraries and helpers
+          $this->load->library('session');
+          $this->load->helper('form');
+          $this->load->helper('url');
+          $this->load->helper('html');
+		  $this->load->library('form_validation');
+		  
+		if(isset($_SESSION["user_id"]))
+		{
+			die("Please Log out from your user account. ");
+		}
+		else
+		{
+			if(!isset($_SESSION["admin_id"]))
+			{
+				redirect('/home', 'refresh');
+			}
+		}
+		  
+		$this->load->model('admin_model');
+		$this->load->model('tournament_model');
+		$this->load->model('team_model');
+		$this->load->model('match_model');
+		
 		
 		$this->load->view('templates/header');
      }
@@ -24,12 +42,72 @@ class Admin extends CI_Controller {
 	*	ADMIN HOME PAGE
 	*/
 	
-	public function index()			
+	public function index()			//C
 	{
-		$this->load->view('admin_home');
+		/**	Get Current Tournament Name		
+		*	$data['tournament_name'];
+		*/
+		
+		$query= $this->tournament_model->get_active_tournament();
+		
+		if($query->num_rows()==0)
+		{
+			echo 'No Active Tournament';
+		}
+		else
+		{
+			$result=$query->row_array();
+			$data['tournament_name']=$result['tournament_name'];	//Current Tournament Name
+			
+			$tournament_id=$result['tournament_id'];				//Current Tournament ID
+			
+			/**
+			*	Get Upcoming Match Which has not been initiated by admin	
+			*	$data['home_team'], $data['away_team']
+			*	After initiation, all tables that requires a match instance are created
+			*/
+			
+			$query= $this->match_model->get_upcoming_match($tournament_id);
+			
+			if($query->num_rows()==0)
+			{
+				$data['home_team']='';				//Home Team ID -> Get Team Name Using Team Model
+				$data['away_team']='';				//Away Team ID -> Get Team Name Using Team Model
+				$data['match_id']='';
+			}
+			else
+			{
+				$result=$query->row_array();
+				$data['home_team']=$this->team_model->get_team_name($result['team1_id']);				//Home Team ID -> Get Team Name Using Team Model
+				$data['away_team']=$this->team_model->get_team_name($result['team2_id']);				//Away Team ID -> Get Team Name Using Team Model
+				$data['match_id']=$result['match_id'];
+			}
+			
+			/**
+			*	Get Recent 2 Phases Which Are Either Not Started Or Not Finished
+			*	$data['phases'] = array($phase1,$phase2);
+			*/
+			
+			$query= $this->tournament_model->get_upcoming_phase($tournament_id);
+			
+			if($query->num_rows()==0)
+			{
+				$data['upcoming_phase']='';
+				$data['phase_id']='';
+			}
+			else
+			{
+				$result=$query->row_array();
+				$data['upcoming_phase']=$result['phase_name'];
+				$data['phase_id']=$result['phase_id'];
+			}
+			
+			$this->load->view('admin_home',$data);
+		}
+		
 	}
 	
-	public function logout()	
+	public function logout()	//C
 	{
 		//Stop Session
 		$this->session->sess_destroy();
@@ -38,15 +116,42 @@ class Admin extends CI_Controller {
 		redirect('/home', 'refresh');
 	}
 	
-	public function schedules()	
+	public function schedules()	//C
 	{
-		// <Copy From User Views>
-		$this->load->view('schedule');
+		$query= $this->tournament_model->get_fixture();		
+		
+		if($query->num_rows()==0)
+		{
+			echo "No Fixture Available for this tournament";	//Load No Fixture View
+		}
+		
+		$data['fixture']=$query->result_array();
+		
+		$this->load->view('schedule',$data);
 	}
 	
-	public function results()	
+	public function results()	//NC
 	{
-		// <Copy From User Views>
+		//COPY FROM USER SECTION LATER
 		$this->load->view('results');
 	}
+	
+	public function start_phase_action($phase_id)	//C
+	{
+		$query= $this->admin_model->start_phase($phase_id);
+		
+		$data['success']=true;
+		$data['success_message']="Data updated successfully to start the phase";
+		$this->load->view('success_status',$data);
+	}
+	
+	public function start_match_action($match_id)	//C
+	{
+		//echo $match_id;
+		$query= $this->admin_model->start_match($match_id);
+		$data['success']=true;
+		$data['success_message']="Data updated successfully to start the match";
+		$this->load->view('success_status',$data);
+	}
+	
 }

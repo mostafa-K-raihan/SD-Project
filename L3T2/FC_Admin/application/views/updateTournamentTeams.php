@@ -19,9 +19,9 @@
 							<div class="dropdown" >
 								<select name="tournament_id" role="menu" aria-labelledby="dLabel" required width="50" style="font-family:Cursive; font-size:1.25em">';
 									
-									for($i=2013;$i<2016;$i++)
+									foreach ($tournaments as $t)
 									{
-										echo '<option value="#">BPL - '.$i.'</option>';
+										echo '<option value='.$t["tournament_id"].' > '. $t["tournament_name"].' </option>';
 									}
 									
 			echo'					</select>
@@ -45,7 +45,7 @@
 			echo'<tr height="60"></tr>
 					<tr>
 					<td width="400"></td>
-					<td><strong>Tournament Name: </strong><h4 style="color:#0000CC"> Selected Tournament ? </h4></td>
+					<td><strong>Tournament Name: </strong><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
 				</tr>
 				<hr><hr>
 				
@@ -70,22 +70,25 @@
 								<strong style="font-family:Cursive; font-size:1.25em">Select </strong>
 							</td>
 						</tr>
-					<form method="post" action="updateTournamentTeam_proc">';
-			
-			for($j=0;$j<10;$j++)
+					<form method="post" action="updateTournamentTeam_2">';
+			$count=1;			
+			foreach($teams as $tm)
 			{
+				$team="team".$count;
+
 				echo '<tr height="20"></tr>
 					<tr>
 					<td width="200"></td>
 					<td>
-						<strong> Team '.$j.'</strong>
+						<strong>'.$this->team_model->get_team_name($tm['team_id']).' </strong>
 					</td>
 					
 					<td width="150"></td>
 					<td>
-						<input type="checkbox" name="#" value="1"><br>
+						<input type="checkbox" name='.$tm['team_id'].' value="1"><br>
 					</td>
 					</tr> ';
+					$count++;
 			}
 
 			echo '

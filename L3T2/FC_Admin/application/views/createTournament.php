@@ -13,14 +13,14 @@
 			<tr height="20"></tr>';
 			
 			<?php			
-			for($i=0;$i<3;$i++)
+			foreach($tournaments as $pl)
 			{
 				echo '<tr height="20"></tr>
 					<tr>
 					<td width="200"></td>
 					<td></td>
 					<td>
-						<strong style="font-size:1.15em">Tournament'.$i.'</strong>
+						<strong style="font-size:1.15em">'.$pl['tournament_name'].' </strong>
 					</td>
 					
 					</tr> ';

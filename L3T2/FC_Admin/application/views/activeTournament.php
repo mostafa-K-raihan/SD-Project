@@ -9,12 +9,12 @@
             <tr height="20"></tr>
             <form method="post" action="activeTournament_proc">
                 <?php 
-                for($i=2013;$i<2016;$i++)
+                foreach($tournaments as $a)
                 {
                     echo '<tr>
                         <td width="510"></td>
                         <td>
-                            <h2><span class="label label-primary"><input type="radio" name="tournament" value="#"> BPL '.$i.'-'.($i+1).' </span></h2><br>
+                            <h2><span class="label label-primary"><input type="radio" name="tournament" value='.$a['tournament_id'].'> '.$a['tournament_name'].'</span></h2><br>
                         </td>
                     </tr>';
                 }?>

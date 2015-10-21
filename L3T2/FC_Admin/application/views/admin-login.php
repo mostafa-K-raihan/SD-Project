@@ -242,13 +242,13 @@ body{
             <div class="form-login" >
             <div class="header1">Admin</div>
 			<div class="header">	
-	<div>Fantasy<span>Cricket</span></div>
-	</div>
+			<div>Fantasy<span>Cricket</span></div>
+			</div>
 			<h4>Welcome back Admin.</h4>
           
-		  <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" required/>
+			<input type="text" id="userName" name="admin_id" class="form-control input-sm chat-input" placeholder="username" required/>
             </br>
-            <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required/>
+            <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="password" required/>
             </br>
             
 			<button type="submit" class="btn btn-default">Sign-In</button>
@@ -268,11 +268,10 @@ body{
 	</div>
 	
 	<?php
-	/*	if($login_error==true)
+		if($login_error==true)
 		{
 			echo '<div class="header2" style="color:red" ><h1><strong> Login Failed! Username and password didn\'t match </strong></h1></div>';
 		}
-		*/
 	?>
 	
 	<script src="<?php echo base_url("assets/js/prefixfree.min.js"); ?>"></script>
