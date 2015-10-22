@@ -10,15 +10,16 @@
 						<td width="60"><h4> <strong style="font-family:Cursive; font-size:1.25em">Select Match:  </strong> </h4></td>
 						<td>
 							<div class="dropdown" >';
-									for($i=0;$i<5;$i++)
+									foreach ($matches as $m)
 									{
 										echo '<table>
 												<tr>
 													<td> 
-														<input type="radio" name="match_id" required value="#">India Vs Australia
+														<input type="radio" name="match_id" required value='.$m["match_id"].'>'.$m["home_team_name"]
+														.' VS '.$m["away_team_name"].'
 													</td>
 													<td width="60"> </td>
-													<td>29-07-2015 06:00 PM</td>
+													<td>'.$m['Time'].'</td>
 												</tr>
 											</table>';
 									}
@@ -47,19 +48,19 @@
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4><strong>Running Tournament: </strong></h4></td>
-						<td><h4 style="color:#0000CC">Tournament Name ?</h4></td>
+						<td><h4 style="color:#0000CC">'.$tournament_name.'</h4></td>
 						<hr><hr>
 					</tr>
 					<tr>
 						<td width="565"></td>
-						<td><h4 style="color:#">India</h4></td>
+						<td><h4 style="color:#">'.$match["home_team_name"].'</h4></td>
 						<td><h4 style="color:#"> VS </h4></td>
-						<td><h4 style="color:#">Australia</h4></td>
+						<td><h4 style="color:#">'.$match["away_team_name"].'</h4></td>
 					</tr>
 					<tr>
 						<td width="565"></td>
 						<td width="150"><h4> Start Time: </strong></h4></td>
-						<td><h4 style="color:#">29-7-2015 06:00 PM</h4></td>
+						<td><h4 style="color:#">'.$match["Time"].'</h4></td>
 					</tr>
 				</table>
 				<hr><hr>

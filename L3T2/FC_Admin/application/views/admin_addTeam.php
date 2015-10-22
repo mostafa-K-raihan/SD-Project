@@ -35,15 +35,18 @@
           </tr>';}
 
       for($count=1;$count<=$players;$count++){
-        
+        $name_var="name".$count;
+        $cat_var="cat".$count;
+        $price_var="price".$count;
+
         echo'<tr height="30"></tr>
         <tr>
           <td width="30"></td>
           <td> '.$count.' </td>
-          <td>Player Name: <br><input type="text" name= "#" required></td>
+          <td>Player Name: <br><input type="text" name= '.$name_var.' required></td>
           <td><br>
             <div class="dropdown" >
-              <select name="#" role="menu" aria-labelledby="dLabel" required width="50">
+              <select name='.$cat_var.' role="menu" aria-labelledby="dLabel" required width="50">
                 <option value="BAT">Batsman</option>
                 <option value="BOWL">Bowler</option>
                 <option value="ALL">All-Rounder</option>
@@ -51,10 +54,24 @@
               </select>
             </div>
           </td>
-          <!--<td>Category: <br><input type="text" name="#" required></td> -->
-          <td>Price: <br><input type="number" name="#" min="500" max="1500" required></td>
+          <!--<td>Category: <br><input type="text" name='.$cat_var.' required></td> -->
+          <td>Price: <br><input type="number" name='.$price_var.' min="500" max="1500" required></td>
         </tr>';
       }?>
+     <!--  <tr height="30"></tr>
+      <tr>
+        <td width="30"></td>
+        <td>Player Name: <input type="text"></td>
+        <td>Category: <input type="text"></td>    
+        <td>Price: <input type="text"></td>
+      </tr>
+      <tr height="30"></tr>
+      <tr>
+        <td width="30"></td>
+        <td>Player Name: <input type="text"></td>
+        <td>Category: <input type="text"></td>    
+        <td>Price: <input type="text"></td>
+      </tr>-->
 
       <tr height="30"></tr>
       <tr>         
