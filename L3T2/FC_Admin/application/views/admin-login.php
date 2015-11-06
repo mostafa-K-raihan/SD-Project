@@ -34,8 +34,8 @@
 			bottom: -40px;
 			width: auto;
 			height: auto;
-			background-image: url(<?php echo base_url('images/back2.jpg'); ?>);
-			/*background-image: url(http;//i62.tinypic.com/nmj4p0.jpg);*/
+			/*background-image: url(<?php echo base_url('images/back2.jpg'); ?>);
+			background-image: url(http;//i62.tinypic.com/nmj4p0.jpg);*/
 			background-size: cover;
 			/*-webkit-filter: blur(5px);*/
 			z-index: 0;
@@ -57,7 +57,7 @@
 		.header1{
 			position: absolute;
 			top: calc(50% - 55px);
-			left: calc(50% - 280px);
+			left: calc(50% - 300px);
 			z-index: 2;
 			font-size: 20px;
 			}
@@ -71,7 +71,7 @@
 		.header{
 			position: absolute;
 			top: calc(50% - 35px);
-			left: calc(50% - 380px);
+			left: calc(50% - 400px);
 			z-index: 2;
 		}
 
@@ -267,17 +267,18 @@ body{
     </div>
 	</div>
 	
-	<?php
-		if($login_error==true)
-		{
-			echo '<div class="header2" style="color:red" ><h1><strong> Login Failed! Username and password didn\'t match </strong></h1></div>';
-		}
-	?>
 	
 	<script src="<?php echo base_url("assets/js/prefixfree.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
+		
+	<?php
+		if($login_error==true)
+		{
+			echo '<div class="header2" style="color:white; text-align:center; margin:-10%" ><h1><strong> Login Failed! Username and password didn\'t match </strong></h1></div>';
+		}
+	?>
 </body>
 
 </html>

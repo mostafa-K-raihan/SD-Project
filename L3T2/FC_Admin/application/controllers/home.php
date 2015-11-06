@@ -37,26 +37,36 @@ class Home extends CI_Controller {
 	
 	public function login()		
 	{
-		
-		$data = array('admin_id'=>trim($_POST['admin_id']),'password'=>md5($_POST["password"]));
-		
-		$query= $this->admin_model->get_loginInfo($data);
-		
-		if($query->num_rows()==1)
+		if(isset($_POST['admin_id']) && isset($_POST['password']))
 		{
-			$loginInfo=$query->row_array();
+			$data = array('admin_id'=>trim($_POST['admin_id']),'password'=>md5($_POST["password"]));
 			
-			$_SESSION["admin_id"]=$loginInfo['admin_id'];		// Change user_id to admin_id
+			$query= $this->admin_model->get_loginInfo($data);
 			
-			//Load User Admin Page
-			redirect('/admin', 'refresh');
+			if($query->num_rows()==1)
+			{
+				$loginInfo=$query->row_array();
+				
+				$_SESSION["admin_id"]=$loginInfo['admin_id'];		// Change user_id to admin_id
+				
+				//Load User Admin Page
+				redirect('/admin', 'refresh');
+			}
+			else
+			{
+				$data = array(
+				   'login_error' => true
+				);
+				$this->load->view('admin-login',$data);
+				//redirect('home','refresh');
+			}
 		}
 		else
 		{
 			$data = array(
-               'login_error' => true
-			);
-			$this->load->view('admin-login',$data);
+				   'login_error' => false
+				);
+				$this->load->view('admin-login',$data);
 		}
 		
 	}

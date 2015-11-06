@@ -13,15 +13,45 @@ class User extends CI_Controller {
         $this->load->helper('html');
 		$this->load->library('form_validation');
 		
-		// < LOAD MODELS >
-		//$data['id']=2;
-		$this->load->view('templates/header2');
-		  
+		if(isset($_SESSION["user_id"]))
+		{
+			$this->load->model('user_model');
+			$this->load->model('tournament_model');
+			$this->load->model('match_model');
+			$this->load->model('team_model');
+			$this->load->model('player_model');
+				
+			$this->load->view('templates/header2');
+		}
+		else
+		{
+			redirect('/home', 'refresh');
+		}  
      }
 	 
 	public function index()
 	{
-		redirect('user/createTeam','refresh');
+		$query=$this->tournament_model->get_active_tournament();
+		if($query->num_rows()==0)
+		{
+			$data['success']=false;
+			$data['fail_message']="No Tournament Running";
+			$this->load->view('status_message',$data);
+		}
+		else
+		{	
+			$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
+			
+			if($var===0)
+			{
+				redirect('user/createTeam','refresh');
+			}
+			else
+			{
+				redirect('user/view_team','refresh');
+			}
+			
+		}
 	}
 	
 	
@@ -65,32 +95,112 @@ class User extends CI_Controller {
 		echo 'Team Successfully Created';
 	}
 	
-	public function view_team()			//UI
+	public function view_team()			//CHECK LATER
 	{
-
-		$this->load->view('user_home');			//View Needs Modification
+		$data = array(
+               'login_error' => false,
+			   'registration_success' => false
+			);
+			
+		$user_team=$this->user_model->get_current_user_match_team($_SESSION['user_id']);
+		
+		//if current match is not found, then transfer window is closed. 
+		//Just Show the old team, because it will be replicated after the transfer window re-opens
+		if($user_team==NULL)
+		{
+			$user_team=$this->user_model->get_user_match_team($_SESSION['user_id']);
+		}
+			
+		$data['user_team']=array();
+			
+		$data['m_point']=$this->user_model->get_user_match_point($_SESSION['user_id']);		//Needs To Be Deleted From this and view
+		$data['o_point']=$this->user_model->get_user_overall_point($_SESSION['user_id']);
+			
+		$data['team_name']=$this->user_model->user_team_name($_SESSION['user_id']);
+		//echo '<br>';
+			
+			foreach($user_team['team_players'] as $u)
+			{
+				$info=array();
+				$info['player_id']=$u['player_id'];
+				//echo '<br>';
+				$result=$this->player_model->get_player_info($info['player_id']);
+				//print_r($result);
+				$info['name']=$result['name'];
+				$tmp=$this->team_model->get_team_name($result['team_id']);
+				$info['team_name']=$tmp;
+				$info['player_cat']=$result['player_cat'];
+				$tmp=$this->player_model->player_overall_point($info['player_id']);
+				$info['point']=$tmp;
+				
+				array_push($data['user_team'],$info);
+			}
+			$data['captain_id']=$user_team['captain'];
+			$result=$this->player_model->get_player_info($data['captain_id']);
+			$data['captain_name']=$result['name'];
+			
+			$this->load->view('user_home',$data);			//View Needs Modification
+		
 	}
 	
 	public function view_points()			//UI
 	{
-		   
-
 		$this->load->view('view_points');
 	}
 	
-	public function topPlayers()				//UI
+	public function topPlayers()				//done
 	{
-		$this->load->view('top_players');
+		$current_t=$this->tournament_model->get_active_tournament_id();
+		if($current_t==NULL)
+		{
+			echo 'No Player Record Found';
+		}
+		else
+		{
+			$data['top']=$this->player_model->top_players();
+			$this->load->view('top_players',$data);
+		}
+
 	}
 	
 	public function schedules()				//done
 	{
-		$this->load->view('schedule');
+		$query= $this->tournament_model->get_fixture();		
+		
+		if($query->num_rows()==0)
+		{
+			//echo "No Fixture Available for this tournament";	//Load No Fixture View
+			$data=array(
+				'success'=>false,
+				'failure_message'=>"No Fixture Available for this tournament"
+			);
+			$this->load->view('status_message',$data);
+		}
+		else
+		{
+			$data['fixture']=$query->result_array();
+		
+			$this->load->view('schedule',$data);
+		}
 	}
 	
 	public function results()		//LATER
 	{
-		$this->load->view('results');
+		$query= $this->tournament_model->get_result();		
+		
+		if($query->num_rows()==0)
+		{
+			$data=array(
+				'success'=>false,
+				'fail_message'=>"No Result Available for this tournament"
+			);
+			$this->load->view('status_message',$data);
+		}
+		else
+		{
+			$data['result']=$query->result_array();
+			$this->load->view('results',$data);
+		}
 	}
 	
 	/**
@@ -115,25 +225,33 @@ class User extends CI_Controller {
 	
 	}
 
-
-	public function pointTable()		//LATER
+	public function pointTable()	
 	{
-		echo "pointTable Test";
+		//comment this after implementation
+		$data=array(
+				'success'=>true,
+				'success_message'=>"Point Table will be added very soon"
+			);
+		$this->load->view('status_message',$data);
+		
+		/*
+		<Implement>
+		$this->load->view('point_table',$data);
+		*/
 	}
 	
-	public function howToPlay()		//LATER
+	public function howToPlay()		
 	{
-		echo "howToPlay Test";
+		// <Implement>
+		//	Just adjust the view
+		$this->load->view('how_to_play');
 	}
 	
-	public function rules()		//LATER
+	public function scoring()		
 	{
-		echo "Rules Test";
-	}
-	
-	public function scoring()		//LATER
-	{
-		echo "scorings Test";
+		// <Implement>
+		//	Just adjust the view 
+		$this->load->view('how_to_play',$data);
 	}
 		
 }

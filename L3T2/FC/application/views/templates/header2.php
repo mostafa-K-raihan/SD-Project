@@ -60,8 +60,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="<?php echo site_url('home/howToPlay'); ?>">How To Play</a></li>
-            <li><a href="<?php echo site_url('home/howToPlay'); ?>">Scoring</a></li>
+            <li><a href="<?php echo site_url('user/howToPlay'); ?>">How To Play</a></li>
+            <li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>
           </ul>
         </li>
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>

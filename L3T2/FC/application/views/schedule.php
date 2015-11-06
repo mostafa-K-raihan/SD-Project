@@ -17,7 +17,7 @@
 </head>
 
 <div class="col-xs-12" style="text-align:center !important;float:left;">
-    <h3> <span class="label label-primary" style="background-color:#abc"> Upcoming Matches </span> </h3>
+    <h3> <span class="label label-primary" style="background-color:#abc">Tournament Fixture </span> </h3>
   </div>
 <div>
       <div class="col-md-3"></div>
@@ -29,33 +29,17 @@
             <th>Team 2</th>
           </thead>
           <tbody>
-			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
-            </tr>
-			
-			<tr>
-              <td>01-02-2016 05:00 PM</td>
-              <td>India</td>
-              <td>Pakistan</td>
-            </tr>
-			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
-            </tr>
-			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
-            </tr>
-			<tr>
-              <td>29-01-2016 05:00 PM</td>
-              <td>Bangladesh</td>
-              <td>Australia</td>
-            </tr>
-			
+			<?php
+			foreach($fixture as $f)
+			{
+				echo '
+				<tr>
+				<td>'.$f['Time'].'</td>
+				<td>'.$f['home_team_name'].'</td>
+				<td>'.$f['away_team_name'].'</td>
+				</tr>';
+			}
+			?>
 		</tbody>
         </table>
       </div>

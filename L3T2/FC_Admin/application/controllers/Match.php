@@ -133,6 +133,7 @@ class Match extends CI_Controller {
 		$this->load->view('updateMatch',$data);
 	}
 	
+	
 	public function updateMatchInfo_proc()
 	{
 		$t_data['start_time']=$_POST['start_year'].'-'.$_POST['start_month'].'-'.$_POST['start_day'].' '.$_POST['start_hour'].':'.$_POST['start_min'].':'.'00';
@@ -210,6 +211,42 @@ class Match extends CI_Controller {
 		
 	}
 
+	public function updateMatchStat_3()
+	{
+		//GET MAN OF THE MATCH INPUT	THROUGH A VIEW
+		/*
+			This function is for supplying data to that view
+		*/
+		
+		$match_id = $_SESSION['match_id'];
+		
+		$match=$this->match_model->get_match_info($match_id)->row_array();
+		
+		$team['team_id']=$match['home_team_id'];
+		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
+		
+		$team_name=$match['home_team_name'];
+		
+		$team_players=$this->team_model->get_tournament_team_players($team)->result_array();
+		//print_r($team_players);
+		
+		$team1=array("team_name"=>$team_name, "team_players"=>$team_players);
+		
+		$team['team_id']=$match['away_team_id'];
+		
+		$team_name=$this->team_model->get_team_name($team['team_id']);
+		$team_players=$this->team_model->get_tournament_team_players($team)->result_array();
+		$team2=array("team_name"=>$team_name, "team_players"=>$team_players);
+		
+		$team_array=array();
+		$team_array[1]=$team1;
+		$team_array[2]=$team1;
+		print_r($team_array);
+		$data['team_array']=$team_array;
+		
+		//LOAD view
+	}
+	
 	public function updateMatchStat_proc($num)		//UPDATE STATS IN DATABASE
 	{		
 		$i=$_SESSION['noPlayers'];
@@ -256,8 +293,27 @@ class Match extends CI_Controller {
 		}
 		else if($num==1)
 		{
+			redirect('match/updateMatchStat_3','refresh');
+		}
+		else if($num==2)
+		{
+			/*
+			DO THE FOLLOWING AFTER THE FORM IS SUBMITTED:
+			*/
+			
+			//code to insert man of the match in database:
+			//get player_id from the form
+			//update_motm_id($match_id,$player_id);
+			//done
+			
+			/*
+			ALREADY DONE
+			*/
+			//update match summary and points
+			
 			$this->match_model->update_match_summary($match_id);
-			//$this->admin_model->update_motm_point($match_id)			//INSERT MOTM IN FORM AND UPDATE HIS POINT ----->> Remaining Task
+			$this->match_model->update_motm_point($match_id)			//INSERT MOTM IN FORM AND UPDATE HIS POINT ----->> Remaining Task
+			
 			unset(
 				$_SESSION['match_id'],
 				$_SESSION['noPlayers']

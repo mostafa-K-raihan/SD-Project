@@ -142,7 +142,7 @@ class Admin extends CI_Controller {
 		
 		$data['success']=true;
 		$data['success_message']="Data updated successfully to start the phase";
-		$this->load->view('success_status',$data);
+		$this->load->view('status_message',$data);
 	}
 	
 	public function start_match_action($match_id)	//C
@@ -151,7 +151,7 @@ class Admin extends CI_Controller {
 		$query= $this->admin_model->start_match($match_id);
 		$data['success']=true;
 		$data['success_message']="Data updated successfully to start the match";
-		$this->load->view('success_status',$data);
+		$this->load->view('status_message',$data);
 	}
 	
 }
