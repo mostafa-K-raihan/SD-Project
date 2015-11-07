@@ -24,10 +24,19 @@
       <?php
 	  echo '<form method="POST" action="admin/start_match_action/'.$match_id.'">
 	  <div class="col-xs-3" style="text-align:center !important; float:right; vertical-align:top; padding:left">
-        <br><input type="submit" value="Initialize Match Data" class="btn btn-info">  </input><br>
+        <br>';
+		if($match_id==null)
+		{
+			echo '<input type="button" style="display: none;" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit1" class="btn btn-default" />';	
+		}
+		else
+		{
+			echo '<input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit1" class="btn btn-default" />';
+		}
+		?>
+		<br>
       </div>
-	  </form>';
-	  ?>
+	  </form>
 	  
     </div>
 	
@@ -42,15 +51,64 @@
 	  
 	  <?php
 	  echo '<form method="POST" action="admin/start_phase_action/'.$phase_id.'">
-		<div class="col-xs-3" style="text-align:center !important; float:right; vertical-align:top; padding:left">
-			<br><input type="submit" value="Initialize Phase Data" class="btn btn-info">  </input><br>
+		<div class="col-xs-3" style="text-align:center !important; float:right; vertical-align:top; padding:left">';
+		
+		if($phase_id==null)
+		{
+			echo '<input type="button" style="display: none;" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit2" class="btn btn-default" />';	
+		}
+		else
+		{
+			echo '<input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit2" class="btn btn-default" />';
+		}
+	?>
+		
+			
 		</div>
-	  </form>';
-	  ?>
+	  </form>
     </div>
 
 	<hr>
 
+	
+<div class="modal fade" id="confirm-submit1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Initialize Match Data?
+            </div>
+            <div class="modal-body">
+                This action involves some crucial operations on the system and required to enable transfer for the mentioned match. Please proceed if you are sure
+                
+            </div>
+            <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a href="<?php echo site_url('admin/start_match_action').'/'.$match_id; ?>" id="submit" class="btn btn-success success">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>
+	
+<div class="modal fade" id="confirm-submit2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Initialize Phase Data?
+            </div>
+            <div class="modal-body">
+                This action involves some crucial operations on the system and required to enable transfer for the mentioned phase. Please proceed if you are sure
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a href="<?php echo site_url('admin/start_phase_action').'/'.$phase_id; ?>" id="submit" class="btn btn-success success">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>
   </body>
 
 </html>
+<!--
+<br><input type="submit" value="Initialize Phase Data" class="btn btn-info">  </input><br>
+	-->		
