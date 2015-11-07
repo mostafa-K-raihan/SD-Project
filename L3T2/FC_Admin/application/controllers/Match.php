@@ -221,9 +221,11 @@ class Match extends CI_Controller {
 		$match_id = $_SESSION['match_id'];
 		
 		$match=$this->match_model->get_match_info($match_id)->row_array();
+		//print_r($match);
 		
 		$team['team_id']=$match['home_team_id'];
 		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
+		//print_r($team);
 		
 		$team_name=$match['home_team_name'];
 		
@@ -231,20 +233,24 @@ class Match extends CI_Controller {
 		//print_r($team_players);
 		
 		$team1=array("team_name"=>$team_name, "team_players"=>$team_players);
+		//print_r($team1);
 		
 		$team['team_id']=$match['away_team_id'];
 		
 		$team_name=$this->team_model->get_team_name($team['team_id']);
+		//print_r($team);
 		$team_players=$this->team_model->get_tournament_team_players($team)->result_array();
 		$team2=array("team_name"=>$team_name, "team_players"=>$team_players);
+		//print_r($team2);
 		
 		$team_array=array();
 		$team_array[1]=$team1;
-		$team_array[2]=$team1;
-		print_r($team_array);
+		$team_array[2]=$team2;
 		$data['team_array']=$team_array;
 		
 		//LOAD view
+		$this->load->view('update_motm',$data);
+		
 	}
 	
 	public function updateMatchStat_proc($num)		//UPDATE STATS IN DATABASE
@@ -303,25 +309,31 @@ class Match extends CI_Controller {
 			
 			//code to insert man of the match in database:
 			//get player_id from the form
-			//update_motm_id($match_id,$player_id);
+			$player_id=$_POST['player_id'];
+			$this->match_model->update_motm_id($match_id,$player_id);
 			//done
 			
-			/*
-			ALREADY DONE
-			*/
+			
+			//ALREADY DONE
+			
 			//update match summary and points
 			
 			$this->match_model->update_match_summary($match_id);
-			$this->match_model->update_motm_point($match_id)			//INSERT MOTM IN FORM AND UPDATE HIS POINT ----->> Remaining Task
+			$this->match_model->update_motm_point($match_id);			//INSERT MOTM IN FORM AND UPDATE HIS POINT ----->> Remaining Task
 			
-			unset(
-				$_SESSION['match_id'],
-				$_SESSION['noPlayers']
-			);
+			if(isset($_SESSION['match_id']) && isset($_SESSION['noPlayers']))
+			{
+				unset(
+					$_SESSION['match_id'],
+					$_SESSION['noPlayers']
+				);
+			}
+			
 			$data['success']=true;	//must be calculated later
 			$data['success_message']="Match Stat Updated Successfully";
 			$data['fail_message']="Something went wrong. Please try again";
 			$this->load->view('status_message',$data);
+			
 		}
 		
 	}

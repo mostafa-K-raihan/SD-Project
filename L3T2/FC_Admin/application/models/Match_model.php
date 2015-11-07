@@ -26,6 +26,12 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
+	public function update_motm_id($match_id,$player_id)
+	{
+		$sql='UPDATE `match` SET `motm_id`= ? WHERE match_id= ?';
+		$query=$this->db->query($sql,array($player_id,$match_id));
+	}
+	
 	public function create_match($data)	//done
 	{
 		$sql = 'INSERT INTO `match` VALUES(\'\',STR_TO_DATE(?,\'%Y-%m-%d %H:%i:%s\'),?,?,\'\',?,\'\',\'\',\'\',\'\',\'\',\'\',0,0)';		
@@ -201,18 +207,20 @@ class Match_model extends CI_Model
 	
 	public function update_motm_point($match_id)
 	{
+		//echo $match_id;
+		
 		//GET MOTM_ID FROM MATCH
-		$sql='SELECT "motm_id" FROM "match" WHERE "match_id"=?';
+		$sql='SELECT `motm_id` FROM `match` WHERE `match_id`=?';
 		$query=$this->db->query($sql,$match_id)->row_array();
 		$motm_id=$query['motm_id'];
 		
 		//GET MOTM_BONUS_PONT FROM CONSTANTS TABLE
-		$sql='select MOTM_BONUS_POINT from "constants" WHERE TOURNAMENT_ID=CURRENT_TOURNAMENT()';
+		$sql='select MOTM_BONUS_POINT from `constants` WHERE TOURNAMENT_ID=CURRENT_TOURNAMENT()';
 		$query=$this->db->query($sql)->row_array();
-		echo $motm_bonus=$query['MOTM_BONUS_POINT'];
+		$motm_bonus=$query['MOTM_BONUS_POINT'];
 		
 		//SET MOTM_BONUS_PONT FOR THE PLAYER IN PLAYER_MATCH_POINT TABLE
-		$sql='UPDATE "player_match_point" SET "motm_bonus"=? WHERE "player_id"=? AND "match_id"=?';
+		$sql='UPDATE player_match_point SET motm_bonus=? WHERE player_id=? AND match_id=?';
 		$query=$this->db->query($sql,array($motm_bonus,$motm_id,$match_id));
 	}
 
