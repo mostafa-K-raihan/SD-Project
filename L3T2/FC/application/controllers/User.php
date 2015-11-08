@@ -21,7 +21,7 @@ class User extends CI_Controller {
 			$this->load->model('team_model');
 			$this->load->model('player_model');
 				
-			$this->load->view('templates/header2');
+	//		$this->load->view('templates/header2');
 		}
 		else
 		{
@@ -32,6 +32,7 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$query=$this->tournament_model->get_active_tournament();
+			
 		if($query->num_rows()==0)
 		{
 			$data['success']=false;
@@ -51,9 +52,14 @@ class User extends CI_Controller {
 				redirect('user/view_team','refresh');
 			}
 			
+			
 		}
 	}
 	
+	public function view_points()			//UI
+	{
+		$this->load->view('view_points');
+	}
 	
 	public function logout()
 	{
@@ -143,11 +149,6 @@ class User extends CI_Controller {
 		
 	}
 	
-	public function view_points()			//UI
-	{
-		$this->load->view('view_points');
-	}
-	
 	public function topPlayers()				//done
 	{
 		$current_t=$this->tournament_model->get_active_tournament_id();
@@ -190,10 +191,12 @@ class User extends CI_Controller {
 		
 		if($query->num_rows()==0)
 		{
+			
 			$data=array(
 				'success'=>false,
 				'fail_message'=>"No Result Available for this tournament"
 			);
+			//ektu jhamela ase
 			$this->load->view('status_message',$data);
 		}
 		else
@@ -246,7 +249,7 @@ class User extends CI_Controller {
 		//	Just adjust the view
 		$this->load->view('how_to_play');
 	}
-	
+	//need to be discarded
 	public function scoring()		
 	{
 		// <Implement>

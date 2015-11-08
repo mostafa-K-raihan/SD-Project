@@ -53,31 +53,35 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+	  
         <li class="active"><a href="<?php echo site_url('user'); ?>">HOME <span class="sr-only">(current)</span></a></li>
-		<li class><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
+		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="<?php echo site_url('user/howToPlay'); ?>">How To Play</a></li>
-            <li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>
-          </ul>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="<?php echo site_url('user/howToPlay'); ?>">How To Play</a></li>
+				<li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>
+			</ul>
         </li>
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
         <li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Edit Profile</a></li>
-            <li><a href="#">Change Password</a></li>
-            <li><a href="<?php echo site_url('user/logout'); ?>">Sign Out</a></li>
-          </ul>
-        </li>
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Edit Profile</a></li>
+					<li><a href="#">Change Password</a></li>
+					<li><a href="<?php echo site_url('user/logout'); ?>">Sign Out</a></li>
+				</ul>
+			</li>
        </ul>
+	   
+	   
+	   
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
