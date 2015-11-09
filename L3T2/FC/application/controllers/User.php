@@ -70,9 +70,57 @@ class User extends CI_Controller {
 		redirect('/home', 'refresh');
 	}
 	
-	public function changeTeam()		//UI
+	
+	public function createTeam()		//Load Data
 	{
-		$this->load->view('changeTeam');
+		//If user doesn't give any specifications, pass all players data to the view
+		//else, pass selected players
+		
+		if(isset($_POST['team_id'])) $team['team_id']=$_POST['team_id'];
+		else $team['team_id'] ='';
+				
+		if(isset($_POST['cat'])) $team['player_cat']=$_POST['cat'];
+		else $team['player_cat']='';
+			
+		if(!isset($_SESSION['user_team']))$_SESSION['user_team']=array();
+		
+		//get running tournament id
+		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
+		
+		//get the match id for which transfer(or team creation) is ongoing
+		$match=$this->match_model->get_upcoming_match()->row_array();
+		$match_id=$match['match_id'];
+		
+		//if no match_id, then transfer should be disabled
+		if($match_id==NULL)
+		{
+			$data['success']=false;
+			$data['fail_message']="Transfer Window is closed <br> Please try again later";
+			$this->load->view('status_message',$data);
+		}
+		else
+		{
+			//get team list to show in the "select by team" option
+			$q=$this->tournament_model->get_active_tournament_teams();
+			$data['teams']=$q->result_array();
+			
+			//get player of the selected team, if team is not selected, get all players
+			$data['players']=$this->tournament_model->get_tournament_players($team)->result_array();
+			
+			//fetch overall points for all players. payers[i] has overall points given by points[i]
+			$data['points']=array();
+			foreach ($data['players'] as $k) {
+				$temp=$this->player_model->player_overall_point($k['Player_id']);
+				array_push($data['points'], $temp);
+			}
+			
+			//save data in session for successive use
+			$_SESSION['players_data']=$data;
+			
+			//load the view
+			$this->load->view('CT',$data);
+		}
+		
 	}
 	
 	public function changeTeam_check()
@@ -88,12 +136,6 @@ class User extends CI_Controller {
 	public function remove_transfered_player()
 	{
 		
-	}
-	
-	public function createTeam()		//UI
-	{
-	 
-		$this->load->view('createTeam');
 	}
 	
 	public function createTeam_proc()	//CONFIRMATION
