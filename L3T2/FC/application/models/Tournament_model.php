@@ -44,7 +44,11 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_tournament_players($team)	//DONE
+	/*GENERATES DATA FOR CREATE_TEAM VIEW*/
+	/*maybe also for change_team view (not adjusted)
+	*/
+	
+	public function get_tournament_players($team)
 	{
 		if($team['team_id']==="" && $team['player_cat']==="")
 		{
