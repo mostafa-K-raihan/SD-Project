@@ -26,10 +26,7 @@ Show Team Status
 	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>	
 
 	<style>
-	.clicked{
-		color: black;
-		
-	}
+	
 	.navbar-inverse{
 			background : #c4c4c4;
 		}
@@ -143,7 +140,7 @@ Show Team Status
 			<td width="100"></td>
 			<td><strong>Sort By (Team): </strong></td>
 			<td>
-				<select name="team_id" >
+				<select name="team_id" id="team_ID" >
 						<option value="">---</option>
 						<?php
 						foreach ($teams as $t) {
@@ -165,7 +162,9 @@ Show Team Status
 			<th>Player Name</th>
 			<th>Category</th>
 			<th>Price</th>
+			<th>Team</th>
 			<th>Earned Points</th>		
+			
 			<th colspan="3">Choose</th>
 		</thead>
 		<tbody>
@@ -178,6 +177,7 @@ Show Team Status
 			  $c=1;
 			  $d="";
 			
+			//comment out the for loop later
 			foreach($user_team as $u)
 			{
 				if($c%5==0)$d=$c1;
@@ -245,15 +245,14 @@ Show Team Status
     <div class="col-md-6">
       <table id = "myTable"class="table table-bordered">
       <thead>
-          <tr>
-            <th >Choose</th>
+          
+            <th>Choose</th>
             <th>Player Name</th>
             <th>Category</th>
             <th>Price</th>
-            <th>Earned Points</th>
-            
-          
-          </tr>
+			<th>Team</th>
+			<th>Earned Points</th>
+	     
         </thead>
         <tbody>
 		<?php 
@@ -279,7 +278,9 @@ Show Team Status
             <input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
             <input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
 			<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
-            <input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
+			<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
+			
+			<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
             
           </form>
           </tr>';
@@ -297,6 +298,11 @@ Show Team Status
 <script type="text/javascript">
 	
 $(document).ready(function() {
+	var jArray = <?php 
+					echo json_encode($players);
+				?>;
+	var jArray2 = <?php echo json_encode ($points);?>;
+				
 	$("#myTable tbody").on("click", ".btn-success", function(event) {
 		/*var formElements=document.getElementById("myForm").elements;    
 		var postData={};
@@ -314,9 +320,12 @@ $(document).ready(function() {
 		var btn = tr.find('td').eq(0).text();
 		*/
 		var tr=$(this).closest('tr');
-		tr.find("#addButtonID").prop("disabled",true);
-		tr.find("#addButtonID").toggleClass("clicked");
+		//tr.find("#addButtonID").prop("disabled",true);
+		//tr.find("#addButtonID").toggleClass("clicked");
 		tr.find("#addButtonID").removeClass("btn-success");
+		tr.find("#addButtonID").addClass("btn-default");
+		
+		
 	//var pName = tr.find('#pName').val();
 		
 		var pName = tr.find('#pName').val();
@@ -324,6 +333,18 @@ $(document).ready(function() {
 		var price = tr.find('#price').val();
 		var pid = tr.find('#pid').val();
 		var points = tr.find('#points').val();
+		var teamName = tr.find('#players_team').val();
+		
+		for(var i=0; i < jArray.length; i++){
+			if($.trim(pid) == jArray[i]['Player_id'])
+			{
+				jArray[i]['Button_status']='false';
+				//alert('done'+jArray[i]['Button_status']);
+			}
+			
+		}
+		
+		
 		
 		//alert(pName);
 		var largeStr = '<form method="post" action="#">';
@@ -332,8 +353,10 @@ $(document).ready(function() {
         largeStr+='<input type="hidden" id="cat" name="cat" value="'+category+'"</input>';
 		largeStr+='<input type="hidden" id="price" name="price" value="'+price+'"</input>';
 		largeStr+='<input type="hidden" id="pid" name="player_id" value="'+pid+'"></input>';
+		largeStr+='<input type="hidden" id="players_team" name="team_name" value="'+teamName+'"></input>';
+		
 		largeStr+='<input type="hidden" id="points" name="points" value="'+points+'"</input></form>';
-		var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
+		var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + teamName + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
 		//alert(str);
 		var captain = '<option value="' + pid + '">' + pName +  '</option>';
 		$('#captainSelection').append(captain);
@@ -384,6 +407,16 @@ $(document).ready(function() {
 			//alert(pid);
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
+			
+			for(var i=0; i < jArray.length; i++){
+				if($.trim(playerID) == jArray[i]['Player_id'])
+				{
+					jArray[i]['Button_status']='true';
+					//alert('done'+jArray[i]['Button_status']);
+				}
+				
+			}
+			
 			$(this).closest('tr').remove();
 			//alert(playerID + " is removed ");
 			var dropdownElement = $("#captainSelection");
@@ -391,8 +424,8 @@ $(document).ready(function() {
 			
 			$('#myTable tr').each(function(row, tr){
 				if(playerID==$(tr).find("#pid").val()){
-					$(tr).find("#addButtonID").prop("disabled",false);
-					$(tr).find("#addButtonID").toggleClass("clicked");
+					//$(tr).find("#addButtonID").prop("disabled",false);
+					//$(tr).find("#addButtonID").toggleClass("clicked");
 					$(tr).find("#addButtonID").addClass("btn-success");
 				}
 			});
@@ -400,45 +433,142 @@ $(document).ready(function() {
 		
 		$('#catSelectSubmit').click(function(){
 				var cat = $("#categories option:selected").text();
-				var jArray = <?php 
-					echo json_encode($players);
-				?>;
-				var jArray2 = <?php echo json_encode ($points);?>;
+				var team = $("#team_ID option:selected").text();
+				team = $.trim(team);
+				cat = $.trim(cat);
 					
 			$('#myTable tr').not(":first").each(function(row, tr){
 				$(tr).remove();
 			});
+			
+			//alert(cat +" "+ team);
 			for(var i=0;i<jArray.length;i++){
 				var str = "";
-				if(cat == '---'){
+				//alert(jArray[i]['Team_name'] +" >> "+ team);
+				if(cat == '---' && team == '---'){
 					str+='<tr>';
 					str+='<form method="post" action="#" id ="myForm">';
-					str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					
+					//alert(jArray[i]['Button_status']);
+					//str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-danger">Add</button> </td>';
+					if(jArray[i]['Button_status']=='false')
+					{
+						//alert('got it');
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-default">Add</button> </td>';
+						
+					}
+					else
+					{
+						//$("#addButtonID").prop("disabled",false);
+						//$("#addButtonID").toggleClass("clicked");
+						//$("#addButtonID").addClass("btn-success");
+						
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					}
+					
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
 					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
 					
 					str+='</form>';
 					str+='</tr>';
 					$("#myTable").append(str);
+					
+					
 				}
-				else if(jArray[i]['Category'] == cat){			
+				else if(jArray[i]['Category'] == cat && team == '---'){			
 					str+='<tr>';
 					str+='<form method="post" action="#" id ="myForm">';
-					str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					if(jArray[i]['Button_status']=='false')
+					{
+						//alert('got it');
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-default">Add</button> </td>';
+						
+					}
+					else
+					{
+						//$("#addButtonID").prop("disabled",false);
+						//$("#addButtonID").toggleClass("clicked");
+						//$("#addButtonID").addClass("btn-success");
+						
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
 					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
 					
 					str+='</form>';
 					str+='</tr>';
 					$("#myTable").append(str);
+					
 				}
-				else{
+				
+				//console.log(jArray[i]['Team_name']+">>>"+$.trim(team));
+				
+				else if((jArray[i]['Team_name'] == team) && (cat == '---')){
+					//alert('got it');
+					
+					str+='<tr>';
+					str+='<form method="post" action="#" id ="myForm">';
+					if(jArray[i]['Button_status']=='false')
+					{
+						//alert('got it');
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-default">Add</button> </td>';
+						
+					}
+					else
+					{
+						//$("#addButtonID").prop("disabled",false);
+						//$("#addButtonID").toggleClass("clicked");
+						//$("#addButtonID").addClass("btn-success");
+						
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					}
+					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
+					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
+					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
+					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
+					
+					str+='</form>';
+					str+='</tr>';
+					$("#myTable").append(str);
+					
+				}
+				else if(jArray[i]['Category'] == cat && jArray[i]['Team_name'] == team){			
+					str+='<tr>';
+					str+='<form method="post" action="#" id ="myForm">';
+					if(jArray[i]['Button_status']=='false')
+					{
+						//alert('got it');
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-default">Add</button> </td>';
+						
+					}
+					else
+					{
+						//$("#addButtonID").prop("disabled",false);
+						//$("#addButtonID").toggleClass("clicked");
+						//$("#addButtonID").addClass("btn-success");
+						
+						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+					}
+					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
+					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
+					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
+					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
+					
+					str+='</form>';
+					str+='</tr>';
+					$("#myTable").append(str);
 					
 				}
 			}

@@ -56,6 +56,19 @@ class User extends CI_Controller {
 		}
 	}
 	
+	public function add_transfered_player()
+	{
+		//echo "Hello";
+				// Unescape the string values in the JSON array
+		$tableData = stripcslashes($_POST['pTableData']);
+		//echo "hi";
+		// Decode the JSON array
+		$tableData = json_decode($tableData,TRUE);
+
+		// now $tableData can be accessed like a PHP array
+		echo $tableData[1]['player_id'];
+	}
+	
 	public function view_points()			//UI
 	{
 		$this->load->view('view_points');
