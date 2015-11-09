@@ -34,7 +34,6 @@
 	</style>
 	
 </head>
-</head>
 <body style="height=800;">
   <!-- navigation bar -->
     <nav class="navbar navbar-inverse">

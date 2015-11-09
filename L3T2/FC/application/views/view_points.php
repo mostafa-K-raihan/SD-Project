@@ -47,7 +47,7 @@
 				.table-striped>tbody>tr:nth-child(even)>th {
 					background-color: #c0c0c0;
 			}
-			
+
 	</style>
 </head>
 
@@ -97,15 +97,15 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container" class="row-fluid PageHead"> <!-- Description Start -->
+<div class="container" class="row-fluid PageHead" style="width:30%;float:left"> <!-- Description Start -->
     <div class="span12">
       <h1 style="color:#180000">Incredible XI</h1>
     </div>
 </div> <!-- Description End -->
 
 <div class="row" >
-	<div class="col-md-8" style="float:right">
-	<table style="background-color:red">
+	<div class="col-md-8" id="parent" style="float:center;width:50%">
+	<!--<table style="background-color:red">
 		<tr>
 			<td>Last Match : Bangladesh Vs Australia</td>
 			<td width="50"> </td>
@@ -127,7 +127,15 @@
 			<td width="30"> </td>
 		</tr>
 	
-	</table>
+	</table>-->
+	
+		<div id="child">
+			<h2>Last Match : Bangladesh Vs Australia</h2>
+			<h3>Time: 29-01-2016 05:00 PM</h3> 
+			<pre>Overall Points: 567</pre>
+			<pre>Matchday Points: 567</pre>
+			<pre>Matchday Rank: 567</pre>
+		</div>
   </div>
 	
 </div>

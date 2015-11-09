@@ -205,7 +205,7 @@ class Home extends CI_Controller {
 		{
 			$data['fixture']=$query->result_array();
 		
-			$this->load->view('schedule',$data);
+			$this->load->view('scheduleBeforeLogin',$data);
 		}
 	}
 	
@@ -226,12 +226,12 @@ class Home extends CI_Controller {
 				'success'=>false,
 				'fail_message'=>"No Result Available for this tournament"
 			);
-			$this->load->view('status_message',$data);
+			$this->load->view('status_message_Before_login',$data);
 		}
 		else
 		{
 			$data['result']=$query->result_array();
-			$this->load->view('results',$data);
+			$this->load->view('resultsBeforeLogin',$data);
 		}
 	}
 	
@@ -249,7 +249,7 @@ class Home extends CI_Controller {
 				'success'=>true,
 				'success_message'=>"Point Table will be added very soon"
 			);
-		$this->load->view('status_message',$data);
+		$this->load->view('status_message_Before_login',$data);
 		
 		/*
 		<Implement>
@@ -267,7 +267,7 @@ class Home extends CI_Controller {
 			'HOWTOPLAY' => true
 		);
 		$this->load->view('templates/header',$data);
-		$this->load->view('how_to_play',$data);
+		$this->load->view('how_to_play_Before_login',$data);
 	}
 	
 	public function scoring()		
