@@ -259,6 +259,16 @@ Show Team Status
 		<?php 
 		$index=0;
         foreach ($players as $p) {
+		/*
+			INDEXES:
+				Player_name : name of the player
+				Team_name : name of the team w.r.t. the player
+				Button_status : For enable/disable button
+				Price
+				Category
+				Player_id
+				points[index] : Overall points w.r.t. the player
+		*/
           echo'
           <tr>
           <form method="post" action="#" id ="myForm">
