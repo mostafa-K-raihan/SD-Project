@@ -50,6 +50,8 @@ class Tournament_model extends CI_Model
 	
 	public function get_tournament_players($team)
 	{
+		/*
+		//#OLD IMPLEMENTATION
 		if($team['team_id']==="" && $team['player_cat']==="")
 		{
 			$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price, T.team_name as Team_name, "true" as Button_status
@@ -84,6 +86,14 @@ class Tournament_model extends CI_Model
 			$query = $this->db->query($sql,array($team['team_id'],$team['tournament_id'],$team['player_cat']));
 		}
 		
+		return $query;
+		*/
+		
+		$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price, T.team_name as Team_name, "true" as Button_status
+					from player P, player_tournament PT, team T
+					where P.player_id = PT.player_id and P.team_id=T.team_id and PT.tournament_id=?';
+			
+		$query = $this->db->query($sql,array($team['tournament_id']));
 		return $query;
 	}
 	

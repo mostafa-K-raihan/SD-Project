@@ -99,7 +99,7 @@
 
 <div class="container" class="row-fluid PageHead" style="width:30%;float:left"> <!-- Description Start -->
     <div class="span12">
-      <h1 style="color:#180000">Incredible XI</h1>
+      <h1 style="color:#180000"><?php echo $team_name;?></h1>
     </div>
 </div> <!-- Description End -->
 
@@ -130,11 +130,11 @@
 	</table>-->
 	
 		<div id="child">
-			<h2>Last Match : Bangladesh Vs Australia</h2>
-			<h3>Time: 29-01-2016 05:00 PM</h3> 
-			<pre>Overall Points: 567</pre>
-			<pre>Matchday Points: 567</pre>
-			<pre>Matchday Rank: 567</pre>
+			<h2>Last Match : <?php echo $matchData['home_team_name']?> Vs <?php echo $matchData['away_team_name']?></h2>
+			<h3>Time: <?php echo $matchData['Time']?></h3> 
+			<pre>Overall Points: <?php echo $o_point; ?></pre>
+			<pre>Matchday Points: <?php echo $m_point; ?></pre>
+			<pre>Matchday Rank: <?php echo "?"; ?></pre>
 		</div>
   </div>
 	
@@ -153,44 +153,20 @@
 	<th>Player Name</th><th>Category</th><th>Team</th><th>Points</th>
 </thead>
 <tbody>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
-	<tr><td>Tamim Iqbal</td><td>Batsman</td><td>Dhaka Gladiators</td><td>105</td></tr>
+	<?php
+	foreach($user_team as $u)
+	{
+		echo '<tr><td>'.$u['name'].'</td><td>'.$u['player_cat'].'</td><td>'.$u['team_name'].'</td><td>'.$u['point'].'</td></tr>';	
+	}
+	?>
+	
 </tbody>
 </table>
 
-<?php
-/*
-	for($i=0;$i<11;$i++)
-	{
-    echo '<div class="span3 PlanPricing template4" style="width:180px">  <!-- Price template4 Starts -->
-      <div class="planName"> <span class="price">546</span>
-        <h4>Taskin Ahmed</h4>
-        <p>Bangladesh</p>
-      </div>
-      <div class="planFeatures">
-        <ul>
-          <li><img src="'.base_url('images/e1.png/').'" height="80" width="80" class="img-circle" alt="Circular Image"></li>
-        </ul>
-      </div>
-      <p> <a href="#" role="button" data-toggle="modal" class="btn btn-success btn-large" height="50" width="50">Bowler</a> </p>
-    </div>';
-	}
-	*/
-	?>
-
     
-  </div>  <!-- Row3 ends -->
+</div>  <!-- Row3 ends -->
   
-  <br><br> <br><br> <br><br>
+<br><br> <br><br> <br><br>
   
 </div> <!-- Container ends -->
 

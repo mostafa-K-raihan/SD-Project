@@ -9,34 +9,21 @@ Show Team Status
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Cricket</title>
-	
-	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	<!--
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	-->
-	<!--
+  
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	-->
-    <!--
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
     <link href="css/hosting.css" rel="stylesheet" media="all">
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
-    
-	<link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
 	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	-->
-	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>	
 
 	<style>
 	
@@ -106,8 +93,6 @@ Show Team Status
 
 <?php
 	//Show Team Status //Needs to be modified
-	/*
-	//NEED TO UPDATE DYNAMICALLY
 	if(isset($_SESSION['user_team']))
 	{
 		$user_team=$_SESSION['user_team'];
@@ -133,7 +118,6 @@ Show Team Status
 		echo'<pre>Batsman: '.$bat.'    Bowlers: '.$bowl.'    Allrounders: '.$all.'    Wicket Keeper: '.$wk.'</pre>';
 		echo '<pre>Team Value : '.$team_value.'</pre>';
 	}
-	*/
 ?>
 
 <table>
@@ -185,7 +169,6 @@ Show Team Status
 		</thead>
 		<tbody>
 		<?php
-			/*
 			  $c1="active";
 			  $c3="success";
 			  $c2="info";
@@ -195,7 +178,6 @@ Show Team Status
 			  $d="";
 			
 			//comment out the for loop later
-			
 			foreach($user_team as $u)
 			{
 				if($c%5==0)$d=$c1;
@@ -220,38 +202,18 @@ Show Team Status
 				</tr>';
 				$c++;
 			}
-			*/
 		?>  
 		</tbody>
 	</table>
 	
 	<table>
 
-	  <form method="post" action="createTeam_proc">
+	  <form method="post" action="#">
 	  <tr>
 	  <td width="200"><strong><h4>Team Name: </h4></strong></td>
 	  <td></td>
 	  <td>
-		<input type="text" name="team_name" id="teamNameID" style="width:100%">
-		<div id="emptyTeamNameModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p>Please choose a valid team name for your team</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
+		<input id="team_name_input" style="width:100%" type="text" name="team_name" required></input>
 	  </td>
       </tr>
 	  
@@ -263,25 +225,6 @@ Show Team Status
         <select style="width:100%" id="captainSelection" name="captain" required>
 					
 		</select>
-		<div id="captainConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
 	  </td>
 	  </tr>
 	
@@ -290,29 +233,7 @@ Show Team Status
 	</tr>
 	<tr>
 		<td></td>
-		<td>
-		<button type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg">Create Team</button>
-		<div id="elevenPlayerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p>Please select eleven players</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!--<button type="button" name="submit" id="TeamSubmit" class="btn btn-danger ">Create Team</button></td>-->
-		
+		<td><button type="button" name="submit" id="TeamSubmit" class="btn btn-danger ">Create Team</button></td>
 		</td>
     </tr>
 	
@@ -336,7 +257,6 @@ Show Team Status
         <tbody>
 		<?php 
 		$index=0;
-		//SHOW THE RIGHT COLUMN FOR DISPLAYING ALL PLAYERS
         foreach ($players as $p) {
 		/*
 			INDEXES:
@@ -359,7 +279,6 @@ Show Team Status
             <input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
 			<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
 			<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
-			
 			<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
             
           </form>
@@ -429,9 +348,9 @@ $(document).ready(function() {
 		//alert(pName);
 		var largeStr = '<form method="post" action="#">';
 		largeStr+='<button type="button" class="btn btn-danger">Remove</button>';
-		largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"></input>';
-        largeStr+='<input type="hidden" id="cat" name="cat" value="'+category+'"></input>';
-		largeStr+='<input type="hidden" id="price" name="price" value="'+price+'"></input>';
+		largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"</input>';
+        largeStr+='<input type="hidden" id="cat" name="cat" value="'+category+'"</input>';
+		largeStr+='<input type="hidden" id="price" name="price" value="'+price+'"</input>';
 		largeStr+='<input type="hidden" id="pid" name="player_id" value="'+pid+'"></input>';
 		largeStr+='<input type="hidden" id="players_team" name="team_name" value="'+teamName+'"></input>';
 		
@@ -445,84 +364,52 @@ $(document).ready(function() {
 	
 		
 		$('#TeamSubmit').click(function() {
-			var teamName;
-			var captainID;
-			var totalRows = document.getElementById("Table").rows.length - 1;
-			//change this to 11 later
-			if(totalRows != 11){
-				$('#elevenPlayerModal').modal('show');  
-			}else {
-				teamName= $.trim($('#teamNameID').val());
-				if(teamName == ''){
-					
-					$('#emptyTeamNameModal').modal('show');
-				}else {
-					captainID= $.trim($('#captainSelection option:selected').val());
-					// player select korlei default captain selected hobe
-					/*
-					for(var i=0;i<jArray.length;i++){
-						if(jArray[i]['Player_id'] == captainID){
-							$("#captainConfirmation .modal-body p").html("Your captain is " +  jArray[i]['Player_name']);
-							$('#captainConfirmation').modal('show');
-							break;
-						}
-					}
-					*/
-					
-					
-					var TableData;
-					TableData = $.toJSON(storeTblValues());
-					
-					$.ajax({
-						type: "POST",
-						url: "createTeam_check",
-						data: "pTableData=" + TableData,
-						success: function(msg){
-				
-							// return value stored in msg variable
-							//alert(msg);
-							
-							if(msg=='Your Team has been created successfully!')
-							{
-								window.location.href = "<?php echo site_url('user/createTeam_proc'); ?>";
-							}
-							else
-							{
-								alert(msg);
-							}
-							
-						}
-					});
-				
-					function storeTblValues()
-					{
-						var TableData = new Array();
+		
+			//TODO
+			/*
+				#REMOVE ALL ALERT MESSAGES
+				#COUNT NUMBER OF PLAYERS - IF NOT 11, DONOT ALLOW
+				#A TEAM NAME MUST BE SUBMITTED , ELSE SHOW ALERT MESSAGE
+				#A CAPTAIN MUST BE SELECTED, ELSE SHOW ALERT MESSAGE
+				#ELSE PROCEDE
+			*/
+			var TableData;
+			TableData = $.toJSON(storeTblValues());
+			
+			$.ajax({
+				type: "POST",
+				url: "createTeam_check",
+				data: "pTableData=" + TableData,
+				success: function(msg){
+			
+			// return value stored in msg variable
+				alert(msg);
+			}
+			});
+			
+			function storeTblValues()
+			{
+				//TODO
+				/*
+					#SEND USER_TEAM_NAME
+					#SEND USER_CAPTAIN_ID
+				*/
+				var TableData = new Array();
 
-						$('#Table tr').each(function(row, tr){
-							TableData[row]={
-								"player_name" : $(tr).find('td:eq(0)').text()
-								, "player_cat" :$(tr).find('td:eq(1)').text()
-								, "price" : $(tr).find('td:eq(2)').text()
-								, "team_name" : $(tr).find('td:eq(3)').text()
-								, "points" : $(tr).find('td:eq(4)').text()
-								, "player_id": $(tr).find('#pid').val()
-								
-							}
+				$('#Table tr').each(function(row, tr){
+					TableData[row]={
+						"player_name" : $(tr).find('td:eq(0)').text()
+						, "player_cat" :$(tr).find('td:eq(1)').text()
+						, "price" : $(tr).find('td:eq(2)').text()
+						, "team_name" : $(tr).find('td:eq(3)').text()
+						, "points" : $(tr).find('td:eq(4)').text()
+						, "player_id": $('#pid').val()
 						
-						});
-						
-						//change to 11+1=12
-						
-						TableData[12]={
-							"team_name" : teamName
-							,"captain_id" : captainID
-						}
-						
-						TableData.shift();  // first row will be empty - so remove
-						return TableData;
 					}
-				}
 				
+				});
+				TableData.shift();  // first row will be empty - so remove
+				return TableData;
 			}
 		});
 		

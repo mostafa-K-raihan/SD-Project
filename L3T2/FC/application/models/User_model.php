@@ -142,17 +142,20 @@ class User_model extends CI_Model
 		}
 	}
 
-	public function create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name)	//RUNNING #CAN BE A SOURCE OF ERROR
+	//COMPLETES DB OPERATIONS FOR CREATE TEAM ACTION
+	public function create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name)
 	{
 		//GET CURRENT TOURNAMENT
 		$tournament_id=$this->tournament_model->get_active_tournament_id();
 		$sql='INSERT into user_tournament VALUES(\'\',?,?,?)';
 		$query=$this->db->query($sql,array($user_id,$tournament_id,$team_name));
 		
+		/*
 		//GET PREVIOUS MATCH ID
 		$query = $this->tournament_model->get_previous_match();
 		$result=$query->row_array();
 		$prev_match_id = $result['match_id'];
+		*/
 		
 		//SET NEW CAPTAIN := OLD CAPTAIN		
 		$new_captain=$captain_id;
@@ -173,7 +176,7 @@ class User_model extends CI_Model
 		foreach($user_team as $r)
 		{
 			$sql='INSERT into user_match_team_player VALUES(\'\',?,?)';
-			$query=$this->db->query($sql,array($new_match_team_id,$r['player_id']));
+			$query=$this->db->query($sql,array($new_match_team_id,$r));
 		}
 	}
 

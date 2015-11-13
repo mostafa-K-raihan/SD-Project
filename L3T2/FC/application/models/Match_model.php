@@ -23,6 +23,23 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
+	public function get_previous_match()		//done
+	{
+		$cur_tour=$this->get_active_tournament_id();
+		
+		$sql = 'SELECT * FROM `match` 
+				WHERE `tournament_id`=? AND `is_started`=1 AND (CURRENT_TIMESTAMP-`start_time`) = 
+				(	
+					SELECT MIN(CURRENT_TIMESTAMP-`start_time`)
+					FROM `match` 
+					WHERE (`start_time` < CURRENT_TIMESTAMP AND `is_started`=1 AND `tournament_id`= ?)
+				)';				
+		
+		$query=$this->db->query($sql,array($cur_tour,$cur_tour)); 
+			
+		return $query;
+	}
+	
 	public function get_match_info($match_id)	//done
 	{
 		$sql = 'SELECT M.`start_time` as Time,M.`team1_id` as home_team_id,

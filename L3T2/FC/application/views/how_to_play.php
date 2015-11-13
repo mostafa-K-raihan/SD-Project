@@ -232,7 +232,6 @@
 	</div>
 </div>
 	<script>
-		<script>
 	$(document).on('click', '#refresh', function () {
     var $link = $('li.active a[data-toggle="tab"]');
     $link.parent().removeClass('active');
