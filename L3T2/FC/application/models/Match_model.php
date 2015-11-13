@@ -23,9 +23,30 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
+	/*
+		THIS VERSION IS USED TO RETRIEVE MATCH DATA 
+		ALTHOUGH THE MATCH MAYNOT APPER IN GET_UPCOMING_MATCH
+		IF AN ADMIN DOESN'T INITIALIZE IT
+	*/
+	public function get_next_match()			//JUST SEARCH USING TIME. MAY NOT NEED TO BE STARTED BY ADMIN
+	{
+		//is_started must be 1 for user_end
+		$sql = 'SELECT * FROM `match` 
+				WHERE tournament_id=current_tournament() AND (start_time-CURRENT_TIMESTAMP) = 
+				(	
+					SELECT MIN(start_time-CURRENT_TIMESTAMP)
+					FROM `match` 
+					WHERE (start_time > CURRENT_TIMESTAMP AND tournament_id=current_tournament())
+				)';				
+		
+		$query=$this->db->query($sql); 
+		
+		return $query;
+	}
+	
 	public function get_previous_match()		//done
 	{
-		$cur_tour=$this->get_active_tournament_id();
+		$cur_tour=$this->tournament_model->get_active_tournament_id();
 		
 		$sql = 'SELECT * FROM `match` 
 				WHERE `tournament_id`=? AND `is_started`=1 AND (CURRENT_TIMESTAMP-`start_time`) = 
@@ -48,7 +69,7 @@ class Match_model extends CI_Model
 				WHERE T1.`team_id`=M.`team1_id` AND T2.`team_id`=M.`team2_id` AND M.`match_id`=?
 				ORDER BY M.`start_time`';
 				
-		return $this->db->query($sql,$match_id);
+		return $this->db->query($sql,array($match_id));
 	}
 	
 

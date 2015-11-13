@@ -74,7 +74,7 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			print_r($user_team);
+			//print_r($user_team);
 			$data['user_team']=array();
 			
 			$data['m_point']=$this->user_model->get_user_match_point($_SESSION['user_id']);
@@ -129,6 +129,27 @@ class User extends CI_Controller {
 	
 	public function createTeam()		//Load Data for the view
 	{
+		//if user has already created a team, then he/she must not be allowed to access it again
+		$query=$this->tournament_model->get_active_tournament();
+			
+		if($query->num_rows()==0)
+		{
+			$data['success']=false;
+			$data['fail_message']="No Tournament Running";
+			$this->load->view('status_message',$data);
+		}
+		else
+		{	
+			$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
+			
+			if($var!=0)
+			{
+				redirect('user/view_team','refresh');
+			}
+			
+			
+		}
+		
 		//If user doesn't give any specifications, pass all players data to the view
 		//commented out, done dynamically using jQuery
 		//else, pass selected players
@@ -451,7 +472,8 @@ class User extends CI_Controller {
 			$data['captain_name']=$result['name'];
 			
 			//GET MATCH DATA
-			$query = $this->match_model->get_upcoming_match();
+			//match maynot need to be initialized
+			$query = $this->match_model->get_next_match();
 			$result=$query->row_array();
 			$next_match_id = $result['match_id'];
 			

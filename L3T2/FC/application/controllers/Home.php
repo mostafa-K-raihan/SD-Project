@@ -269,7 +269,7 @@ class Home extends CI_Controller {
 		$this->load->view('templates/header',$data);
 		$this->load->view('how_to_play_Before_login',$data);
 	}
-	
+	/*
 	public function scoring()		
 	{
 		// <Implement>
@@ -283,5 +283,5 @@ class Home extends CI_Controller {
 		$this->load->view('templates/header',$data);
 		$this->load->view('how_to_play',$data);
 	}
-	
+	*/
 }

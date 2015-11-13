@@ -156,7 +156,15 @@
 	<?php
 	foreach($user_team as $u)
 	{
-		echo '<tr><td>'.$u['name'].'</td><td>'.$u['player_cat'].'</td><td>'.$u['team_name'].'</td><td>'.$u['point'].'</td></tr>';	
+		if($u['player_id']===$captain_id)
+		{
+			$point=$u['point']*2;
+			echo '<tr><td>'.$u['name'].' (CAP) </td><td>'.$u['player_cat'].'</td><td>'.$u['team_name'].'</td><td>'.$point.'</td></tr>';
+		}
+		else
+		{
+			echo '<tr><td>'.$u['name'].'</td><td>'.$u['player_cat'].'</td><td>'.$u['team_name'].'</td><td>'.$u['point'].'</td></tr>';
+		}	
 	}
 	?>
 	
