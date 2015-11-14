@@ -412,6 +412,56 @@ class User_model extends CI_Model
 		$query=$this->db->query($sql,array($user_id,$phase_id));
 	}
 	
+	
+	public function top_users()
+	{
+		$current_t=$this->tournament_model->get_active_tournament_id();
+		if($current_t==NULL)
+		{
+			echo 'No Player Record Found';
+		}
+		else
+		{
+			$sql = 'SELECT u.user_id as user_id from user_tournament u
+				where u.tournament_id=?';
+
+			$result = $this->db->query($sql,$current_t)->result_array();
+			//print_r($result);
+			
+			$info = array();
+			$i = 0;
+			foreach ($result as $r) {
+				$temp = $this->get_user_info($r['user_id']);
+				
+				$inf['user_name']=$temp['user_name'];
+				$inf['user_team_name']=$temp['user_team_name'];
+				$inf['country']=$temp['country'];
+				
+				
+				$inf['point']=$this->get_user_overall_point($r['user_id']);
+				$info[$i]=$inf;
+				
+				$i++;
+			}
+				
+			$sort = array();
+			foreach ($info as $key => $row)
+			{
+				$sort[$key] = $row['point'];
+			}
+			array_multisort($sort, SORT_DESC, $info);
+			
+			return $info;
+		}
+	}
+	
+	public function get_user_info($user_id)
+	{
+		$sql='SELECT ui.user_name,ui.country,ut.user_team_name from user_tournament ut, userinfo ui WHERE ut.user_id=ui.user_id and ui.user_id=?';
+		$result=$this->db->query($sql,$user_id)->row_array();
+		return $result;
+	}
+	
 }
 
 ?>

@@ -831,11 +831,15 @@ class User extends CI_Controller {
 		$current_t=$this->tournament_model->get_active_tournament_id();
 		if($current_t==NULL)
 		{
-			echo 'No Player Record Found';
+			$data['success']=false;
+			$data['fail_message']="No Player Record Found";
+			$this->load->view('status_message',$data);
 		}
 		else
 		{
 			$data['top']=$this->player_model->top_players();
+			$data['topUsers']=$this->user_model->top_users();
+			
 			$this->load->view('top_players',$data);
 		}
 

@@ -80,8 +80,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<?php
-echo'
 
   <div class="col-xs-12" style="text-align:center !important;float:left;">
     <h3> <span class="label label-success" > Top Scoring Players </span> </h3>
@@ -99,31 +97,82 @@ echo'
             <th>Price</th>
             <th>Point</th>
           </thead>
-          <tbody>';
+          <tbody>
+		  <?php
           $c1="active";
           $c3="success";
           $c2="info";
           $c4="warning";
           $c=1;$d="";
-          foreach ($top as $t) {
-            if($c%4==0)$d=$c1;
-            else if($c%4==1)$d=$c2;
-            else if($c%4==2)$d=$c3;
-            else if($c%4==3)$d=$c4;
-          echo'  <tr class='.$d.'>
-              <td>'.$t['name'].'</td>
-              <td>'.$t['team_name'].'</td>
-              <td>'.$t['cat'].'</td>
-              <td>$'.$t['price'].'</td>
-              <td>'.$t['point'].'</td>
+		  
+		  $COUNT=min(sizeof($top,0),10);
+		  $index=0;
+		  for($index=0;$index<$COUNT;$index++)
+		  {
+			if($index%4==0)$d=$c1;
+            else if($index%4==1)$d=$c2;
+            else if($index%4==2)$d=$c3;
+            else if($index%4==3)$d=$c4;
+			echo'  <tr class='.$d.'>
+              <td>'.$top[$index]['name'].'</td>
+              <td>'.$top[$index]['team_name'].'</td>
+              <td>'.$top[$index]['cat'].'</td>
+              <td>$'.$top[$index]['price'].'</td>
+              <td>'.$top[$index]['point'].'</td>
             </tr>';
-            $c++;
-          }
-          echo'</tbody>
+            
+		  }
+		  ?>
+          </tbody>
         </table>
+		</div>
+	</div>
+	
+	<div class="col-xs-12" style="text-align:center !important;float:left;">
+    <h3> <span class="label label-success" > FCPB Leaderboard </span> </h3>
+	</div>
+  
+	<div>
+		
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+		<table class="table table-hover table-bordered">
+          <thead>
+            <th>User Name</th>
+            <th>Team Name</th>
+            <th>Country</th>
+            <th>Total Points</th>
+          </thead>
+          <tbody>
+		  <?php
+          $c1="active";
+          $c3="success";
+          $c2="info";
+          $c4="warning";
+          $c=1;$d="";
+		  
+		  $index=0;
+		  $COUNT=min(sizeof($topUsers,0),50);
+		  for($index=0;$index<$COUNT;$index++)
+		  {
+			if($index%4==0)$d=$c1;
+            else if($index%4==1)$d=$c2;
+            else if($index%4==2)$d=$c3;
+            else if($index%4==3)$d=$c4;
+			echo'  <tr class='.$d.'>
+              <td>'.$topUsers[$index]['user_name'].'</td>
+              <td>'.$topUsers[$index]['user_team_name'].'</td>
+              <td>'.$topUsers[$index]['country'].'</td>
+              <td>'.$topUsers[$index]['point'].'</td>
+            </tr>';
+            
+		  }
+		  ?>
+          </tbody>
+        </table>
+		
       </div>
       <div class="col-md-2"></div>
   </div>
     <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>';
-?>
+    <script src="js/bootstrap.min.js"></script>
