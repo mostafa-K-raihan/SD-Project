@@ -11,35 +11,19 @@ Show Team Status
     <title>Fantasy Cricket</title>
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	<!--
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	-->
-	<!--
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	-->
-    <!--
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-    <link href="css/hosting.css" rel="stylesheet" media="all">
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
-    
-	<link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
-	
-	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	-->
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
-
 	<style>
-	
+	#topTable0 th, #topTable0 td{
+		
+		table-layout:fixed;
+		text-align: center;
+		font-size:25px;
+		font-family:sans-serif;
+	}
 	.navbar-inverse{
 			background : #c4c4c4;
 		}
@@ -54,7 +38,6 @@ Show Team Status
 		}
 	</style>
 	
-</head>
 </head>
 <body style="height=800;">
   <!-- navigation bar -->
@@ -102,50 +85,29 @@ Show Team Status
   </div><!-- /.container-fluid -->
 </nav>
 
- 
+<div>
+	<table class="table table-bordered"	 class="table table-striped" id = "topTable0">
+		<thead>
+			<th colspan="3">Next Match</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><?php echo $matchData['home_team_name'].'<br>'; ?></td>
+				<td>VS</td>
+				<td><?php echo $matchData['away_team_name'].'<br>'; ?></td>
+				
+			</tr>
+			<tr>
+				<td colspan="3">Time: <?php echo $matchData['Time'];?></td>	
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-<?php
-	//Show Team Status //Needs to be modified
-	/*
-	//NEED TO UPDATE DYNAMICALLY
-	if(isset($_SESSION['user_team']))
-	{
-		$user_team=$_SESSION['user_team'];
-		
-		$team_value=0;
-		$bat=0;
-		$bowl=0;
-		$all=0;
-		$wk=0;
-		$number_of_players=0;
-		
-		foreach($user_team as $u)
-		{
-			$team_value+=$u['price'];
-			if($u['player_cat']==='BAT') $bat++;
-			else if($u['player_cat']==='BOWL') $bowl++;
-			else if($u['player_cat']==='ALL') $all++;
-			else if($u['player_cat']==='WK') $wk++;
-			
-			$number_of_players++;
-		}
-		echo '<pre>Number Of Players : '.$number_of_players.'</pre>';
-		echo'<pre>Batsman: '.$bat.'    Bowlers: '.$bowl.'    Allrounders: '.$all.'    Wicket Keeper: '.$wk.'</pre>';
-		echo '<pre>Team Value : '.$team_value.'</pre>';
-	}
-	*/
-?>
-
-<table>
-	<tr>
-		<pre>Next Match:<?php echo $matchData['home_team_name'];?> VS <?php echo $matchData['away_team_name'];?> </pre>
-		<pre>Time: <?php echo $matchData['Time'];?> </pre>
-	</tr>
-	
+<table style="table-layout:fixed;width:100%;text-align:center">
     <tr>
-		<td width="300"></td>
-		<td><h3><?php echo $team_name;?></h3></td>
-		<td width="350"></td>
+		<td colspan="5" ><h3><?php echo $team_name;?></h3></td>
+		<td colspan="3"></td>
 		<td><strong>Sort By (Category): </strong></td>
 		<form method="post" action="#">
 			<td>
@@ -158,7 +120,7 @@ Show Team Status
 						<option value="WK">WK</option>
 					</select>
 			</td>
-			<td width="100"></td>
+			
 			<td><strong>Sort By (Team): </strong></td>
 			<td>
 				<select name="team_id" id="team_ID" >
@@ -170,15 +132,14 @@ Show Team Status
 						?>
 				</select>
 			</td>
-			<td width="10"></td>
-			<td><button type="button" name="submit" id="catSelectSubmit" value="GO!" class="btn btn-info pull-right">GO</button></td>
+			<td><button type="button" name="submit" id="catSelectSubmit" value="GO!" class="btn btn-info block-center">GO</button></td>
 		</form>
     </tr>
 </table>
 
 <div>
 	<div class="col-md-6">
-	<table class="table table-bordered" class="table table-striped" class="table table-hover" id = "Table">
+	<table class="table table-bordered" class="table table-striped"id = "Table">
 		<thead>
 			<th>Player Name</th>
 			<th>Category</th>
@@ -202,14 +163,6 @@ Show Team Status
 			
 			foreach($user_team as $u)
 			{
-				/*
-				if($c%5==0)$d=$c1;
-				else if($c%5==1)$d=$c2;
-				else if($c%5==2)$d=$c3;
-				else if($c%5==3)$d=$c4;
-				else if($c%5==4)$d=$c5;
-				*/
-
 				echo '<tr >'.'
 				
 				<form method="post" action="#">
@@ -233,47 +186,44 @@ Show Team Status
 		</tbody>
 	</table>
 	
-	<table>
+	<table style="width:100%;table-layout:fixed">
 
 	  <form method="post" action="createTeam_proc">
 	  
-	  <tr height="20"></tr>
-      <tr>
-      <td><strong><h4>Select Captain: </h4></strong></td>
-      <td ></td>
-      <td>
-        <select style="width:100%" id="captainSelection" name="captain" required>
-					
-		</select>
-		<div id="captainConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+	  <tr>
+		  <td><strong><h4>Select Captain: </h4></strong></td>
+		  <td>
+			<select style="width: 50%; margin-left:25%" id="captainSelection" name="captain" required>
+						
+			</select>
+			<div id="captainConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
 
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
+				<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<!--<h4 class="modal-title">Modal Header</h4>-->
+						</div>
+						<div class="modal-body">
+							<p></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
 					</div>
-					<div class="modal-body">
-						<p></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
+
 				</div>
-
 			</div>
-		</div>
-	  </td>
+		  </td>
 	  </tr>
 	
 	<tr height="10">
 		<td> <br> </td>
 	</tr>
 	<tr>
-		<td></td>
-		<td>
-		<button type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg">Create Team</button>
+		<td colspan="2">
+		<button style="margin-left:35%"type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg" >Create Team</button>
 		<div id="elevenPlayerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 
@@ -355,8 +305,6 @@ Show Team Status
   </div>
 </div>
 
-
-
 <script type="text/javascript">
 	
 $(document).ready(function() {
@@ -365,30 +313,17 @@ $(document).ready(function() {
 				?>;
 	var jArray2 = <?php echo json_encode ($points);?>;
 				
+	var players = <?php echo json_encode($user_team)?>;
+	var pp;
+	for(var j=0;j<players.length;j++){
+		pp = '<option value="' + players[j]['player_id'] + '">' + players[j]['player_name'] +  '</option>';
+		$('#captainSelection').append(pp);
+	}
 	$("#myTable tbody").on("click", ".btn-success", function(event) {
-		/*var formElements=document.getElementById("myForm").elements;    
-		var postData={};
-		for (var i=1; i<formElements.length; i++)
-			if (formElements[i].type!="submit")//we dont want to include the submit-buttom
-				//alert(formElements[i].value);	
 		
-		var tr = $(this).closest('tr');	
-	
-		var cell2 = tr.find('td').eq(1).text();
-		var cell3 = tr.find('td').eq(2).text();
-		var cell4 = tr.find('td').eq(3).text();
-		var cell5 = tr.find('td').eq(4).text();
-		var cell6 = tr.find('td').eq(5).text();
-		var btn = tr.find('td').eq(0).text();
-		*/
 		var tr=$(this).closest('tr');
-		//tr.find("#addButtonID").prop("disabled",true);
-		//tr.find("#addButtonID").toggleClass("clicked");
 		tr.find("#addButtonID").removeClass("btn-success");
 		tr.find("#addButtonID").addClass("btn-default");
-		
-		
-	//var pName = tr.find('#pName').val();
 		
 		var pName = tr.find('#pName').val();
 		var category = tr.find('#cat').val();
@@ -401,14 +336,9 @@ $(document).ready(function() {
 			if($.trim(pid) == jArray[i]['Player_id'])
 			{
 				jArray[i]['Button_status']='false';
-				//alert('done'+jArray[i]['Button_status']);
-			}
-			
+			}	
 		}
 		
-		
-		
-		//alert(pName);
 		var largeStr = '<form method="post" action="#">';
 		largeStr+='<button type="button" class="btn btn-danger">Remove</button>';
 		largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"></input>';
@@ -419,10 +349,9 @@ $(document).ready(function() {
 		
 		largeStr+='<input type="hidden" id="points" name="points" value="'+points+'"</input></form>';
 		var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + teamName + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
-		//alert(str);
 		var captain = '<option value="' + pid + '">' + pName +  '</option>';
 		$('#captainSelection').append(captain);
-	   $('#Table').append(str);
+		$('#Table').append(str);
     });
 	
 		
@@ -430,14 +359,12 @@ $(document).ready(function() {
 			var teamName;
 			var captainID;
 			var totalRows = document.getElementById("Table").rows.length - 1;
-			//change this to 11 later
 			if(totalRows != 11){
 				$('#elevenPlayerModal').modal('show');  
 			}
 			else
 			{
-				captainID= $.trim($('#captainSelection option:selected').val());
-					
+				captainID= $.trim($('#captainSelection option:selected').val());	
 				var TableData;
 				TableData = $.toJSON(storeTblValues());
 					
@@ -485,17 +412,10 @@ $(document).ready(function() {
 						
 					TableData.shift();  // first row will be empty - so remove
 					return TableData;
-				}
-				
+				}	
 			}
 		});
-		
-		
-		
 		$("#Table tbody").on("click", ".btn-danger", function(event){
-			//var pid = $('#pid').val();
-			
-			//alert(pid);
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
 			
@@ -503,20 +423,15 @@ $(document).ready(function() {
 				if($.trim(playerID) == jArray[i]['Player_id'])
 				{
 					jArray[i]['Button_status']='true';
-					//alert('done'+jArray[i]['Button_status']);
-				}
-				
+				}	
 			}
 			
 			$(this).closest('tr').remove();
-			//alert(playerID + " is removed ");
 			var dropdownElement = $("#captainSelection");
 			dropdownElement.find('option[value='+playerID+']').remove();
 			
 			$('#myTable tr').each(function(row, tr){
 				if(playerID==$(tr).find("#pid").val()){
-					//$(tr).find("#addButtonID").prop("disabled",false);
-					//$(tr).find("#addButtonID").toggleClass("clicked");
 					$(tr).find("#addButtonID").addClass("btn-success");
 				}
 			});
@@ -531,17 +446,11 @@ $(document).ready(function() {
 			$('#myTable tr').not(":first").each(function(row, tr){
 				$(tr).remove();
 			});
-			
-			//alert(cat +" "+ team);
 			for(var i=0;i<jArray.length;i++){
 				var str = "";
-				//alert(jArray[i]['Team_name'] +" >> "+ team);
 				if(cat == '---' && team == '---'){
 					str+='<tr>';
 					str+='<form method="post" action="#" id ="myForm">';
-					
-					//alert(jArray[i]['Button_status']);
-					//str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-danger">Add</button> </td>';
 					if(jArray[i]['Button_status']=='false')
 					{
 						//alert('got it');
@@ -550,10 +459,6 @@ $(document).ready(function() {
 					}
 					else
 					{
-						//$("#addButtonID").prop("disabled",false);
-						//$("#addButtonID").toggleClass("clicked");
-						//$("#addButtonID").addClass("btn-success");
-						
 						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
 					}
 					
@@ -581,10 +486,6 @@ $(document).ready(function() {
 					}
 					else
 					{
-						//$("#addButtonID").prop("disabled",false);
-						//$("#addButtonID").toggleClass("clicked");
-						//$("#addButtonID").addClass("btn-success");
-						
 						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
@@ -599,12 +500,7 @@ $(document).ready(function() {
 					$("#myTable").append(str);
 					
 				}
-				
-				//console.log(jArray[i]['Team_name']+">>>"+$.trim(team));
-				
 				else if((jArray[i]['Team_name'] == team) && (cat == '---')){
-					//alert('got it');
-					
 					str+='<tr>';
 					str+='<form method="post" action="#" id ="myForm">';
 					if(jArray[i]['Button_status']=='false')
@@ -615,10 +511,6 @@ $(document).ready(function() {
 					}
 					else
 					{
-						//$("#addButtonID").prop("disabled",false);
-						//$("#addButtonID").toggleClass("clicked");
-						//$("#addButtonID").addClass("btn-success");
-						
 						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
@@ -644,10 +536,6 @@ $(document).ready(function() {
 					}
 					else
 					{
-						//$("#addButtonID").prop("disabled",false);
-						//$("#addButtonID").toggleClass("clicked");
-						//$("#addButtonID").addClass("btn-success");
-						
 						str+='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
@@ -668,7 +556,3 @@ $(document).ready(function() {
 });
 </script>
   
-  
-  
-  <!--<td width="5%"><input type="submit" name="submit" id="submit" value="ADD" class="btn btn-primary "></td>
-  -->
