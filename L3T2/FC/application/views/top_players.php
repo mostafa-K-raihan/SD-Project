@@ -22,6 +22,19 @@
 		.navbar-inverse .navbar-nav > li > a {
 			color: #000;
 		}
+		#mainTabs li a{
+			color: black;
+		}
+		.nav-tabs > li.active > a,
+        .nav-tabs > li.active > a:hover,
+        .nav-tabs > li.active > a:focus{
+            color: #555555;
+            background-color: DarkGray;  
+        } 
+		
+		.nav-tabs > li > a:hover{
+			background-color: Tomato;
+		}
 		body{
 			background-color: #f9f9f9;
 		}

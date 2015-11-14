@@ -29,9 +29,6 @@
 			color: #000;
 		}
 		body{
-			background-color: #f9f9f9;
-		}
-		body{
 			background-color:teal;
 		}
 		#mainTabs li a{

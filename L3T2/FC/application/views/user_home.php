@@ -38,8 +38,6 @@
 			background-color: #f9f9f9;
 		}
 	</style>
-	
-</head>
 </head>
 <body style="height=800;">
   <!-- navigation bar -->
@@ -64,13 +62,7 @@
 		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
-        <li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rules & Scoring <span class="caret"></span></a>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="<?php echo site_url('user/howToPlay'); ?>">How To Play</a></li>
-				<li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>
-			</ul>
-        </li>
+        <li><a href="<?php echo site_url('user/howToPlay'); ?>">Rules and Scoring</a></li>
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
         <li><a href="#">Prizes </a></li>

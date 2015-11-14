@@ -13,18 +13,13 @@ Show Team Status
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>
+	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
 	<style>
-	#topTable0 th, #topTable0 td{
-		
-		table-layout:fixed;
-		text-align: center;
-		font-size:25px;
-		font-family:sans-serif;
-	}
-	.navbar-inverse{
+	
+		.navbar-inverse{
 			background : #c4c4c4;
 		}
 		.navbar-inverse .navbar-brand{
@@ -35,6 +30,13 @@ Show Team Status
 		}
 		body{
 			background-color: #f9f9f9;
+		}
+		#topTable0 th, #topTable0 td{
+		
+			table-layout:fixed;
+			text-align: center;
+			font-size:25px;
+			font-family:sans-serif;
 		}
 	</style>
 	
@@ -58,13 +60,13 @@ Show Team Status
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 	  
-        <li class="active"><a href="<?php echo site_url('user'); ?>">HOME <span class="sr-only">(current)</span></a></li>
+        <li><a href="<?php echo site_url('user'); ?>">HOME <span class="sr-only">(current)</span></a></li>
 		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
         <li><a href="<?php echo site_url('user/howToPlay'); ?>">Rules and Scoring</a></li>
 		
-        <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
+        <li class="active"><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
         <li><a href="#">Prizes </a></li>
       </ul>
