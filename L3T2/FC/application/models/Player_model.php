@@ -20,7 +20,7 @@ class Player_model extends CI_Model
 	
 	public function get_player_info($player_id)
 	{
-		$sql='SELECT * FROM player WHERE player_id=?';
+		$sql='SELECT *,T.team_name FROM player,team T WHERE player_id=? and player.team_id=T.team_id';
 		return $this->db->query($sql,$player_id)->row_array();
 	}
 	
