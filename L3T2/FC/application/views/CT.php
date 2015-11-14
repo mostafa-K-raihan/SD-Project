@@ -11,34 +11,21 @@ Show Team Status
     <title>Fantasy Cricket</title>
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	<!--
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	-->
-	<!--
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
-    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	-->
-    <!--
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-    <link href="css/hosting.css" rel="stylesheet" media="all">
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
-    
-	<link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
-	
-	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	-->
+
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
-	
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
+
 
 	<style>
+	#topTable0 td{
+		text-align: center;
+		font-size: 30px;
+		font-family: sans-serif;
+		
+	}
 	#topTable td{
 		text-align: center;
 		background-color: lightBlue;
@@ -61,9 +48,12 @@ Show Team Status
 			overflow:scroll;
 			height:100px;
 		}
+		
+		#myTable th, td, #Table th,td{
+			table-layout:fixed;
+			text-align: center;
+		}
 	</style>
-	
-</head>
 </head>
 <body style="height=800;">
   <!-- navigation bar -->
@@ -113,256 +103,234 @@ Show Team Status
 
  
 
-<?php
-	//Show Team Status //Needs to be modified
-	/*
-	//NEED TO UPDATE DYNAMICALLY
-	if(isset($_SESSION['user_team']))
-	{
-		$user_team=$_SESSION['user_team'];
-		
-		$team_value=0;
-		$bat=0;
-		$bowl=0;
-		$all=0;
-		$wk=0;
-		$number_of_players=0;
-		
-		foreach($user_team as $u)
-		{
-			$team_value+=$u['price'];
-			if($u['player_cat']==='BAT') $bat++;
-			else if($u['player_cat']==='BOWL') $bowl++;
-			else if($u['player_cat']==='ALL') $all++;
-			else if($u['player_cat']==='WK') $wk++;
-			
-			$number_of_players++;
-		}
-		echo '<pre>Number Of Players : '.$number_of_players.'</pre>';
-		echo'<pre>Batsman: '.$bat.'    Bowlers: '.$bowl.'    Allrounders: '.$all.'    Wicket Keeper: '.$wk.'</pre>';
-		echo '<pre>Team Value : '.$team_value.'</pre>';
-	}
-	*/
-?>
-
-<table class="table table-bordered" class="table table-striped" id = "topTable" style="table-layout:fixed">
-	<tbody>
-		
-		<tr>
-			<td>Balance</td>
-			<td id="priceTag" style="background-color: Blue; color:white; font-size:20px;">$10000</td>
-			<td>Batsman</td>
-			<td>0</td>
-			<td>Bowler</td>
-			<td>0</td>
-			<td>WK</td>
-			<td>0</td>
-			<td>AllRounder</td>
-			<td>0</td>
-		</tr>
-	</tbody>
-</table>
-
-<table>
-    <tr>
-		<td width="300"></td>
-		<td><h3>YOUR TEAM</h3></td>
-		<td width="350"></td>
-		<td><strong>Sort By (Category): </strong></td>
-		<form method="post" action="#">
-			<td>
-				
-					<select name="cat" id="categories">
-						<option value="">---</option>
-						<option value="BAT">BAT</option>
-						<option value="BOWL">BOWL</option>
-						<option value="ALL">ALL</option>
-						<option value="WK">WK</option>
-					</select>
-			</td>
-			<td width="100"></td>
-			<td><strong>Sort By (Team): </strong></td>
-			<td>
-				<select name="team_id" id="team_ID" >
-						<option value="">---</option>
-						<?php
-						foreach ($teams as $t) {
-							echo'<option value='.$t['team_id'].'> '.$t['team_name'].' </option>';
-						}
-						?>
-				</select>
-			</td>
-			<td width="10"></td>
-			<td><button type="button" name="submit" id="catSelectSubmit" value="GO!" class="btn btn-info pull-right">GO</button></td>
-		</form>
-    </tr>
-</table>
 
 <div>
-	<div class="col-md-6">
-	<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
-	<table class="table table-bordered" class="table table-striped" id = "Table" >
-		<thead>
-			<th>Player Name</th>
-			<th>Category</th>
-			<th>Price</th>
-			<th>Team</th>
-			<th>Earned Points</th>		
-			
-			<th colspan="3">Choose</th>
-		</thead>
+	<table class="table table-bordered"	 class="table table-striped" id = "topTable0" style="table-layout:fixed">
 		<tbody>
+			<tr>
+				<td><?php echo $matchData['home_team_name'].'<br>'; ?></td>
+				<td>VS</td>
+				<td><?php echo $matchData['away_team_name'].'<br>'; ?></td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><?php echo $matchData['Time']; ?></td>	
+			</tr>
 		</tbody>
 	</table>
-	
-	</div>
-	<table>
-	  <form method="post" action="createTeam_proc">
-	  <tr>
-	  <td width="200"><strong><h4>Team Name: </h4></strong></td>
-	  <td></td>
-	  <td>
-		<input type="text" name="team_name" id="teamNameID" style="width:100%">
-		<div id="emptyTeamNameModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p>Please choose a valid team name for your team</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	  </td>
-      </tr>
-	  
-	  <tr height="20"></tr>
-      <tr>
-      <td><strong><h4>Select Captain: </h4></strong></td>
-      <td ></td>
-      <td>
-        <select style="width:100%" id="captainSelection" name="captain" required>
-					
-		</select>
-		<div id="captainConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	  </td>
-	  </tr>
-	
-	<tr height="10">
-		<td> <br> </td>
-	</tr>
-	<tr>
-		<td></td>
-		<td>
-		<button type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg">Create Team</button>
-		<div id="elevenPlayerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-
-			<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<!--<h4 class="modal-title">Modal Header</h4>-->
-					</div>
-					<div class="modal-body">
-						<p>Please select eleven players</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!--<button type="button" name="submit" id="TeamSubmit" class="btn btn-danger ">Create Team</button></td>-->
-		
-		</td>
-    </tr>
-	
-	<tr height="50"></tr>
-  </table>
-  
-    </div>
-	
-    <div class="col-md-6" style="overflow:scroll;height:500px;width:50%;overflow:auto">
-      <table id = "myTable"class="table table-bordered">
-      <thead>
-          
-            <th>Choose</th>
-            <th>Player Name</th>
-            <th>Category</th>
-            <th>Price</th>
-			<th>Team</th>
-			<th>Earned Points</th>
-	     
-        </thead>
-        <tbody>
-		
-		<?php 
-		$index=0;
-		//SHOW THE RIGHT COLUMN FOR DISPLAYING ALL PLAYERS
-        
-		foreach ($players as $p) {
-		/*
-			INDEXES:
-				Player_name : name of the player
-				Team_name : name of the team w.r.t. the player
-				Button_status : For enable/disable button
-				Price
-				Category
-				Player_id
-				points[index] : Overall points w.r.t. the player
-		*/
-          echo'
-          <tr>
-          <form method="post" action="#" id ="myForm">
-            <td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>
-			<input type="hidden" id="pName" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
-            <input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
-            <input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
-			<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
-			<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
-			<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
-            
-          </form>
-          </tr>';
-          $index++;
-        }
-		
-		?>		
-		
-        </tbody>
-    </table>
-    </div>
-  </div>
 </div>
+	<table class="table table-bordered" class="table table-striped" id = "topTable" style="table-layout:fixed">
+		<tbody>
+			
+			<tr>
+				<td>Balance</td>
+				<td id="priceTag" style="background-color: Blue; color:white; font-size:20px;">$10000</td>
+				<td>Batsman</td>
+				<td>0</td>
+				<td>Bowler</td>
+				<td>0</td>
+				<td>WK</td>
+				<td>0</td>
+				<td>AllRounder</td>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table id="dataTable">
+		<tr>
+			<td width="300"></td>
+			<td><h3>YOUR TEAM</h3></td>
+			<td width="350"></td>
+			<td><strong>Sort By (Category): </strong></td>
+			<form method="post" action="#">
+				<td>
+					
+						<select name="cat" id="categories">
+							<option value="">---</option>
+							<option value="BAT">BAT</option>
+							<option value="BOWL">BOWL</option>
+							<option value="ALL">ALL</option>
+							<option value="WK">WK</option>
+						</select>
+				</td>
+				<td width="100"></td>
+				<td><strong>Sort By (Team): </strong></td>
+				<td>
+					<select name="team_id" id="team_ID" >
+							<option value="">---</option>
+							<?php
+							foreach ($teams as $t) {
+								echo'<option value='.$t['team_id'].'> '.$t['team_name'].' </option>';
+							}
+							?>
+					</select>
+				</td>
+				<td width="10"></td>
+				<td><button type="button" name="submit" id="catSelectSubmit" value="GO!" class="btn btn-info pull-right">GO</button></td>
+			</form>
+		</tr>
+	</table>
+		<div class="col-md-6">
+			<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
+				<table class="table table-bordered" class="table table-striped" id = "Table" >
+					<thead>
+						<th>Name</th>
+						<th>Category</th>
+						<th>Price</th>
+						<th>Team</th>
+						<th>Points</th>		
+						
+						<th colspan="3">Choose</th>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				
+			</div>
+			<table>
+			  <!--<form method="post" action="createTeam_proc">-->
+				<tr>
+					<td width="200"><strong><h4>Team Name: </h4></strong></td>
+					<td></td>
+					<td>
+						<input type="text" name="team_name" id="teamNameID" style="width:100%">
+						<div id="emptyTeamNameModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+
+							<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<!--<h4 class="modal-title">Modal Header</h4>-->
+									</div>
+									<div class="modal-body">
+										<p>Please choose a valid team name for your team</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				
+				<tr height="20"></tr>
+				<tr>
+					  <td><strong><h4>Select Captain: </h4></strong></td>
+					  <td ></td>
+					  <td>
+						<select style="width:100%" id="captainSelection" name="captain" required>
+									
+						</select>
+						<div id="captainConfirmation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+
+							<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<!--<h4 class="modal-title">Modal Header</h4>-->
+									</div>
+									<div class="modal-body">
+										<p></p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					  </td>
+				</tr>
+				<tr height="10">
+					<td> <br> </td>
+				</tr>
+			  
+				<tr>
+					<td></td>
+					<td>
+						<button type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg">Create Team</button>
+						<div id="elevenPlayerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+
+							<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<!--<h4 class="modal-title">Modal Header</h4>-->
+									</div>
+									<div class="modal-body">
+										<p>Please select eleven players</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!--<button type="button" name="submit" id="TeamSubmit" class="btn btn-danger ">Create Team</button></td>-->
+					
+					</td>
+				</tr>
+			
+				<tr height="50"></tr>
+			</table>
+		</div>
+	
+		<div class="col-md-6" style="overflow:scroll;height:500px;width:50%;overflow:auto">
+		<table id = "myTable"class="table table-bordered">
+			<thead>
+			  
+				<th>Choose</th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Price</th>
+				<th>Team</th>
+				<th>Points</th>
+			 
+			</thead>
+			<tbody>
+			
+				<?php 
+				$index=0;
+				//SHOW THE RIGHT COLUMN FOR DISPLAYING ALL PLAYERS
+				
+				foreach ($players as $p) {
+				/*
+					INDEXES:
+						Player_name : name of the player
+						Team_name : name of the team w.r.t. the player
+						Button_status : For enable/disable button
+						Price
+						Category
+						Player_id
+						points[index] : Overall points w.r.t. the player
+				*/
+				  echo'
+				  <tr>
+				  <form method="post" action="#" id ="myForm">
+					<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>
+					<input type="hidden" id="pName" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
+					<input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
+					<input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
+					<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
+					<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
+					<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
+					
+				  </form>
+				  </tr>';
+				  $index++;
+				}
+				
+				?>				
+			</tbody>
+		</table>
+	</div>
 
 
 

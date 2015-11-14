@@ -195,6 +195,14 @@ class User extends CI_Controller {
 			//save data in session for successive use
 			$_SESSION['players_data']=$data;
 			
+			//GET MATCH DATA
+			$query = $this->match_model->get_next_match();
+			$result=$query->row_array();
+			$next_match_id = $result['match_id'];
+			
+			$query=$this->match_model->get_match_info($next_match_id);
+			$data['matchData']=$query->row_array();
+
 			//load the view
 			$this->load->view('CT',$data);
 		}
