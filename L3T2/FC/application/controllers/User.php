@@ -201,6 +201,11 @@ class User extends CI_Controller {
 		
 	}
 	
+	public function test()
+	{
+		$cur=$this->tournament_model->get_upcoming_phase();
+		print_r($cur);
+	}
 	public function createTeam_check()
 	{
 		// Unescape the string values in the JSON array
@@ -366,31 +371,56 @@ class User extends CI_Controller {
 				{
 					//OTHER CHECKS IF REQUIRED
 					
+					$cur_phase=$this->tournament_model->get_current_phase();
+					//echo $cur_phase.':P';
 					
+					if($cur_phase===NULL)
+					{
+						$cur_phase=$this->tournament_model->get_upcoming_phase();
+						
+						if($cur_phase===NULL)
+						{
+							//SEVERE ERROR
+							die();
+						}
+					}
+					
+					//echo $cur_phase;
 					
 					//DO DATABASE OPERATIONS
-					$user_id=$_SESSION['user_id'];
-					
-					$match=$this->match_model->get_upcoming_match()->row_array();
-					$match_id=$match['match_id'];
-					
-					$captain_id=$tableData[NUMBER_OF_PLAYERS]['captain_id'];
-					$team_name = $tableData[NUMBER_OF_PLAYERS]['team_name'];
-					
-					//print_r($user_team);
-					
-					$val=$this->user_model->create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name);
-					
-					//INITIALIZE FREE TRANSFER DATA
-					$this->user_model->create_user_phase_transfer($user_id, $this->tournament_model->get_current_phase());
-					
-					//UNSET USER TEAM SESSION
-					unset($_SESSION['players_data']);
-					
-					
-					//LOAD SUCCESS MESSAGE
-					echo 'Your Team has been created successfully!';
-					
+					//IF, SOMEHOW, THERE IS AN EXISTING TEAM, THEN REDIRECT
+					$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
+			
+					if($var!=0)
+					{
+						redirect('user/view_team','refresh');
+					}
+					else if($var==0)
+					{
+						//PROCEDE NORMALLY
+						$user_id=$_SESSION['user_id'];
+						
+						$match=$this->match_model->get_upcoming_match()->row_array();
+						$match_id=$match['match_id'];
+						
+						$captain_id=$tableData[NUMBER_OF_PLAYERS]['captain_id'];
+						$team_name = $tableData[NUMBER_OF_PLAYERS]['team_name'];
+						
+						//print_r($user_team);
+						
+						$val=$this->user_model->create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name);
+						
+						//INITIALIZE FREE TRANSFER DATA
+						$this->user_model->create_user_phase_transfer($user_id, $cur_phase);
+						
+						//UNSET USER TEAM SESSION
+						unset($_SESSION['players_data']);
+						
+						
+						//LOAD SUCCESS MESSAGE
+						echo 'Your Team has been created successfully!';
+						
+					}
 				}
 			}
 			else
