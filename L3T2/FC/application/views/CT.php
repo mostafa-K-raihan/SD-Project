@@ -471,10 +471,6 @@ $(document).ready(function() {
 						url: "createTeam_check",
 						data: "pTableData=" + TableData,
 						success: function(msg){
-				
-							// return value stored in msg variable
-							//alert(msg);
-							
 							if(msg=='Your Team has been created successfully!')
 							{
 								window.location.href = "<?php echo site_url('user/createTeam_proc'); ?>";
