@@ -39,7 +39,12 @@ Show Team Status
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
 
 	<style>
-	
+	#topTable td{
+		text-align: center;
+		background-color: lightBlue;
+		font-size: 20px;
+		font-family:verdana;
+	}
 	.navbar-inverse{
 			background : #c4c4c4;
 		}
@@ -51,6 +56,10 @@ Show Team Status
 		}
 		body{
 			background-color: #f9f9f9;
+		}
+		.scrollit{
+			overflow:scroll;
+			height:100px;
 		}
 	</style>
 	
@@ -136,6 +145,24 @@ Show Team Status
 	*/
 ?>
 
+<table class="table table-bordered" class="table table-striped" id = "topTable" style="table-layout:fixed">
+	<tbody>
+		
+		<tr>
+			<td>Balance</td>
+			<td id="priceTag" style="background-color: Blue; color:white; font-size:20px;">$10000</td>
+			<td>Batsman</td>
+			<td>0</td>
+			<td>Bowler</td>
+			<td>0</td>
+			<td>WK</td>
+			<td>0</td>
+			<td>AllRounder</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>
+
 <table>
     <tr>
 		<td width="300"></td>
@@ -173,7 +200,8 @@ Show Team Status
 
 <div>
 	<div class="col-md-6">
-	<table class="table table-bordered" class="table table-striped" class="table table-hover" id = "Table">
+	<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
+	<table class="table table-bordered" class="table table-striped" id = "Table" >
 		<thead>
 			<th>Player Name</th>
 			<th>Category</th>
@@ -184,49 +212,11 @@ Show Team Status
 			<th colspan="3">Choose</th>
 		</thead>
 		<tbody>
-		<?php
-			/*
-			  $c1="active";
-			  $c3="success";
-			  $c2="info";
-			  $c4="warning";
-			  $c5="danger";
-			  $c=1;
-			  $d="";
-			
-			//comment out the for loop later
-			
-			foreach($user_team as $u)
-			{
-				if($c%5==0)$d=$c1;
-				else if($c%5==1)$d=$c2;
-				else if($c%5==2)$d=$c3;
-				else if($c%5==3)$d=$c4;
-				else if($c%5==4)$d=$c5;
-				echo '<tr class='.$d.'>'.'
-				
-				<form method="post" action="#">
-
-				
-					<input type="hidden" name="name" value="'.$u['player_name'].'"><td width="12%" >'.$u['player_name'].'</td></input>
-					<input type="hidden" name="cat" value="'.$u['player_cat'].'"><td width="8%">'.$u['player_cat'].'</td></input>
-					<input type="hidden" name="price" value="'.$u['price'].'"><td width="10%">$'.$u['price'].'</td></input>
-					<input type="hidden" name="player_id" value="'.$u['player_id'].'"></input>
-					<input type="hidden" name="points" value="'.$u['total_points'].'"><td width="10%">'.$u['total_points'].'</td></input>
-					<td width="5%"><button type="button" id="finalBtn" class="btn btn-danger">Remove</button></td>
-					
-				</form>
-			  
-				</tr>';
-				$c++;
-			}
-			*/
-		?>  
 		</tbody>
 	</table>
 	
+	</div>
 	<table>
-
 	  <form method="post" action="createTeam_proc">
 	  <tr>
 	  <td width="200"><strong><h4>Team Name: </h4></strong></td>
@@ -321,7 +311,7 @@ Show Team Status
   
     </div>
 	
-    <div class="col-md-6">
+    <div class="col-md-6" style="overflow:scroll;height:500px;width:50%;overflow:auto">
       <table id = "myTable"class="table table-bordered">
       <thead>
           
@@ -334,10 +324,12 @@ Show Team Status
 	     
         </thead>
         <tbody>
+		
 		<?php 
 		$index=0;
 		//SHOW THE RIGHT COLUMN FOR DISPLAYING ALL PLAYERS
-        foreach ($players as $p) {
+        
+		foreach ($players as $p) {
 		/*
 			INDEXES:
 				Player_name : name of the player
@@ -351,22 +343,21 @@ Show Team Status
           echo'
           <tr>
           <form method="post" action="#" id ="myForm">
-
-            
             <td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>
 			<input type="hidden" id="pName" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
             <input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
             <input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
 			<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
 			<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
-			
 			<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
             
           </form>
           </tr>';
           $index++;
         }
+		
 		?>		
+		
         </tbody>
     </table>
     </div>
@@ -382,51 +373,54 @@ $(document).ready(function() {
 					echo json_encode($players);
 				?>;
 	var jArray2 = <?php echo json_encode ($points);?>;
-				
+	var bats,bowl,wk,all;
+	bats=bowl=wk=all=0;
+					
 	$("#myTable tbody").on("click", ".btn-success", function(event) {
-		/*var formElements=document.getElementById("myForm").elements;    
-		var postData={};
-		for (var i=1; i<formElements.length; i++)
-			if (formElements[i].type!="submit")//we dont want to include the submit-buttom
-				//alert(formElements[i].value);	
-		
-		var tr = $(this).closest('tr');	
-	
-		var cell2 = tr.find('td').eq(1).text();
-		var cell3 = tr.find('td').eq(2).text();
-		var cell4 = tr.find('td').eq(3).text();
-		var cell5 = tr.find('td').eq(4).text();
-		var cell6 = tr.find('td').eq(5).text();
-		var btn = tr.find('td').eq(0).text();
-		*/
 		var tr=$(this).closest('tr');
-		//tr.find("#addButtonID").prop("disabled",true);
-		//tr.find("#addButtonID").toggleClass("clicked");
 		tr.find("#addButtonID").removeClass("btn-success");
 		tr.find("#addButtonID").addClass("btn-default");
-		
-		
-	//var pName = tr.find('#pName').val();
-		
 		var pName = tr.find('#pName').val();
 		var category = tr.find('#cat').val();
 		var price = tr.find('#price').val();
 		var pid = tr.find('#pid').val();
 		var points = tr.find('#points').val();
 		var teamName = tr.find('#players_team').val();
-		
 		for(var i=0; i < jArray.length; i++){
 			if($.trim(pid) == jArray[i]['Player_id'])
 			{
 				jArray[i]['Button_status']='false';
-				//alert('done'+jArray[i]['Button_status']);
 			}
 			
 		}
+		var stringCurrentPrice = $("#topTable").find('#priceTag').html();
+		var newStringCurrentPrice = stringCurrentPrice.substr(1);
+		var intCurrentPrice = parseInt(newStringCurrentPrice, 10);
+		var clickedPlayerPrice = parseInt(price, 10);
+		var changedPrice = (intCurrentPrice-clickedPlayerPrice);
+		if(changedPrice<0){
+			$('#topTable td').eq(1).css('background-color','red');
+			$('#topTable td').eq(1).html("$" + changedPrice.toString());
 		
+		}else{
+			$('#topTable td').eq(1).css('background-color','blue');
+			$('#topTable td').eq(1).html("$" + changedPrice.toString());
+		}
+		if(category == 'BAT'){
+			bats++;
 		
+			$('#topTable td').eq(3).html(bats.toString());
+		}else if(category == 'BOWL'){
+			bowl ++;
+			$('#topTable td').eq(5).html(bowl.toString());
+		}else if(category == 'WK'){
+			wk++;
+			$('#topTable td').eq(7).html(wk.toString());
+		}else if(category == 'ALL'){
+			all++;
+			$('#topTable td').eq(9).html(all.toString());
+		}
 		
-		//alert(pName);
 		var largeStr = '<form method="post" action="#">';
 		largeStr+='<button type="button" class="btn btn-danger">Remove</button>';
 		largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"></input>';
@@ -437,7 +431,6 @@ $(document).ready(function() {
 		
 		largeStr+='<input type="hidden" id="points" name="points" value="'+points+'"</input></form>';
 		var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + teamName + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
-		//alert(str);
 		var captain = '<option value="' + pid + '">' + pName +  '</option>';
 		$('#captainSelection').append(captain);
 	   $('#Table').append(str);
@@ -529,12 +522,32 @@ $(document).ready(function() {
 		
 		
 		$("#Table tbody").on("click", ".btn-danger", function(event){
-			//var pid = $('#pid').val();
-			
-			//alert(pid);
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
-			
+			var playerPrice = parseInt(closest.find('#price').val(),10);
+			var currentBalance = parseInt($("#topTable").find('#priceTag').html().substr(1),10);
+			var updatedBalance = playerPrice+currentBalance;
+			var category = closest.find('#cat').val();
+			if(category == 'ALL'){
+				all--;
+				$('#topTable td').eq(9).html(all.toString());
+			}else if(category == 'BOWL'){
+				bowl--;
+				$('#topTable td').eq(5).html(bowl.toString());
+			}else if(category == 'BAT'){
+				bats--;
+				$('#topTable td').eq(3).html(bats.toString());
+			}else if(category == 'WK'){
+				wk--;
+				$('#topTable td').eq(7).html(wk.toString());
+			}
+			if(updatedBalance>=0){
+				$('#topTable td').eq(1).css('background-color','blue');
+				$('#topTable td').eq(1).html("$" + updatedBalance.toString());
+			}else {
+				$('#topTable td').eq(1).css('background-color','red');
+				$('#topTable td').eq(1).html("$" + updatedBalance.toString());
+			}
 			for(var i=0; i < jArray.length; i++){
 				if($.trim(playerID) == jArray[i]['Player_id'])
 				{
@@ -551,8 +564,6 @@ $(document).ready(function() {
 			
 			$('#myTable tr').each(function(row, tr){
 				if(playerID==$(tr).find("#pid").val()){
-					//$(tr).find("#addButtonID").prop("disabled",false);
-					//$(tr).find("#addButtonID").toggleClass("clicked");
 					$(tr).find("#addButtonID").addClass("btn-success");
 				}
 			});
