@@ -19,6 +19,12 @@
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
 	<style>
+		#topTable0{
+			table-layout: fixed;
+			text-align:center;
+			font-size: 25px;
+			font-family:sans-serif;
+		}
 		.navbar-inverse{
 			background : #c4c4c4;
 		}
@@ -86,13 +92,23 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<?php
-	//Show a random match (manual data); I will merge with back-end later
-?>
-<div id="child">
-	<pre style="background-color: #1020;" >Next Match : <?php echo $matchData['home_team_name']?> Vs <?php echo $matchData['away_team_name']?></pre>
-	<pre>Time: <?php echo $matchData['Time']?></pre> 
+
+<div>
+	<table class="table table-bordered"	 class="table table-striped" id = "topTable0">
+		<tbody>
+			<tr>
+				<td><?php echo $matchData['home_team_name'].'<br>'; ?></td>
+				<td>VS</td>
+				<td><?php echo $matchData['away_team_name'].'<br>'; ?></td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><?php echo $matchData['Time']; ?></td>	
+			</tr>
+		</tbody>
+	</table>
 </div>
+
 		
 <div class="container" class="row-fluid PageHead"> <!-- Description Start -->
     <div class="span12">
