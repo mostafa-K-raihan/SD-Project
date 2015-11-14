@@ -496,14 +496,14 @@ class User extends CI_Controller {
 		{
 			//if a user doesn't have any team, he should create a team
 			//commented for testing. uncomment later
-			/*
+			
 			$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
 			
 			if($var==0)
 			{
 				redirect('user/createTeam','refresh');
 			}
-			*/
+			
 			$search_key['tournament_id']=$query_result;
 			//get the match id for which transfer(or team creation) is ongoing
 			$match=$this->match_model->get_upcoming_match()->row_array();
