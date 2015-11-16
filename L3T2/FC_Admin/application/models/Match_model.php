@@ -28,6 +28,7 @@ class Match_model extends CI_Model
 	
 	public function update_motm_id($match_id,$player_id)
 	{
+		//INSERT NEW MOTM ID INTO DATABASE
 		$sql='UPDATE `match` SET `motm_id`= ? WHERE match_id= ?';
 		$query=$this->db->query($sql,array($player_id,$match_id));
 	}
@@ -208,6 +209,8 @@ class Match_model extends CI_Model
 	public function update_motm_point($match_id)
 	{
 		//echo $match_id;
+		$sql='UPDATE player_match_point SET motm_bonus =0 WHERE match_id=?';
+		$query=$this->db->query($sql,$match_id);
 		
 		//GET MOTM_ID FROM MATCH
 		$sql='SELECT `motm_id` FROM `match` WHERE `match_id`=?';

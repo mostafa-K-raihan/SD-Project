@@ -122,18 +122,38 @@ class Admin extends CI_Controller {
 		
 		if($query->num_rows()==0)
 		{
-			echo "No Fixture Available for this tournament";	//Load No Fixture View
+			$data=array(
+				'success'=>false,
+				'fail_message'=>"No Fixture Available for this tournament"
+			);
+			$this->load->view('status_message',$data);
 		}
-		
-		$data['fixture']=$query->result_array();
-		
-		$this->load->view('schedule',$data);
+		else
+		{
+			$data['fixture']=$query->result_array();
+			$this->load->view('schedule',$data);
+		}
 	}
 	
 	public function results()	//NC
 	{
-		//COPY FROM USER SECTION LATER
-		$this->load->view('results');
+		$query= $this->tournament_model->get_result();		
+		
+		if($query->num_rows()==0)
+		{
+			
+			$data=array(
+				'success'=>false,
+				'fail_message'=>"No Result Available for this tournament"
+			);
+			//ektu jhamela ase
+			$this->load->view('status_message',$data);
+		}
+		else
+		{
+			$data['result']=$query->result_array();
+			$this->load->view('results',$data);
+		}
 	}
 	
 	public function start_phase_action($phase_id)	//C
