@@ -150,6 +150,21 @@
  <?php
 	foreach($user_team as $u)
 	{
+	$imageLocation = "";
+	if($u['team_name']==='Team 1'){
+		$imageLocation = 'images/dhaka.png/';
+	}else if($u['team_name']==='Team 2'){
+		$imageLocation = 'images/ctg.png/';
+	}else if($u['team_name']==='Team 3'){
+		$imageLocation = 'images/comilla.png/';
+	}else if($u['team_name']==='Team 4'){
+		$imageLocation = 'images/rangpur.png/';
+	}else if($u['team_name']==='Team 5'){
+		$imageLocation = 'images/sylhet.png/';
+	}else if($u['team_name']==='Team 6'){
+		$imageLocation = 'images/barishal.png/';
+	}
+	
     echo '<div class="span3 PlanPricing template4" style="width:180px">  <!-- Price template4 Starts -->
       <div class="planName"> <span class="price">'.$u['point'].'</span>
         <h4>'.$u['name'].'</h4>
@@ -157,7 +172,7 @@
       </div>
       <div class="planFeatures">
         <ul>
-          <li><img src="'.base_url('images/e1.png/').'" height="80" width="80" class="img-circle" alt="Circular Image"></li>
+          <li><img src="'.base_url($imageLocation).'" height="80" width="80" class="img-circle" alt="Circular Image"></li>
         </ul>
       </div>
       <p> <a href="#" role="button" data-toggle="modal" class="btn btn-success btn-large" height="50" width="50">'.$u['player_cat'].' </a> </p>
