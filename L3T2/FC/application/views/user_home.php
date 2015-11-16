@@ -151,17 +151,17 @@
 	foreach($user_team as $u)
 	{
 	$imageLocation = "";
-	if($u['team_name']==='Team 1'){
+	if($u['team_name']==='Team A' or $u['team_name']==='Team 1'){
 		$imageLocation = 'images/dhaka.png/';
-	}else if($u['team_name']==='Team 2'){
+	}else if($u['team_name']==='Team B' or $u['team_name']==='Team 2'){
 		$imageLocation = 'images/ctg.png/';
-	}else if($u['team_name']==='Team 3'){
+	}else if($u['team_name']==='Team C' or $u['team_name']==='Team 3'){
 		$imageLocation = 'images/comilla.png/';
-	}else if($u['team_name']==='Team 4'){
+	}else if($u['team_name']==='Team D' or $u['team_name']==='Team 4'){
 		$imageLocation = 'images/rangpur.png/';
-	}else if($u['team_name']==='Team 5'){
+	}else if($u['team_name']==='Team E' or $u['team_name']==='Team 5'){
 		$imageLocation = 'images/sylhet.png/';
-	}else if($u['team_name']==='Team 6'){
+	}else if($u['team_name']==='Team F' or $u['team_name']==='Team 6'){
 		$imageLocation = 'images/barishal.png/';
 	}
 	
