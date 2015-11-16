@@ -432,25 +432,7 @@ $(document).ready(function() {
 					
 					
 					var TableData;
-					TableData = $.toJSON(storeTblValues());
 					
-					$.ajax({
-						type: "POST",
-						url: "createTeam_check",
-						data: "pTableData=" + TableData,
-						success: function(msg){
-							if(msg=='Your Team has been created successfully!')
-							{
-								window.location.href = "<?php echo site_url('user/createTeam_proc'); ?>";
-							}
-							else
-							{
-								alert(msg);
-							}
-							
-						}
-					});
-				
 					function storeTblValues()
 					{
 						var TableData = new Array();
@@ -478,6 +460,25 @@ $(document).ready(function() {
 						TableData.shift();  // first row will be empty - so remove
 						return TableData;
 					}
+					TableData = $.toJSON(storeTblValues());
+					
+					$.ajax({
+						type: "POST",
+						url: "createTeam_check",
+						data: "pTableData=" + TableData,
+						success: function(msg){
+							if(msg=='Your Team has been created successfully!')
+							{
+								window.location.href = "<?php echo site_url('user/createTeam_proc'); ?>";
+							}
+							else
+							{
+								alert(msg);
+							}
+							
+						}
+					});
+				
 				}
 				
 			}

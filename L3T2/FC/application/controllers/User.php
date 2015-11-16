@@ -212,7 +212,9 @@ class User extends CI_Controller {
 	
 	public function test()
 	{
-		$cur=$this->tournament_model->get_upcoming_phase();
+		$cur=$this->tournament_model->get_previous_match()->row_array();
+		print_r($cur);
+		$cur=$this->tournament_model->get_current_phase();
 		print_r($cur);
 	}
 	public function createTeam_check()
