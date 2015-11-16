@@ -18,7 +18,12 @@ Show Team Status
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
 	<style>
-	
+		#topTable td{
+			text-align: center;
+			font-family:sans-serif;
+			font-size:25px;
+			background-color: lightBlue;
+		}
 		.navbar-inverse{
 			background : #c4c4c4;
 		}
@@ -72,7 +77,7 @@ Show Team Status
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user_name'];?><span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="#">Edit Profile</a></li>
 					<li><a href="#">Change Password</a></li>
@@ -104,7 +109,31 @@ Show Team Status
 			</tr>
 		</tbody>
 	</table>
+
+	
 </div>
+
+<table class="table table-bordered" class="table table-striped" id = "topTable" style="table-layout:fixed">
+		<thead>
+			<th colspan="5" style="text-align:right">Remaining Transfers</th><th colspan="5" style="text-align:left">	<?php echo $free_transfers; ?></th>
+		</thead>
+		<tbody>
+			
+			<tr>
+				<td>Balance</td>
+				<td id="priceTag" style="background-color: Blue; color:white; font-size:20px;"><?php echo '$'.((10000)-$team_status['value']);?></td>
+				<td>Batsman</td>
+				<td><?php echo $team_status['bat'];?></td>
+				<td>Bowler</td>
+				<td><?php echo $team_status['bowl'];?></td>
+				<td>WK</td>
+				<td><?php echo $team_status['wk'];?></td>
+				<td>AllRounder</td>
+				<td><?php echo $team_status['all'];?></td>
+			</tr>
+		</tbody>
+	</table>
+
 
 <table style="table-layout:fixed;width:100%;text-align:center">
     <tr>
@@ -141,6 +170,7 @@ Show Team Status
 
 <div>
 	<div class="col-md-6">
+	<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
 	<table class="table table-bordered" class="table table-striped"id = "Table">
 		<thead>
 			<th>Player Name</th>
@@ -172,7 +202,7 @@ Show Team Status
 				
 					<input type="hidden" id="pName" name="name" value="'.$u['player_name'].'"><td width="12%" >'.$u['player_name'].'</td></input>
 					<input type="hidden" id="cat" name="cat" value="'.$u['player_cat'].'"><td width="8%">'.$u['player_cat'].'</td></input>
-					<input type="hidden" id="price" name="price" value="'.$u['price'].'"><td width="10%">$'.$u['price'].'</td></input>
+					<input type="hidden" id="price" name="price" value="$'.$u['price'].'"><td width="10%">$'.$u['price'].'</td></input>
 					<input type="hidden" id="pid" name="player_id" value="'.$u['player_id'].'"></input>
 					<input type="hidden" id="players_team" name="team_name" value="'.$u['team_name'].'"><td width="10%">'.$u['team_name'].'</td></input>
 					<input type="hidden" id="points" name="points" value="'.$u['total_points'].'"><td width="10%">'.$u['total_points'].'</td></input>
@@ -187,6 +217,7 @@ Show Team Status
 		?>  
 		</tbody>
 	</table>
+	</div>
 	
 	<table style="width:100%;table-layout:fixed">
 
@@ -256,6 +287,7 @@ Show Team Status
     </div>
 	
     <div class="col-md-6">
+	<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
       <table id = "myTable"class="table table-bordered">
       <thead>
           
@@ -282,15 +314,25 @@ Show Team Status
 				Player_id
 				points[index] : Overall points w.r.t. the player
 		*/
-          echo'
+		
+		$tempStr="";
+		if($p['Button_status']=='true')
+		{
+			$tempStr='<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>';
+		}
+		else
+		{
+			$tempStr='<td width="5%"><button type="button" id="addButtonID" class="btn btn-default">Add</button> </td>';
+		}
+        echo'
           <tr>
           <form method="post" action="#" id ="myForm">
 
             
-            <td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>
+            '.$tempStr.'
 			<input type="hidden" id="pName" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
             <input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
-            <input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
+            <input type="hidden" id="price" name="price" value="$'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
 			<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
 			<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
 			
@@ -303,6 +345,7 @@ Show Team Status
 		?>		
         </tbody>
     </table>
+	</div>
     </div>
   </div>
 </div>
@@ -313,14 +356,36 @@ $(document).ready(function() {
 	var jArray = <?php 
 					echo json_encode($players);
 				?>;
+	
+	
 	var jArray2 = <?php echo json_encode ($points);?>;
 				
 	var players = <?php echo json_encode($user_team)?>;
+	
 	var pp;
+	var bats,bowl,wk,all;
+	bats = <?php echo $team_status['bat'];?>;
+	bowl = <?php echo $team_status['bowl'];?>;
+	wk = <?php echo $team_status['wk'];?>;
+	all = <?php echo $team_status['all'];?>;
+	
+	var captainID=<?php echo $captain_id; ?>;
+	
 	for(var j=0;j<players.length;j++){
-		pp = '<option value="' + players[j]['player_id'] + '">' + players[j]['player_name'] +  '</option>';
-		$('#captainSelection').append(pp);
+		if(players[j]['player_id']==captainID)
+		{
+			pp = '<option value="' + players[j]['player_id'] + '">' + players[j]['player_name'] +  '</option>';
+			$('#captainSelection').append(pp);
+		}
 	}
+	for(var j=0;j<players.length;j++){
+		if(players[j]['player_id']!=captainID)
+		{
+			pp = '<option value="' + players[j]['player_id'] + '">' + players[j]['player_name'] +  '</option>';
+			$('#captainSelection').append(pp);
+		}
+	}
+	
 	$("#myTable tbody").on("click", ".btn-success", function(event) {
 		
 		var tr=$(this).closest('tr');
@@ -330,6 +395,7 @@ $(document).ready(function() {
 		var pName = tr.find('#pName').val();
 		var category = tr.find('#cat').val();
 		var price = tr.find('#price').val();
+		//alert(price); // dollar ase
 		var pid = tr.find('#pid').val();
 		var points = tr.find('#points').val();
 		var teamName = tr.find('#players_team').val();
@@ -339,6 +405,35 @@ $(document).ready(function() {
 			{
 				jArray[i]['Button_status']='false';
 			}	
+		}
+		
+		var stringCurrentPrice = $("#topTable").find('#priceTag').html();
+		alert(stringCurrentPrice);
+		var newStringCurrentPrice = stringCurrentPrice.substr(1);
+		var intCurrentPrice = parseInt(newStringCurrentPrice, 10);
+		var clickedPlayerPrice = parseInt(price.substr(1), 10); // dollar removed from price or right table 
+		var changedPrice = (intCurrentPrice-clickedPlayerPrice);
+		if(changedPrice<0){
+			$('#topTable td').eq(1).css('background-color','red');
+			$('#topTable td').eq(1).html("$" + changedPrice.toString());
+		
+		}else{
+			$('#topTable td').eq(1).css('background-color','blue');
+			$('#topTable td').eq(1).html("$" + changedPrice.toString());
+		}
+		if(category == 'BAT'){
+			bats++;
+		
+			$('#topTable td').eq(3).html(bats.toString());
+		}else if(category == 'BOWL'){
+			bowl ++;
+			$('#topTable td').eq(5).html(bowl.toString());
+		}else if(category == 'WK'){
+			wk++;
+			$('#topTable td').eq(7).html(wk.toString());
+		}else if(category == 'ALL'){
+			all++;
+			$('#topTable td').eq(9).html(all.toString());
 		}
 		
 		var largeStr = '<form method="post" action="#">';
@@ -367,29 +462,6 @@ $(document).ready(function() {
 			else
 			{
 				captainID= $.trim($('#captainSelection option:selected').val());	
-				var TableData;
-				TableData = $.toJSON(storeTblValues());
-					
-				$.ajax({
-					type: "POST",
-					url: "changeTeam_check",
-					data: "pTableData=" + TableData,
-					success: function(msg){
-				
-						// return value stored in msg variable
-						//alert(msg);
-								
-						if(msg=='Your Team has been changed successfully!')
-						{
-							window.location.href = "<?php echo site_url('user/createTeam_proc'); ?>";
-						}
-						else
-						{
-							alert(msg);
-						}
-								
-					}
-				});
 				
 				function storeTblValues()
 				{
@@ -415,17 +487,74 @@ $(document).ready(function() {
 					TableData.shift();  // first row will be empty - so remove
 					return TableData;
 				}	
+				
+				var TableData;
+				TableData = $.toJSON(storeTblValues());
+					
+				$.ajax({
+					type: "POST",
+					url: "changeTeam_check",
+					data: "pTableData=" + TableData,
+					success: function(msg){
+				
+						// return value stored in msg variable
+						//alert(msg);
+								
+						if(msg=='Your Team has been changed successfully!')
+						{
+							window.location.href = "<?php echo site_url('user/view_team'); ?>";
+						}
+						else if(msg=='CONFIRM TRANSFER')
+						{
+							window.location.href = "<?php echo site_url('user/changeTeam_confirm'); ?>";
+						}
+						else
+						{
+							alert(msg);
+						}
+								
+					}
+				});
+				
 			}
 		});
 		$("#Table tbody").on("click", ".btn-danger", function(event){
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
+			//alert(closest.find('#price').val());
+			var playerPrice = parseInt(closest.find('#price').val().substr(1),10);
 			
+			var currentBalance = parseInt($("#topTable").find('#priceTag').html().substr(1),10);
+			
+			var updatedBalance = playerPrice+currentBalance;
+			//alert(playerPrice + ' ' + currentBalance +'='+ updatedBalance);
+			var category = closest.find('#cat').val();
+			if(category == 'ALL'){
+				all--;
+				$('#topTable td').eq(9).html(all.toString());
+			}else if(category == 'BOWL'){
+				bowl--;
+				$('#topTable td').eq(5).html(bowl.toString());
+			}else if(category == 'BAT'){
+				bats--;
+				$('#topTable td').eq(3).html(bats.toString());
+			}else if(category == 'WK'){
+				wk--;
+				$('#topTable td').eq(7).html(wk.toString());
+			}
+			if(updatedBalance>=0){
+				$('#topTable td').eq(1).css('background-color','blue');
+				$('#topTable td').eq(1).html("$" + updatedBalance.toString());
+			}else {
+				$('#topTable td').eq(1).css('background-color','red');
+				$('#topTable td').eq(1).html("$" + updatedBalance.toString());
+			}
 			for(var i=0; i < jArray.length; i++){
 				if($.trim(playerID) == jArray[i]['Player_id'])
 				{
 					jArray[i]['Button_status']='true';
-				}	
+					//alert(jArray[i]['Player_name']+'?'+true+'?');
+				}
 			}
 			
 			$(this).closest('tr').remove();
@@ -466,7 +595,7 @@ $(document).ready(function() {
 					
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -492,7 +621,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -517,7 +646,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -542,7 +671,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';

@@ -86,7 +86,7 @@ Show Team Status
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user_name'];?> <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="#">Edit Profile</a></li>
 					<li><a href="#">Change Password</a></li>
@@ -205,7 +205,7 @@ Show Team Status
 										<!--<h4 class="modal-title">Modal Header</h4>-->
 									</div>
 									<div class="modal-body">
-										<p>Please choose a valid team name for your team</p>
+										<p>Please choose a name for your team</p>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -317,7 +317,7 @@ Show Team Status
 					<td width="5%"><button type="button" id="addButtonID" class="btn btn-success">Add</button> </td>
 					<input type="hidden" id="pName" name="name" value="'.$p['Player_name'].'"><td width="12%" >'.$p['Player_name'].'</td></input>
 					<input type="hidden" id="cat" name="cat" value="'.$p['Category'].'"><td width="8%">'.$p['Category'].'</td></input>
-					<input type="hidden" id="price" name="price" value="'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
+					<input type="hidden" id="price" name="price" value="$'.$p['Price'].'"><td width="10%">$'.$p['Price'].'</td></input>
 					<input type="hidden" id="pid" name="player_id" value="'.$p['Player_id'].'"></input>
 					<input type="hidden" id="players_team" name="team_name" value="'.$p['Team_name'].'"><td width="10%">'.$p['Team_name'].'</td></input>
 					<input type="hidden" id="points" name="points" value="'.$points[$index].'"><td width="10%">'.$points[$index].'</td></input>
@@ -351,6 +351,8 @@ $(document).ready(function() {
 		var pName = tr.find('#pName').val();
 		var category = tr.find('#cat').val();
 		var price = tr.find('#price').val();
+		//alert(price);
+		
 		var pid = tr.find('#pid').val();
 		var points = tr.find('#points').val();
 		var teamName = tr.find('#players_team').val();
@@ -364,7 +366,7 @@ $(document).ready(function() {
 		var stringCurrentPrice = $("#topTable").find('#priceTag').html();
 		var newStringCurrentPrice = stringCurrentPrice.substr(1);
 		var intCurrentPrice = parseInt(newStringCurrentPrice, 10);
-		var clickedPlayerPrice = parseInt(price, 10);
+		var clickedPlayerPrice = parseInt(price.substr(1), 10);
 		var changedPrice = (intCurrentPrice-clickedPlayerPrice);
 		if(changedPrice<0){
 			$('#topTable td').eq(1).css('background-color','red');
@@ -489,7 +491,8 @@ $(document).ready(function() {
 		$("#Table tbody").on("click", ".btn-danger", function(event){
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
-			var playerPrice = parseInt(closest.find('#price').val(),10);
+			alert(closest.find('#price').val());
+			var playerPrice = parseInt(closest.find('#price').val().substr(1),10);
 			var currentBalance = parseInt($("#topTable").find('#priceTag').html().substr(1),10);
 			var updatedBalance = playerPrice+currentBalance;
 			var category = closest.find('#cat').val();
@@ -571,7 +574,7 @@ $(document).ready(function() {
 					
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -601,7 +604,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -635,7 +638,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';
@@ -664,7 +667,7 @@ $(document).ready(function() {
 					}
 					str+='<input type="hidden" id="pName" name="name" value="'+jArray[i]['Player_name']+'"><td width="12%" >'+jArray[i]['Player_name']+'</td></input>';
 					str+='<input type="hidden" id="cat" name="cat" value="'+jArray[i]['Category']+'"><td width="8%">'+jArray[i]['Category']+'</td></input>';
-					str+='<input type="hidden" id="price" name="price" value="'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
+					str+='<input type="hidden" id="price" name="price" value="$'+jArray[i]['Price']+'"><td width="10%">$'+jArray[i]['Price']+'</td></input>';
 					str+='<input type="hidden" id="players_team" name="team_name" value="'+jArray[i]['Team_name']+'"><td width="10%">'+jArray[i]['Team_name']+'</td></input>';
 					str+='<input type="hidden" id="pid" name="player_id" value="'+jArray[i]['Player_id']+'"></input>';
 					str+='<input type="hidden" id="points" name="points" value="'+jArray2[i]+'"><td width="10%">'+jArray2[i]+'</td></input>';

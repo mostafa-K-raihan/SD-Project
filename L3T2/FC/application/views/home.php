@@ -139,9 +139,7 @@
 
 <footer class="footer">
 	<ul class="nav navbar-nav navbar-left">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services Provided</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="<?php echo site_url('home/about_us');?>">About Us</a></li>
 	</ul>
     
 </footer>

@@ -269,6 +269,11 @@ class Home extends CI_Controller {
 		$this->load->view('templates/header',$data);
 		$this->load->view('how_to_play_Before_login',$data);
 	}
+	
+	public function about_us()
+	{
+		$this->load->view('aboutUs');
+	}
 	/*
 	public function scoring()		
 	{

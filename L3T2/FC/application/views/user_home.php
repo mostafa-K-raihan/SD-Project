@@ -69,7 +69,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
-				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user_name'];?> <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="#">Edit Profile</a></li>
 					<li><a href="#">Change Password</a></li>

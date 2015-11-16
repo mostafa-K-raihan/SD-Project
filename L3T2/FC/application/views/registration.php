@@ -414,7 +414,7 @@
                 <div class="form-group">
                     <label for="InputEmail">Enter Password</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="InputPasswordFirst" name="password" placeholder="At least 8 characters" required>
+                        <input type="password" class="form-control" id="InputPasswordFirst" name="password" placeholder="Please choose a secure password" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>

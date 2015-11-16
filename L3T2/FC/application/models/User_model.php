@@ -27,7 +27,7 @@ class User_model extends CI_Model
 			return 'UNLIMITED';
 		}
 		
-		$sql='SELECT P.free_transfers-UPT.transfers_made as FT
+		$sql='SELECT P.free_transfers-IFNULL(UPT.transfers_made,0) as FT
 			FROM phase P, user_phase_transfer UPT
 			WHERE P.phase_id=current_phase()
 			AND P.phase_id=UPT.phase_id AND UPT.user_id=?';
@@ -35,6 +35,7 @@ class User_model extends CI_Model
 		
 		$result=$query->row_array();
 		return $result['FT'];
+		
 	}	
 	
 	public function get_transfer_outs($user_id,$user_team_players)		//RUNNING
@@ -107,6 +108,7 @@ class User_model extends CI_Model
 		$result=$query->row_array();
 		
 		return $result['count'];
+		
 	}
 	
 	public function get_loginInfo($data)		//USED FOR LOG-IN
@@ -368,10 +370,8 @@ class User_model extends CI_Model
 		$i=0;
 		foreach($outs as $old)
 		{
-			echo $old_id=$old['player_id'];
-			echo $new_id=$ins[$i]['player_id'];
-			
-			echo '<hr>';
+			$old_id=$old['player_id'];
+			$new_id=$ins[$i]['player_id'];
 			
 			$sql='UPDATE user_match_team_player 
 			SET player_id=? 
@@ -389,7 +389,7 @@ class User_model extends CI_Model
 				WHERE user_id=? AND phase_id=current_phase()';
 		$result=$this->db->query($sql,array($_SESSION['user_id']))->row_array();
 		
-		if($result==NULL)
+		if($result['transfers_made']===NULL)
 		{
 			//DO NOTHING---THERE IS NO ENTRY FOR CURRENT PHASE I.E. USER HAVE UNLIMITED FREE TRANSFERS
 		}
@@ -401,14 +401,29 @@ class User_model extends CI_Model
 					SET transfers_made=?
 					WHERE user_id=? AND phase_id=current_phase()';
 			$query=$this->db->query($sql,array($count,$_SESSION['user_id']));
-		}	
+		}
+		
 		return;
 		
 	}
 	
+	/*
+		THERE ARE TWO VERSIONS OF CREATE_USER_PHASE_TRANSFER.
+		YOU ARE SUGGESTED TO UNDERSTAND THIS AND USE IT PROPERLY
+		
+		These are used to differentiate between first phase of (new)user
+	*/
+	
+	//used for admin module
 	public function create_user_phase_transfer($user_id, $phase_id)
 	{
 		$sql='INSERT into user_phase_transfer VALUES(\'\',?,?,0)';
+		$query=$this->db->query($sql,array($user_id,$phase_id));
+	}
+	//used for user module
+	public function create_user_phase_transfer_from_user($user_id, $phase_id)
+	{
+		$sql='INSERT into user_phase_transfer VALUES(\'\',?,?,NULL)';
 		$query=$this->db->query($sql,array($user_id,$phase_id));
 	}
 	

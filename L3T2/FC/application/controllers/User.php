@@ -219,6 +219,7 @@ class User extends CI_Controller {
 	}
 	public function createTeam_check()
 	{
+		
 		// Unescape the string values in the JSON array
 		$tableData = stripcslashes($_POST['pTableData']);
 		
@@ -305,7 +306,7 @@ class User extends CI_Controller {
 		$value=0;
 		for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
 		{
-			$value+=$tableData[$i]['price'];
+			$value+=substr($tableData[$i]['price'],1);
 		}
 		
 		//1.CHECK TEAM VALUE;
@@ -424,7 +425,7 @@ class User extends CI_Controller {
 						$val=$this->user_model->create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name);
 						
 						//INITIALIZE FREE TRANSFER DATA
-						$this->user_model->create_user_phase_transfer($user_id, $cur_phase);
+						$this->user_model->create_user_phase_transfer_from_user($user_id, $cur_phase);
 						
 						//UNSET USER TEAM SESSION
 						unset($_SESSION['players_data']);
@@ -586,7 +587,14 @@ class User extends CI_Controller {
 				$cap=$u_team['captain'];
 				$data['user_team']=array();
 				$temp_team=$u_team['team_players'];
-					
+				
+				$data['team_status']['value']=0;
+				$data['team_status']['bat']=0;
+				$data['team_status']['bowl']=0;
+				$data['team_status']['all']=0;
+				$data['team_status']['wk']=0;
+				$data['captain_id']=$cap;
+				
 				foreach($temp_team as $p)
 				{
 					$pl_id=$p['player_id'];
@@ -596,6 +604,25 @@ class User extends CI_Controller {
 					$pl_name=$inf['name'];
 					$pl_cat=$inf['player_cat'];
 					$pl_price=$inf['price'];
+					
+					$data['team_status']['value']+=$pl_price;
+					if($pl_cat==="BAT")
+					{
+						$data['team_status']['bat']++;
+					}
+					else if($pl_cat==="BOWL")
+					{
+						$data['team_status']['bowl']++;
+					}
+					else if($pl_cat==="ALL")
+					{
+						$data['team_status']['all']++;
+					}
+					else if($pl_cat==="WK")
+					{
+						$data['team_status']['wk']++;
+					}
+					
 					$pl_ov_points=$this->player_model->player_overall_point($pl_id);
 					$pl_team=$inf['team_name'];
 						
@@ -604,6 +631,30 @@ class User extends CI_Controller {
 							'total_points'=>$pl_ov_points,'team_name'=>$pl_team);
 								
 					array_push($data['user_team'],$newPlayer);
+				}
+				
+				$len=0;
+				foreach($data['players'] as $p)
+				{
+					$len++;
+				}
+				
+				for($index=0;$index<$len;$index++)
+				{
+					$val=false;
+					foreach($data['user_team'] as $u)
+					{
+						if($data['players'][$index]['Player_id']==$u['player_id'])
+						{
+							$val=true;
+							break;
+						}
+					}
+					
+					if($val==true)
+					{
+						$data['players'][$index]['Button_status']='false';
+					}
 				}
 				
 				//GET NUMBER OF REMAINING FREE TRANSFERS
@@ -633,13 +684,7 @@ class User extends CI_Controller {
 		// Decode the JSON array
 		$tableData = json_decode($tableData,TRUE);
 		
-		
-		/*
-			CODE NEEDS TO BE ADJUSTED LATER
-			-- declare the constants inside another class
-		*/
-		
-		
+		//print_r($tableData);
 		define("NUMBER_OF_PLAYERS",11); //change to 11 later
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
@@ -690,43 +735,20 @@ class User extends CI_Controller {
 			)
 		);
 		
-		//print_r($team_config);
-		
-		/*
-			#INDEXES
-				#PRIMARY INDEX: 0,1,2,...11
-					#0-10 : player's data
-					#11 : Captain id + Team Name
-				#SECONDARY INDEX
-					#FOR PRIMARY INDEX 0..10
-						#player_name
-						#player_cat
-						#price
-						#team_name
-						#points
-						#player_id
-					#FOR PRIMARY INDEX 11
-						#team_name : USER TEAM NAME
-						#captain_id : PLAYER ID OF THE CAPTAIN SELECTED BY THE USER
-		*/
-		
-		//CHECK USER TEAM VALUE
-		
+		//calculate user team value
 		$value=0;
 		for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
 		{
-			$value+=$tableData[$i]['price'];
+			$value+=substr($tableData[$i]['price'],1);
 		}
 		
-		//1.CHECK TEAM VALUE;
+		//Condition 1.1 : Team VAlue Check
 		if($value>MAX_TEAM_VALUE)
 		{
 			echo 'Your team value can not excede '.MAX_TEAM_VALUE.' . Please try again.';
 		}
-		else	//2. CHECK COMBINATION
+		else
 		{
-			//echo 'Checkpoint:#Team Value passed';
-			
 			$n_bat=0;
 			$n_bowl=0;
 			$n_wk=0;
@@ -762,9 +784,8 @@ class User extends CI_Controller {
 				
 			}
 			
-			//echo $n_bat.'::'.$n_bowl.'::'.$n_wk.'::'.$n_all;
 			
-			//CHECK TEAM CONFIGURATION
+			
 			$allow_combo=false;
 			
 			foreach($team_config as $valid)
@@ -776,15 +797,12 @@ class User extends CI_Controller {
 				}
 			}
 			
-			//echo '>>>'.$allow_combo;
-			//$allow_combo = true; //delete it
-			
+			//CONDITION 1.2:: CHECK TEAM COMBINATION
 			if($allow_combo)
 			{
-				//3. CHECK TEAM DISTRIBUTION
 				$freqs = array_count_values($player_team_names);
 				$max_same = max($freqs);
-				//echo $max_same;
+				//Condition 1.3:: MAX PLAYERS FROM THE SAME TEAM
 				if($max_same>MAX_FROM_SAME_TEAM)
 				{
 					//ALERT
@@ -792,33 +810,49 @@ class User extends CI_Controller {
 				}
 				else
 				{
-					//OTHER CHECKS IF REQUIRED
+					$user_id = $_SESSION['user_id'];
 					
+					$ft=$this->user_model->get_remaining_transfers($_SESSION['user_id']);
+					//echo $ft;
 					
+					$used_transfer=$this->user_model->get_used_transfers($user_id,$user_team);
 					
-					//DO DATABASE OPERATIONS
-					//$user_id=$_SESSION['user_id'];
+					//Condition 2.1: No Transfer (Same Team Selected Again) -> only captain can be changed
+					if($used_transfer==0)
+					{
+						$user_id=$_SESSION['user_id'];
 					
-					//$match=$this->match_model->get_upcoming_match()->row_array();
-					//$match_id=$match['match_id'];
+						$match=$this->match_model->get_upcoming_match()->row_array();
+						$match_id=$match['match_id'];
 					
-					//$captain_id=$tableData[NUMBER_OF_PLAYERS]['captain_id'];
-					//$team_name = $tableData[NUMBER_OF_PLAYERS]['team_name'];
-					
-					//print_r($user_team);
-					
-					//$val=$this->user_model->create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name);
-					
-					//INITIALIZE FREE TRANSFER DATA
-					//$this->user_model->create_user_phase_transfer($user_id, $this->tournament_model->get_current_phase());
-					
-					//UNSET USER TEAM SESSION
-					//unset($_SESSION['players_data']);
-					
-					
-					//LOAD SUCCESS MESSAGE
-					echo 'Your Team has been created successfully!';
-					
+						$new_captain_id=$tableData[11]['captain_id'];
+						
+						$this->user_model->change_captain($user_id,$match_id,$new_captain_id);
+						echo 'Your Team has been changed successfully!';
+					}
+					else
+					{
+						//Condition 2.2 : Transfer Limit Exceded
+						if($ft!=='UNLIMITED' and $used_transfer>$ft)
+						{
+							//ERROR :: TRANSFER LIMIT EXCEDED. DISALLOW USER
+							echo 'Transfer Limit Exceded';
+						}
+						else
+						{
+							$data['transfer_outs']=$this->user_model->get_transfer_outs($user_id,$user_team);
+							$data['transfer_ins']=$this->user_model->get_transfer_ins($user_id,$user_team);
+							
+							$_SESSION['transfer_outs']=$data['transfer_outs'];
+							$_SESSION['transfer_ins']=$data['transfer_ins'];
+							$_SESSION['used_transfer']=$used_transfer;
+							$_SESSION['new_captain_id']=$tableData[11]['captain_id'];
+							$_SESSION['free_transfers']=$ft;
+							
+							echo 'CONFIRM TRANSFER';
+						}
+					}
+		
 				}
 			}
 			else
@@ -826,9 +860,55 @@ class User extends CI_Controller {
 				//ALERT
 				echo 'Please check the rules and scoring system and find a valid combo for your team.';
 			}
+			
 		}
+	}
+	
+	public function changeTeam_confirm()
+	{
+		$data['transfer_outs']=$_SESSION['transfer_outs'];
+		$data['transfer_ins']=$_SESSION['transfer_ins'];
 		
+		$data['used_transfer']=$_SESSION['used_transfer'];
+		$data['free_transfers']=$_SESSION['free_transfers'];
 		
+		//BETTER IF THE VIEW IS REPLACED BY A POP-UP
+		$this->load->view('confirm_transfer',$data);
+	}
+	
+	public function changeTeam_proc()
+	{
+		$user_id=$_SESSION['user_id'];
+		
+		$match=$this->match_model->get_upcoming_match()->row_array();
+		$match_id=$match['match_id'];
+		
+		$new_captain_id=$_SESSION['new_captain_id'];
+		
+		$user_match_team_id=$this->user_model->get_user_match_team_id($user_id,$match_id);
+		
+		//#01 : Change Captain
+		$this->user_model->change_captain($user_id,$match_id,$new_captain_id);
+		
+		//#02 : Replace Transferred Players
+		$ins=$_SESSION['transfer_ins'];
+		$outs=$_SESSION['transfer_outs'];
+		
+		//#REPLACE TEAM IN DATABASE AND ALSO UPDATE FREE TRANSFER COUNT
+		$this->user_model->replace_team_players($user_match_team_id,$ins,$outs);
+		
+		unset(
+			$_SESSION['transfer_outs'],
+			$_SESSION['transfer_ins'],
+			$_SESSION['used_transfer'],
+			$_SESSION['new_captain_id']
+		);
+		
+		$data=array(
+			'success'=>true,
+			'success_message'=>"Your transfers have been saved."
+		);
+		$this->load->view('status_message',$data);
 	}
 	
 	public function topPlayers()				//done
