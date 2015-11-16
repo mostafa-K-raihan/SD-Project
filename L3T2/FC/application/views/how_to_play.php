@@ -29,9 +29,6 @@
 			color: #000;
 		}
 		body{
-			background-color: #f9f9f9;
-		}
-		body{
 			background-color:teal;
 		}
 		#mainTabs li a{
@@ -132,9 +129,8 @@
 </nav>
 <div class="container-fluid">
        <!-- tabs link -->
-		
-		<div class="tabbable">      
-      <ul id="mainTabs" class="nav nav-tabs">
+	<div class="tabbable">      
+		<ul id="mainTabs" class="nav nav-tabs">
        
 			<li class="active"><a href="#howToPlay" data-toggle="tab">How to Play</a></li>
 			<li><a href="#Scoring" data-toggle="tab">Scoring</a></li>
@@ -142,12 +138,11 @@
 		
 		
 		
-      </ul>
-      <div class="tab-content">
-				<div class="tab-pane active" id="howToPlay" style="color: white">
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="howToPlay" style="color: white">
 				<h3>Creating Your Team</h3>
 				<p>Create a team by selecting your cricketers with any of the 7 possible combinations available.</p>
-				
 				<table class = "table table-striped table table-bordered" id="comboTable">
 					<thead>
 						<th>Player Type</th><th>Combo 1</th><th>Combo 2</th><th>Combo 3</th><th>Combo 4</th><th>Combo 5</th><th>Combo 6</th><th>Combo 7</th>
@@ -171,8 +166,9 @@
 				<p>You will be given 100$ to manage all your players. Each Player costs differently. Adjust wisely.</p>
 				<p>Captain's point will be doubled after each match.</p>
 				<p>If captain does not play there will be <strong style="font:monospace; font-size:20px"><i>no captain's double point allocation.</i></strong><br> So choose wisely.</p>
-				</div>
-				<div class="tab-pane" id="Scoring" style="color:white">
+			</div>
+			
+			<div class="tab-pane" id="Scoring" style="color:white">
 				
 				<label style="font-size:30px">Batting Points</label>
 				<table class = "table table-striped table table-bordered" id="pointTable">
@@ -227,8 +223,8 @@
 				</table>
 				<p> * Man of the Match will receive extra 50 points.</p>
 				<p> * Cricketer you choose as Captain will receive double points.</p>
-				</div>
-      </div>
+			</div>
+		</div>
 	</div>
 </div>
 	<script>

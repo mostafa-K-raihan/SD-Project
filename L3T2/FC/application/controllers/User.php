@@ -70,7 +70,8 @@ class User extends CI_Controller {
 		{
 			$data['success']=false;
 			$data['fail_message']="You donot have any previous team";
-			$this->load->view('status_message',$data);
+			$this->load->view('templates/header2');
+			$this->load->view('status_message_Before_login',$data);
 		}
 		else
 		{
@@ -880,7 +881,8 @@ class User extends CI_Controller {
 				'fail_message'=>"No Result Available for this tournament"
 			);
 			//ektu jhamela ase
-			$this->load->view('status_message',$data);
+			$this->load->view('templates/header2');
+			$this->load->view('status_message_Before_login',$data);
 		}
 		else
 		{
