@@ -230,7 +230,7 @@ class User extends CI_Controller {
 		define("NUMBER_OF_PLAYERS",11); //change to 11 later
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
-		
+		//echo 'Test';
 		//allowed team combinations
 		$team_config=array(
 			array(
@@ -312,6 +312,7 @@ class User extends CI_Controller {
 		}
 		else	//2. CHECK COMBINATION
 		{
+			
 			$n_bat=0;
 			$n_bowl=0;
 			$n_wk=0;
@@ -366,6 +367,7 @@ class User extends CI_Controller {
 			
 			if($allow_combo)
 			{
+				
 				//3. CHECK TEAM DISTRIBUTION
 				$freqs = array_count_values($player_team_names);
 				$max_same = max($freqs);
@@ -385,7 +387,7 @@ class User extends CI_Controller {
 					if($cur_phase===NULL)
 					{
 						$cur_phase=$this->tournament_model->get_upcoming_phase();
-						
+						//echo $cur_phase.':P';
 						if($cur_phase===NULL)
 						{
 							//SEVERE ERROR

@@ -289,10 +289,15 @@ class Match extends CI_Controller {
 			$data['player_id']=$this->input->post($id_var);
 			$data['match_id']=$match_id;
 			
+			//echo $count."=>";
+			//print_r($data);
+			//echo "<br>";
+			
 			$this->match_model->update_match_points($data);
 			
 		}
-
+		
+		
 		if($num==0)
 		{
 			redirect('match/updateMatchStat_2','refresh');
@@ -335,6 +340,7 @@ class Match extends CI_Controller {
 			$this->load->view('status_message',$data);
 			
 		}
+		
 		
 	}
 }

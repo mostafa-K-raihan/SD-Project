@@ -32,11 +32,11 @@ class Tournament_model extends CI_Model
 	{
 		$tournament_id=$this->get_active_tournament_id();
 		$sql = 'SELECT * FROM `phase` 
-				WHERE `tournament_id`='.$tournament_id.' AND `is_started`=0 AND (`start_time`-CURRENT_TIMESTAMP) = 
+				WHERE `tournament_id`='.$tournament_id.' AND `is_started`=1 AND (`start_time`-CURRENT_TIMESTAMP) = 
 				(	
 					SELECT MIN(`start_time`-CURRENT_TIMESTAMP)
 					FROM `phase` 
-					WHERE (`start_time` > CURRENT_TIMESTAMP AND `is_started`=0 AND `tournament_id`='.$tournament_id.')
+					WHERE (`start_time` > CURRENT_TIMESTAMP AND `is_started`=1 AND `tournament_id`='.$tournament_id.')
 				)';				
 		
 		$query=$this->db->query($sql)->row_array(); 
