@@ -676,6 +676,7 @@ class User extends CI_Controller {
 			}
 		}	
 	}
+	
 	public function changeTeam_check()
 	{
 		// Unescape the string values in the JSON array
@@ -979,13 +980,38 @@ class User extends CI_Controller {
 	
 	
 	public function changePassword()		//LATER
-	{
+	{	
+		$data = array(
+			'error' => false
+		);
+		$this->load->view('edit_profile',$data);
 		
 	}
 
-	public function editProfile()				//LATER
+	public function changePassword_proc()				//LATER
 	{
-	
+		$pass=$this->input->post('password');
+		$conpass=$this->input->post('confirm_password');
+		
+		if($pass!==$conpass){
+			$data=array(
+				'error' =>true
+			);
+			$this->load->view('edit_profile',$data);
+		}
+		else
+		{
+			$pass=md5($pass);
+			$this->user_model->update_password($_SESSION['user_id'],$pass);
+			$data=array(
+				'success'=>true,
+				'success_message'=>"Password changed successfully"
+			);
+			
+			$this->load->view('status_message',$data);
+		}
+		
+		
 	}
 	
 	

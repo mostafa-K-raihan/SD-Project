@@ -107,7 +107,7 @@
 					<tbody>
 						<tr><td>For every run scored</td><td>1</td></tr>
 						<tr><td>Milestone Bonus(For each 25 runs)</td><td>25</td></tr>
-						<tr><td>Every Boundary Hit</td><td>2</td></tr>
+						<tr><td>Every Four Hit</td><td>2</td></tr>
 						<tr><td>Every Six Hit</td><td>6</td></tr>
 						<tr><td>Dismissal for Duck</td><td>-5</td></tr>
 						<tr><td style="background-color:#fcb"><strong>Strike Rate Bonus System</strong></td><td style="background-color:#fcb"><strong>Points</strong></td></tr>
@@ -129,7 +129,6 @@
 						<tr><td>1 Wicket</td><td>25</td></tr>
 						<tr><td>For Each Subsequent Wicket</td><td>25</td></tr>
 						<tr><td>Per Maiden Over</td><td>20</td></tr>
-						<tr><td>Per Dot Ball</td><td>2</td></tr>
 						<tr><td style="background-color:#fcb"><strong>Economy Rate Bonus System</strong></td><td style="background-color:#fcb"><strong>Points</strong></td></tr>
 						<tr><td>12 and more </td><td>-10</td></tr>
 						<tr><td>10 - 11.99</td><td>-5</td></tr>
@@ -137,7 +136,7 @@
 						<tr><td>8-9.99</td><td>10</td></tr>
 						<tr><td>6.5-7.99</td><td>20</td></tr>
 						<tr><td>5-6.49</td><td>30</td></tr>
-						<tr><td>4-5.99</td><td>40</td></tr>
+						<tr><td>4-4.99</td><td>40</td></tr>
 					</tbody>
 				</table>
 				

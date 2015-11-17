@@ -154,7 +154,7 @@ class Home extends CI_Controller {
 				}
 				else $data['birthday'] ='';
 				
-				if(isset($_POST['country']) && !empty($_POST['country'])) $data['country'] =$this->input->post('country');
+				if(isset($_POST['country'])) $data['country'] =$this->input->post('country');
 				else $data['country'] ='';
 				
 				$exists= $this->user_model->exist_user($data['email']);
@@ -272,6 +272,13 @@ class Home extends CI_Controller {
 	
 	public function about_us()
 	{
+		$data=array(
+			'id'=> -1,
+			'SIGNUP' => false,
+			'HOWTOPLAY' => false
+		);
+		$this->load->view('templates/header',$data);
+		
 		$this->load->view('aboutUs');
 	}
 	/*
