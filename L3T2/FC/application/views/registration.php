@@ -34,12 +34,12 @@
                     <label for="InputName">Enter Name</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="user_name" id="InputName" placeholder="Enter Name" required>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-group">
-							<select name="Country" placeholder="Select Country" class="form-control" id="country-selector" autocorrect="off" autocomplete="off">
+					<select name="Country" placeholder="Select Country" class="form-control" id="country-selector" autocorrect="off" autocomplete="off" required>
+								  
 								  <option value="" selected="selected">Select Country</option>
 								  <option value="Afghanistan" data-alternative-spellings="AF ?????????">Afghanistan</option>
 								  <option value="Albania" data-alternative-spellings="AL">Albania</option>
@@ -234,7 +234,8 @@
                         <input type="text" class="form-control" name="country" id="InputCountry" placeholder="Enter Country" >
                         <span class="input-group-addon"></span>
                     </div>-->
-                </div>
+                
+				</div>
 				
                 <div class="form-group">
                     <label for="InputDate">Enter Your Birthday</label>
