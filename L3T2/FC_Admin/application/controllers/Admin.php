@@ -1,16 +1,21 @@
 <?php
+
 /**
-	LAST MODIFIED : 29-06-2015 04:02 PM
+*	LAST MODIFIED : 29-06-2015 04:02 PM
 */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 	  
-	 public function __construct()	//C
+	 public function __construct()
      {
           parent::__construct();
 		  
-		  //Load Necessary Libraries and helpers
+		  /**
+		  *	Load Libraries , Models and Helpers
+		  */
+		  
           $this->load->library('session');
           $this->load->helper('form');
           $this->load->helper('url');
@@ -39,13 +44,13 @@ class Admin extends CI_Controller {
      }
 	 
 	/**
-	*	ADMIN HOME PAGE
+	*	[ADMIN HOME PAGE]
 	*/
 	
-	public function index()			//C
+	public function index()			
 	{
-		/**	Get Current Tournament Name		
-		*	$data['tournament_name'];
+		/**	
+		*	\brief Get Current Tournament Name		
 		*/
 		
 		$query= $this->tournament_model->get_active_tournament();
@@ -57,13 +62,13 @@ class Admin extends CI_Controller {
 		else
 		{
 			$result=$query->row_array();
-			$data['tournament_name']=$result['tournament_name'];	//Current Tournament Name
+			$data['tournament_name']=$result['tournament_name'];	/**< Current Tournament Name */
 			
-			$tournament_id=$result['tournament_id'];				//Current Tournament ID
+			$tournament_id=$result['tournament_id'];				/**< Current Tournament ID */
 			
 			/**
-			*	Get Upcoming Match Which has not been initiated by admin	
-			*	$data['home_team'], $data['away_team']
+			*	\brief Get Upcoming Match Which has not been initiated by admin	
+			*	
 			*	After initiation, all tables that requires a match instance are created
 			*/
 			
@@ -71,15 +76,15 @@ class Admin extends CI_Controller {
 			
 			if($query->num_rows()==0)
 			{
-				$data['home_team']='';				//Home Team ID -> Get Team Name Using Team Model
-				$data['away_team']='';				//Away Team ID -> Get Team Name Using Team Model
+				$data['home_team']='';				
+				$data['away_team']='';				
 				$data['match_id']='';
 			}
 			else
 			{
 				$result=$query->row_array();
-				$data['home_team']=$this->team_model->get_team_name($result['team1_id']);				//Home Team ID -> Get Team Name Using Team Model
-				$data['away_team']=$this->team_model->get_team_name($result['team2_id']);				//Away Team ID -> Get Team Name Using Team Model
+				$data['home_team']=$this->team_model->get_team_name($result['team1_id']);				
+				$data['away_team']=$this->team_model->get_team_name($result['team2_id']);				
 				$data['match_id']=$result['match_id'];
 			}
 			
@@ -107,16 +112,22 @@ class Admin extends CI_Controller {
 		
 	}
 	
-	public function logout()	//C
+	/**
+	*	Admin Logs out
+	*/
+	
+	public function logout()	
 	{
-		//Stop Session
-		$this->session->sess_destroy();
+		$this->session->sess_destroy();	/*!< Stop Session */
 		
-		//Redirect To Homepage
+		/**
+		*Redirect To Homepage
+		*/
+		
 		redirect('/home', 'refresh');
 	}
 	
-	public function schedules()	//C
+	public function schedules()	
 	{
 		$query= $this->tournament_model->get_fixture();		
 		
@@ -135,7 +146,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	
-	public function results()	//NC
+	public function results()	
 	{
 		$query= $this->tournament_model->get_result();		
 		
@@ -146,7 +157,7 @@ class Admin extends CI_Controller {
 				'success'=>false,
 				'fail_message'=>"No Result Available for this tournament"
 			);
-			//ektu jhamela ase
+			
 			$this->load->view('status_message',$data);
 		}
 		else
@@ -156,7 +167,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	
-	public function start_phase_action($phase_id)	//C
+	public function start_phase_action($phase_id)	
 	{
 		$query= $this->admin_model->start_phase($phase_id);
 		
@@ -165,9 +176,8 @@ class Admin extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
-	public function start_match_action($match_id)	//C
+	public function start_match_action($match_id)	
 	{
-		//echo $match_id;
 		$query= $this->admin_model->start_match($match_id);
 		$data['success']=true;
 		$data['success_message']="Data updated successfully to start the match";
