@@ -1,32 +1,40 @@
 <?php
 
-/*
-	THE REMAINING LOGICAL TASK
-	
-	(1) WHEN A USER CREATES A NEW TEAM,
-		----- INSERT INTO USER_PHASE_TRANSFER
-		----- HANDLE THE TRANSFER COUNT OF HIS/HER FIRST MATCH CAREFULLY
-		
-	(2) CHECK BEFORE GIVING ACCESS TO CHANGE TEAM,
-		----- THE USER HAS A TEAM IN THE CURRENT TOURNAMENT
+/**
+	Provides database support for the controllers to manipulate user related information
 */
 
 class User_model extends CI_Model 
 {
 
+	/**
+	*	Connect to database
+	*/
     public function __construct()
 	{
         $this->load->database();
 	}
 	
-	
+	/**
+	*	\brief Get the number of free transfer remaining for a user (in current phase)
+	*
+	*	\brief param : $user_id --- just user_id (int)
+	*
+	*	return value : number of remaining transfers (int)
+	*/
 	public function get_remaining_transfers($user_id)
 	{
+		/**
+			No current phase means - during two phases or before the first phase of the tournament. So, user has unlimited transfer access
+		*/
 		if($this->tournament_model->get_current_phase() === NULL)
 		{
 			return 'UNLIMITED';
 		}
 		
+		/**
+			Otherwise, get number of available free transfers from database
+		*/
 		$sql='SELECT P.free_transfers-IFNULL(UPT.transfers_made,0) as FT
 			FROM phase P, user_phase_transfer UPT
 			WHERE P.phase_id=current_phase()
@@ -38,7 +46,18 @@ class User_model extends CI_Model
 		
 	}	
 	
-	public function get_transfer_outs($user_id,$user_team_players)		//RUNNING
+	/**
+		\brief #TASK : To find out which players are transferred out from user's team
+		
+		\brief #PARAMS :
+		
+			\brief $user_id  --- int
+			
+			\brief $user_team_players --- array of int (array of player_id's of players selected by user after submitting request for transfers)
+			
+		\brief #RETURN VALUE : array('player_id'=>id of the player transferred out , 'name'=> name of the player)
+	*/
+	public function get_transfer_outs($user_id,$user_team_players)		
 	{
 		$temp=$this->match_model->get_upcoming_match();
 		$result=$temp->row_array();
@@ -63,7 +82,18 @@ class User_model extends CI_Model
 		return $outs;
 	}
 	
-	public function get_transfer_ins($user_id,$user_team_players)		//RUNNING
+	/**
+		\brief #TASK : To find out which players are transferred in from user's team
+		
+		\brief #PARAMS :
+		
+			\brief $user_id  --- int
+			
+			\brief $user_team_players --- array of int (array of player_id's of players selected by user after submitting request for transfers)
+			
+		\brief #RETURN VALUE : array('player_id'=>id of the player transferred in , 'name'=> name of the player)
+	*/
+	public function get_transfer_ins($user_id,$user_team_players)		
 	{
 		$temp=$this->match_model->get_upcoming_match();
 		$result=$temp->row_array();
@@ -92,7 +122,18 @@ class User_model extends CI_Model
 		return $ins;
 	}
 	
-	public function get_used_transfers($user_id,$user_team_players)		//RUNNING
+	/**
+		\brief #TASK : To find out number of transfers used by a user
+		
+		\brief #PARAMS :
+		
+			\brief $user_id  --- int
+			
+			\brief $user_team_players --- array of int (array of player_id's of players selected by user after submitting request for transfers)
+			
+		\brief #RETURN VALUE : int (number of transfers used)
+	*/
+	public function get_used_transfers($user_id,$user_team_players)		
 	{
 		$temp=$this->match_model->get_upcoming_match();
 		$result=$temp->row_array();
@@ -111,25 +152,49 @@ class User_model extends CI_Model
 		
 	}
 	
-	public function get_loginInfo($data)		//USED FOR LOG-IN
+	/**
+		\brief #TASK : To get required login info from userinfo table
+		
+		\brief #PARAMS :
+		
+			\brief $data  --- array('email'=> e-mail address of user, 'password'=>password submitted by user)
+		
+		\brief #RETURN VALUE : the query result. indices follows the column names of database table. i.e. user_id, email, password etc
+	*/
+	public function get_loginInfo($data)
 	{
 		$query = $this->db->get_where('userInfo', array('email' => $data['email'],'password' => $data['password']));
 		return $query;
 	}
 	
-	public function exist_user($email)			//CHECK WHETHER AN EMAIL IS ALREADY REGISTERED - RETURN 1 IF YES, OTHERWISE RETURN 0
+	/**
+		\brief CHECK WHETHER AN EMAIL IS ALREADY REGISTERED 
+		
+		RETURN 1 IF YES, OTHERWISE RETURN 0
+	*/
+	public function exist_user($email)
 	{
 		$query = $this->db->get_where('userInfo', array('email' => $email));
 		if($query->num_rows()>0) return 1;
 		else return 0;
 	}
 	
-	public function register($data)				//COMPLETE REGISTRATION
+	/**
+		\brief COMPLETE REGISTRATION inside database
+		
+		return type : void
+	*/
+	public function register($data)				
 	{
 		$query = $this->db->insert('userInfo',$data);
 	}
 	
-	public function exist_tournament_user($user_id)		//CHECK WHETHER A USER HAS A TEAM FOR THE CURRENT TOURNAMENT - 1 FOR YES, 0 FOR NO
+	/**
+		\brief CHECK WHETHER A USER HAS A TEAM FOR THE CURRENT TOURNAMENT
+
+		return - 1 FOR YES, 0 FOR NO
+	*/
+	public function exist_tournament_user($user_id)		
 	{
 		$tournament_id=$this->tournament_model->get_active_tournament_id();
 		$sql='SELECT * FROM `user_tournament` WHERE `tournament_id`=? and `user_id`=?';
@@ -144,37 +209,43 @@ class User_model extends CI_Model
 		}
 	}
 
-	//COMPLETES DB OPERATIONS FOR CREATE TEAM ACTION
+	/**
+		\brief COMPLETES DB OPERATIONS FOR CREATE TEAM ACTION
+	
+		\brief parameters : 
+		
+			\brief $user_id --- int
+			
+			\brief $match_id --- int (id of upcoming match)
+			
+			\brief $captain_id --- int (id of captain of user's team)
+
+			\brief $user_team --- array of int (id of players of user's team)
+
+			\brief $user_team_name --- string (team name submitted by user)
+	*/
 	public function create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name)
 	{
-		//GET CURRENT TOURNAMENT
+		//! GET CURRENT TOURNAMENT
 		$tournament_id=$this->tournament_model->get_active_tournament_id();
 		$sql='INSERT into user_tournament VALUES(\'\',?,?,?)';
 		$query=$this->db->query($sql,array($user_id,$tournament_id,$team_name));
 		
-		/*
-		//GET PREVIOUS MATCH ID
-		$query = $this->tournament_model->get_previous_match();
-		$result=$query->row_array();
-		$prev_match_id = $result['match_id'];
-		*/
-		
-		//SET NEW CAPTAIN := OLD CAPTAIN		
+		//! SET NEW CAPTAIN		
 		$new_captain=$captain_id;
 		
-		//CREATE USER_MATCH_TEAM
+		//! CREATE USER_MATCH_TEAM ENTRY
 		$sql='INSERT into user_match_team VALUES(\'\',?,?,?,0)';
 		$query=$this->db->query($sql,array($user_id,$match_id,$new_captain));
 		
 		
-		//GET NEW MATCH TEAM ID
+		//! GET NEW MATCH TEAM ID
 		$sql='SELECT * FROM user_match_team WHERE user_id=? AND match_id=?';
 		$query=$this->db->query($sql,array($user_id,$match_id));
 		$result=$query->row_array();
 		$new_match_team_id=$result['user_match_team_id'];
 		
-		//SET ALL PLAYERS DATA
-		//SET NEW MATCH_TEAM_PLAYERS := ALL PREVIOUS USER_MATCH_TEAM_PLAYERS	
+		//! SET ALL PLAYERS ID INTO user_match_team_player TABLE
 		foreach($user_team as $r)
 		{
 			$sql='INSERT into user_match_team_player VALUES(\'\',?,?)';
