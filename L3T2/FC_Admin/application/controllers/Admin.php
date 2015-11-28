@@ -50,7 +50,7 @@ class Admin extends CI_Controller {
 	public function index()			
 	{
 		/**	
-		*	\brief Get Current Tournament Name		
+		*	\brief Get Current Tournament Name
 		*/
 		
 		$query= $this->tournament_model->get_active_tournament();
@@ -62,9 +62,12 @@ class Admin extends CI_Controller {
 		else
 		{
 			$result=$query->row_array();
-			$data['tournament_name']=$result['tournament_name'];	/**< Current Tournament Name */
 			
-			$tournament_id=$result['tournament_id'];				/**< Current Tournament ID */
+			// Current Tournament Name
+			$data['tournament_name']=$result['tournament_name'];	
+			
+			//Current Tournament ID
+			$tournament_id=$result['tournament_id'];				
 			
 			/**
 			*	\brief Get Upcoming Match Which has not been initiated by admin	
@@ -102,6 +105,7 @@ class Admin extends CI_Controller {
 			else
 			{
 				$result=$query->row_array();
+				//	phase_id of the next phase
 				$data['upcoming_phase']=$result['phase_name'];
 				$data['phase_id']=$result['phase_id'];
 			}
@@ -117,7 +121,7 @@ class Admin extends CI_Controller {
 	
 	public function logout()	
 	{
-		$this->session->sess_destroy();	//!< Stop Session 
+		$this->session->sess_destroy();	//!Stop Session 
 		
 		/**
 		*Redirect To Homepage
