@@ -89,8 +89,7 @@ class Admin extends CI_Controller {
 			}
 			
 			/**
-			*	Get Recent 2 Phases Which Are Either Not Started Or Not Finished
-			*	$data['phases'] = array($phase1,$phase2);
+			*	Get Upcoming Phase Which Are Not Started By Admin
 			*/
 			
 			$query= $this->tournament_model->get_upcoming_phase($tournament_id);
@@ -118,7 +117,7 @@ class Admin extends CI_Controller {
 	
 	public function logout()	
 	{
-		$this->session->sess_destroy();	/*!< Stop Session */
+		$this->session->sess_destroy();	//!< Stop Session 
 		
 		/**
 		*Redirect To Homepage

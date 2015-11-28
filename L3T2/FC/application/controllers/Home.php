@@ -154,7 +154,7 @@ class Home extends CI_Controller {
 				}
 				else $data['birthday'] ='';
 				
-				if(isset($_POST['country'])) $data['country'] =$this->input->post('country');
+				if(isset($_POST['Country'])) $data['country'] =$this->input->post('Country');
 				else $data['country'] ='';
 				
 				$exists= $this->user_model->exist_user($data['email']);
