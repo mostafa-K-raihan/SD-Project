@@ -4,6 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed'); // basepath cont
 
 class Home extends CI_Controller {
 	 
+	 /**
+	 *	\brief Load Necessary Libraries and helpers
+	 *
+	 *	Load Models
+	 */
 	 public function __construct() 
      {
           parent::__construct();
@@ -25,12 +30,14 @@ class Home extends CI_Controller {
 		  $this->load->model('user_model');
 		  $this->load->model('tournament_model');
      }
-	 
+	
+	/**
+	*	If user session is found, just redirect to user's homepage (view team or create team decided by user controller)
+	*/
 	public function index()	
 	{
 		if(isset($_SESSION["user_id"]))
 		{	
-			//echo $_SESSION["user_id"];
 			redirect('/user', 'refresh');
 		}
 		else
@@ -52,6 +59,11 @@ class Home extends CI_Controller {
 		
 	}
 	
+	/**
+	* \brief Controller Function to manage user login
+	*
+	* If user login is successful, redirect to user's homepage. Otherwise, reload the page
+	*/
 	public function login()	
 	{
 		$data = array('email'=>trim($_POST['email']),'password'=>md5($_POST["password"]));
@@ -85,6 +97,11 @@ class Home extends CI_Controller {
 		}
 	}
 	
+	/**
+	* \brief Controller Function to manage user registration
+	*
+	* If user session is found, just redirect to user's homepage rather than showing register page
+	*/
 	public function register()	
 	{
 		if(isset($_SESSION["user_id"]))
@@ -108,9 +125,15 @@ class Home extends CI_Controller {
 		}
 	}
 	
+	/**
+	* \brief Provides condition checking and database operation for user registration
+	*/
 	public function register_proc()
 	{
-		$pass=md5($this->input->post('password'));
+			/**
+				Password and confirm password inputs must match
+			*/
+			$pass=md5($this->input->post('password'));
 			$conpass=md5($this->input->post('confirm_password'));
 
 			if($pass!=$conpass)
@@ -138,7 +161,9 @@ class Home extends CI_Controller {
 				);
 				$this->load->view('templates/header',$headerData);
 			
-			
+				/**
+					Extract necessary data from html input fields
+				*/
 				$data['user_id'] ='';
 
 				$data['user_name'] =trim($this->input->post('user_name'));
@@ -157,6 +182,9 @@ class Home extends CI_Controller {
 				if(isset($_POST['Country'])) $data['country'] =$this->input->post('Country');
 				else $data['country'] ='';
 				
+				/**
+					If an user is already registered in the system, request for registration is denied
+				*/
 				$exists= $this->user_model->exist_user($data['email']);
 
 				if($exists==1)
@@ -169,6 +197,9 @@ class Home extends CI_Controller {
 				}
 				else
 				{
+					/**
+						If everything is ok, register user in database
+					*/
 					$this->user_model->register($data);
 					$data = array(
 					   'login_error' => false,
@@ -180,7 +211,9 @@ class Home extends CI_Controller {
 			}
 	}
 	
-	
+	/**
+		Show tournament fixture
+	*/
 	public function schedules()		
 	{
 		$headerData=array(
@@ -190,11 +223,13 @@ class Home extends CI_Controller {
 		);
 		$this->load->view('templates/header',$headerData);
 		
+		/**
+			Load fixture from database (using tournament_model )
+		*/
 		$query= $this->tournament_model->get_fixture();		
 		
 		if($query->num_rows()==0)
 		{
-			//echo "No Fixture Available for this tournament";	//Load No Fixture View
 			$data=array(
 				'success'=>false,
 				'failure_message'=>"No Fixture Available for this tournament"
@@ -209,6 +244,9 @@ class Home extends CI_Controller {
 		}
 	}
 	
+	/**
+		Show tournament results if any match is complete
+	*/
 	public function results()		
 	{
 		$headerData=array(
@@ -235,6 +273,9 @@ class Home extends CI_Controller {
 		}
 	}
 	
+	/**
+		Not yet implemented. Just need to link some sites like crickinfo which contains the point table
+	*/
 	public function pointTable()	
 	{
 		$headerData=array(
@@ -244,23 +285,18 @@ class Home extends CI_Controller {
 		);
 		$this->load->view('templates/header',$headerData);
 		
-		//comment this after implementation
 		$data=array(
 				'success'=>true,
 				'success_message'=>"Point Table will be added very soon"
 			);
 		$this->load->view('status_message_Before_login',$data);
-		
-		/*
-		<Implement>
-		$this->load->view('point_table',$data);
-		*/
 	}
 	
+	/**
+		Kind of a user manual showing the rules of the game. No logical code. Totally done inside html
+	*/
 	public function howToPlay()		
 	{
-		// <Implement>
-		//	Just adjust the view
 		$data=array(
 			'id'=> -1,
 			'SIGNUP' => false,
@@ -270,6 +306,9 @@ class Home extends CI_Controller {
 		$this->load->view('how_to_play_Before_login',$data);
 	}
 	
+	/**
+		Introduction to our team. Another fully html task
+	*/
 	public function about_us()
 	{
 		$data=array(
@@ -281,19 +320,4 @@ class Home extends CI_Controller {
 		
 		$this->load->view('aboutUs');
 	}
-	/*
-	public function scoring()		
-	{
-		// <Implement>
-		//	Just adjust the view 
-		$data=array(
-			'id'=> -1,
-			'SIGNUP' => false,
-			'HOWTOPLAY' => true,
-			
-		);
-		$this->load->view('templates/header',$data);
-		$this->load->view('how_to_play',$data);
-	}
-	*/
 }
