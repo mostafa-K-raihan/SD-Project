@@ -2,8 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
+
+	/**
+		\brief load all necessary libraries and helpers
+
+		if session is set then load neccessary models else redirects to homepage
+		
+	*/
 	 
-	 public function __construct()		//DONE
+	 public function __construct()		
      {
         parent::__construct();
 		
@@ -29,6 +36,9 @@ class User extends CI_Controller {
 		}  
      }
 	 
+	 /**
+		If user has a team already created then load viewTeam else redirects to createTeam 
+	*/
 	public function index()
 	{
 		$query=$this->tournament_model->get_active_tournament();
@@ -56,14 +66,14 @@ class User extends CI_Controller {
 		}
 	}
 	
-	public function view_points()			//baki
+	/**
+		\brief shows total and individual points of the players from the user team. 
+		
+		If no team has created then a status message is shown
+	*/
+	public function view_points()			
 	{
-		/*
-		$data = array(
-               'login_error' => false,
-			   'registration_success' => false
-			);
-		*/
+		
 			
 		$user_team=$this->user_model->get_user_match_team($_SESSION['user_id']);
 		if($user_team==NULL)
@@ -75,14 +85,10 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			//print_r($user_team);
 			$data['user_team']=array();
-			
 			$data['m_point']=$this->user_model->get_user_match_point($_SESSION['user_id']);
 			$data['o_point']=$this->user_model->get_user_overall_point($_SESSION['user_id']);
-			
 			$data['team_name']=$this->user_model->user_team_name($_SESSION['user_id']);
-			
 			foreach($user_team['team_players'] as $u)
 			{
 				$info=array();
@@ -106,7 +112,7 @@ class User extends CI_Controller {
 			$data['captain_name']=$result['name'];
 			
 				
-			//GET MATCH DATA
+			//! GET MATCH DATA
 			$query = $this->match_model->get_previous_match();
 			$result=$query->row_array();
 			$prev_match_id = $result['match_id'];
@@ -118,19 +124,30 @@ class User extends CI_Controller {
 		}
 	}
 	
-	public function logout()	//done
+	
+	/**
+		stopping the session and redirect to homepage
+	*/
+	public function logout()
 	{
-		//Stop Session
+		//! Stop Session
 		$this->session->sess_destroy();
 		
-		//Redirect To Homepage
+		//! Redirect To Homepage
 		redirect('/home', 'refresh');
 	}
 	
 	
-	public function createTeam()		//Load Data for the view
+	/**
+		\brief if user has already created a team, then he/she must not be allowed to access it again
+		
+		\brief instead it will redirect user to view_team 
+		
+		If the user does not create a team then createTeam (CT : view) is loaded 
+		
+	*/
+	public function createTeam()		
 	{
-		//if user has already created a team, then he/she must not be allowed to access it again
 		$query=$this->tournament_model->get_active_tournament();
 			
 		if($query->num_rows()==0)
@@ -149,27 +166,15 @@ class User extends CI_Controller {
 			}
 		}
 		
-		//If user doesn't give any specifications, pass all players data to the view
-		//commented out, done dynamically using jQuery
-		//else, pass selected players
-		/*
-		if(isset($_POST['team_id'])) $team['team_id']=$_POST['team_id'];
-		else $team['team_id'] ='';
-				
-		if(isset($_POST['cat'])) $team['player_cat']=$_POST['cat'];
-		else $team['player_cat']='';
-			
-		if(!isset($_SESSION['user_team']))$_SESSION['user_team']=array();
-		*/
 		
-		//get running tournament id
+		//! get running tournament id
 		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
 		
-		//get the match id for which transfer(or team creation) is ongoing
+		//! get the match id for which transfer(or team creation) is ongoing
 		$match=$this->match_model->get_upcoming_match()->row_array();
 		$match_id=$match['match_id'];
 		
-		//if no match_id, then transfer should be disabled
+		//! if no match_id, then transfer should be disabled
 		if($match_id==NULL)
 		{
 			$data['success']=false;
@@ -178,14 +183,14 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			//get team list to show in the "select by team" option
+			//! get team list to show in the "select by team" option
 			$q=$this->tournament_model->get_active_tournament_teams();
 			$data['teams']=$q->result_array();
 			
-			//get player of the selected team, if team is not selected, get all players
+			//! get player of the selected team, if team is not selected, get all players
 			$data['players']=$this->tournament_model->get_tournament_players($team)->result_array();
 			
-			//fetch overall points for all players. payers[i] has overall points given by points[i]
+			//! fetch overall points for all players. payers[i] has overall points given by points[i]
 			$data['points']=array();
 			
 			foreach ($data['players'] as $k) {
@@ -193,10 +198,10 @@ class User extends CI_Controller {
 				array_push($data['points'], $temp);
 			}
 			
-			//save data in session for successive use
+			//! save data in session for successive use
 			$_SESSION['players_data']=$data;
 			
-			//GET MATCH DATA
+			//! GET MATCH DATA
 			$query = $this->match_model->get_next_match();
 			$result=$query->row_array();
 			$next_match_id = $result['match_id'];
@@ -204,12 +209,16 @@ class User extends CI_Controller {
 			$query=$this->match_model->get_match_info($next_match_id);
 			$data['matchData']=$query->row_array();
 
-			//load the view
+			//! load the view
 			$this->load->view('CT',$data);
 		}
 		
 	}
 	
+	/**
+		for debug
+	
+	*/
 	public function test()
 	{
 		$cur=$this->tournament_model->get_previous_match()->row_array();
@@ -217,25 +226,28 @@ class User extends CI_Controller {
 		$cur=$this->tournament_model->get_current_phase();
 		print_r($cur);
 	}
+	/**
+		verify all the necessary condition to create a user team.
+	*/
+	
 	public function createTeam_check()
 	{
 		
-		// Unescape the string values in the JSON array
+		//! Unescape the string values in the JSON array
 		$tableData = stripcslashes($_POST['pTableData']);
 		
-		// Decode the JSON array
+		//! Decode the JSON array
 		$tableData = json_decode($tableData,TRUE);
 
-		/*
-			CODE NEEDS TO BE ADJUSTED LATER
-			-- declare the constants inside another class
+		/**
+			 -- declare the constants
 		*/
 		
-		define("NUMBER_OF_PLAYERS",11); //change to 11 later
+		define("NUMBER_OF_PLAYERS",11); 
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
-		//echo 'Test';
-		//allowed team combinations
+		
+		//! allowed team combinations
 		$team_config=array(
 			array(
 				"wk"=>1,
@@ -280,28 +292,41 @@ class User extends CI_Controller {
 				"all"=>3
 			)
 		);
-		
-		//print_r($team_config);
-		
-		/*
-			#INDEXES
-				#PRIMARY INDEX: 0,1,2,...11
-					#0-10 : player's data
-					#11 : Captain id + Team Name
-				#SECONDARY INDEX
-					#FOR PRIMARY INDEX 0..10
-						#player_name
-						#player_cat
-						#price
-						#team_name
-						#points
-						#player_id
-					#FOR PRIMARY INDEX 11
-						#team_name : USER TEAM NAME
+		/**
+			\brief json_array indices
+			
+			\brief #INDICES
+			
+			\brief	#PRIMARY INDEX: 0,1,2,...11
+			
+			\brief		#0-10 : player's data
+			
+			\brief		#11 : Captain id + Team Name
+			
+			\brief	#SECONDARY INDEX
+			
+			\brief		#FOR PRIMARY INDEX 0..10
+			
+			\brief			#player_name
+			
+			\brief			#player_cat
+			
+			\brief			#price
+			
+			\brief			#team_name
+			
+			\brief			#points
+			
+			\brief			#player_id
+			
+			\brief		#FOR PRIMARY INDEX 11
+			
+			\brief			#team_name : USER TEAM NAME
+			
 						#captain_id : PLAYER ID OF THE CAPTAIN SELECTED BY THE USER
 		*/
 		
-		//CHECK USER TEAM VALUE
+		//! CHECK USER TEAM VALUE
 		
 		$value=0;
 		for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
@@ -309,12 +334,12 @@ class User extends CI_Controller {
 			$value+=substr($tableData[$i]['price'],1);
 		}
 		
-		//1.CHECK TEAM VALUE;
+		//! 1.CHECK TEAM VALUE;
 		if($value>MAX_TEAM_VALUE)
 		{
 			echo 'Your team value can not excede '.MAX_TEAM_VALUE.' . Please try again.';
 		}
-		else	//2. CHECK COMBINATION
+		else	//! 2. CHECK COMBINATION
 		{
 			
 			$n_bat=0;
@@ -325,7 +350,7 @@ class User extends CI_Controller {
 			$player_team_names=array();
 			$user_team=array();
 					
-			//GET TEAM COMBO
+			//! GET TEAM COMBO
 			for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
 			{
 				if($tableData[$i]['player_cat']==="BAT")
@@ -345,16 +370,14 @@ class User extends CI_Controller {
 					$n_all++;
 				}
 				
-				//GET THE TEAM_NAMES WRT THE PLAYERS
+				//! GET THE TEAM_NAMES WRT THE PLAYERS
 				array_push($player_team_names,$tableData[$i]['team_name']);
-				//GET PLAYER_ID 
+				//! GET PLAYER_ID 
 				array_push($user_team,$tableData[$i]['player_id']);
 				
 			}
 			
-			//echo $n_bat.'::'.$n_bowl.'::'.$n_wk.'::'.$n_all;
-			
-			//CHECK TEAM CONFIGURATION
+			//! CHECK TEAM CONFIGURATION
 			$allow_combo=false;
 			
 			foreach($team_config as $valid)
@@ -366,43 +389,35 @@ class User extends CI_Controller {
 				}
 			}
 			
-			//echo '>>>'.$allow_combo;
-			//$allow_combo = true; //delete it
 			
 			if($allow_combo)
 			{
 				
-				//3. CHECK TEAM DISTRIBUTION
+				//! 3. CHECK TEAM DISTRIBUTION OVER A SINGLE TEAM BASED ON A CONDITION LIKE 3 PLAYERS FROM 1 TEAM etc.
 				$freqs = array_count_values($player_team_names);
 				$max_same = max($freqs);
-				//echo $max_same;
 				if($max_same>MAX_FROM_SAME_TEAM)
 				{
-					//ALERT
+					//! ALERT IF VIOLATION OF RULES OCCUR
 					echo 'You can not take more than '.MAX_FROM_SAME_TEAM.' players from the same team. Please try again';
 				}
 				else
 				{
-					//OTHER CHECKS IF REQUIRED
+					//! OTHER CHECKS IF REQUIRED
 					
 					$cur_phase=$this->tournament_model->get_current_phase();
-					//echo $cur_phase.':P';
-					
 					if($cur_phase===NULL)
 					{
 						$cur_phase=$this->tournament_model->get_upcoming_phase();
-						//echo $cur_phase.':P';
 						if($cur_phase===NULL)
 						{
-							//SEVERE ERROR
+							//! SEVERE ERROR
 							die();
 						}
 					}
 					
-					//echo $cur_phase;
-					
-					//DO DATABASE OPERATIONS
-					//IF, SOMEHOW, THERE IS AN EXISTING TEAM, THEN REDIRECT
+					//! DO DATABASE OPERATIONS
+					//! IF, SOMEHOW, THERE IS AN EXISTING TEAM, THEN REDIRECT
 					$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
 			
 					if($var!=0)
@@ -411,7 +426,7 @@ class User extends CI_Controller {
 					}
 					else if($var==0)
 					{
-						//PROCEDE NORMALLY
+						//! PROCEDE NORMALLY
 						$user_id=$_SESSION['user_id'];
 						
 						$match=$this->match_model->get_upcoming_match()->row_array();
@@ -420,18 +435,16 @@ class User extends CI_Controller {
 						$captain_id=$tableData[NUMBER_OF_PLAYERS]['captain_id'];
 						$team_name = $tableData[NUMBER_OF_PLAYERS]['team_name'];
 						
-						//print_r($user_team);
-						
 						$val=$this->user_model->create_user_match_team($user_id, $match_id,$captain_id,$user_team,$team_name);
 						
-						//INITIALIZE FREE TRANSFER DATA
+						//! INITIALIZE FREE TRANSFER DATA
 						$this->user_model->create_user_phase_transfer_from_user($user_id, $cur_phase);
 						
-						//UNSET USER TEAM SESSION
+						//! UNSET USER TEAM SESSION
 						unset($_SESSION['players_data']);
 						
 						
-						//LOAD SUCCESS MESSAGE
+						//! LOAD SUCCESS MESSAGE
 						echo 'Your Team has been created successfully!';
 						
 					}
@@ -439,21 +452,28 @@ class User extends CI_Controller {
 			}
 			else
 			{
-				//ALERT
+				//! ALERT IF COMBO IS NOT ALLOWED
 				echo 'Please check the rules and scoring system and find a valid combo for your team.';
 			}
 		}
 		
 	}
 	
-	public function createTeam_proc()	//CONFIRMATION
+	
+	/**
+		confirm whether the team is created successfully or not
+	*/
+	public function createTeam_proc()	
 	{
 		$data['success']=true;
 		$data['success_message']="Team Successfully Created";
 		$this->load->view('status_message',$data);
 	}
 	
-	public function view_team()			//CHECK LATER
+	/**
+		shows the team created by the user along with points 
+	*/
+	public function view_team()
 	{
 		$data = array(
                'login_error' => false,
@@ -462,17 +482,17 @@ class User extends CI_Controller {
 			
 		$user_team=$this->user_model->get_current_user_match_team($_SESSION['user_id']);
 		
-		//print_r($user_team);
-		//if current match is not found, then transfer window is closed. 
-		//Just Show the old team, because it will be replicated after the transfer window re-opens
+		
+		//! if current match is not found, then transfer window is closed. 
+		//! Just Show the old team, because it will be replicated after the transfer window re-opens
 		if($user_team===NULL)
 		{
 			$user_team=$this->user_model->get_user_match_team($_SESSION['user_id']);
 		}
-		//Now, the user should have a team. Otherwise, he would be redirected to createTeam (#to be done)
-		//So, it is safe to assume that user_team is not null
+		//! Now, the user should have a team. Otherwise, he would be redirected to createTeam (#to be done)
+		//! So, it is safe to assume that user_team is not null
 
-		//still we are checking this for safety
+		//! still we are checking this for safety
 		if($user_team===NULL)
 		{
 			$data['success']=false;
@@ -484,13 +504,12 @@ class User extends CI_Controller {
 			
 			$data['user_team']=array();
 			
-			//Shows player's point for the previous match. No need to show it here
-			//$data['m_point']=$this->user_model->get_user_match_point($_SESSION['user_id']);		//Needs To Be Deleted From this and view
+			//! Shows player's point for the previous match. No need to show it here
 			
-			//Data for overall points of each player
+			//! Data for overall points of each player
 			$data['o_point']=$this->user_model->get_user_overall_point($_SESSION['user_id']);
 			
-			//Data for team name of user
+			//! Data for team name of user
 			$data['team_name']=$this->user_model->user_team_name($_SESSION['user_id']);
 			
 			foreach($user_team['team_players'] as $u)
@@ -513,19 +532,23 @@ class User extends CI_Controller {
 			$result=$this->player_model->get_player_info($data['captain_id']);
 			$data['captain_name']=$result['name'];
 			
-			//GET MATCH DATA
-			//match maynot need to be initialized
+			//! GET MATCH DATA
+			//! match maynot need to be initialized
 			$query = $this->match_model->get_next_match();
 			$result=$query->row_array();
 			$next_match_id = $result['match_id'];
 			
 			$query=$this->match_model->get_match_info($next_match_id);
 			$data['matchData']=$query->row_array();
-			$this->load->view('user_home',$data);			//View Needs Modification
+			$this->load->view('user_home',$data);			
 		}
 	}
 	
-	public function changeTeam()		//Load Data
+	
+	/**
+		enables user to change his/her current team
+	*/
+	public function changeTeam()		
 	{
 		$user_id=$_SESSION['user_id'];
 		
@@ -538,8 +561,8 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			//if a user doesn't have any team, he should create a team
-			//commented for testing. uncomment later
+			//! if a user doesn't have any team, he should create a team
+			//! commented for testing. uncomment later
 			
 			$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
 			
@@ -549,11 +572,11 @@ class User extends CI_Controller {
 			}
 			
 			$search_key['tournament_id']=$query_result;
-			//get the match id for which transfer(or team creation) is ongoing
+			//! get the match id for which transfer(or team creation) is ongoing
 			$match=$this->match_model->get_upcoming_match()->row_array();
 			$match_id=$match['match_id'];
 			
-			//if no match_id, then transfer should be disabled
+			//! if no match_id, then transfer should be disabled
 			if($match_id==NULL)
 			{
 				$data['success']=false;
@@ -562,14 +585,14 @@ class User extends CI_Controller {
 			}
 			else
 			{
-				//get team list to show in the "select by team" option
+				//! get team list to show in the "select by team" option
 				$q=$this->tournament_model->get_active_tournament_teams();
 				$data['teams']=$q->result_array();
 				
-				//get player of the selected team, if team is not selected, get all players
+				//! get player of the selected team, if team is not selected, get all players
 				$data['players']=$this->tournament_model->get_tournament_players($search_key)->result_array();
 				
-				//fetch overall points for all players. payers[i] has overall points given by points[i]
+				//! fetch overall points for all players. payers[i] has overall points given by points[i]
 				$data['points']=array();
 				
 				foreach ($data['players'] as $k) {
@@ -577,13 +600,11 @@ class User extends CI_Controller {
 					array_push($data['points'], $temp);
 				}
 				
-				//save data in session for successive use
+				//! save data in session for successive use
 				$_SESSION['players_data']=$data;
 				
-				//Now load data for user's current team on the left side view
+				//! Now load data for user's current team on the left side view
 				$u_team=$this->user_model->get_current_user_match_team($user_id);
-				//print_r($u_team);
-				
 				$cap=$u_team['captain'];
 				$data['user_team']=array();
 				$temp_team=$u_team['team_players'];
@@ -625,7 +646,9 @@ class User extends CI_Controller {
 					
 					$pl_ov_points=$this->player_model->player_overall_point($pl_id);
 					$pl_team=$inf['team_name'];
-						
+				
+
+					//! NEW PLAYERS TO BE ADDED
 					$newPlayer=array('player_id'=>$pl_id,'player_name'=>$pl_name,
 							'player_cat'=>$pl_cat,'price'=>$pl_price,
 							'total_points'=>$pl_ov_points,'team_name'=>$pl_team);
@@ -639,6 +662,8 @@ class User extends CI_Controller {
 					$len++;
 				}
 				
+				
+				//! PRESERVE/UPDATE BUTTON STATUS
 				for($index=0;$index<$len;$index++)
 				{
 					$val=false;
@@ -657,12 +682,13 @@ class User extends CI_Controller {
 					}
 				}
 				
-				//GET NUMBER OF REMAINING FREE TRANSFERS
+				//! GET NUMBER OF REMAINING FREE TRANSFERS
 				$data['free_transfers']=$this->user_model->get_remaining_transfers($user_id);
 				$data['team_name']=$this->user_model->user_team_name($user_id);
 
-				//GET MATCH DATA
-				//match need to be initialized
+				//! GET MATCH DATA
+				//! MATCH NEED TO INITIALIZED
+				
 				$query = $this->match_model->get_upcoming_match();
 				$result=$query->row_array();
 				$next_match_id = $result['match_id'];
@@ -670,27 +696,30 @@ class User extends CI_Controller {
 				$query=$this->match_model->get_match_info($next_match_id);
 				$data['matchData']=$query->row_array();
 				
-				//load the view
+				//! LOAD THE VIEW
 				$this->load->view('changeTeam',$data);
 				
 			}
 		}	
 	}
 	
+	/**
+		\brief almost same as createTeam_check()
+		
+	*/
 	public function changeTeam_check()
 	{
-		// Unescape the string values in the JSON array
+		//! Unescape the string values in the JSON array
 		$tableData = stripcslashes($_POST['pTableData']);
 		
-		// Decode the JSON array
+		//! Decode the JSON array
 		$tableData = json_decode($tableData,TRUE);
 		
-		//print_r($tableData);
-		define("NUMBER_OF_PLAYERS",11); //change to 11 later
+		define("NUMBER_OF_PLAYERS",11);
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
 		
-		//allowed team combinations
+		//! allowed team combinations
 		$team_config=array(
 			array(
 				"wk"=>1,
@@ -736,14 +765,14 @@ class User extends CI_Controller {
 			)
 		);
 		
-		//calculate user team value
+		//! calculate user team value
 		$value=0;
 		for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
 		{
 			$value+=substr($tableData[$i]['price'],1);
 		}
 		
-		//Condition 1.1 : Team VAlue Check
+		//! Condition 1.1 : Team VAlue Check
 		if($value>MAX_TEAM_VALUE)
 		{
 			echo 'Your team value can not excede '.MAX_TEAM_VALUE.' . Please try again.';
@@ -758,7 +787,7 @@ class User extends CI_Controller {
 			$player_team_names=array();
 			$user_team=array();
 					
-			//GET TEAM COMBO
+			//! GET TEAM COMBO
 			for($i=0;$i<NUMBER_OF_PLAYERS;$i++)
 			{
 				if($tableData[$i]['player_cat']==="BAT")
@@ -778,9 +807,9 @@ class User extends CI_Controller {
 					$n_all++;
 				}
 				
-				//GET THE TEAM_NAMES WRT THE PLAYERS
+				//! GET THE TEAM_NAMES WRT THE PLAYERS
 				array_push($player_team_names,$tableData[$i]['team_name']);
-				//GET PLAYER_ID 
+				//! GET PLAYER_ID 
 				array_push($user_team,$tableData[$i]['player_id']);
 				
 			}
@@ -798,15 +827,15 @@ class User extends CI_Controller {
 				}
 			}
 			
-			//CONDITION 1.2:: CHECK TEAM COMBINATION
+			//! CONDITION 1.2:: CHECK TEAM COMBINATION
 			if($allow_combo)
 			{
 				$freqs = array_count_values($player_team_names);
 				$max_same = max($freqs);
-				//Condition 1.3:: MAX PLAYERS FROM THE SAME TEAM
+				//! Condition 1.3:: MAX PLAYERS FROM THE SAME TEAM
 				if($max_same>MAX_FROM_SAME_TEAM)
 				{
-					//ALERT
+					//! ALERT
 					echo 'You can not take more than '.MAX_FROM_SAME_TEAM.' players from the same team. Please try again';
 				}
 				else
@@ -814,11 +843,12 @@ class User extends CI_Controller {
 					$user_id = $_SESSION['user_id'];
 					
 					$ft=$this->user_model->get_remaining_transfers($_SESSION['user_id']);
-					//echo $ft;
+
 					
 					$used_transfer=$this->user_model->get_used_transfers($user_id,$user_team);
 					
-					//Condition 2.1: No Transfer (Same Team Selected Again) -> only captain can be changed
+					//! Condition 2.1: No Transfer (Same Team Selected Again) -> only captain can be changed
+					
 					if($used_transfer==0)
 					{
 						$user_id=$_SESSION['user_id'];
@@ -833,10 +863,10 @@ class User extends CI_Controller {
 					}
 					else
 					{
-						//Condition 2.2 : Transfer Limit Exceded
+						//! Condition 2.2 : Transfer Limit Exceded
 						if($ft!=='UNLIMITED' and $used_transfer>$ft)
 						{
-							//ERROR :: TRANSFER LIMIT EXCEDED. DISALLOW USER
+							//! ERROR :: TRANSFER LIMIT EXCEDED. DISALLOW USER
 							echo 'Transfer Limit Exceded';
 						}
 						else
@@ -858,13 +888,16 @@ class User extends CI_Controller {
 			}
 			else
 			{
-				//ALERT
+				//! ALERT
 				echo 'Please check the rules and scoring system and find a valid combo for your team.';
 			}
 			
 		}
 	}
 	
+	/**
+		FINAL CHECKING BEFORE SUBSTITUITION HAPPENS
+	*/
 	public function changeTeam_confirm()
 	{
 		$data['transfer_outs']=$_SESSION['transfer_outs'];
@@ -873,10 +906,12 @@ class User extends CI_Controller {
 		$data['used_transfer']=$_SESSION['used_transfer'];
 		$data['free_transfers']=$_SESSION['free_transfers'];
 		
-		//BETTER IF THE VIEW IS REPLACED BY A POP-UP
 		$this->load->view('confirm_transfer',$data);
 	}
 	
+	/**
+		NECESSARY WORKS NEEDS TO BE DONE WHEN USER HIT THE SUBMIT BUTTON IN CHANGE TEAM CONFIRMATION PAGE
+	*/
 	public function changeTeam_proc()
 	{
 		$user_id=$_SESSION['user_id'];
@@ -888,14 +923,14 @@ class User extends CI_Controller {
 		
 		$user_match_team_id=$this->user_model->get_user_match_team_id($user_id,$match_id);
 		
-		//#01 : Change Captain
+		//! #01 : Change Captain
 		$this->user_model->change_captain($user_id,$match_id,$new_captain_id);
 		
-		//#02 : Replace Transferred Players
+		//! #02 : Replace Transferred Players
 		$ins=$_SESSION['transfer_ins'];
 		$outs=$_SESSION['transfer_outs'];
 		
-		//#REPLACE TEAM IN DATABASE AND ALSO UPDATE FREE TRANSFER COUNT
+		//! #REPLACE TEAM IN DATABASE AND ALSO UPDATE FREE TRANSFER COUNT
 		$this->user_model->replace_team_players($user_match_team_id,$ins,$outs);
 		
 		unset(
@@ -912,7 +947,10 @@ class User extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
-	public function topPlayers()				//done
+	/**
+		SHOW LIST OF PLAYERS AND USERS ACCORDING TO THEIR SORTED POINTS (GREATER FIRST) 
+	*/
+	public function topPlayers()			
 	{
 		$current_t=$this->tournament_model->get_active_tournament_id();
 		if($current_t==NULL)
@@ -931,13 +969,16 @@ class User extends CI_Controller {
 
 	}
 	
-	public function schedules()				//done
+	/**
+		SHOW UPCOMING MATCHES
+	*/
+	public function schedules()				
 	{
 		$query= $this->tournament_model->get_fixture();		
 		
 		if($query->num_rows()==0)
 		{
-			//echo "No Fixture Available for this tournament";	//Load No Fixture View
+			//! Load No Fixture View
 			$data=array(
 				'success'=>false,
 				'failure_message'=>"No Fixture Available for this tournament"
@@ -952,7 +993,10 @@ class User extends CI_Controller {
 		}
 	}
 	
-	public function results()		//DONE
+	/**
+		SHOW RESULTS
+	*/
+	public function results()
 	{
 		$query= $this->tournament_model->get_result();		
 		
@@ -963,7 +1007,6 @@ class User extends CI_Controller {
 				'success'=>false,
 				'fail_message'=>"No Result Available for this tournament"
 			);
-			//ektu jhamela ase
 			$this->load->view('templates/header2');
 			$this->load->view('status_message_Before_login',$data);
 		}
@@ -975,11 +1018,9 @@ class User extends CI_Controller {
 	}
 	
 	/**
-		<Implement>
+		REDIRECT TO EDIT PROFILE TO CHANGE PASSWORD
 	*/
-	
-	
-	public function changePassword()		//LATER
+	public function changePassword()
 	{	
 		$data = array(
 			'error' => false
@@ -988,7 +1029,11 @@ class User extends CI_Controller {
 		
 	}
 
-	public function changePassword_proc()				//LATER
+	
+	/**
+		UPDATE THE DATABASE FOR CHANGED PASSWORD
+	*/
+	public function changePassword_proc()
 	{
 		$pass=$this->input->post('password');
 		$conpass=$this->input->post('confirm_password');
@@ -1011,35 +1056,26 @@ class User extends CI_Controller {
 			$this->load->view('status_message',$data);
 		}
 		
+	}
+	
+	/**
+		SHOW POINT TABLE
 		
-	}
-	
-	
-	
-	public function changeCaptain()				//LATER
-	{
-	
-	}
-
+	*/
 	public function pointTable()	
 	{
-		//comment this after implementation
 		$data=array(
 				'success'=>true,
 				'success_message'=>"Point Table will be added very soon"
 			);
 		$this->load->view('status_message',$data);
-		
-		/*
-		<Implement>
-		$this->load->view('point_table',$data);
-		*/
 	}
 	
+	/**
+		SHOW RULES AND SCORING
+	*/
 	public function howToPlay()		
 	{
-		// <Implement>
-		//	Just adjust the view
 		$this->load->view('how_to_play');
 	}
 		
