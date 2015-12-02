@@ -12,7 +12,7 @@ Show Team Status
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
-	<script type="text/javascript" src="https://jquery-json.googlecode.com/files/jquery.json-2.4.min.js" ></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery.json-2.4.min.js"); ?>" ></script>
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
@@ -255,7 +255,7 @@ Show Team Status
 	</tr>
 	<tr>
 		<td colspan="2">
-		<button style="margin-left:35%"type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg" >Create Team</button>
+		<button style="margin-left:35%"type="button" name="submit" id="TeamSubmit" class="btn btn-info btn-lg" >Change Team</button>
 		<div id="elevenPlayerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 
@@ -407,7 +407,7 @@ $(document).ready(function() {
 		}
 		
 		var stringCurrentPrice = $("#topTable").find('#priceTag').html();
-		alert(stringCurrentPrice);
+		//alert(stringCurrentPrice);
 		var newStringCurrentPrice = stringCurrentPrice.substr(1);
 		var intCurrentPrice = parseInt(newStringCurrentPrice, 10);
 		var clickedPlayerPrice = parseInt(price.substr(1), 10); // dollar removed from price or right table 

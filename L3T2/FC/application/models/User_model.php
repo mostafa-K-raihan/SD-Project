@@ -253,14 +253,21 @@ class User_model extends CI_Model
 		}
 	}
 
-	public function get_current_user_match_team($user_id)	//RUNNING
+	/**
+		\brief Find the list of players currently in user's team.
+		
+		\brief input : $user_id --- int
+		
+		output : array('captain'=> int [captain's id] , 'team_players'=>array('player_id' => int [id of each player]))
+	*/
+	public function get_current_user_match_team($user_id)	
 	{
-		//GET UPCOMING MATCH ID
+		//! GET UPCOMING MATCH ID
 		$query = $this->match_model->get_upcoming_match();
 		$result=$query->row_array();
 		$prev_match_id = $result['match_id'];
 		
-		//GET  USER MATCH TEAM
+		//! GET  USER MATCH TEAM
 		$sql='SELECT * FROM user_match_team WHERE user_id=? AND match_id=?';
 		$query=$this->db->query($sql,array($user_id,$prev_match_id));
 		
@@ -268,27 +275,34 @@ class User_model extends CI_Model
 		
 		$result=$query->row_array();
 		
-		//GET CAPTAIN ID
+		//! GET CAPTAIN ID
 		$data['captain']=$result['captain_id'];
 		
-		//GET  MATCH TEAM ID
+		//! GET  MATCH TEAM ID
 		$prev_match_team_id=$result['user_match_team_id'];
 		
-		//GET ALL USER_MATCH_TEAM_PLAYERS
+		//! GET ALL USER_MATCH_TEAM_PLAYERS
 		$sql='SELECT player_id FROM user_match_team_player WHERE user_match_team_id=?';
 		$query=$this->db->query($sql,array($prev_match_team_id));
 		$data['team_players']=$query->result_array();
 		return $data;
 	}
 	
+	/**
+		\brief Find the list of players who were in user's team in the last(previous) match.
+		
+		\brief input : $user_id --- int
+		
+		output : array('captain'=> int [captain's id] , 'team_players'=>array('player_id' => int [id of each player]))
+	*/
 	public function get_user_match_team($user_id)	//RUNNING
 	{
-		//GET PREVIOUS MATCH ID
+		//! GET PREVIOUS MATCH ID
 		$query = $this->tournament_model->get_previous_match();
 		$result=$query->row_array();
 		$prev_match_id = $result['match_id'];
 		
-		//GET PREVIOUS USER MATCH TEAM
+		//! GET PREVIOUS USER MATCH TEAM
 		$sql='SELECT * FROM user_match_team WHERE user_id=? AND match_id=?';
 		$query=$this->db->query($sql,array($user_id,$prev_match_id));
 		
@@ -296,19 +310,30 @@ class User_model extends CI_Model
 		
 		$result=$query->row_array();
 		
-		//GET PREVIOUS CAPTAIN ID
+		//! GET PREVIOUS CAPTAIN ID
 		$data['captain']=$result['captain_id'];
 		
-		//GET PREVIOUS MATCH TEAM ID
+		//! GET PREVIOUS MATCH TEAM ID
 		$prev_match_team_id=$result['user_match_team_id'];
 		
-		//GET ALL PREVIOUS USER_MATCH_TEAM_PLAYERS
+		//! GET ALL PREVIOUS USER_MATCH_TEAM_PLAYERS
 		$sql='SELECT player_id FROM user_match_team_player WHERE user_match_team_id=?';
 		$query=$this->db->query($sql,array($prev_match_team_id));
 		$data['team_players']=$query->result_array();
 		return $data;
 	}
 	
+	/**
+		\brief returns the user_match_team_id for a specific user and match
+		
+		\brief input:
+		
+			\brief $user_id --- int
+			
+			\brief $match_id --- int
+			
+		\brief output: int [user_match_team_id]
+	*/
 	public function get_user_match_team_id($user_id,$match_id)
 	{
 		$sql='SELECT * FROM user_match_team WHERE user_id=? AND match_id=?';
@@ -317,7 +342,10 @@ class User_model extends CI_Model
 		return $result['user_match_team_id'];
 	}
 	
-	public function get_user_match_point($user_id)	//RUNNING
+	/**
+		Get matchday points of a user (for current match). Uses get_user_match_point_v2($user_id,$m_id) for calculation
+	*/
+	public function get_user_match_point($user_id)	
 	{
 		$m=$this->tournament_model->get_previous_match()->row_array();
 		$match_id=$m['match_id'];
@@ -331,8 +359,12 @@ class User_model extends CI_Model
 		return $total;
 	}
 	
-	
-	public function get_user_match_point_v2($u_id,$m_id)	//RUNNING
+	/**
+		\brief returns matchday points of a user for any given match.
+		
+		\brief inputs: $u_id => user_id , $m_id => match_id for the given match
+	*/
+	public function get_user_match_point_v2($u_id,$m_id)	
 	{
 		$total=0;
 		$cur_tournament=$this->tournament_model->get_active_tournament_id();
@@ -344,7 +376,7 @@ class User_model extends CI_Model
 		$u_team_id=$result['user_match_team_id'];
 		$cap=$result['captain_id'];
 
-		//ADD CAPTAIN'S POINT
+		//! ADD CAPTAIN'S POINT
 		$sql='SELECT UPDATE_PLAYER_POINT(?, ?, ?) AS pl_point';
 		$query=$this->db->query($sql,array($cap, $m_id,$cur_tournament));
 		
@@ -355,7 +387,7 @@ class User_model extends CI_Model
 		}
 		
 		
-		//ADD TEAM PLAYERS POINT
+		//! ADD TEAM PLAYERS POINT
 		$sql='SELECT player_id
 					FROM user_match_team_player
 					WHERE user_match_team_id=?';
@@ -379,7 +411,11 @@ class User_model extends CI_Model
 	}
 	
 	
-	
+	/**
+		\brief returns phase points of a user for any given phase.
+		
+		\brief inputs: $u_id => user_id , $ph_id => phase_id for the given phase
+	*/
 	public function get_user_phase_point_v2($u_id,$ph_id)
 	{
 		$total=0;
@@ -399,7 +435,13 @@ class User_model extends CI_Model
 	}
 	
 	
-	
+	/**
+		\brief returns overall points of a user for the current tournament
+		
+		\brief inputs: $u_id => user_id
+		
+		\brief output: int [overall_point]
+	*/
 	public function get_user_overall_point($u_id)
 	{
 		$total=0;
@@ -418,6 +460,7 @@ class User_model extends CI_Model
 		return $total;
 	}
 	
+	
 	public function user_team_name($user_id)
 	{
 		$tournament_id=$this->tournament_model->get_active_tournament_id();
@@ -425,6 +468,7 @@ class User_model extends CI_Model
 		$query=$this->db->query($sql,array($tournament_id,$user_id))->row_array();
 		return $query['user_team_name'];
 	}
+	
 	
 	public function change_captain($user_id,$match_id,$new_captain_id)
 	{
@@ -436,6 +480,13 @@ class User_model extends CI_Model
 		return;
 	}
 	
+	/**
+		\brief Used to complete user transfer.
+		
+		\brief input:
+		
+			\brief $user_match_team_id : id of the user_match_team entry , $ins : array of int (player_id of transferred in players) , $outs : array of int (player_id of transferred out players)
+	*/
 	public function replace_team_players($user_match_team_id,$ins,$outs)
 	{
 		$i=0;
@@ -453,7 +504,7 @@ class User_model extends CI_Model
 			$i++;
 		}
 		
-		//UPDATE TRANSFER COUNT IF APPLICABLE
+		//! UPDATE TRANSFER COUNT IF APPLICABLE
 		
 		$sql='SELECT transfers_made
 				FROM user_phase_transfer
@@ -462,7 +513,7 @@ class User_model extends CI_Model
 		
 		if($result['transfers_made']===NULL)
 		{
-			//DO NOTHING---THERE IS NO ENTRY FOR CURRENT PHASE I.E. USER HAVE UNLIMITED FREE TRANSFERS
+			//! DO NOTHING---THERE IS NO ENTRY FOR CURRENT PHASE I.E. USER HAVE UNLIMITED FREE TRANSFERS
 		}
 		else
 		{
@@ -498,7 +549,9 @@ class User_model extends CI_Model
 		$query=$this->db->query($sql,array($user_id,$phase_id));
 	}
 	
-	
+	/**
+		Find top users based on overall points. Returns the array in a sorted order (descending) of points
+	*/
 	public function top_users()
 	{
 		$current_t=$this->tournament_model->get_active_tournament_id();
@@ -512,7 +565,6 @@ class User_model extends CI_Model
 				where u.tournament_id=?';
 
 			$result = $this->db->query($sql,$current_t)->result_array();
-			//print_r($result);
 			
 			$info = array();
 			$i = 0;

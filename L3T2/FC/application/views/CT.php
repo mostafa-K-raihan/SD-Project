@@ -490,7 +490,7 @@ $(document).ready(function() {
 		$("#Table tbody").on("click", ".btn-danger", function(event){
 			var closest = $(this).closest('tr');
 			var playerID = closest.find('#pid').val();
-			alert(closest.find('#price').val());
+			//alert(closest.find('#price').val());
 			var playerPrice = parseInt(closest.find('#price').val().substr(1),10);
 			var currentBalance = parseInt($("#topTable").find('#priceTag').html().substr(1),10);
 			var updatedBalance = playerPrice+currentBalance;

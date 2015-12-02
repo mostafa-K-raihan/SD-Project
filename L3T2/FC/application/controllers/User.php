@@ -80,8 +80,8 @@ class User extends CI_Controller {
 		{
 			$data['success']=false;
 			$data['fail_message']="You donot have any previous team";
-			$this->load->view('templates/header2');
-			$this->load->view('status_message_Before_login',$data);
+			//$this->load->view('templates/header2');
+			$this->load->view('status_message',$data);
 		}
 		else
 		{
@@ -323,7 +323,7 @@ class User extends CI_Controller {
 			
 			\brief			#team_name : USER TEAM NAME
 			
-						#captain_id : PLAYER ID OF THE CAPTAIN SELECTED BY THE USER
+			\brief #captain_id : PLAYER ID OF THE CAPTAIN SELECTED BY THE USER
 		*/
 		
 		//! CHECK USER TEAM VALUE
@@ -562,7 +562,6 @@ class User extends CI_Controller {
 		else
 		{
 			//! if a user doesn't have any team, he should create a team
-			//! commented for testing. uncomment later
 			
 			$var=$this->user_model->exist_tournament_user($_SESSION['user_id']);
 			
@@ -648,7 +647,7 @@ class User extends CI_Controller {
 					$pl_team=$inf['team_name'];
 				
 
-					//! NEW PLAYERS TO BE ADDED
+					// NEW PLAYERS TO BE ADDED
 					$newPlayer=array('player_id'=>$pl_id,'player_name'=>$pl_name,
 							'player_cat'=>$pl_cat,'price'=>$pl_price,
 							'total_points'=>$pl_ov_points,'team_name'=>$pl_team);
@@ -835,7 +834,6 @@ class User extends CI_Controller {
 				//! Condition 1.3:: MAX PLAYERS FROM THE SAME TEAM
 				if($max_same>MAX_FROM_SAME_TEAM)
 				{
-					//! ALERT
 					echo 'You can not take more than '.MAX_FROM_SAME_TEAM.' players from the same team. Please try again';
 				}
 				else
@@ -888,7 +886,7 @@ class User extends CI_Controller {
 			}
 			else
 			{
-				//! ALERT
+				// ALERT
 				echo 'Please check the rules and scoring system and find a valid combo for your team.';
 			}
 			
