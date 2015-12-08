@@ -371,7 +371,15 @@ class User_model extends CI_Model
 
 		$sql='SELECT `user_match_team_id`,`captain_id`
 		FROM `user_match_team` WHERE `user_id`='.$u_id.' AND `match_id` ='.$m_id.'';
-		$result=$this->db->query($sql)->row_array();
+		
+		$query=$this->db->query($sql);
+		
+		if($query->num_rows()==0)
+		{
+			return 0;
+		}
+		
+		$result=$query->row_array();
 		
 		$u_team_id=$result['user_match_team_id'];
 		$cap=$result['captain_id'];
