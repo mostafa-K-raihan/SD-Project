@@ -66,45 +66,6 @@ class Tournament_model extends CI_Model
 	
 	public function get_tournament_players($team)
 	{
-		/*
-		//#OLD IMPLEMENTATION
-		if($team['team_id']==="" && $team['player_cat']==="")
-		{
-			$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price, T.team_name as Team_name, "true" as Button_status
-					from player P, player_tournament PT, team T
-					where P.player_id = PT.player_id and P.team_id=T.team_id and PT.tournament_id=?';
-			
-			$query = $this->db->query($sql,array($team['tournament_id']));
-		}
-		
-		else if($team['team_id']==="")
-		{
-			$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price
-					from player P, player_tournament PT
-					where P.player_id = PT.player_id and PT.tournament_id=? and P.player_cat=?';
-			
-			$query = $this->db->query($sql,array($team['tournament_id'],$team['player_cat']));
-		}
-		else if($team['player_cat']==="")
-		{
-			$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price
-					from player P, player_tournament PT
-					where P.player_id = PT.player_id and P.team_id=? and PT.tournament_id=?';
-					
-			$query = $this->db->query($sql,array($team['team_id'],$team['tournament_id']));
-		}
-		else
-		{
-			$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price
-					from player P, player_tournament PT
-					where P.player_id = PT.player_id and P.team_id=? and PT.tournament_id=? and P.player_cat=?';
-					
-			$query = $this->db->query($sql,array($team['team_id'],$team['tournament_id'],$team['player_cat']));
-		}
-		
-		return $query;
-		*/
-		
 		$sql = 'select P.name as Player_name, P.player_id as Player_id, P.player_cat as Category, P.price as Price, T.team_name as Team_name, "true" as Button_status
 					from player P, player_tournament PT, team T
 					where P.player_id = PT.player_id and P.team_id=T.team_id and PT.tournament_id=?';
@@ -113,6 +74,32 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
+	public function get_tournament_players_by_category($cat)
+	{
+		$sql = 'select P.name as player_name, P.player_id as player_id, P.player_cat as category, P.price as price, T.team_name as team_name
+					from player P, player_tournament PT, team T
+					where P.player_id = PT.player_id and P.player_cat=? and P.team_id=T.team_id and PT.tournament_id=current_tournament()';
+			
+		$query = $this->db->query($sql,array($cat));
+		return $query;
+	}
+	
+	/**
+		Return all players ( information ) participating in the current tournament 
+	*/
+	public function get_all_players()
+	{
+		$sql = 'select P.name as player_name, P.player_id as player_id, P.player_cat as category, P.price as price, T.team_name as team_name
+					from player P, player_tournament PT, team T
+					where P.player_id = PT.player_id and P.team_id=T.team_id and PT.tournament_id=current_tournament()';
+			
+		$query = $this->db->query($sql)->result_array();
+		return $query;
+	}
+	
+	/**
+		Return match schedule
+	*/
 	public function get_fixture($tournament_id=0)		//DONE
 	{
 		if($tournament_id==0)
@@ -131,6 +118,9 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
+	/**
+		Return completed match results
+	*/
 	public function get_result($tournament_id=0)	//DONE
 	{
 		if($tournament_id==0)

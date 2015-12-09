@@ -25,7 +25,7 @@ class Stat extends CI_Controller {
 			$this->load->model('stat_model');
 			$this->load->model('tournament_model');
 			$this->load->model('user_model');
-			//$this->load->model('team_model');
+			$this->load->model('team_model');
 			$this->load->model('player_model');
 		}
 		else
@@ -36,7 +36,230 @@ class Stat extends CI_Controller {
 	 
 	public function index()
 	{
-		$this->load->view('stat');
+		//$this->load->view('stat');
+		$this->category_overall_stat();
+	}
+	
+
+	/**
+		Show statistics of point contribution of individual players for the user
+	*/
+	public function player_overall_stat()
+	{
+		/// 1. Find all player's id
+		$players = $this->tournament_model->get_all_players();
+		
+		$playerData=array();
+		/// 2. For Each Player
+		
+		foreach($players as $p)
+		{
+			/// 2(a). Find all 'match_id' & 'point' s where the player played for the user
+			$temp = $this->stat_model->get_user_team_match_id($_SESSION['user_id'],$p['player_id']);
+			
+			if($temp->num_rows()==0)
+			{
+				continue;
+			}
+			else
+			{
+				$temp = $temp->result_array();
+			}
+			
+			
+			$p['points']=0;
+			
+			/// 2(a).1. For Each match_id, calculate point and add them
+			foreach($temp as $t)
+			{
+				if($t['captain_id']==$p['player_id'])
+				{
+					$p['points']+=($this->player_model->get_player_point_by_match($p['player_id'],$t['match_id']))*2;
+				}
+				else
+				{
+					$p['points']+=$this->player_model->get_player_point_by_match($p['player_id'],$t['match_id']);
+				}
+			}
+		
+			array_push($playerData,$p);
+			
+			//test codes
+			//print_r($p);
+			//echo '<br><br>';
+		}
+		
+		$multiSort = array();
+		foreach ($playerData as $key => $row)
+		{
+			$multiSort[$key] = $row['points'];
+		}
+		array_multisort($multiSort, SORT_DESC, $playerData);
+			
+		//print_r($playerData);
+		//echo '<br><br>';
+		foreach($playerData as $pd)
+		{
+			print_r($pd);
+			//echo $pd['points'];
+			echo '<br>';
+		}
+	}
+	
+	/**
+		Show statistics of point contribution of each team for the user
+	*/
+	public function team_overall_stat()
+	{
+		$teamData = array();
+		
+		///1. Find All 'team_id's of the tournament
+		$teams = $this->tournament_model->get_active_tournament_teams()->result_array();
+		
+		foreach($teams as $team)
+		{
+			/// 1.1. Find all player's id of that team only
+			$players = $this->team_model-> get_team_players($team['team_id'])->result_array();
+			
+			$playerData=array();
+			$teamPoint=0;
+			/// 1.2. For Each Player
+			foreach($players as $player)
+			{
+				/// 1.2(a). Find all 'match_id' & 'point' s where the player played for the user
+				$temp = $this->stat_model->get_user_team_match_id($_SESSION['user_id'],$player['player_id']);
+				
+				if($temp->num_rows()==0)
+				{
+					continue;
+				}
+				else
+				{
+					$temp = $temp->result_array();
+				}
+				
+				
+				$player['points']=0;
+				
+				/// 1.2(a).1. For Each match_id, calculate point and add them
+				foreach($temp as $t)
+				{
+					if($t['captain_id']==$player['player_id'])
+					{
+						$player['points']+=($this->player_model->get_player_point_by_match($player['player_id'],$t['match_id']))*2;
+					}
+					else
+					{
+						$player['points']+=$this->player_model->get_player_point_by_match($player['player_id'],$t['match_id']);
+					}
+				}
+			
+				$teamPoint+=$player['points'];
+			}
+			
+			$team['teamPoint']=$teamPoint;
+			
+			array_push($teamData,$team);
+			
+		}
+		
+		$multiSort = array();
+		foreach ($teamData as $key => $row)
+		{
+			$multiSort[$key] = $row['teamPoint'];
+		}
+		array_multisort($multiSort, SORT_DESC, $teamData);
+		
+		/**
+			TEST
+		*/
+		foreach($teamData as $pd)
+		{
+			print_r($pd);
+			//echo $pd['points'];
+			echo '<br>';
+		}
+		/**
+			END OF TEST
+		*/
+	}
+	
+	/**
+		Show statistics of point contribution of each category for the user
+	*/
+	public function category_overall_stat()
+	{
+		$catData = array();
+		
+		///1. Find All 'team_id's of the tournament
+		$categories = array('BAT','BOWL','ALL','WK');
+		$catData=array();
+			
+		foreach($categories as $cat)
+		{
+			//echo $cat.'<br>';
+			
+			/// 1.1. Find all player's id of that team only
+			$players = $this->tournament_model-> get_tournament_players_by_category($cat)->result_array();
+			//print_r($players);
+			//echo '<br><br>';
+			
+			$catPoint=0;
+			/// 1.2. For Each Player
+			foreach($players as $player)
+			{
+				/// 1.2(a). Find all 'match_id' & 'point' s where the player played for the user
+				$temp = $this->stat_model->get_user_team_match_id($_SESSION['user_id'],$player['player_id']);
+				
+				if($temp->num_rows()==0)
+				{
+					continue;
+				}
+				else
+				{
+					$temp = $temp->result_array();
+				}
+				
+				
+				$player['points']=0;
+				
+				/// 1.2(a).1. For Each match_id, calculate point and add them
+				foreach($temp as $t)
+				{
+					if($t['captain_id']==$player['player_id'])
+					{
+						$player['points']+=($this->player_model->get_player_point_by_match($player['player_id'],$t['match_id']))*2;
+					}
+					else
+					{
+						$player['points']+=$this->player_model->get_player_point_by_match($player['player_id'],$t['match_id']);
+					}
+				}
+			
+				$catPoint+=$player['points'];
+			}
+			
+			$category['cat']=$cat;
+			$category['catPoint']=$catPoint;
+			
+			array_push($catData,$category);
+			
+		}
+		
+		//print_r($catData);
+		
+		$multiSort = array();
+		foreach ($catData as $key => $row)
+		{
+			$multiSort[$key] = $row['catPoint'];
+		}
+		array_multisort($multiSort, SORT_DESC, $catData);
+		
+		foreach($catData as $c)
+		{
+			print_r($c);
+			echo '<br><br>';
+		}
 	}
 	
 	public function stat_per_match()

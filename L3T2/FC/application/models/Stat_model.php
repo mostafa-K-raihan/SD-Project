@@ -41,5 +41,20 @@ class Stat_model extends CI_Model
 		
 		return $result;
 	}
+	
+	/**
+		Return 'match_id' and corresponding 'captain_id' s in which the given player was in the user's team.
+		If No such entry, return -1
+	*/
+	public function get_user_team_match_id($user_id,$player_id)
+	{
+		$sql='SELECT umt.match_id, umt.captain_id FROM `user_match_team_player` umtp, user_match_team umt
+		WHERE umt.user_id=? and
+		umt.user_match_team_id = umtp.user_match_team_id and
+		umtp.player_id=?';
+		$temp=$this->db->query($sql,array($user_id,$player_id));
+		
+		return $temp;
+	}
 }
 ?>
