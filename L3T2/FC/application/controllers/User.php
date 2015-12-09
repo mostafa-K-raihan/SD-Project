@@ -247,51 +247,6 @@ class User extends CI_Controller {
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
 		
-		//! allowed team combinations
-		$team_config=array(
-			array(
-				"wk"=>1,
-				"bat"=>5,
-				"bowl"=>3,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>5,
-				"bowl"=>4,
-				"all"=>1
-			),
-			array(
-				"wk"=>1,
-				"bat"=>4,
-				"bowl"=>5,
-				"all"=>1
-			),
-			array(
-				"wk"=>1,
-				"bat"=>4,
-				"bowl"=>4,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>4,
-				"bowl"=>3,
-				"all"=>3
-			),
-			array(
-				"wk"=>1,
-				"bat"=>3,
-				"bowl"=>5,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>3,
-				"bowl"=>4,
-				"all"=>3
-			)
-		);
 		/**
 			\brief json_array indices
 			
@@ -378,17 +333,7 @@ class User extends CI_Controller {
 			}
 			
 			//! CHECK TEAM CONFIGURATION
-			$allow_combo=false;
-			
-			foreach($team_config as $valid)
-			{
-				if($valid['bat']==$n_bat && $valid['bowl']==$n_bowl && $valid['all']==$n_all && $valid['wk']==$n_wk)
-				{
-					$allow_combo=true;
-					break;
-				}
-			}
-			
+			$allow_combo=true;
 			
 			if($allow_combo)
 			{

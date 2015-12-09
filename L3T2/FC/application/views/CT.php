@@ -101,7 +101,7 @@ Show Team Status
 </nav>
 
  
-
+<!-- Home away teams and match starting time id:topTable0-->
 
 <div>
 	<table class="table table-bordered"	 class="table table-striped" id = "topTable0" style="table-layout:fixed">
@@ -118,6 +118,9 @@ Show Team Status
 		</tbody>
 	</table>
 </div>
+
+<!-- top row indicating any change made in selecting players ie balance, # of players id: topTable -->
+
 	<table class="table table-bordered" class="table table-striped" id = "topTable" style="table-layout:fixed">
 		<tbody>
 			
@@ -136,6 +139,8 @@ Show Team Status
 		</tbody>
 	</table>
 
+	<!-- sorting category and team and select id: dataTable-->
+	
 	<table id="dataTable">
 		<tr>
 			<td width="300"></td>
@@ -170,6 +175,7 @@ Show Team Status
 			</form>
 		</tr>
 	</table>
+		<!-- Own team players area , selected players are inserted one by one in this area id: Table-->
 		<div class="col-md-6">
 			<div style="overflow:scroll;height:500px;width:100%;overflow:auto;">
 				<table class="table table-bordered" class="table table-striped" id = "Table" >
@@ -280,7 +286,7 @@ Show Team Status
 				<tr height="50"></tr>
 			</table>
 		</div>
-	
+		<!-- All team players area id: myTable-->
 		<div class="col-md-6" style="overflow:scroll;height:500px;width:50%;overflow:auto">
 		<table id = "myTable"class="table table-bordered">
 			<thead>
@@ -333,6 +339,7 @@ Show Team Status
 
 
 
+	<!-- javascript needed to dynamically change a lot of things in this page-->
 <script type="text/javascript">
 	
 $(document).ready(function() {
@@ -342,67 +349,199 @@ $(document).ready(function() {
 	var jArray2 = <?php echo json_encode ($points);?>;
 	var bats,bowl,wk,all;
 	bats=bowl=wk=all=0;
-					
+	var MAXIMUM_BATSMAN = 5;
+	var MINIMUM_BATSMAN = 4;
+	var MAXIMUM_BOWLER = 5;
+	var MINIMUM_BOWLER = 4;
+	var MAXIMUM_WK = 1;
+	var MINIMUM_WK = 1;
+	var MAXIMUM_AR = 2;
+	var MINIMUM_AR = 1;
+	var map = new Map();
+	var buttonDisable;
+	var numberOfPlayer;
+	// add button functionality
+	//add button will be disabled
+	//get all relevant data from the selected row
+	//change topTable0 data dynamically
+	//append selected row into Table
+	
 	$("#myTable tbody").on("click", ".btn-success", function(event) {
-		var tr=$(this).closest('tr');
-		tr.find("#addButtonID").removeClass("btn-success");
-		tr.find("#addButtonID").addClass("btn-default");
-		var pName = tr.find('#pName').val();
+		buttonDisable = true; // default button disable action
+		var tr=$(this).closest('tr');  // which row is clicked
+		 
+		var pName = tr.find('#pName').val(); // get the values of the row
 		var category = tr.find('#cat').val();
 		var price = tr.find('#price').val();
-		//alert(price);
-		
 		var pid = tr.find('#pid').val();
 		var points = tr.find('#points').val();
 		var teamName = tr.find('#players_team').val();
-		for(var i=0; i < jArray.length; i++){
-			if($.trim(pid) == jArray[i]['Player_id'])
-			{
-				jArray[i]['Button_status']='false';
+		
+		//check the player if he is categorically consistent
+		if(category == 'BAT'){
+			bats++;
+			if(bats > MAXIMUM_BATSMAN){
+				alert('Sorry you can only take maximum ' + MAXIMUM_BATSMAN + ' batsman');
+				// button change hobe na, player add hobe na, topTable o change hobe na
+				bats--;
+				buttonDisable = false;
+			}else if(bats == MAXIMUM_BATSMAN){
+				if(bowl == MAXIMUM_BOWLER || all == MAXIMUM_AR){
+					alert('Team combination failed view the rules and scoring section');
+					// button change hobe na, player add hobe na, topTable o change hobe na
+					bats--;
+					buttonDisable = false;
+				}
+			}
+		}
+		
+		else if(category == 'BOWL'){
+			bowl ++;
+			if(bowl > MAXIMUM_BOWLER){
+				alert('Sorry you can only take maximum ' + MAXIMUM_BOWLER + ' bowler');
+				// button change hobe na, player add hobe na, topTable o change hobe na
+				bowl--;
+				buttonDisable = false;
+				
+			}else if(bowl == MAXIMUM_BOWLER){
+				if(bats == MAXIMUM_BATSMAN || all == MAXIMUM_AR){
+					alert('Team combination failed view the rules and scoring section');
+					// button change hobe na, player add hobe na, topTable o change hobe na
+					bowl--;
+					buttonDisable = false;
+					
+				}
+			}
+		}
+		
+		else if(category == 'WK'){
+			wk++;
+			if(wk > MAXIMUM_WK){
+				alert('Sorry you can only take maximum ' + MAXIMUM_WK + ' wicketkeeper');
+				// button change hobe na, player add hobe na
+				wk--;
+				buttonDisable = false;
+			}
+		}
+		
+		else if(category == 'ALL'){
+			all++;
+			if(all > MAXIMUM_AR){
+				alert('Sorry you can only take maximum ' + MAXIMUM_AR + ' all-rounder');
+				// button change hobe na, player add hobe na
+				all--;
+				buttonDisable = false;
+			}else if(all == MAXIMUM_AR){
+				if(bats == MAXIMUM_BATSMAN || bowl == MAXIMUM_BOWLER){
+					alert('Team combination failed view the rules and scoring section');
+					all--;
+					buttonDisable = false;		
+				}
+			}
+		}
+		
+		//check the player is teamwise consistent
+		if(!map.has(teamName)){
+			if(buttonDisable == true)map.set(teamName, 1);
+			
+		}else {
+			var k = map.get(teamName);
+			k++;
+			if(k>3){
+				alert('Sorry you can only take 3 players from each team');
+			
+				//category er count komate hobe
+				
+				if(buttonDisable==true)
+				{
+					//Remove Button e variable gula revert korte hobe
+					if(category == 'BAT')bats--;
+					else if(category == 'BOWL')bowl--;
+					else if(category == 'ALL')all--;
+					else if(category == 'WK')wk--;
+					
+				}
+				
+				//button change hobe na, table e add hobe na ar top table 0 teo change hobe na
+				buttonDisable = false;
+				
+				k--;
+			}else {
+				if(buttonDisable == true) map.set(teamName,k);
 			}
 			
 		}
+		
+		//check the player is too costly
 		var stringCurrentPrice = $("#topTable").find('#priceTag').html();
 		var newStringCurrentPrice = stringCurrentPrice.substr(1);
 		var intCurrentPrice = parseInt(newStringCurrentPrice, 10);
 		var clickedPlayerPrice = parseInt(price.substr(1), 10);
 		var changedPrice = (intCurrentPrice-clickedPlayerPrice);
 		if(changedPrice<0){
-			$('#topTable td').eq(1).css('background-color','red');
-			$('#topTable td').eq(1).html("$" + changedPrice.toString());
-		
-		}else{
-			$('#topTable td').eq(1).css('background-color','blue');
-			$('#topTable td').eq(1).html("$" + changedPrice.toString());
+			alert('You are out of balance');
+			//player add hobe na balance o change hobe na button disable hobe na
+			buttonDisable = false;
 		}
-		if(category == 'BAT'){
-			bats++;
-		
-			$('#topTable td').eq(3).html(bats.toString());
-		}else if(category == 'BOWL'){
-			bowl ++;
-			$('#topTable td').eq(5).html(bowl.toString());
-		}else if(category == 'WK'){
-			wk++;
-			$('#topTable td').eq(7).html(wk.toString());
-		}else if(category == 'ALL'){
-			all++;
-			$('#topTable td').eq(9).html(all.toString());
+	   
+	   if(buttonDisable == true){
+			numberOfPlayer++;
+			if(numberOfPlayer>11){
+				alert('You have selected 11 players already');
+				numberOfPlayer--;
+				if(category == 'BAT')bats--;
+				else if(category == 'BOWL')bowl--;
+				else if(category == 'ALL')all--;
+				else if(category == 'WK')wk--;
+				if(map.has(teamName)){
+					var k = map.get(teamName);
+					k--;
+					map.set(teamName, k);
+				}
+			}else {
+			// disable the button
+				tr.find("#addButtonID").removeClass("btn-success");
+				tr.find("#addButtonID").addClass("btn-default");
+				
+				//append in the Table
+				var largeStr = '<form method="post" action="#">';
+				largeStr+='<button type="button" class="btn btn-danger">Remove</button>';
+				largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"></input>';
+				largeStr+='<input type="hidden" id="cat" name="cat" value="'+category+'"></input>';
+				largeStr+='<input type="hidden" id="price" name="price" value="'+price+'"></input>';
+				largeStr+='<input type="hidden" id="pid" name="player_id" value="'+pid+'"></input>';
+				largeStr+='<input type="hidden" id="players_team" name="team_name" value="'+teamName+'"></input>';
+				
+				largeStr+='<input type="hidden" id="points" name="points" value="'+points+'"</input></form>';
+				var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + teamName + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
+				
+				//append the player into captain position
+				var captain = '<option value="' + pid + '">' + pName +  '</option>';
+				$('#captainSelection').append(captain);
+				$('#Table').append(str);
+				
+				//change topTable0 heading
+				$('#topTable td').eq(1).css('background-color','blue');
+				//price change
+				$('#topTable td').eq(1).html("$" + changedPrice.toString());
+				//categorywise number change
+				if(category == 'BAT')$('#topTable td').eq(3).html(bats.toString());
+				else if(category == 'BOWL')$('#topTable td').eq(5).html(bowl.toString());
+				else if(category == 'WK')$('#topTable td').eq(7).html(wk.toString());
+				else if(category == 'ALL')$('#topTable td').eq(9).html(all.toString());
+				//button status saved
+				for(var i=0; i < jArray.length; i++){
+				if($.trim(pid) == jArray[i]['Player_id'])
+				{
+					jArray[i]['Button_status']='false';
+				}
+			}
 		}
-		
-		var largeStr = '<form method="post" action="#">';
-		largeStr+='<button type="button" class="btn btn-danger">Remove</button>';
-		largeStr+='<input type="hidden" id="pName" name="name" value="'+pName+'"></input>';
-        largeStr+='<input type="hidden" id="cat" name="cat" value="'+category+'"></input>';
-		largeStr+='<input type="hidden" id="price" name="price" value="'+price+'"></input>';
-		largeStr+='<input type="hidden" id="pid" name="player_id" value="'+pid+'"></input>';
-		largeStr+='<input type="hidden" id="players_team" name="team_name" value="'+teamName+'"></input>';
-		
-		largeStr+='<input type="hidden" id="points" name="points" value="'+points+'"</input></form>';
-		var str = '<tr class="child"><td>' + pName + '</td><td>' + category + '</td><td>' + price + '</td><td>' + teamName + '</td><td>' + points + '</td><td>'+ largeStr + '</td></tr>';
-		var captain = '<option value="' + pid + '">' + pName +  '</option>';
-		$('#captainSelection').append(captain);
-	   $('#Table').append(str);
+	   }else {
+			//nothing should be happened here 
+			//some error msg
+			//system will net let the user to add this row to the user player table
+	   }
     });
 	
 		
@@ -495,17 +634,40 @@ $(document).ready(function() {
 			var currentBalance = parseInt($("#topTable").find('#priceTag').html().substr(1),10);
 			var updatedBalance = playerPrice+currentBalance;
 			var category = closest.find('#cat').val();
+			var teamName = closest.find('#players_team').val();
 			if(category == 'ALL'){
 				all--;
+				if(map.has(teamName)){
+					var k = map.get(teamName);
+					k--;
+					map.set(teamName,k);
+				}
 				$('#topTable td').eq(9).html(all.toString());
 			}else if(category == 'BOWL'){
 				bowl--;
+				if(map.has(teamName)){
+					var k = map.get(teamName);
+					k--;
+					map.set(teamName,k);
+				}
 				$('#topTable td').eq(5).html(bowl.toString());
 			}else if(category == 'BAT'){
 				bats--;
+				
+				if(map.has(teamName)){
+					var k = map.get(teamName);
+					k--;
+					map.set(teamName,k);
+				}
 				$('#topTable td').eq(3).html(bats.toString());
 			}else if(category == 'WK'){
 				wk--;
+				
+				if(map.has(teamName)){
+					var k = map.get(teamName);
+					k--;
+					map.set(teamName,k);
+				}
 				$('#topTable td').eq(7).html(wk.toString());
 			}
 			if(updatedBalance>=0){
