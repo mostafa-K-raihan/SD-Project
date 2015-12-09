@@ -52,6 +52,39 @@ echo'
               
             </tr>';
             $c++;
+			
+			if($r['RUNS']>$r['RUNS2'])
+			{
+				echo '<tr>
+					<td></td>
+					<td colspan="3" style="text-align:center">
+						<font color="blue">'.$r['Home Team'].' won by '.(10-$r['Wickets']).' Wickets</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			else if($r['RUNS']<$r['RUNS2'])
+			{
+				echo '<tr>
+					<td></td>
+					<td colspan="3" style="text-align:center">
+						<font color="blue">'.$r['Away Team'].' won by '.(10-$r['Wickets2']).' Wickets</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			else
+			{
+				echo '<tr>
+					<td></td>
+					
+					<td colspan="3" style="text-align:center">
+						<font color="green">Match Drawn</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			
           }
           echo'</tbody>
         </table>
