@@ -107,6 +107,8 @@ echo'
             else if($c%4==1)$d=$c2;
             else if($c%4==2)$d=$c3;
             else if($c%4==3)$d=$c4;
+			
+			
           echo'  <tr class='.$d.'>
               <td>'.$r['Time'].'</td>
               <td>'.$r['Home Team'].'</td>
@@ -117,7 +119,42 @@ echo'
               
             </tr>';
             $c++;
+			
+			if($r['RUNS']>$r['RUNS2'])
+			{
+				echo '<tr>
+					<td></td>
+					<td colspan="3" style="text-align:center">
+						<font color="blue">'.$r['Home Team'].' won by '.(10-$r['Wickets']).' Wickets</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			else if($r['RUNS']<$r['RUNS2'])
+			{
+				echo '<tr>
+					<td></td>
+					<td colspan="3" style="text-align:center">
+						<font color="blue">'.$r['Away Team'].' won by '.(10-$r['Wickets2']).' Wickets</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			else
+			{
+				echo '<tr>
+					<td></td>
+					
+					<td colspan="3" style="text-align:center">
+						<font color="green">Match Drawn</font>
+					</td>
+					<td></td>
+				</tr>';
+			}
+			
+			
           }
+		  
           echo'</tbody>
         </table>
       </div>
