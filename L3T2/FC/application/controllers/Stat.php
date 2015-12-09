@@ -170,18 +170,7 @@ class Stat extends CI_Controller {
 		}
 		array_multisort($multiSort, SORT_DESC, $teamData);
 		
-		/**
-			TEST
-		*/
-		foreach($teamData as $pd)
-		{
-			print_r($pd);
-			//echo $pd['points'];
-			echo '<br>';
-		}
-		/**
-			END OF TEST
-		*/
+		return $teamData;
 	}
 	
 	/**
@@ -239,7 +228,18 @@ class Stat extends CI_Controller {
 				$catPoint+=$player['points'];
 			}
 			
-			$category['cat']=$cat;
+			if($cat=="BAT")
+			{
+				$category['cat']="Batsman";
+			}else if($cat == "BOWL"){
+				$category['cat']="Bowler";
+			}else if($cat == "WK"){
+				$category['cat'] = "WicketKeeper";
+			}else if($cat=="ALL"){
+				$category['cat']="All-Rounder";
+			}
+			
+			
 			$category['catPoint']=$catPoint;
 			
 			array_push($catData,$category);
@@ -255,11 +255,9 @@ class Stat extends CI_Controller {
 		}
 		array_multisort($multiSort, SORT_DESC, $catData);
 		
-		foreach($catData as $c)
-		{
-			print_r($c);
-			echo '<br><br>';
-		}
+		$data['catData']=$catData;
+		$data['teamData']=$this->team_overall_stat();
+		$this->load->view('BargraphView',$data);
 	}
 	
 	public function stat_per_match()
