@@ -34,6 +34,15 @@ class Player_model extends CI_Model
 		else return $total['PT'];
 	}
 	
+	public function get_player_point_by_match($player_id,$match_id)
+	{
+		$sql='SELECT update_player_point(?,?,current_tournament()) as PT';
+		$total= $this->db->query($sql,array($player_id,$match_id))->row_array();
+		
+		if($total['PT']===NULL) return 0;
+		else return $total['PT'];
+	}
+	
 	public function top_players()
 	{
 		$current_t=$this->tournament_model->get_active_tournament_id();

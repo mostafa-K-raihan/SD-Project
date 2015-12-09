@@ -56,7 +56,7 @@
         <li><a href="<?php echo site_url('user'); ?>">HOME <span class="sr-only">(current)</span></a></li>
 		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
-        <li class="active"><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
+        <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
 		<li><a href="<?php echo site_url('user/howToPlay'); ?>">Rules and Scoring</a></li>
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
@@ -81,7 +81,7 @@
 echo'
 
   <div class="col-xs-12" style="text-align:center !important;float:left;">
-    <h3> <span class="label label-success" > Results </span> </h3>
+    <h3> <span class="label label-success" > Match Statistics </span> </h3>
   </div>
 
 
@@ -91,10 +91,9 @@ echo'
         <table class="table table-hover table-bordered">
           <thead>
             <th>Time</th>
-            <th>Home Team </th>
-            <th>Runs/Wickets (Overs )</th>
-			<th>Away Team </th>
-			<th>Runs/Wickets (Overs)</th>
+            <th>Home Team
+            Vs Away Team </th>
+			<th>Earned Points</th>
           </thead>
           <tbody>';
           $c2="active";
@@ -107,15 +106,30 @@ echo'
             else if($c%4==1)$d=$c2;
             else if($c%4==2)$d=$c3;
             else if($c%4==3)$d=$c4;
+			
+			
           echo'  <tr class='.$d.'>
               <td>'.$r['Time'].'</td>
-              <td>'.$r['Home Team'].'</td>
-              <td>'.$r['RUNS'].'/'.$r['Wickets'].'('.$r['Overs'].'.'.$r['Balls'].')</td>
-			  <td>'.$r['Away Team'].'</td>
-			   <td>'.$r['RUNS2'].'/'.$r['Wickets2'].'('.$r['Overs2'].'.'.$r['Balls2'].')</td>
-			  
-              
+              <td><font color="blue">'.$r['Home Team'].'</font> vs <font color="blue">'.$r['Away Team'].'</font></td>
+			  <td>'.$r['points'].'</td>
             </tr>';
+			
+			/**
+			//ON CLICK EXPAND
+			if($r['detail']==-1)
+			{
+				echo 'No Data Available';
+			}
+			else
+			{
+				foreach($r['detail'] as $t)
+				{
+					print_r($t);
+					echo '<br><br>';
+				}
+			}
+			echo '<pre>END</pre><br><br>';
+			*/
             $c++;
           }
           echo'</tbody>

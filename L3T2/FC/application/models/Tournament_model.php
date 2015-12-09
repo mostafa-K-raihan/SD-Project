@@ -138,7 +138,7 @@ class Tournament_model extends CI_Model
 			$tournament_id=$this->get_active_tournament_id();
 		}
 		
-		$sql = 'SELECT M.`start_time` as Time, T1.`team_name` as `Home Team`,
+		$sql = 'SELECT M.`match_id` as match_id , M.`start_time` as Time, T1.`team_name` as `Home Team`,
 				M.`team1_total_runs` AS RUNS,M.`team1_wickets` AS Wickets,
 				Floor((M.`team1_balls`)/6) AS Overs, MOD(M.`team1_balls`,6) AS Balls,
 				T2.`team_name` as `Away Team`,
