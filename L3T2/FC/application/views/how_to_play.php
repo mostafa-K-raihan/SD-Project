@@ -141,19 +141,18 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="howToPlay" style="color: white">
 				<h3>Creating Your Team</h3>
-				<p>Create a team by selecting your cricketers with any of the 7 possible combinations available.</p>
-				<table class = "table table-striped table table-bordered" id="comboTable">
+				<p> From each team you can only choose minimum three players </p>
+				
+				<table class = "table table-striped table table-bordered" id="comboTable" style="table-layout: fixed">
 					<thead>
-						<th>Player Type</th><th>Combo 1</th><th>Combo 2</th><th>Combo 3</th><th>Combo 4</th><th>Combo 5</th><th>Combo 6</th><th>Combo 7</th>
+						<th>Player Type</th><th>Number of player</th>
 					</thead>
 					
 					<tbody>
-						<tr><td>Wicketkeeper</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-						<tr><td>Batsmen</td><td>5</td><td>5</td><td>4</td><td>4</td><td>4</td><td>3</td><td>3</td></tr>
-						<tr><td>Bowlers</td><td>3</td><td>4</td><td>5</td><td>4</td><td>3</td><td>5</td><td>4</td></tr>
-						<tr><td>All-Rounders</td><td>2</td><td>1</td><td>1</td><td>2</td><td>3</td><td>2</td><td>3</td></tr>
-						<tr><td>Total Cricketers</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td></tr>
-		
+						<tr><td>Batsman</td><td>4(Minimum)</td></tr>
+						<tr><td>Bowler</td><td>4(Minimum)</td></tr>
+						<tr><td>Wicketkeeper</td><td>1(Exactly)</td></tr>
+						<tr><td>All-Rounder</td><td>1(Minimum)</td></tr>
 					</tbody>
 				</table>
 				<h3>Manage Your Team</h3>
