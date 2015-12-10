@@ -132,10 +132,6 @@ echo'
 					}
 					else
 					{
-						if($r['is_captain']==1)
-						{
-							$r['name']=$r['name']." (Captain) ";
-						}
 						
 						echo '<table class="table table-hover" id="table1">
 						<thead>
@@ -144,14 +140,23 @@ echo'
 							<th>Player Team</th>
 							<th>Point</th>
 						</thead>
-						<tbody>
-							<tr>
-								<td>'.$r['name'].'</td>
-								<td>'.$r['player_cat'].'</td>
-								<td>'.$r['team_name'].'</td>
-								<td>'.$r['match_point'].'</td>
-							</tr>
-						</tbody>
+						<tbody>';
+						
+						foreach($r['detail'] as $d)
+						{
+							if($d['is_captain']==1)
+							{
+								$d['name']=$d['name']." (Captain) ";
+							}
+							
+							echo'	<tr>
+									<td>'.$d['name'].'</td>
+									<td>'.$d['player_cat'].'</td>
+									<td>'.$d['team_name'].'</td>
+									<td>'.$d['match_point'].'</td>
+								</tr>';
+						}		
+						echo '</tbody>
 					</table>';
 					
 					}
