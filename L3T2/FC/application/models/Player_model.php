@@ -1,11 +1,17 @@
 <?php
+/**
+	Database Level Operations for mainly `player` entity
+*/
 class Player_model extends CI_Model 
 {
-	public function __construct()	//DONE
+	public function __construct()	
 	{
         $this->load->database();
 	}
 	
+	/**
+		Get Total Point of a player in current tournament
+	*/
 	public function player_overall_point($player_id)
 	{
 		$sql = 'SELECT get_player_overall_point(CURRENT_TOURNAMENT(), ?) as TP';
@@ -18,12 +24,18 @@ class Player_model extends CI_Model
 
 	}
 	
+	/**
+		Get Player's information (name, category, price, team name etc) for a given `player_id`
+	*/
 	public function get_player_info($player_id)
 	{
 		$sql='SELECT *,T.team_name FROM player,team T WHERE player_id=? and player.team_id=T.team_id';
 		return $this->db->query($sql,$player_id)->row_array();
 	}
 	
+	/**
+		Get points gained by the player in the last match
+	*/
 	public function get_player_last_match_point($player_id)
 	{
 		$match_id=$this->tournament_model->get_previous_match_id();
@@ -34,6 +46,9 @@ class Player_model extends CI_Model
 		else return $total['PT'];
 	}
 	
+	/**
+		Get points gained by a player in a particular match (given by `match_id`)
+	*/
 	public function get_player_point_by_match($player_id,$match_id)
 	{
 		$sql='SELECT update_player_point(?,?,current_tournament()) as PT';
@@ -43,6 +58,9 @@ class Player_model extends CI_Model
 		else return $total['PT'];
 	}
 	
+	/**
+		Return all player's overall data (irrespective of user team) sorted by total points gained
+	*/
 	public function top_players()
 	{
 		$current_t=$this->tournament_model->get_active_tournament_id();
@@ -67,8 +85,7 @@ class Player_model extends CI_Model
 				$t=$this->team_model->get_team_name($inf['team_id']);
 				$inf['team_name']=$t;
 				$inf['player_id']=$temp['player_id'];
-				//$sql = 'select get_player_overall_point(CURRENT_TOURNAMENT(), ?) as Point';
-				//$q = $this->db->query($sql,$r['player_id'])->row_array();
+				
 				$inf['point']=$this->player_overall_point($r['player_id']);
 				$info[$i]=$inf;
 				$i++;
@@ -80,10 +97,7 @@ class Player_model extends CI_Model
 				$price[$key] = $row['point'];
 			}
 			array_multisort($price, SORT_DESC, $info);
-			// foreach ($info as $key => $r)
-			// {
-			//     print_r($r);
-			// }
+			
 			return $info;
 
 

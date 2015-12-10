@@ -1,4 +1,7 @@
 <?php
+/**
+	Provides Database Support For Different Statistical Operation
+*/
 class Stat_model extends CI_Model 
 {
     public function __construct()
@@ -9,7 +12,7 @@ class Stat_model extends CI_Model
 	/**
 		Returns the array of user team players' id [ array("player_id"=>value) ] for the given match id
 	*/
-	/// required data : player_name, team , category , player_id
+	/// returned data : player_name, team , category , player_id
 	public function get_user_player_by_match($user_match_team_id)
 	{
 		$sql='SELECT u.player_id , p.player_cat , p.name , t.team_name  FROM `user_match_team_player` u ,

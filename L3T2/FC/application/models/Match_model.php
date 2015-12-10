@@ -14,7 +14,8 @@ class Match_model extends CI_Model
 	}
 	
 	/**
-		Get the match data(next match,started by admin) for which transfer is enabled . Returns the query result directly without array parsing.
+		\brief Get the match data(next match,started by admin) for which transfer is enabled . 
+		Returns the query result directly without array parsing.
 	*/
 	public function get_upcoming_match()			//NOTE :: IMPLEMENTATION OF THIS FUNCTION IS DIFFERENT FOR ADMIN AND USER
 	{
