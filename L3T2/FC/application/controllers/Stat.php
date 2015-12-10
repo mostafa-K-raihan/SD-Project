@@ -37,7 +37,7 @@ class Stat extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('stat');
-		$this->category_overall_stat();
+		$this->per_category_per_team_stat();
 	}
 	
 
@@ -98,12 +98,14 @@ class Stat extends CI_Controller {
 			
 		//print_r($playerData);
 		//echo '<br><br>';
-		foreach($playerData as $pd)
+		/*foreach($playerData as $pd)
 		{
 			print_r($pd);
 			//echo $pd['points'];
 			echo '<br>';
-		}
+		}*/
+		$data['playerData']=$playerData;
+		$this->load->view('playerByplayerStat',$data);
 	}
 	
 	/**
@@ -176,7 +178,7 @@ class Stat extends CI_Controller {
 	/**
 		Show statistics of point contribution of each category for the user
 	*/
-	public function category_overall_stat()
+	public function per_category_per_team_stat()
 	{
 		$catData = array();
 		

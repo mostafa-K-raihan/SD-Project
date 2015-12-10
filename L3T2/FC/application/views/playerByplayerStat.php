@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Cricket</title>
-	
+
+	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
+    <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
+	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
+	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
-	
 	<style>
 		body{
 			background-color: #f9f9f9;
@@ -16,7 +19,7 @@
 	</style>
 	
 </head>
-
+</head>
 <body style="height=800;">
   <!-- navigation bar -->
     <nav class="navbar navbar-inverse">
@@ -40,11 +43,11 @@
 		<li><a href="<?php echo site_url('user/view_points'); ?>">Latest Points </a></li>
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
-    	<li><a href="<?php echo site_url('user/howToPlay'); ?>">Rules and Scoring</a></li>		
-
+        <li><a href="<?php echo site_url('user/howplayerDatalay'); ?>">Rules and Scoring</a></li>
+        
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
-        <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
-        <li class="dropdown">
+        <li  class="active"><a href="<?php echo site_url('user/topplayers'); ?>">top Scorers </a></li>
+        <li class="active" class="dropdown">
 				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Statistics<span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Per Category Per Team</a></li>
@@ -56,7 +59,7 @@
 		<li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-			<li class="active" class="dropdown">
+			<li class="dropdown">
 				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user_name'];?> <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="<?php echo site_url('user/changePassword'); ?>">Change Password</a></li>
@@ -70,50 +73,51 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div>
-	<?php
-		if($error==true)
-		{
-			echo '<div class="alert alert-danger">
-				<strong><span class="glyphicon glyphicon-remove"></span> Password and Confirm Password didn\'t match </strong>
-			 </div>';
-		}
-	?>
-</div>
-<div class="container" style="padding-top: 60px;">
-	<h1 class="page-header">Change Password</h1>
-	
-	<div class="row">
-		<!-- left column -->
-		
-		
-		<!-- edit form column -->
-		<div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-			
-			
-			<form class="form-horizontal" method = "post" action="<?php echo site_url('user/changePassword_proc'); ?>" role="form">
-				
-				<div class="form-group">
-					<label class="col-md-3 control-label">New Password:</label>
-					<div class="col-md-8">
-						<input class="form-control" value="" name="password" type="password" required >
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-3 control-label">Confirm password:</label>
-					<div class="col-md-8">
-						<input class="form-control" value="" name="confirm_password" type="password" required >
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-3 control-label"></label>
-					<div class="col-md-8">
-						  <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+<!--
+  <div class="col-xs-12" style="text-align:center !important;float:left;">
+    <h3> <span class="label label-success" > playerData Scoring Players </span> </h3>
+  </div>
+-->
+
+<div class="container-fluid">
+	<h2 style="text-align:center">Points gained from Players</h2>
+	<div style="overflow:scroll;height:595px;width:100%;overflow:auto;">
+		<table class="table table-hover table-bordered">
+			  <thead>
+					<th>Player Name</th>
+					<th>Team Name</th>
+					<th>Category</th>
+					<th>Price</th>
+					<th>Point</th>
+			  </thead>
+			  <tbody>
+				  <?php
+				  $c1="active";
+				  $c3="success";
+				  $c2="info";
+				  $c4="warning";
+				  $c=1;$d="";
+				  
+				  $COUNT=min(sizeof($playerData,0),50);
+				  $index=0;
+				  for($index=0;$index<$COUNT;$index++)
+				  {
+					if($index%4==0)$d=$c1;
+					else if($index%4==1)$d=$c2;
+					else if($index%4==2)$d=$c3;
+					else if($index%4==3)$d=$c4;
+					echo'  <tr class='.$d.'>
+					  <td>'.$playerData[$index]['player_name'].'</td>
+					  <td>'.$playerData[$index]['team_name'].'</td>
+					  <td>'.$playerData[$index]['category'].'</td>
+					  <td>$'.$playerData[$index]['price'].'</td>
+					  <td>'.$playerData[$index]['points'].'</td>
+					</tr>';
+					
+				  }
+				  ?>
+			  </tbody>
+		</table>
+	</div>	
+</div> <!-- container fluid finished-->
 </body>
-</html>

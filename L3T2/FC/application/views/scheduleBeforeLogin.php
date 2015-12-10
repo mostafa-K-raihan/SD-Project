@@ -1,8 +1,5 @@
 <head>
 <style>
-		body{
-			background-color: teal;
-		}
 		.table-striped>thead{
 			background-color: #fcb;
 		}

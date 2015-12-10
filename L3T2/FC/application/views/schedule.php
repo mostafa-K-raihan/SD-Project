@@ -12,22 +12,13 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
     <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
 	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
 	<style>
-		.navbar-inverse{
-			background : #c4c4c4;
-		}
-		.navbar-inverse .navbar-brand{
-			color : Navy; 
-		}
-		.navbar-inverse .navbar-nav > li > a {
-			color: #000;
-		}
+	
 		body{
 			background-color: #f9f9f9;
 		}
@@ -73,7 +64,16 @@
 		
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
-        <li><a href="#">Prizes </a></li>
+        <li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Statistics<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Per Category Per Team</a></li>
+					<li><a href="<?php echo site_url('stat/stat_per_match'); ?>">Match by Match</a></li>
+					<li><a href="<?php echo site_url('stat/player_overall_stat'); ?>">Player by Player</a></li>
+					
+				</ul>
+		</li>
+		<li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">

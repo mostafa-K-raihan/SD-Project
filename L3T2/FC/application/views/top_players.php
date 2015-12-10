@@ -13,28 +13,6 @@
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 	<style>
-		.navbar-inverse{
-			background : #c4c4c4;
-		}
-		.navbar-inverse .navbar-brand{
-			color : Navy; 
-		}
-		.navbar-inverse .navbar-nav > li > a {
-			color: #000;
-		}
-		#mainTabs li a{
-			color: black;
-		}
-		.nav-tabs > li.active > a,
-        .nav-tabs > li.active > a:hover,
-        .nav-tabs > li.active > a:focus{
-            color: #555555;
-            background-color: DarkGray;  
-        } 
-		
-		.nav-tabs > li > a:hover{
-			background-color: Tomato;
-		}
 		body{
 			background-color: #f9f9f9;
 		}
@@ -73,7 +51,16 @@
         
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li  class="active"><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
-        <li><a href="#">Prizes </a></li>
+        <li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Statistics<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Per Category Per Team</a></li>
+					<li><a href="<?php echo site_url('stat/stat_per_match'); ?>">Match by Match</a></li>
+					<li><a href="<?php echo site_url('stat/player_overall_stat'); ?>">Player by Player</a></li>
+					
+				</ul>
+		</li>
+		<li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
