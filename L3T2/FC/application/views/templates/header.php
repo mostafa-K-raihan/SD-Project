@@ -8,15 +8,6 @@
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-theme.min.css"); ?>" />
 	<style>
-		.navbar-inverse{
-			background : #c4c4c4;
-		}
-		.navbar-inverse .navbar-brand{
-			color : Navy; 
-		}
-		.navbar-inverse .navbar-nav > li > a {
-			color: #000;
-		}
 		body{
 			background-color: teal;
 		}

@@ -12,7 +12,6 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
     <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
 	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>

@@ -12,22 +12,12 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
     <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
 	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 
 	<style>
-		.navbar-inverse{
-			background : #c4c4c4;
-		}
-		.navbar-inverse .navbar-brand{
-			color : Navy; 
-		}
-		.navbar-inverse .navbar-nav > li > a {
-			color: #000;
-		}
 		body{
 			background-color: #f9f9f9;
 		}
