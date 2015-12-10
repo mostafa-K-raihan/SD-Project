@@ -1,16 +1,21 @@
 <?php
+
 /**
 		Provides Database Level Functionality for `match` table
-*/
-	
+*/	
 class Match_model extends CI_Model 
 {
-	
+	/**
+		Load Database Class to connect
+	*/
     public function __construct()	
 	{
         $this->load->database();
 	}
 	
+	/**
+		Get the match data(next match,started by admin) for which transfer is enabled . Returns the query result directly without array parsing.
+	*/
 	public function get_upcoming_match()			//NOTE :: IMPLEMENTATION OF THIS FUNCTION IS DIFFERENT FOR ADMIN AND USER
 	{
 		//is_started must be 1 for user_end
@@ -27,14 +32,11 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
-	/*
-		THIS VERSION IS USED TO RETRIEVE MATCH DATA 
-		ALTHOUGH THE MATCH MAYNOT APPER IN GET_UPCOMING_MATCH
-		IF AN ADMIN DOESN'T INITIALIZE IT
+	/**
+		Get next match data, (started or not) .
 	*/
 	public function get_next_match()			//JUST SEARCH USING TIME. MAY NOT NEED TO BE STARTED BY ADMIN
 	{
-		//is_started must be 1 for user_end
 		$sql = 'SELECT * FROM `match` 
 				WHERE tournament_id=current_tournament() AND (start_time-CURRENT_TIMESTAMP) = 
 				(	
@@ -48,7 +50,10 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_previous_match()		//done
+	/**
+		Get previous match (Least recent) information(started by admin)
+	*/
+	public function get_previous_match()		
 	{
 		$cur_tour=$this->tournament_model->get_active_tournament_id();
 		
@@ -65,7 +70,10 @@ class Match_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_match_info($match_id)	//done
+	/**
+		Get match data for a given match id
+	*/
+	public function get_match_info($match_id)	
 	{
 		$sql = 'SELECT M.`start_time` as Time,M.`team1_id` as home_team_id,
 				T1.`team_name` as home_team_name,M.`team2_id` as away_team_id,T2.`team_name` as away_team_name 
