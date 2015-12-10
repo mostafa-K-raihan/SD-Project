@@ -125,7 +125,7 @@ echo'
               <td><font color="blue">'.$r['Home Team'].'</font> <font color="#399">vs</font> <font color="blue">'.$r['Away Team'].'</font></td>
 			  <td>'.$r['points'].'</td>
             </tr>
-			<tr class="prevRow"><div class="slidethis"><td colspan="3"><p>Detailed Stat</p>';
+			<tr class="prevRow"><td colspan="3"><div class="slidethis"><p>Detailed Stat</p>';
 					if(count($r['detail'])==0)
 					{
 						echo '<font color="red">No Data Available</font>';
@@ -161,7 +161,7 @@ echo'
 					
 					}
 					
-				echo'</td></div></tr>';
+				echo'</div></td></tr>';
 			
 			/*
 			//ON CLICK EXPAND
@@ -194,7 +194,7 @@ $(function() {
         event.stopPropagation();
         var $target = $(event.target);
         if ( $target.closest("td").attr("colspan") > 1 ) {
-            $target.slideUp();
+            $target.find(".slidethis").slideUp();
         } else {
 			//$("td[colspan=3]").hide();
             $target.closest("tr").next().find("td[colspan=3]").slideToggle();

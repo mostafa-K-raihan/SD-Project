@@ -1,8 +1,12 @@
 <?php
+/**
+		Provides Database Level Functionality for `match` table
+*/
+	
 class Match_model extends CI_Model 
 {
-
-    public function __construct()	//DONE
+	
+    public function __construct()	
 	{
         $this->load->database();
 	}
