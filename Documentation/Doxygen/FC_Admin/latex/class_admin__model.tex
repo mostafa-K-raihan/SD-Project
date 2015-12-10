@@ -1,0 +1,84 @@
+\hypertarget{class_admin__model}{}\section{Admin\+\_\+model Class Reference}
+\label{class_admin__model}\index{Admin\+\_\+model@{Admin\+\_\+model}}
+Inheritance diagram for Admin\+\_\+model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_admin__model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_admin__model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_admin__model_a5f339cfcda0ea331041ada24a74dcb16}{get\+\_\+login\+Info} (\$data)
+\item 
+\hyperlink{class_admin__model_a42ae92008340fbccbc6fc300410cc6fc}{start\+\_\+phase} (\$phase\+\_\+id)
+\item 
+\hyperlink{class_admin__model_a25fb351800264a943c8d9d70385ac1a4}{create\+\_\+user\+\_\+phase\+\_\+transfer} (\$user\+\_\+id, \$phase\+\_\+id)
+\item 
+\hyperlink{class_admin__model_a6fb35302e2461fe5b3d955a6065e99a0}{start\+\_\+match} (\$match\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Database support for admin 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_admin__model_a095c5d389db211932136b53f25f39685}{}\index{Admin\+\_\+model@{Admin\+\_\+model}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Admin\+\_\+model@{Admin\+\_\+model}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_admin__model_a095c5d389db211932136b53f25f39685}
+Connect to database; load other required models 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_admin__model_a25fb351800264a943c8d9d70385ac1a4}{}\index{Admin\+\_\+model@{Admin\+\_\+model}!create\+\_\+user\+\_\+phase\+\_\+transfer@{create\+\_\+user\+\_\+phase\+\_\+transfer}}
+\index{create\+\_\+user\+\_\+phase\+\_\+transfer@{create\+\_\+user\+\_\+phase\+\_\+transfer}!Admin\+\_\+model@{Admin\+\_\+model}}
+\subsubsection[{create\+\_\+user\+\_\+phase\+\_\+transfer(\$user\+\_\+id, \$phase\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+user\+\_\+phase\+\_\+transfer (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$phase\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_admin__model_a25fb351800264a943c8d9d70385ac1a4}
+create phase transfer entry to keep track of remaining free transfers \hypertarget{class_admin__model_a5f339cfcda0ea331041ada24a74dcb16}{}\index{Admin\+\_\+model@{Admin\+\_\+model}!get\+\_\+login\+Info@{get\+\_\+login\+Info}}
+\index{get\+\_\+login\+Info@{get\+\_\+login\+Info}!Admin\+\_\+model@{Admin\+\_\+model}}
+\subsubsection[{get\+\_\+login\+Info(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+login\+Info (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_admin__model_a5f339cfcda0ea331041ada24a74dcb16}
+Find information required for login \hypertarget{class_admin__model_a6fb35302e2461fe5b3d955a6065e99a0}{}\index{Admin\+\_\+model@{Admin\+\_\+model}!start\+\_\+match@{start\+\_\+match}}
+\index{start\+\_\+match@{start\+\_\+match}!Admin\+\_\+model@{Admin\+\_\+model}}
+\subsubsection[{start\+\_\+match(\$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}start\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_admin__model_a6fb35302e2461fe5b3d955a6065e99a0}
+Do database operations to start a match 
+\begin{DoxyEnumerate}
+\item Get current tournament tournament id
+\item Set is\+\_\+started flag
+\item Create player\+\_\+match\+\_\+point\+\_\+entries for all players (of current tournament)
+\item G\+E\+T A\+L\+L T\+O\+U\+R\+N\+A\+M\+E\+N\+T U\+S\+E\+R\+S
+\end{DoxyEnumerate}
+
+4(a). F\+O\+R E\+A\+C\+H U\+S\+E\+R , create a default match team \hypertarget{class_admin__model_a42ae92008340fbccbc6fc300410cc6fc}{}\index{Admin\+\_\+model@{Admin\+\_\+model}!start\+\_\+phase@{start\+\_\+phase}}
+\index{start\+\_\+phase@{start\+\_\+phase}!Admin\+\_\+model@{Admin\+\_\+model}}
+\subsubsection[{start\+\_\+phase(\$phase\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}start\+\_\+phase (
+\begin{DoxyParamCaption}
+\item[{}]{\$phase\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_admin__model_a42ae92008340fbccbc6fc300410cc6fc}
+Update database to start a phase; returns true if successful 
+\begin{DoxyEnumerate}
+\item set {\ttfamily is\+\_\+started} flag
+\item G\+E\+T A\+L\+L T\+O\+U\+R\+N\+A\+M\+E\+N\+T U\+S\+E\+R\+S
+\item F\+O\+R E\+A\+C\+H U\+S\+E\+R create phase transfer entry to keep track of remaining free transfers 
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/application/models/\hyperlink{_admin__model_8php}{Admin\+\_\+model.\+php}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\hypertarget{class_c_i___d_b__ibase__forge}{}\section{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge Class Reference}
+\label{class_c_i___d_b__ibase__forge}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_i___d_b__ibase__forge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a902a7267babceb2ce595706f217e00ad}{create\+\_\+database} (\$db\+\_\+name)
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a9e0a4706cac7e0bb62e76f23081000d4}{drop\+\_\+database} (\$db\+\_\+name= \textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a41c6cae02f2fda8b429ad0afb9509426}{\+\_\+alter\+\_\+table} (\$alter\+\_\+type, \$table, \$field)
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a8f38f1c5b5dddecca4befbe393f3f299}{\+\_\+process\+\_\+column} (\$field)
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a8553be952084c6f7cdfff370a1d14f6b}{\+\_\+attr\+\_\+type} (\&\$attributes)
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a2a013a5932439c3c44f0dad3436525f7}{\+\_\+attr\+\_\+auto\+\_\+increment} (\&\$attributes, \&\$field)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a2f6484fcb8d1dc3eef67a637227cd583}{\$\+\_\+create\+\_\+table\+\_\+if} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a1a649e7cf9de16bcf932977b18bc91de}{\$\+\_\+rename\+\_\+table} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_a92a8a9145a7fc91e252e58d019373581}{\$\+\_\+drop\+\_\+table\+\_\+if} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_aae977ae6d61fa183f0b25422b6ddc31c}{\$\+\_\+unsigned}
+\item 
+\hyperlink{class_c_i___d_b__ibase__forge_ae58fe6a5104d4a069a49b27533ce808f}{\$\+\_\+null} = \textquotesingle{}N\+U\+L\+L\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__ibase__forge_a41c6cae02f2fda8b429ad0afb9509426}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}}
+\index{\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\+\_\+alter\+\_\+table(\$alter\+\_\+type, \$table, \$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+alter\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$alter\+\_\+type, }
+\item[{}]{\$table, }
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a41c6cae02f2fda8b429ad0afb9509426}
+A\+L\+T\+E\+R T\+A\+B\+L\+E
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$alter\+\_\+type} & A\+L\+T\+E\+R type \\
+\hline
+string & {\em \$table} & Table name \\
+\hline
+mixed & {\em \$field} & Column definition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$string\mbox{[}\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__ibase__forge_a2a013a5932439c3c44f0dad3436525f7}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\+\_\+attr\+\_\+auto\+\_\+increment@{\+\_\+attr\+\_\+auto\+\_\+increment}}
+\index{\+\_\+attr\+\_\+auto\+\_\+increment@{\+\_\+attr\+\_\+auto\+\_\+increment}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+auto\+\_\+increment(\&\$attributes, \&\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+auto\+\_\+increment (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes, }
+\item[{\&}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a2a013a5932439c3c44f0dad3436525f7}
+Field attribute A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+array & {\em \&\$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__ibase__forge_a8553be952084c6f7cdfff370a1d14f6b}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\+\_\+attr\+\_\+type@{\+\_\+attr\+\_\+type}}
+\index{\+\_\+attr\+\_\+type@{\+\_\+attr\+\_\+type}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+type(\&\$attributes)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a8553be952084c6f7cdfff370a1d14f6b}
+Field attribute T\+Y\+P\+E
+
+Performs a data type mapping between different databases.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__ibase__forge_a8f38f1c5b5dddecca4befbe393f3f299}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}}
+\index{\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+column(\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a8f38f1c5b5dddecca4befbe393f3f299}
+Process column
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__ibase__forge_a902a7267babceb2ce595706f217e00ad}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!create\+\_\+database@{create\+\_\+database}}
+\index{create\+\_\+database@{create\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{create\+\_\+database(\$db\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+database (
+\begin{DoxyParamCaption}
+\item[{}]{\$db\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__ibase__forge_a902a7267babceb2ce595706f217e00ad}
+Create database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$db\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__ibase__forge_a9e0a4706cac7e0bb62e76f23081000d4}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!drop\+\_\+database@{drop\+\_\+database}}
+\index{drop\+\_\+database@{drop\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{drop\+\_\+database(\$db\+\_\+name= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}drop\+\_\+database (
+\begin{DoxyParamCaption}
+\item[{}]{\$db\+\_\+name = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__ibase__forge_a9e0a4706cac7e0bb62e76f23081000d4}
+Drop database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$db\+\_\+name} & (ignored) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__ibase__forge_a2f6484fcb8d1dc3eef67a637227cd583}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}}
+\index{\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+table\+\_\+if = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a2f6484fcb8d1dc3eef67a637227cd583}
+\hypertarget{class_c_i___d_b__ibase__forge_a92a8a9145a7fc91e252e58d019373581}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}}
+\index{\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\$\+\_\+drop\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+drop\+\_\+table\+\_\+if = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a92a8a9145a7fc91e252e58d019373581}
+\hypertarget{class_c_i___d_b__ibase__forge_ae58fe6a5104d4a069a49b27533ce808f}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\$\+\_\+null@{\$\+\_\+null}}
+\index{\$\+\_\+null@{\$\+\_\+null}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\$\+\_\+null}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+null = \textquotesingle{}N\+U\+L\+L\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_ae58fe6a5104d4a069a49b27533ce808f}
+\hypertarget{class_c_i___d_b__ibase__forge_a1a649e7cf9de16bcf932977b18bc91de}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\$\+\_\+rename\+\_\+table@{\$\+\_\+rename\+\_\+table}}
+\index{\$\+\_\+rename\+\_\+table@{\$\+\_\+rename\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\$\+\_\+rename\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+rename\+\_\+table = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_a1a649e7cf9de16bcf932977b18bc91de}
+\hypertarget{class_c_i___d_b__ibase__forge_aae977ae6d61fa183f0b25422b6ddc31c}{}\index{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}!\$\+\_\+unsigned@{\$\+\_\+unsigned}}
+\index{\$\+\_\+unsigned@{\$\+\_\+unsigned}!C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+ibase\+\_\+forge}}
+\subsubsection[{\$\+\_\+unsigned}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+unsigned\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__ibase__forge_aae977ae6d61fa183f0b25422b6ddc31c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array(
+        \textcolor{stringliteral}{'SMALLINT'}  => \textcolor{stringliteral}{'INTEGER'},
+        \textcolor{stringliteral}{'INTEGER'}   => \textcolor{stringliteral}{'INT64'},
+        \textcolor{stringliteral}{'FLOAT'}     => \textcolor{stringliteral}{'DOUBLE PRECISION'}
+    )
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/database/drivers/ibase/\hyperlink{ibase__forge_8php}{ibase\+\_\+forge.\+php}\end{DoxyCompactItemize}

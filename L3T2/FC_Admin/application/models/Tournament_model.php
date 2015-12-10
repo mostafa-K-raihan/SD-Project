@@ -1,4 +1,7 @@
 <?php
+/**
+	Provides Database Level Operations for `tournament` entity and related functions
+*/
 class Tournament_model extends CI_Model 
 {
 
@@ -7,21 +10,32 @@ class Tournament_model extends CI_Model
         $this->load->database();
 	}
 	
-	public function get_active_tournament()		//DONE
+	/**
+		Get information about currently running tournament.
+	*/
+	public function get_active_tournament()		
 	{
 		$sql = 'SELECT * FROM `tournament` where `is_active`=1';				
 		$query=$this->db->query($sql); 
 		return $query;
 	}
 	
-	public function get_active_tournament_id()		//Done
+	/**
+		Get `tournament_id` of current tournament
+	*/
+	public function get_active_tournament_id()		
 	{
 		$sql = 'SELECT `tournament_id` FROM `tournament` where `is_active`=1';				
 		$result=$this->db->query($sql)->row_array(); 
 		return $result['tournament_id'];
 	}
 	
-	public function get_upcoming_phase($tournament_id)		//DONE
+	/**
+		\brief Get information of next phase (not started, admin will start) of current tournament
+		
+		This function is only used to show upcoming phase in admin homepage
+	*/
+	public function get_upcoming_phase($tournament_id)		
 	{
 		$sql = 'SELECT * FROM `phase` 
 				WHERE `tournament_id`='.$tournament_id.' AND `is_started`=0 AND (`start_time`-CURRENT_TIMESTAMP) = 
@@ -37,7 +51,10 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_fixture($tournament_id=0)		//DONE
+	/**
+		Return match schedule
+	*/
+	public function get_fixture($tournament_id=0)		
 	{
 		if($tournament_id==0)
 		{
@@ -55,7 +72,10 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_result($tournament_id=0)	//DONE
+	/**
+		Return completed match results
+	*/
+	public function get_result($tournament_id=0)	
 	{
 		if($tournament_id==0)
 		{
@@ -77,7 +97,10 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_active_tournament_teams()	//DONE
+	/**
+		Get information of all teams participating in the current tournament
+	*/
+	public function get_active_tournament_teams()	
 	{
 	
 		$result = $this->get_active_tournament()->row_array();
@@ -97,8 +120,7 @@ class Tournament_model extends CI_Model
 	*	RETURN TRUE IF PLAYER EXISTS IN CURRENT TOURNAMENT
 	*	FALSE OTHERWISE
 	*/
-	
-	public function player_exists($player_id)	//done
+	public function player_exists($player_id)	
 	{
 		$result = $this->get_active_tournament()->row_array();
 		$cur_tournament_id = $result['tournament_id'];
@@ -113,7 +135,10 @@ class Tournament_model extends CI_Model
 		else return 1;
 	}
 	
-	public function add_tournament_player($player_id)	//done
+	/**
+		insert a player into `player_tournament` table to indicate that the player is participating in the current tournament
+	*/
+	public function add_tournament_player($player_id)	
 	{
 		if($this->player_exists($player_id)==0)
 		{
@@ -130,7 +155,10 @@ class Tournament_model extends CI_Model
 		}		
 	}
 	
-	public function delete_tournament_player($player_id)	//done
+	/**
+		Delete a player from player_tournament table to indicate that the player is no longer participating in the current tournament
+	*/
+	public function delete_tournament_player($player_id)	
 	{
 		if($this->player_exists($player_id)==1)
 		{
@@ -142,19 +170,28 @@ class Tournament_model extends CI_Model
 		}
 	}
 	
-	public function view_tournaments()	//done
+	/**
+		Return all data from `tournament` table
+	*/
+	public function view_tournaments()	
 	{
 		$sql = 'SELECT * FROM `tournament`';		
 		return $query=$this->db->query($sql);
 	}
 	
-	public function create_tournament($data)	//done
+	/**
+		Create a new tournament
+	*/
+	public function create_tournament($data)	
 	{
 		$sql = 'INSERT INTO `tournament` VALUES(?,?,DATE(?),DATE(?),?,?,?)';		
 		return $query=$this->db->query($sql,$data); 
 	}
 	
-	public function get_all_tournaments()	//done
+	/**
+		Return all data from `tournament` table, sorted by tournament name
+	*/
+	public function get_all_tournaments()	
 	{
 		$sql = 	'SELECT * from `tournament` ORDER BY `tournament_name`';
 				
@@ -163,7 +200,10 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_tournament_name($tournament_id)	//done
+	/**
+		Return tournament_name for a given tournament_id
+	*/
+	public function get_tournament_name($tournament_id)	
 	{
 		$sql = 'SELECT `tournament_name` FROM `tournament` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
@@ -172,7 +212,10 @@ class Tournament_model extends CI_Model
 		return $result['tournament_name'];
 	}
 	
-	public function team_exists_tournament($tournament_id,$team_id)	//done
+	/**
+		returns 1 if a team is alredy in a tournament; returns 0 otherwise 
+	*/
+	public function team_exists_tournament($tournament_id,$team_id)	
 	{
 		
 		$sql = 	'SELECT COUNT(*) FROM `team_tournament` where `team_id` = ? AND `tournament_id` = ?';
@@ -185,7 +228,10 @@ class Tournament_model extends CI_Model
 		else return 1;
 	}
 	
-	public function add_tournament_team($tournament_id,$team_id)	//done
+	/**
+		Insert a team into team_tournament table to indicate that the team is participating in that tournament
+	*/
+	public function add_tournament_team($tournament_id,$team_id)	
 	{
 		if($this->team_exists_tournament($tournament_id,$team_id)==0)
 		{
@@ -199,7 +245,10 @@ class Tournament_model extends CI_Model
 		}		
 	}
 	
-	public function delete_tournament_team($tournament_id,$team_id)	//done
+	/**
+		Delete a team from team_tournament table to indicate that the team is no longer participating in that tournament
+	*/
+	public function delete_tournament_team($tournament_id,$team_id)	
 	{
 		if($this->team_exists_tournament($tournament_id,$team_id)==1)
 		{
@@ -208,7 +257,10 @@ class Tournament_model extends CI_Model
 		}
 	}
 	
-	public function update_active_tournament($tournament_id)	//done
+	/**
+		Update current tournament id
+	*/
+	public function update_active_tournament($tournament_id)	
 	{
 		$current_tournament=$this->get_active_tournament_id();
 		$sql='UPDATE `tournament`
@@ -223,28 +275,39 @@ class Tournament_model extends CI_Model
 
 	}
 	
-	
-	public function add_tournament_phase($phase_data)	//done
+	/**
+		Insert a tournament phase
+	*/
+	public function add_tournament_phase($phase_data)	
 	{
 		$sql = 'INSERT INTO `phase` VALUES(?,?,STR_TO_DATE(?,\'%Y-%m-%d %H:%i:%s\'),STR_TO_DATE(?,\'%Y-%m-%d %H:%i:%s\'),?,?,?,?)';
 		return $this->db->query($sql,$phase_data);
 	}
 	
-	public function get_tournament_info($tournament_id)	//done
+	/**
+		Get information of a particular tournament (given by tournament_id)
+	*/
+	public function get_tournament_info($tournament_id)	
 	{
 		$sql = 'SELECT * FROM `tournament` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
 		return $result=$query->row_array();
 	}
 	
-	public function get_phase_info($tournament_id)	//done
+	/**
+		Get information of all phases of a particular tournament (given by tournament_id)
+	*/
+	public function get_phase_info($tournament_id)	
 	{
 		$sql = 'SELECT * FROM `phase` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
 		return $result=$query->result_array();
 	}
 	
-	public function update_tournament_phase($phase_data)	//done
+	/**
+		Update information of a phase
+	*/
+	public function update_tournament_phase($phase_data)	
 	{
 		$sql = 'UPDATE `phase` SET `phase_name` = ?,
 		`start_time` = STR_TO_DATE(?,\'%Y-%m-%d %H:%i:%s\'),
@@ -255,7 +318,10 @@ class Tournament_model extends CI_Model
 		return $this->db->query($sql,array($phase_data['phase_name'],$phase_data['start_time'],$phase_data['finish_time'],$phase_data['free_transfers'],$phase_data['phase_id']));
 	}
 	
-	public function get_active_tournament_name()	//done
+	/**
+		Returns the name of currently active tournament
+	*/
+	public function get_active_tournament_name()	
 	{
 		$sql = 'SELECT `tournament_name` FROM `tournament` where `is_active`=1';				
 		
@@ -266,7 +332,10 @@ class Tournament_model extends CI_Model
 		return $result['tournament_name'];
 	}
 	
-	public function get_previous_match()		//processing
+	/**
+		Get previous match information (started by admin)
+	*/
+	public function get_previous_match()		
 	{
 		$cur_tour=$this->get_active_tournament_id();
 		
@@ -282,73 +351,5 @@ class Tournament_model extends CI_Model
 			
 		return $query;
 	}
-	
-	/**Unprocessed*/
-	
-	
-	
-	/**
-	public function get_previous_match_id()
-	{
-		$sql = 'SELECT "match_id" FROM "match" 
-				WHERE "tournament_id"=current_tournament() AND "is_started"=1 AND (CURRENT_TIMESTAMP-"start_time") = 
-				(	
-					SELECT MIN(CURRENT_TIMESTAMP-"start_time")
-					FROM "match" 
-					WHERE ("start_time" < CURRENT_TIMESTAMP AND "is_started"=1 AND "tournament_id"= current_tournament())
-				)';				
-		
-		$query=$this->db->query($sql); 
-			
-		return $query->row_array();
-	}
-	
-	public function get_last_completed_phase($tournament_id)
-	{
-		$sql = 	'SELECT * FROM "phase" 
-				WHERE "tournament_id"=1 AND "is_complete"=0 AND (CURRENT_TIMESTAMP-"finish_time") = 
-				(	
-					SELECT MIN(CURRENT_TIMESTAMP-"finish_time")
-					FROM "phase" 
-					WHERE (CURRENT_TIMESTAMP> "finish_time")
-				)';
-				
-		$query=$this->db->query($sql,$tournament_id); 
-		
-		//$result=$query->row_array();
-		
-		return $query;
-	}
-	
-	public function get_tournament_teams($tournament_id)
-	{
-		$sql = 	'SELECT "team_id" from "team_tournament" where "tournament_id"=?';			
-		$query=$this->db->query($sql,$tournament_id); 
-		return $query;
-	}
-	
-	
-	//add_tournament_team($tid);
-	
-	public function team_exists($team_id)
-	{
-		$result = $this->get_active_tournament()->row_array();
-		$cur_tournament_id = $result['tournament_id'];
-		
-		$sql = 	'SELECT "COUNT"(*) FROM "team_tournament" where "team_id" = ? AND "tournament_id" = ?';
-				
-		$query=$this->db->query($sql,array($team_id,$cur_tournament_id)); 
-		
-		$rs = $query->row_array();
-		
-		if($rs['"COUNT"(*)']==0) return 0;
-		else return 1;
-	}
-	
-	
-	
-	
-	*/
-	
 
 }

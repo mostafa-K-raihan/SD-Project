@@ -1,0 +1,49 @@
+\hypertarget{excanvas_8js}{}\section{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/excanvas.js File Reference}
+\label{excanvas_8js}\index{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/excanvas.\+js@{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/excanvas.\+js}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{excanvas_8js_a409038cddd5fb941140f7ff76f5b7b15}{if} (!\hyperlink{jquery_8canvasjs_8min_8js_aa5a7e68f21867234aa493ebc1635b2d9}{document.\+create\+Element}(\textquotesingle{}canvas\textquotesingle{}).get\+Context)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{excanvas_8js_a409038cddd5fb941140f7ff76f5b7b15}{}\index{excanvas.\+js@{excanvas.\+js}!if@{if}}
+\index{if@{if}!excanvas.\+js@{excanvas.\+js}}
+\subsubsection[{if("!document.\+create\+Element(\textquotesingle{}canvas\textquotesingle{}).\+get\+Context)}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{!{\bf document.\+create\+Element}(\textquotesingle{}canvas\textquotesingle{}).}]{get\+Context}
+\end{DoxyParamCaption}
+)}\label{excanvas_8js_a409038cddd5fb941140f7ff76f5b7b15}
+excanvas is used to support I\+E678 which do not implement H\+T\+M\+L5 Canvas Element. You can safely remove the following excanvas code if you don\textquotesingle{}t need to support older browsers.
+
+Copyright 2006 Google Inc. \href{https://code.google.com/p/explorercanvas/}{\tt https\+://code.\+google.\+com/p/explorercanvas/} Licensed under the Apache License, Version 2.\+0 This funtion is assigned to the $<$canvas$>$ elements as element.\+get\+Context().  \{H\+T\+M\+L\+Element\} \begin{DoxyReturn}{Returns}
+\{Canvas\+Rendering\+Context2\+D\+\_\+\}
+\end{DoxyReturn}
+Binds a function to an object. The returned function will always use the passed in
+\begin{DoxyCode}
+1 obj 
+\end{DoxyCode}
+ as
+\begin{DoxyCode}
+1 this 
+\end{DoxyCode}
+ .
+
+Example\+:
+
+g = bind(f, obj, a, b) g(c, d) // will do f.\+call(obj, a, b, c, d)
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Function\}} & f The function to bind the object to \\
+\hline
+{\em \{\+Object\}} & obj The object that should act as this when the function is called \\
+\hline
+{\em \{$\ast$\}} & var\+\_\+args Rest arguments that will be used as the initial arguments when the function is called \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Function\} A new function that has bound this
+\end{DoxyReturn}
+The text drawing function. The max\+Width argument isn\textquotesingle{}t taken in account, since no browser supports it yet.

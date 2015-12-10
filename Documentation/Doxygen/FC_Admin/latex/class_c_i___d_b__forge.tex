@@ -1,0 +1,651 @@
+\hypertarget{class_c_i___d_b__forge}{}\section{C\+I\+\_\+\+D\+B\+\_\+forge Class Reference}
+\label{class_c_i___d_b__forge}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+forge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_c_i___d_b__forge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__forge_aaf2ef772755ec6f361d44e16cc9ffd69}{\+\_\+\+\_\+construct} (\&\$db)
+\item 
+\hyperlink{class_c_i___d_b__forge_a902a7267babceb2ce595706f217e00ad}{create\+\_\+database} (\$db\+\_\+name)
+\item 
+\hyperlink{class_c_i___d_b__forge_a9612987b2d4230de2638d15857e92e67}{drop\+\_\+database} (\$db\+\_\+name)
+\item 
+\hyperlink{class_c_i___d_b__forge_a70e5c5fca213d8ad84cc71ba1698c3dd}{add\+\_\+key} (\$key, \$primary=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__forge_acdaeff5aae80d6128c7ed9817ee82f1c}{add\+\_\+field} (\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a0904375ba759fbe7961b424a46c0adae}{create\+\_\+table} (\$table, \$if\+\_\+not\+\_\+exists=F\+A\+L\+S\+E, array \$attributes=array())
+\item 
+\hyperlink{class_c_i___d_b__forge_ac46bdab43413dcc115d1be4a05dbcd0f}{drop\+\_\+table} (\$table\+\_\+name, \$if\+\_\+exists=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__forge_a0fb4802acad335ebdecd921d59de9a51}{rename\+\_\+table} (\$table\+\_\+name, \$new\+\_\+table\+\_\+name)
+\item 
+\hyperlink{class_c_i___d_b__forge_a855261dcf98c0cf401aa469994919c51}{add\+\_\+column} (\$table, \$field, \$\+\_\+after=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__forge_aed0d6a0b12511dbdf19bb68fed7fd467}{drop\+\_\+column} (\$table, \$column\+\_\+name)
+\item 
+\hyperlink{class_c_i___d_b__forge_aa03cc8de0ac9ce03016bd2b50ddeff87}{modify\+\_\+column} (\$table, \$field)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__forge_ab2303c817e3b402b77b7f99627b9c319}{\$fields} = array()
+\item 
+\hyperlink{class_c_i___d_b__forge_af20635b6c08e03bfee9e3fc036fa80f3}{\$keys} = array()
+\item 
+\hyperlink{class_c_i___d_b__forge_a09349689030ba7198a094abf357c78bc}{\$primary\+\_\+keys} = array()
+\item 
+\hyperlink{class_c_i___d_b__forge_a6e90c3633cd0984a7e8de501f7771c53}{\$db\+\_\+char\+\_\+set} = \textquotesingle{}\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__forge_a609e3ae24bd762e8d154f38a2ec7cfda}{\+\_\+create\+\_\+table} (\$table, \$if\+\_\+not\+\_\+exists, \$attributes)
+\item 
+\hyperlink{class_c_i___d_b__forge_a10b25326d82f6ddd9af1935e52e42b72}{\+\_\+create\+\_\+table\+\_\+attr} (\$attributes)
+\item 
+\hyperlink{class_c_i___d_b__forge_a1875c16d087f2c269fc3666f0488c4c8}{\+\_\+drop\+\_\+table} (\$table, \$if\+\_\+exists)
+\item 
+\hyperlink{class_c_i___d_b__forge_a41c6cae02f2fda8b429ad0afb9509426}{\+\_\+alter\+\_\+table} (\$alter\+\_\+type, \$table, \$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_ae469322e7aad35ff5689973878175922}{\+\_\+process\+\_\+fields} (\$\hyperlink{class_c_i___d_b__forge_a0904375ba759fbe7961b424a46c0adae}{create\+\_\+table}=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__forge_a8f38f1c5b5dddecca4befbe393f3f299}{\+\_\+process\+\_\+column} (\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a8553be952084c6f7cdfff370a1d14f6b}{\+\_\+attr\+\_\+type} (\&\$attributes)
+\item 
+\hyperlink{class_c_i___d_b__forge_aebcfa19bad617858b7d728ff4df87f2c}{\+\_\+attr\+\_\+unsigned} (\&\$attributes, \&\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a033e9e430791efe4206512668ddf318e}{\+\_\+attr\+\_\+default} (\&\$attributes, \&\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a7568a93ea53a7392a63fffe83bb7a090}{\+\_\+attr\+\_\+unique} (\&\$attributes, \&\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a2a013a5932439c3c44f0dad3436525f7}{\+\_\+attr\+\_\+auto\+\_\+increment} (\&\$attributes, \&\$field)
+\item 
+\hyperlink{class_c_i___d_b__forge_a207c32e2b5c14364b2e33d2f15500b7e}{\+\_\+process\+\_\+primary\+\_\+keys} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__forge_ae0bdb4ea3418590d1894c5b621b5ca50}{\+\_\+process\+\_\+indexes} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__forge_ab90fa1f6f390913fed8670e6535dc180}{\+\_\+reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__forge_a1fa3127fc82f96b1436d871ef02be319}{\$db}
+\item 
+\hyperlink{class_c_i___d_b__forge_acd23c9a8735806155f1a5d0a87c151f2}{\$\+\_\+create\+\_\+database} = \textquotesingle{}C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \%s\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_a8305b12fc17f6f87778260ebdff287b4}{\$\+\_\+drop\+\_\+database} = \textquotesingle{}D\+R\+O\+P D\+A\+T\+A\+B\+A\+S\+E \%s\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_a5950510a854f546e14f781b079a0a2b0}{\$\+\_\+create\+\_\+table} = \char`\"{}\%s \%s (\%\hyperlink{cli_2error__general_8php_ace0fd03cd383f20ce6ea63247a207294}{s\textbackslash{}n})\char`\"{}
+\item 
+\hyperlink{class_c_i___d_b__forge_a2f6484fcb8d1dc3eef67a637227cd583}{\$\+\_\+create\+\_\+table\+\_\+if} = \textquotesingle{}C\+R\+E\+A\+T\+E T\+A\+B\+L\+E I\+F N\+O\+T E\+X\+I\+S\+T\+S\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_a73e07acdd35c948ad353903c2827af6e}{\$\+\_\+create\+\_\+table\+\_\+keys} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__forge_a92a8a9145a7fc91e252e58d019373581}{\$\+\_\+drop\+\_\+table\+\_\+if} = \textquotesingle{}D\+R\+O\+P T\+A\+B\+L\+E I\+F E\+X\+I\+S\+T\+S\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_a1a649e7cf9de16bcf932977b18bc91de}{\$\+\_\+rename\+\_\+table} = \textquotesingle{}A\+L\+T\+E\+R T\+A\+B\+L\+E \%s R\+E\+N\+A\+M\+E T\+O \%s;\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_aae977ae6d61fa183f0b25422b6ddc31c}{\$\+\_\+unsigned} = T\+R\+U\+E
+\item 
+\hyperlink{class_c_i___d_b__forge_ae58fe6a5104d4a069a49b27533ce808f}{\$\+\_\+null} = \textquotesingle{}\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__forge_aa119e1b4e3d00f47a7b83b7066087915}{\$\+\_\+default} = \textquotesingle{} D\+E\+F\+A\+U\+L\+T \textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___d_b__forge_aaf2ef772755ec6f361d44e16cc9ffd69}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+\+\_\+construct(\&\$db)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$db}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_aaf2ef772755ec6f361d44e16cc9ffd69}
+Class constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \&\$db} & Database object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__forge_a41c6cae02f2fda8b429ad0afb9509426}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}}
+\index{\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+alter\+\_\+table(\$alter\+\_\+type, \$table, \$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+alter\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$alter\+\_\+type, }
+\item[{}]{\$table, }
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a41c6cae02f2fda8b429ad0afb9509426}
+A\+L\+T\+E\+R T\+A\+B\+L\+E
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$alter\+\_\+type} & A\+L\+T\+E\+R type \\
+\hline
+string & {\em \$table} & Table name \\
+\hline
+mixed & {\em \$field} & Column definition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$string\mbox{[}\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a2a013a5932439c3c44f0dad3436525f7}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+attr\+\_\+auto\+\_\+increment@{\+\_\+attr\+\_\+auto\+\_\+increment}}
+\index{\+\_\+attr\+\_\+auto\+\_\+increment@{\+\_\+attr\+\_\+auto\+\_\+increment}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+auto\+\_\+increment(\&\$attributes, \&\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+auto\+\_\+increment (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes, }
+\item[{\&}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a2a013a5932439c3c44f0dad3436525f7}
+Field attribute A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+array & {\em \&\$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a033e9e430791efe4206512668ddf318e}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+attr\+\_\+default@{\+\_\+attr\+\_\+default}}
+\index{\+\_\+attr\+\_\+default@{\+\_\+attr\+\_\+default}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+default(\&\$attributes, \&\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+default (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes, }
+\item[{\&}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a033e9e430791efe4206512668ddf318e}
+Field attribute D\+E\+F\+A\+U\+L\+T
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+array & {\em \&\$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a8553be952084c6f7cdfff370a1d14f6b}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+attr\+\_\+type@{\+\_\+attr\+\_\+type}}
+\index{\+\_\+attr\+\_\+type@{\+\_\+attr\+\_\+type}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+type(\&\$attributes)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a8553be952084c6f7cdfff370a1d14f6b}
+Field attribute T\+Y\+P\+E
+
+Performs a data type mapping between different databases.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a7568a93ea53a7392a63fffe83bb7a090}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+attr\+\_\+unique@{\+\_\+attr\+\_\+unique}}
+\index{\+\_\+attr\+\_\+unique@{\+\_\+attr\+\_\+unique}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+unique(\&\$attributes, \&\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+unique (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes, }
+\item[{\&}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a7568a93ea53a7392a63fffe83bb7a090}
+Field attribute U\+N\+I\+Q\+U\+E
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+array & {\em \&\$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_aebcfa19bad617858b7d728ff4df87f2c}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+attr\+\_\+unsigned@{\+\_\+attr\+\_\+unsigned}}
+\index{\+\_\+attr\+\_\+unsigned@{\+\_\+attr\+\_\+unsigned}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+attr\+\_\+unsigned(\&\$attributes, \&\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+attr\+\_\+unsigned (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$attributes, }
+\item[{\&}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_aebcfa19bad617858b7d728ff4df87f2c}
+Field attribute U\+N\+S\+I\+G\+N\+E\+D
+
+Depending on the \+\_\+unsigned property value\+:
+
+
+\begin{DoxyItemize}
+\item T\+R\+U\+E will always set \$field\mbox{[}\textquotesingle{}unsigned\textquotesingle{}\mbox{]} to \textquotesingle{}U\+N\+S\+I\+G\+N\+E\+D\textquotesingle{}
+\item F\+A\+L\+S\+E will always set \$field\mbox{[}\textquotesingle{}unsigned\textquotesingle{}\mbox{]} to \textquotesingle{}\textquotesingle{}
+\item array(\+T\+Y\+P\+E) will set \$field\mbox{[}\textquotesingle{}unsigned\textquotesingle{}\mbox{]} to \textquotesingle{}U\+N\+S\+I\+G\+N\+E\+D\textquotesingle{}, if \$attributes\mbox{[}\textquotesingle{}T\+Y\+P\+E\textquotesingle{}\mbox{]} is found in the array
+\item array(T\+Y\+P\+E =$>$ U\+T\+Y\+P\+E) will change \$field\mbox{[}\textquotesingle{}type\textquotesingle{}\mbox{]}, from T\+Y\+P\+E to U\+T\+Y\+P\+E in case of a match
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$attributes} & \\
+\hline
+array & {\em \&\$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a609e3ae24bd762e8d154f38a2ec7cfda}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+create\+\_\+table@{\+\_\+create\+\_\+table}}
+\index{\+\_\+create\+\_\+table@{\+\_\+create\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+create\+\_\+table(\$table, \$if\+\_\+not\+\_\+exists, \$attributes)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+create\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$if\+\_\+not\+\_\+exists, }
+\item[{}]{\$attributes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a609e3ae24bd762e8d154f38a2ec7cfda}
+Create Table
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+bool & {\em \$if\+\_\+not\+\_\+exists} & Whether to add \textquotesingle{}I\+F N\+O\+T E\+X\+I\+S\+T\+S\textquotesingle{} condition \\
+\hline
+array & {\em \$attributes} & Associative array of table attributes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a10b25326d82f6ddd9af1935e52e42b72}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+create\+\_\+table\+\_\+attr@{\+\_\+create\+\_\+table\+\_\+attr}}
+\index{\+\_\+create\+\_\+table\+\_\+attr@{\+\_\+create\+\_\+table\+\_\+attr}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+create\+\_\+table\+\_\+attr(\$attributes)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+create\+\_\+table\+\_\+attr (
+\begin{DoxyParamCaption}
+\item[{}]{\$attributes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a10b25326d82f6ddd9af1935e52e42b72}
+C\+R\+E\+A\+T\+E T\+A\+B\+L\+E attributes
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$attributes} & Associative array of table attributes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a1875c16d087f2c269fc3666f0488c4c8}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+drop\+\_\+table@{\+\_\+drop\+\_\+table}}
+\index{\+\_\+drop\+\_\+table@{\+\_\+drop\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+drop\+\_\+table(\$table, \$if\+\_\+exists)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+drop\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$if\+\_\+exists}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a1875c16d087f2c269fc3666f0488c4c8}
+Drop Table
+
+Generates a platform-\/specific D\+R\+O\+P T\+A\+B\+L\+E string
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+bool & {\em \$if\+\_\+exists} & Whether to add an I\+F E\+X\+I\+S\+T\+S condition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a8f38f1c5b5dddecca4befbe393f3f299}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}}
+\index{\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+column(\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a8f38f1c5b5dddecca4befbe393f3f299}
+Process column
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_ae469322e7aad35ff5689973878175922}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+process\+\_\+fields@{\+\_\+process\+\_\+fields}}
+\index{\+\_\+process\+\_\+fields@{\+\_\+process\+\_\+fields}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+fields(\$create\+\_\+table=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+fields (
+\begin{DoxyParamCaption}
+\item[{}]{\$create\+\_\+table = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_ae469322e7aad35ff5689973878175922}
+Process fields
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$create\+\_\+table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_ae0bdb4ea3418590d1894c5b621b5ca50}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+process\+\_\+indexes@{\+\_\+process\+\_\+indexes}}
+\index{\+\_\+process\+\_\+indexes@{\+\_\+process\+\_\+indexes}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+indexes(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+indexes (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_ae0bdb4ea3418590d1894c5b621b5ca50}
+Process indexes
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a207c32e2b5c14364b2e33d2f15500b7e}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+process\+\_\+primary\+\_\+keys@{\+\_\+process\+\_\+primary\+\_\+keys}}
+\index{\+\_\+process\+\_\+primary\+\_\+keys@{\+\_\+process\+\_\+primary\+\_\+keys}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+primary\+\_\+keys(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+primary\+\_\+keys (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a207c32e2b5c14364b2e33d2f15500b7e}
+Process primary keys
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_ab90fa1f6f390913fed8670e6535dc180}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\+\_\+reset@{\+\_\+reset}}
+\index{\+\_\+reset@{\+\_\+reset}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\+\_\+reset()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_ab90fa1f6f390913fed8670e6535dc180}
+Reset
+
+Resets table creation vars
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a855261dcf98c0cf401aa469994919c51}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!add\+\_\+column@{add\+\_\+column}}
+\index{add\+\_\+column@{add\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{add\+\_\+column(\$table, \$field, \$\+\_\+after=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$field, }
+\item[{}]{\$\+\_\+after = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a855261dcf98c0cf401aa469994919c51}
+Column Add
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Remove deprecated \$\+\_\+after option in 3.\+1+ 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+array & {\em \$field} & Column definition \\
+\hline
+string & {\em \$\+\_\+after} & Column for A\+F\+T\+E\+R clause (deprecated) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\end{DoxyRefDesc}
+\hypertarget{class_c_i___d_b__forge_acdaeff5aae80d6128c7ed9817ee82f1c}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!add\+\_\+field@{add\+\_\+field}}
+\index{add\+\_\+field@{add\+\_\+field}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{add\+\_\+field(\$field)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+field (
+\begin{DoxyParamCaption}
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_acdaeff5aae80d6128c7ed9817ee82f1c}
+Add Field
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__forge}{C\+I\+\_\+\+D\+B\+\_\+forge} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a70e5c5fca213d8ad84cc71ba1698c3dd}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!add\+\_\+key@{add\+\_\+key}}
+\index{add\+\_\+key@{add\+\_\+key}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{add\+\_\+key(\$key, \$primary=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$primary = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a70e5c5fca213d8ad84cc71ba1698c3dd}
+Add Key
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+bool & {\em \$primary} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__forge}{C\+I\+\_\+\+D\+B\+\_\+forge} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a902a7267babceb2ce595706f217e00ad}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!create\+\_\+database@{create\+\_\+database}}
+\index{create\+\_\+database@{create\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{create\+\_\+database(\$db\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+database (
+\begin{DoxyParamCaption}
+\item[{}]{\$db\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a902a7267babceb2ce595706f217e00ad}
+Create database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$db\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a0904375ba759fbe7961b424a46c0adae}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!create\+\_\+table@{create\+\_\+table}}
+\index{create\+\_\+table@{create\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{create\+\_\+table(\$table, \$if\+\_\+not\+\_\+exists=\+F\+A\+L\+S\+E, array \$attributes=array())}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$if\+\_\+not\+\_\+exists = {\ttfamily FALSE}, }
+\item[{array}]{\$attributes = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a0904375ba759fbe7961b424a46c0adae}
+Create Table
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+bool & {\em \$if\+\_\+not\+\_\+exists} & Whether to add I\+F N\+O\+T E\+X\+I\+S\+T\+S condition \\
+\hline
+array & {\em \$attributes} & Associative array of table attributes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_aed0d6a0b12511dbdf19bb68fed7fd467}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!drop\+\_\+column@{drop\+\_\+column}}
+\index{drop\+\_\+column@{drop\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{drop\+\_\+column(\$table, \$column\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}drop\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$column\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_aed0d6a0b12511dbdf19bb68fed7fd467}
+Column Drop
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+string & {\em \$column\+\_\+name} & Column name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a9612987b2d4230de2638d15857e92e67}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!drop\+\_\+database@{drop\+\_\+database}}
+\index{drop\+\_\+database@{drop\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{drop\+\_\+database(\$db\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}drop\+\_\+database (
+\begin{DoxyParamCaption}
+\item[{}]{\$db\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a9612987b2d4230de2638d15857e92e67}
+Drop database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$db\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_ac46bdab43413dcc115d1be4a05dbcd0f}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!drop\+\_\+table@{drop\+\_\+table}}
+\index{drop\+\_\+table@{drop\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{drop\+\_\+table(\$table\+\_\+name, \$if\+\_\+exists=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}drop\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table\+\_\+name, }
+\item[{}]{\$if\+\_\+exists = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_ac46bdab43413dcc115d1be4a05dbcd0f}
+Drop Table
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table\+\_\+name} & Table name \\
+\hline
+bool & {\em \$if\+\_\+exists} & Whether to add an I\+F E\+X\+I\+S\+T\+S condition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_aa03cc8de0ac9ce03016bd2b50ddeff87}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!modify\+\_\+column@{modify\+\_\+column}}
+\index{modify\+\_\+column@{modify\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{modify\+\_\+column(\$table, \$field)}]{\setlength{\rightskip}{0pt plus 5cm}modify\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_aa03cc8de0ac9ce03016bd2b50ddeff87}
+Column Modify
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+string & {\em \$field} & Column definition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__forge_a0fb4802acad335ebdecd921d59de9a51}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!rename\+\_\+table@{rename\+\_\+table}}
+\index{rename\+\_\+table@{rename\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{rename\+\_\+table(\$table\+\_\+name, \$new\+\_\+table\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}rename\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table\+\_\+name, }
+\item[{}]{\$new\+\_\+table\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__forge_a0fb4802acad335ebdecd921d59de9a51}
+Rename Table
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table\+\_\+name} & Old table name \\
+\hline
+string & {\em \$new\+\_\+table\+\_\+name} & New table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__forge_acd23c9a8735806155f1a5d0a87c151f2}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+create\+\_\+database@{\$\+\_\+create\+\_\+database}}
+\index{\$\+\_\+create\+\_\+database@{\$\+\_\+create\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+database}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+database = \textquotesingle{}C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \%s\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_acd23c9a8735806155f1a5d0a87c151f2}
+\hypertarget{class_c_i___d_b__forge_a5950510a854f546e14f781b079a0a2b0}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+create\+\_\+table@{\$\+\_\+create\+\_\+table}}
+\index{\$\+\_\+create\+\_\+table@{\$\+\_\+create\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf \+\_\+create\+\_\+table} = \char`\"{}\%s \%s (\%{\bf s\textbackslash{}n})\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a5950510a854f546e14f781b079a0a2b0}
+\hypertarget{class_c_i___d_b__forge_a2f6484fcb8d1dc3eef67a637227cd583}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}}
+\index{\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+table\+\_\+if = \textquotesingle{}C\+R\+E\+A\+T\+E T\+A\+B\+L\+E I\+F N\+O\+T E\+X\+I\+S\+T\+S\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a2f6484fcb8d1dc3eef67a637227cd583}
+\hypertarget{class_c_i___d_b__forge_a73e07acdd35c948ad353903c2827af6e}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+create\+\_\+table\+\_\+keys@{\$\+\_\+create\+\_\+table\+\_\+keys}}
+\index{\$\+\_\+create\+\_\+table\+\_\+keys@{\$\+\_\+create\+\_\+table\+\_\+keys}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+table\+\_\+keys = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a73e07acdd35c948ad353903c2827af6e}
+\hypertarget{class_c_i___d_b__forge_aa119e1b4e3d00f47a7b83b7066087915}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+default@{\$\+\_\+default}}
+\index{\$\+\_\+default@{\$\+\_\+default}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+default = \textquotesingle{} D\+E\+F\+A\+U\+L\+T \textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_aa119e1b4e3d00f47a7b83b7066087915}
+\hypertarget{class_c_i___d_b__forge_a8305b12fc17f6f87778260ebdff287b4}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+drop\+\_\+database@{\$\+\_\+drop\+\_\+database}}
+\index{\$\+\_\+drop\+\_\+database@{\$\+\_\+drop\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+drop\+\_\+database}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+drop\+\_\+database = \textquotesingle{}D\+R\+O\+P D\+A\+T\+A\+B\+A\+S\+E \%s\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a8305b12fc17f6f87778260ebdff287b4}
+\hypertarget{class_c_i___d_b__forge_a92a8a9145a7fc91e252e58d019373581}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}}
+\index{\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+drop\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+drop\+\_\+table\+\_\+if = \textquotesingle{}D\+R\+O\+P T\+A\+B\+L\+E I\+F E\+X\+I\+S\+T\+S\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a92a8a9145a7fc91e252e58d019373581}
+\hypertarget{class_c_i___d_b__forge_ae58fe6a5104d4a069a49b27533ce808f}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+null@{\$\+\_\+null}}
+\index{\$\+\_\+null@{\$\+\_\+null}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+null}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+null = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_ae58fe6a5104d4a069a49b27533ce808f}
+\hypertarget{class_c_i___d_b__forge_a1a649e7cf9de16bcf932977b18bc91de}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+rename\+\_\+table@{\$\+\_\+rename\+\_\+table}}
+\index{\$\+\_\+rename\+\_\+table@{\$\+\_\+rename\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+rename\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+rename\+\_\+table = \textquotesingle{}A\+L\+T\+E\+R T\+A\+B\+L\+E \%s R\+E\+N\+A\+M\+E T\+O \%s;\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a1a649e7cf9de16bcf932977b18bc91de}
+\hypertarget{class_c_i___d_b__forge_aae977ae6d61fa183f0b25422b6ddc31c}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$\+\_\+unsigned@{\$\+\_\+unsigned}}
+\index{\$\+\_\+unsigned@{\$\+\_\+unsigned}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$\+\_\+unsigned}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+unsigned = T\+R\+U\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_aae977ae6d61fa183f0b25422b6ddc31c}
+\hypertarget{class_c_i___d_b__forge_a1fa3127fc82f96b1436d871ef02be319}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$db@{\$db}}
+\index{\$db@{\$db}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$db}]{\setlength{\rightskip}{0pt plus 5cm}\$db\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__forge_a1fa3127fc82f96b1436d871ef02be319}
+\hypertarget{class_c_i___d_b__forge_a6e90c3633cd0984a7e8de501f7771c53}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$db\+\_\+char\+\_\+set@{\$db\+\_\+char\+\_\+set}}
+\index{\$db\+\_\+char\+\_\+set@{\$db\+\_\+char\+\_\+set}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$db\+\_\+char\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}\$db\+\_\+char\+\_\+set = \textquotesingle{}\textquotesingle{}}\label{class_c_i___d_b__forge_a6e90c3633cd0984a7e8de501f7771c53}
+\hypertarget{class_c_i___d_b__forge_ab2303c817e3b402b77b7f99627b9c319}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$fields@{\$fields}}
+\index{\$fields@{\$fields}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$fields}]{\setlength{\rightskip}{0pt plus 5cm}\$fields = array()}\label{class_c_i___d_b__forge_ab2303c817e3b402b77b7f99627b9c319}
+\hypertarget{class_c_i___d_b__forge_af20635b6c08e03bfee9e3fc036fa80f3}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$keys@{\$keys}}
+\index{\$keys@{\$keys}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$keys}]{\setlength{\rightskip}{0pt plus 5cm}\$keys = array()}\label{class_c_i___d_b__forge_af20635b6c08e03bfee9e3fc036fa80f3}
+\hypertarget{class_c_i___d_b__forge_a09349689030ba7198a094abf357c78bc}{}\index{C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}!\$primary\+\_\+keys@{\$primary\+\_\+keys}}
+\index{\$primary\+\_\+keys@{\$primary\+\_\+keys}!C\+I\+\_\+\+D\+B\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+forge}}
+\subsubsection[{\$primary\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}\$primary\+\_\+keys = array()}\label{class_c_i___d_b__forge_a09349689030ba7198a094abf357c78bc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/database/\hyperlink{_d_b__forge_8php}{D\+B\+\_\+forge.\+php}\end{DoxyCompactItemize}

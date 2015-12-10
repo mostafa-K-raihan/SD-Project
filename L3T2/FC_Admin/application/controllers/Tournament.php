@@ -1,17 +1,16 @@
 <?php
 /**
-	LAST UPDATE: 29-06-2015
-	STATUS: COMPLETE
+	Provide database support for `tournament` entity
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tournament extends CI_Controller {
   
-	public function __construct()	//done
+	public function __construct()
     {
         parent::__construct();
 		  
-		//Load Necessary Libraries and helpers
+		/// Load Necessary Libraries and helpers
         $this->load->library('session');
         $this->load->helper('form');
         $this->load->helper('url');
@@ -38,12 +37,18 @@ class Tournament extends CI_Controller {
 		$this->load->view('templates/header');
     }
 	 
+	/**
+		Nothing
+	*/
 	public function index()
 	{
 	
 	}
 	
-	public function createTournament()	//done
+	/**
+		CREATE TOURNAMENT : Show view (input form)
+	*/
+	public function createTournament()	
 	{
 		
 		$query=$this->tournament_model->view_tournaments();
@@ -53,14 +58,17 @@ class Tournament extends CI_Controller {
 		$this->load->view('createTournament',$data);
 	}
 	
-	public function createTournament_proc()	//CHECKING & CONFIRMATION
+	/**
+		CREATE TOURNAMENT : Process user input
+	*/
+	public function createTournament_proc()
 	{
 		$t_data['tournament_id']='';
 		$t_data['tournament_name']=trim($this->input->post('tournament_name'));
 		$t_data['start_date']=$_POST['start_year'].'-'.$_POST['start_month'].'-'.$_POST['start_day'];
 		$t_data['end_date']=$_POST['end_year'].'-'.$_POST['end_month'].'-'.$_POST['end_day'];
 		$t_data['is_active']='';
-		$t_data['icon']='';				//Get the link of the image icon
+		$t_data['icon']='';
 		$t_data['is_complete']='';
 		
 		$data['success']=$this->tournament_model->create_tournament($t_data);
@@ -70,6 +78,7 @@ class Tournament extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
+	/*
 	public function deleteTournament()
 	{
 		//Load View
@@ -99,8 +108,12 @@ class Tournament extends CI_Controller {
 	{
 		
 	}
+	*/
 	
-	public function updateTournamentTeam()	//done
+	/**
+		UPDATE TOURNAMENT TEAM : Show view to select tournament
+	*/
+	public function updateTournamentTeam()	
 	{
 		$query=$this->tournament_model->get_all_tournaments();
 		$data['tournaments']=$query->result_array();
@@ -108,7 +121,10 @@ class Tournament extends CI_Controller {
 		$this->load->view('updateTournamentTeams',$data);
 	}
 
-	public function updateTournamentTeam_1()	//done
+	/**
+		UPDATE TOURNAMENT TEAM : Show view to select teams
+	*/
+	public function updateTournamentTeam_1()	
 	{
 		$tournament_id = $_POST['tournament_id'];
 		$data['tournament_name']=$this->tournament_model->get_tournament_name($tournament_id);
@@ -126,7 +142,10 @@ class Tournament extends CI_Controller {
 		$this->load->view('updateTournamentTeams',$data);
 	}
 	
-	public function updateTournamentTeam_2()	//done
+	/**
+		UPDATE TOURNAMENT TEAM : Process user input
+	*/
+	public function updateTournamentTeam_2()
 	{
 		$teams=$_SESSION['teams'];
 		$tournament_id = $_SESSION['tournament_id'];
@@ -153,7 +172,10 @@ class Tournament extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
-	public function activeTournament()	//done
+	/**
+		SELECT ACTIVE TOURNAMENT : Show view to select
+	*/
+	public function activeTournament()
 	{
 		$query=$this->tournament_model->view_tournaments();
 
@@ -163,12 +185,15 @@ class Tournament extends CI_Controller {
 		//echo 'Select Active Tournament Here';
 	}
 
-	public function activeTournament_proc()	//Confirmation
+	/**
+		SELECT ACTIVE TOURNAMENT : Process user input
+	*/
+	public function activeTournament_proc()
 	{
 		$t_id = $_POST['tournament'];
 		$this->tournament_model->update_active_tournament($t_id);
 		
-		$data['success']=true;	//must be calculated later
+		$data['success']=true;
 		$data['success_message']="Tournament Has Been Activated Successfully";
 		$data['fail_message']="Something went wrong. Please try again";
 		$this->load->view('status_message',$data);

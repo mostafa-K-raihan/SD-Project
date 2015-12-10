@@ -1,0 +1,253 @@
+\hypertarget{class_c_i___session__memcached__driver}{}\section{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver Class Reference}
+\label{class_c_i___session__memcached__driver}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+Inheritance diagram for C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_i___session__memcached__driver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session__memcached__driver_ac1669c73d53d6f16cf5459a1e84d39c8}{\+\_\+\+\_\+construct} (\&\$params)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a614b5cf3840833913c7a73260ed28e02}{open} (\$save\+\_\+path, \$name)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a5bbf84ebf657be4eaccc0582377c76bf}{read} (\$session\+\_\+id)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_ad9d124885be93668f1dbf6aace5964f5}{write} (\$session\+\_\+id, \$session\+\_\+data)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_aa69c8bf1f1dcf4e72552efff1fe3e87e}{close} ()
+\item 
+\hyperlink{class_c_i___session__memcached__driver_aaec5812f6b4eb6835f88d3baa06a002a}{destroy} (\$session\+\_\+id)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a57aff7ee0656d8aa75d545fb8b3ae35d}{gc} (\$maxlifetime)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a2c49c8e23be3e2aca96a9d20de18ffc2}{\+\_\+get\+\_\+lock} (\$session\+\_\+id)
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a0265e356e6cf1eaba229663c1664c37d}{\+\_\+release\+\_\+lock} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a9ce5188201bbc41ed4374947a35dadcc}{\$\+\_\+memcached}
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a177f231cc2eec31d9aa8f50f9ec9b407}{\$\+\_\+key\+\_\+prefix} = \textquotesingle{}ci\+\_\+session\+:\textquotesingle{}
+\item 
+\hyperlink{class_c_i___session__memcached__driver_a79bf61cb0768c7bb23404280ae004fb4}{\$\+\_\+lock\+\_\+key}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___session__memcached__driver_ac1669c73d53d6f16cf5459a1e84d39c8}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\+\_\+\+\_\+construct(\&\$params)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$params}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_ac1669c73d53d6f16cf5459a1e84d39c8}
+Class constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & Configuration parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___session__memcached__driver_a2c49c8e23be3e2aca96a9d20de18ffc2}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\+\_\+get\+\_\+lock@{\+\_\+get\+\_\+lock}}
+\index{\+\_\+get\+\_\+lock@{\+\_\+get\+\_\+lock}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\+\_\+get\+\_\+lock(\$session\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+get\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{}]{\$session\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session__memcached__driver_a2c49c8e23be3e2aca96a9d20de18ffc2}
+Get lock
+
+Acquires an (emulated) lock.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$session\+\_\+id} & Session I\+D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session__memcached__driver_a0265e356e6cf1eaba229663c1664c37d}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\+\_\+release\+\_\+lock@{\+\_\+release\+\_\+lock}}
+\index{\+\_\+release\+\_\+lock@{\+\_\+release\+\_\+lock}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\+\_\+release\+\_\+lock()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+release\+\_\+lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session__memcached__driver_a0265e356e6cf1eaba229663c1664c37d}
+Release lock
+
+Releases a previously acquired lock
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session__memcached__driver_aa69c8bf1f1dcf4e72552efff1fe3e87e}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!close@{close}}
+\index{close@{close}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{close()}]{\setlength{\rightskip}{0pt plus 5cm}close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_aa69c8bf1f1dcf4e72552efff1fe3e87e}
+Close
+
+Releases locks and closes connection.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_aa69c8bf1f1dcf4e72552efff1fe3e87e}{Session\+Handler\+Interface}.
+
+\hypertarget{class_c_i___session__memcached__driver_aaec5812f6b4eb6835f88d3baa06a002a}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!destroy@{destroy}}
+\index{destroy@{destroy}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{destroy(\$session\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}destroy (
+\begin{DoxyParamCaption}
+\item[{}]{\$session\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_aaec5812f6b4eb6835f88d3baa06a002a}
+Destroy
+
+Destroys the current session.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$session\+\_\+id} & Session I\+D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_aaec5812f6b4eb6835f88d3baa06a002a}{Session\+Handler\+Interface}.
+
+\hypertarget{class_c_i___session__memcached__driver_a57aff7ee0656d8aa75d545fb8b3ae35d}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!gc@{gc}}
+\index{gc@{gc}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{gc(\$maxlifetime)}]{\setlength{\rightskip}{0pt plus 5cm}gc (
+\begin{DoxyParamCaption}
+\item[{}]{\$maxlifetime}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_a57aff7ee0656d8aa75d545fb8b3ae35d}
+Garbage Collector
+
+Deletes expired sessions
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$maxlifetime} & Maximum lifetime of sessions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_a57aff7ee0656d8aa75d545fb8b3ae35d}{Session\+Handler\+Interface}.
+
+\hypertarget{class_c_i___session__memcached__driver_a614b5cf3840833913c7a73260ed28e02}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!open@{open}}
+\index{open@{open}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{open(\$save\+\_\+path, \$name)}]{\setlength{\rightskip}{0pt plus 5cm}open (
+\begin{DoxyParamCaption}
+\item[{}]{\$save\+\_\+path, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_a614b5cf3840833913c7a73260ed28e02}
+Open
+
+Sanitizes save\+\_\+path and initializes connections.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$save\+\_\+path} & Server path(s) \\
+\hline
+string & {\em \$name} & Session cookie name, unused \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_a614b5cf3840833913c7a73260ed28e02}{Session\+Handler\+Interface}.
+
+\hypertarget{class_c_i___session__memcached__driver_a5bbf84ebf657be4eaccc0582377c76bf}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!read@{read}}
+\index{read@{read}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{read(\$session\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}read (
+\begin{DoxyParamCaption}
+\item[{}]{\$session\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_a5bbf84ebf657be4eaccc0582377c76bf}
+Read
+
+Reads session data and acquires a lock
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$session\+\_\+id} & Session I\+D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Serialized session data 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_a5bbf84ebf657be4eaccc0582377c76bf}{Session\+Handler\+Interface}.
+
+\hypertarget{class_c_i___session__memcached__driver_ad9d124885be93668f1dbf6aace5964f5}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!write@{write}}
+\index{write@{write}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{write(\$session\+\_\+id, \$session\+\_\+data)}]{\setlength{\rightskip}{0pt plus 5cm}write (
+\begin{DoxyParamCaption}
+\item[{}]{\$session\+\_\+id, }
+\item[{}]{\$session\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session__memcached__driver_ad9d124885be93668f1dbf6aace5964f5}
+Write
+
+Writes (create / update) session data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$session\+\_\+id} & Session I\+D \\
+\hline
+string & {\em \$session\+\_\+data} & Serialized session data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_session_handler_interface_ad9d124885be93668f1dbf6aace5964f5}{Session\+Handler\+Interface}.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___session__memcached__driver_a177f231cc2eec31d9aa8f50f9ec9b407}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\$\+\_\+key\+\_\+prefix@{\$\+\_\+key\+\_\+prefix}}
+\index{\$\+\_\+key\+\_\+prefix@{\$\+\_\+key\+\_\+prefix}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\$\+\_\+key\+\_\+prefix}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+key\+\_\+prefix = \textquotesingle{}ci\+\_\+session\+:\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session__memcached__driver_a177f231cc2eec31d9aa8f50f9ec9b407}
+\hypertarget{class_c_i___session__memcached__driver_a79bf61cb0768c7bb23404280ae004fb4}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\$\+\_\+lock\+\_\+key@{\$\+\_\+lock\+\_\+key}}
+\index{\$\+\_\+lock\+\_\+key@{\$\+\_\+lock\+\_\+key}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\$\+\_\+lock\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+lock\+\_\+key\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session__memcached__driver_a79bf61cb0768c7bb23404280ae004fb4}
+\hypertarget{class_c_i___session__memcached__driver_a9ce5188201bbc41ed4374947a35dadcc}{}\index{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}!\$\+\_\+memcached@{\$\+\_\+memcached}}
+\index{\$\+\_\+memcached@{\$\+\_\+memcached}!C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver@{C\+I\+\_\+\+Session\+\_\+memcached\+\_\+driver}}
+\subsubsection[{\$\+\_\+memcached}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+memcached\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session__memcached__driver_a9ce5188201bbc41ed4374947a35dadcc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/libraries/\+Session/drivers/\hyperlink{_session__memcached__driver_8php}{Session\+\_\+memcached\+\_\+driver.\+php}\end{DoxyCompactItemize}

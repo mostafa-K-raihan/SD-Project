@@ -1,24 +1,19 @@
 <?php
 /**
-	LAST UPDATED: 30-06-2015
-	STATUS: REPLICATION COMPLETE
+	Provides Database support for `team` entity. 
 */
 class Team_model extends CI_Model 
 {
 	
-    public function __construct()	//DONE
+    public function __construct()	
 	{
         $this->load->database();
 	}
 	
-	public function update_motm_id($match_id,$player_id)	//NOT TESTED
-	{
-		$sql='UPDATE `match` SET `motm_id`=? WHERE `match_id`=?';
-		$query=$this->db->query($sql,$team_id); 
-		return;
-	}
-	
-	public function get_team_name($team_id)	//DONE
+	/**
+		Returns the name of a particular team (given by team_id)
+	*/
+	public function get_team_name($team_id)
 	{
 		$sql = 'SELECT `team_name` FROM `team` where `team_id`=?';				
 		$query=$this->db->query($sql,$team_id); 
@@ -27,6 +22,11 @@ class Team_model extends CI_Model
 		return $result['team_name'];
 	}
 	
+	/**
+		\brief Returns `team_id` for a given `team_name`
+		
+		It is discouraged to use this function.
+	*/
 	public function get_team_id($team_name)	//DONE
 	{
 		$sql = 'SELECT `team_id` FROM `team` where `team_name`=?';				
@@ -37,13 +37,21 @@ class Team_model extends CI_Model
 		return $result['team_id'];
 	}
 	
-	public function create_team($data)		//DONE
+	/**
+		\brief Insert a new team into database
+		
+		input: $data : array('team_id'=>?,'team_name'=>?,'jersy_image'=>?)
+	*/
+	public function create_team($data)		
 	{
 		$sql = 'INSERT INTO `team` VALUES(?,?,?)';		
 		return $this->db->query($sql,$data); 
 	}
 	
-	public function get_all_teams()	//DONE
+	/**
+		Get all team information from the database
+	*/
+	public function get_all_teams()	
 	{
 		$sql = 	'SELECT * from `team` ORDER BY `team_name`';
 				
@@ -52,9 +60,8 @@ class Team_model extends CI_Model
 		return $query;
 	}
 	
-	/*
-	//SELECT PLAYER_ID'S FOR A GIVEN TEAM
-	//PLAYER MAY OR MAYNOT BE IN THE TEAM SHEET FOR THE CURRENT/ACTIVE TOURNAMENT
+	/**
+		Get information of all players of a particular team (given by team_id)
 	*/
 	public function get_team_players($team_id)	//DONE
 	{
@@ -63,9 +70,8 @@ class Team_model extends CI_Model
 		return $query;
 	}
 
-	/*
-	//SELECT PLAYER_ID'S FOR A GIVEN TEAM
-	//PLAYER MUST BE IN THE TEAM SHEET FOR THE CURRENT/ACTIVE TOURNAMENT
+	/**
+		Get name and id of all players in current tournament
 	*/
 	public function get_tournament_team_players($team)	//done
 	{
@@ -74,6 +80,16 @@ class Team_model extends CI_Model
 				where P.`player_id` = PT.`player_id` and P.`team_id`=? and PT.`tournament_id`=?';
 		$query = $this->db->query($sql,$team);
 		return $query;
+	}
+	
+	/**
+		Redundant and not used; Delete if confirmed
+	*/
+	public function update_motm_id($match_id,$player_id)	
+	{
+		$sql='UPDATE `match` SET `motm_id`=? WHERE `match_id`=?';
+		$query=$this->db->query($sql,$team_id); 
+		return;
 	}
 	
 }

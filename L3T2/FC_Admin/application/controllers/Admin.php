@@ -1,7 +1,7 @@
 <?php
 
 /**
-*	LAST MODIFIED : 29-06-2015 04:02 PM
+*	Defines Server Actions For Admin Home Page
 */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -149,6 +149,9 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	/**
+		Show Tournament Results
+	*/
 	public function results()	
 	{
 		$query= $this->tournament_model->get_result();		
@@ -170,6 +173,9 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	/**
+		Do Database operations to start a phase and enable user transfer for this phase
+	*/
 	public function start_phase_action($phase_id)	
 	{
 		$query= $this->admin_model->start_phase($phase_id);
@@ -179,6 +185,9 @@ class Admin extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
+	/**
+		Do Database operations to start a match and enable user transfer for this match
+	*/
 	public function start_match_action($match_id)	
 	{
 		$query= $this->admin_model->start_match($match_id);

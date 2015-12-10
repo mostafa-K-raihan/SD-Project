@@ -1,0 +1,50 @@
+\hypertarget{jquery_8canvasjs_8js}{}\section{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/jquery.canvasjs.\+js File Reference}
+\label{jquery_8canvasjs_8js}\index{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/jquery.\+canvasjs.\+js@{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/source/jquery.\+canvasjs.\+js}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+function \hyperlink{jquery_8canvasjs_8js_ad55530ae1e5978df8e721017c1fc8466}{window}
+\item 
+function \hyperlink{jquery_8canvasjs_8js_a672db958ecc0481c2276f091769a9983}{document}
+\item 
+function \hyperlink{jquery_8canvasjs_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{jquery_8canvasjs_8js_a672db958ecc0481c2276f091769a9983}{}\index{jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}!document@{document}}
+\index{document@{document}!jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}function document}\label{jquery_8canvasjs_8js_a672db958ecc0481c2276f091769a9983}
+\hypertarget{jquery_8canvasjs_8js_a08113a236cc18d2a9d5ce27e638012be}{}\index{jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}!undefined@{undefined}}
+\index{undefined@{undefined}!jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}}
+\subsubsection[{undefined}]{\setlength{\rightskip}{0pt plus 5cm}function undefined}\label{jquery_8canvasjs_8js_a08113a236cc18d2a9d5ce27e638012be}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+
+    $.fn.CanvasJSChart = \textcolor{keyword}{function} (options) \{
+
+        \textcolor{keywordflow}{if} (options) \{
+
+            var $el = this.first();
+            var container = \textcolor{keyword}{this}[0];
+            var chart = \textcolor{keyword}{new} \hyperlink{canvasjs_8min_8js_afa2987ce70448fa0b1e97d8b5d9fb3fa}{CanvasJS}.Chart(container, options);
+
+            $el.children(\textcolor{stringliteral}{".canvasjs-chart-container"}).data(\textcolor{stringliteral}{"canvasjsChartRef"}, chart);
+
+            chart.render();
+
+            \textcolor{keywordflow}{return} \textcolor{keyword}{this};
+
+        \} \textcolor{keywordflow}{else} \{
+
+            \textcolor{keywordflow}{return} this.first().children(\textcolor{stringliteral}{".canvasjs-chart-container"}).data(\textcolor{stringliteral}{"canvasjsChartRef"});
+
+        \}
+    \}
+
+\}(\hyperlink{jquery_8json-2_84_8min_8js_a2b1d6f9c448e3ce72f4e1865d6e38d2c}{jQuery}, \hyperlink{jquery_8canvasjs_8js_ad55530ae1e5978df8e721017c1fc8466}{window}, \hyperlink{jquery_8canvasjs_8js_a672db958ecc0481c2276f091769a9983}{document}))
+\end{DoxyCode}
+\hypertarget{jquery_8canvasjs_8js_ad55530ae1e5978df8e721017c1fc8466}{}\index{jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}!window@{window}}
+\index{window@{window}!jquery.\+canvasjs.\+js@{jquery.\+canvasjs.\+js}}
+\subsubsection[{window}]{\setlength{\rightskip}{0pt plus 5cm}function window}\label{jquery_8canvasjs_8js_ad55530ae1e5978df8e721017c1fc8466}

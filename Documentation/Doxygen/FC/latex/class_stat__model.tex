@@ -1,0 +1,67 @@
+\hypertarget{class_stat__model}{}\section{Stat\+\_\+model Class Reference}
+\label{class_stat__model}\index{Stat\+\_\+model@{Stat\+\_\+model}}
+Inheritance diagram for Stat\+\_\+model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stat__model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stat__model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_stat__model_aae38f450ca56fb7a815cb0eb7d170e76}{get\+\_\+user\+\_\+player\+\_\+by\+\_\+match} (\$user\+\_\+match\+\_\+team\+\_\+id)
+\begin{DoxyCompactList}\small\item\em returned data \+: player\+\_\+name, team , category , player\+\_\+id \end{DoxyCompactList}\item 
+\hyperlink{class_stat__model_abfa4fb201a00936dae8bfe0ee1de5def}{get\+\_\+ids\+\_\+by\+\_\+match} (\$user\+\_\+id, \$match\+\_\+id)
+\item 
+\hyperlink{class_stat__model_a208d97b470817f08228bb1225042e218}{get\+\_\+user\+\_\+team\+\_\+match\+\_\+id} (\$user\+\_\+id, \$player\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides Database Support For Different Statistical Operation 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_stat__model_a095c5d389db211932136b53f25f39685}{}\index{Stat\+\_\+model@{Stat\+\_\+model}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Stat\+\_\+model@{Stat\+\_\+model}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_stat__model_a095c5d389db211932136b53f25f39685}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_stat__model_abfa4fb201a00936dae8bfe0ee1de5def}{}\index{Stat\+\_\+model@{Stat\+\_\+model}!get\+\_\+ids\+\_\+by\+\_\+match@{get\+\_\+ids\+\_\+by\+\_\+match}}
+\index{get\+\_\+ids\+\_\+by\+\_\+match@{get\+\_\+ids\+\_\+by\+\_\+match}!Stat\+\_\+model@{Stat\+\_\+model}}
+\subsubsection[{get\+\_\+ids\+\_\+by\+\_\+match(\$user\+\_\+id, \$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+ids\+\_\+by\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_stat__model_abfa4fb201a00936dae8bfe0ee1de5def}
+Returns the user\+\_\+match\+\_\+team\+\_\+id \& captain\+\_\+id of user team for the given match id \hypertarget{class_stat__model_aae38f450ca56fb7a815cb0eb7d170e76}{}\index{Stat\+\_\+model@{Stat\+\_\+model}!get\+\_\+user\+\_\+player\+\_\+by\+\_\+match@{get\+\_\+user\+\_\+player\+\_\+by\+\_\+match}}
+\index{get\+\_\+user\+\_\+player\+\_\+by\+\_\+match@{get\+\_\+user\+\_\+player\+\_\+by\+\_\+match}!Stat\+\_\+model@{Stat\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+player\+\_\+by\+\_\+match(\$user\+\_\+match\+\_\+team\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+player\+\_\+by\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+match\+\_\+team\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_stat__model_aae38f450ca56fb7a815cb0eb7d170e76}
+
+
+returned data \+: player\+\_\+name, team , category , player\+\_\+id 
+
+Returns the array of user team players\textquotesingle{} id \mbox{[} array(\char`\"{}player\+\_\+id\char`\"{}=$>$value) \mbox{]} for the given match id \hypertarget{class_stat__model_a208d97b470817f08228bb1225042e218}{}\index{Stat\+\_\+model@{Stat\+\_\+model}!get\+\_\+user\+\_\+team\+\_\+match\+\_\+id@{get\+\_\+user\+\_\+team\+\_\+match\+\_\+id}}
+\index{get\+\_\+user\+\_\+team\+\_\+match\+\_\+id@{get\+\_\+user\+\_\+team\+\_\+match\+\_\+id}!Stat\+\_\+model@{Stat\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+team\+\_\+match\+\_\+id(\$user\+\_\+id, \$player\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+team\+\_\+match\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$player\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_stat__model_a208d97b470817f08228bb1225042e218}
+Return \textquotesingle{}match\+\_\+id\textquotesingle{} and corresponding \textquotesingle{}captain\+\_\+id\textquotesingle{} s in which the given player was in the user\textquotesingle{}s team. If No such entry, return -\/1 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/application/models/\hyperlink{_stat__model_8php}{Stat\+\_\+model.\+php}\end{DoxyCompactItemize}

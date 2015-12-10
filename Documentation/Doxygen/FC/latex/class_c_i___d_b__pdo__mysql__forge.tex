@@ -1,0 +1,155 @@
+\hypertarget{class_c_i___d_b__pdo__mysql__forge}{}\section{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge Class Reference}
+\label{class_c_i___d_b__pdo__mysql__forge}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_i___d_b__pdo__mysql__forge}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a10b25326d82f6ddd9af1935e52e42b72}{\+\_\+create\+\_\+table\+\_\+attr} (\$attributes)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a41c6cae02f2fda8b429ad0afb9509426}{\+\_\+alter\+\_\+table} (\$alter\+\_\+type, \$table, \$field)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a8f38f1c5b5dddecca4befbe393f3f299}{\+\_\+process\+\_\+column} (\$field)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_ae0bdb4ea3418590d1894c5b621b5ca50}{\+\_\+process\+\_\+indexes} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_acd23c9a8735806155f1a5d0a87c151f2}{\$\+\_\+create\+\_\+database} = \textquotesingle{}C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \%s C\+H\+A\+R\+A\+C\+T\+E\+R S\+E\+T \%s C\+O\+L\+L\+A\+T\+E \%s\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a2f6484fcb8d1dc3eef67a637227cd583}{\$\+\_\+create\+\_\+table\+\_\+if} = \textquotesingle{}C\+R\+E\+A\+T\+E T\+A\+B\+L\+E I\+F N\+O\+T E\+X\+I\+S\+T\+S\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a73e07acdd35c948ad353903c2827af6e}{\$\+\_\+create\+\_\+table\+\_\+keys} = T\+R\+U\+E
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_a92a8a9145a7fc91e252e58d019373581}{\$\+\_\+drop\+\_\+table\+\_\+if} = \textquotesingle{}D\+R\+O\+P T\+A\+B\+L\+E I\+F E\+X\+I\+S\+T\+S\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_aae977ae6d61fa183f0b25422b6ddc31c}{\$\+\_\+unsigned}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__forge_ae58fe6a5104d4a069a49b27533ce808f}{\$\+\_\+null} = \textquotesingle{}N\+U\+L\+L\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a41c6cae02f2fda8b429ad0afb9509426}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}}
+\index{\+\_\+alter\+\_\+table@{\+\_\+alter\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\+\_\+alter\+\_\+table(\$alter\+\_\+type, \$table, \$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+alter\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$alter\+\_\+type, }
+\item[{}]{\$table, }
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a41c6cae02f2fda8b429ad0afb9509426}
+A\+L\+T\+E\+R T\+A\+B\+L\+E
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$alter\+\_\+type} & A\+L\+T\+E\+R type \\
+\hline
+string & {\em \$table} & Table name \\
+\hline
+mixed & {\em \$field} & Column definition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$string\mbox{[}\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a10b25326d82f6ddd9af1935e52e42b72}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\+\_\+create\+\_\+table\+\_\+attr@{\+\_\+create\+\_\+table\+\_\+attr}}
+\index{\+\_\+create\+\_\+table\+\_\+attr@{\+\_\+create\+\_\+table\+\_\+attr}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\+\_\+create\+\_\+table\+\_\+attr(\$attributes)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+create\+\_\+table\+\_\+attr (
+\begin{DoxyParamCaption}
+\item[{}]{\$attributes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a10b25326d82f6ddd9af1935e52e42b72}
+C\+R\+E\+A\+T\+E T\+A\+B\+L\+E attributes
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$attributes} & Associative array of table attributes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a8f38f1c5b5dddecca4befbe393f3f299}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}}
+\index{\+\_\+process\+\_\+column@{\+\_\+process\+\_\+column}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+column(\$field)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+column (
+\begin{DoxyParamCaption}
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a8f38f1c5b5dddecca4befbe393f3f299}
+Process column
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_ae0bdb4ea3418590d1894c5b621b5ca50}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\+\_\+process\+\_\+indexes@{\+\_\+process\+\_\+indexes}}
+\index{\+\_\+process\+\_\+indexes@{\+\_\+process\+\_\+indexes}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\+\_\+process\+\_\+indexes(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+process\+\_\+indexes (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_ae0bdb4ea3418590d1894c5b621b5ca50}
+Process indexes
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & (ignored) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_acd23c9a8735806155f1a5d0a87c151f2}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+create\+\_\+database@{\$\+\_\+create\+\_\+database}}
+\index{\$\+\_\+create\+\_\+database@{\$\+\_\+create\+\_\+database}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+database}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+database = \textquotesingle{}C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \%s C\+H\+A\+R\+A\+C\+T\+E\+R S\+E\+T \%s C\+O\+L\+L\+A\+T\+E \%s\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_acd23c9a8735806155f1a5d0a87c151f2}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a2f6484fcb8d1dc3eef67a637227cd583}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}}
+\index{\$\+\_\+create\+\_\+table\+\_\+if@{\$\+\_\+create\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+table\+\_\+if = \textquotesingle{}C\+R\+E\+A\+T\+E T\+A\+B\+L\+E I\+F N\+O\+T E\+X\+I\+S\+T\+S\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a2f6484fcb8d1dc3eef67a637227cd583}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a73e07acdd35c948ad353903c2827af6e}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+create\+\_\+table\+\_\+keys@{\$\+\_\+create\+\_\+table\+\_\+keys}}
+\index{\$\+\_\+create\+\_\+table\+\_\+keys@{\$\+\_\+create\+\_\+table\+\_\+keys}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+create\+\_\+table\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+create\+\_\+table\+\_\+keys = T\+R\+U\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a73e07acdd35c948ad353903c2827af6e}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_a92a8a9145a7fc91e252e58d019373581}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}}
+\index{\$\+\_\+drop\+\_\+table\+\_\+if@{\$\+\_\+drop\+\_\+table\+\_\+if}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+drop\+\_\+table\+\_\+if}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+drop\+\_\+table\+\_\+if = \textquotesingle{}D\+R\+O\+P T\+A\+B\+L\+E I\+F E\+X\+I\+S\+T\+S\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_a92a8a9145a7fc91e252e58d019373581}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_ae58fe6a5104d4a069a49b27533ce808f}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+null@{\$\+\_\+null}}
+\index{\$\+\_\+null@{\$\+\_\+null}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+null}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+null = \textquotesingle{}N\+U\+L\+L\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_ae58fe6a5104d4a069a49b27533ce808f}
+\hypertarget{class_c_i___d_b__pdo__mysql__forge_aae977ae6d61fa183f0b25422b6ddc31c}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}!\$\+\_\+unsigned@{\$\+\_\+unsigned}}
+\index{\$\+\_\+unsigned@{\$\+\_\+unsigned}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+forge}}
+\subsubsection[{\$\+\_\+unsigned}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+unsigned\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__forge_aae977ae6d61fa183f0b25422b6ddc31c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array(
+        \textcolor{stringliteral}{'TINYINT'},
+        \textcolor{stringliteral}{'SMALLINT'},
+        \textcolor{stringliteral}{'MEDIUMINT'},
+        \textcolor{stringliteral}{'INT'},
+        \textcolor{stringliteral}{'INTEGER'},
+        \textcolor{stringliteral}{'BIGINT'},
+        \textcolor{stringliteral}{'REAL'},
+        \textcolor{stringliteral}{'DOUBLE'},
+        \textcolor{stringliteral}{'DOUBLE PRECISION'},
+        \textcolor{stringliteral}{'FLOAT'},
+        \textcolor{stringliteral}{'DECIMAL'},
+        \textcolor{stringliteral}{'NUMERIC'}
+    )
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/database/drivers/pdo/subdrivers/\hyperlink{pdo__mysql__forge_8php}{pdo\+\_\+mysql\+\_\+forge.\+php}\end{DoxyCompactItemize}

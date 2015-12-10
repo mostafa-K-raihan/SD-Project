@@ -1,0 +1,276 @@
+\hypertarget{class_c_i___cache__redis}{}\section{C\+I\+\_\+\+Cache\+\_\+redis Class Reference}
+\label{class_c_i___cache__redis}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+Inheritance diagram for C\+I\+\_\+\+Cache\+\_\+redis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_i___cache__redis}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___cache__redis_a24a9bf83a1002d46ece83a93d14bd921}{get} (\$key)
+\item 
+\hyperlink{class_c_i___cache__redis_a472645db04a8ce4b040b789a3062a7d2}{save} (\$id, \$data, \$ttl=60, \$raw=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___cache__redis_aa74a2edd6f3cbb5c5353f7faa97b6d70}{delete} (\$key)
+\item 
+\hyperlink{class_c_i___cache__redis_a2f07a4e09b57f4460d49852497d1808f}{increment} (\$id, \$offset=1)
+\item 
+\hyperlink{class_c_i___cache__redis_a4eb1c2772c8efc48c411ea060dd040b7}{decrement} (\$id, \$offset=1)
+\item 
+\hyperlink{class_c_i___cache__redis_adb40b812890a8bc058bf6b7a0e1a54d9}{clean} ()
+\item 
+\hyperlink{class_c_i___cache__redis_aa8b9c4d9f0387156736ccd8850f0727e}{cache\+\_\+info} (\$type=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___cache__redis_ae0041475d947465622dfcef1fc53e43d}{get\+\_\+metadata} (\$key)
+\item 
+\hyperlink{class_c_i___cache__redis_a98c68fd153468bc148c4ed8c716859fc}{is\+\_\+supported} ()
+\item 
+\hyperlink{class_c_i___cache__redis_a421831a265621325e1fdd19aace0c758}{\+\_\+\+\_\+destruct} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___cache__redis_ab657271a732fbbf98edf7a7b6060b784}{\+\_\+setup\+\_\+redis} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___cache__redis_a36de60a8fcbe3efac91a87577d0728de}{\$\+\_\+redis}
+\item 
+\hyperlink{class_c_i___cache__redis_a138ded30ad61d04611681cdf7060a6cf}{\$\+\_\+serialized} = array()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_c_i___cache__redis_afbad69596f851c659fd07255c321fb97}{\$\+\_\+default\+\_\+config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___cache__redis_a421831a265621325e1fdd19aace0c758}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{\+\_\+\+\_\+destruct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+destruct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a421831a265621325e1fdd19aace0c758}
+Class destructor
+
+Closes the connection to Redis if present.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___cache__redis_ab657271a732fbbf98edf7a7b6060b784}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!\+\_\+setup\+\_\+redis@{\+\_\+setup\+\_\+redis}}
+\index{\+\_\+setup\+\_\+redis@{\+\_\+setup\+\_\+redis}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{\+\_\+setup\+\_\+redis()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+setup\+\_\+redis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___cache__redis_ab657271a732fbbf98edf7a7b6060b784}
+Setup Redis config and connection
+
+Loads Redis config file if present. Will halt execution if a Redis connection can\textquotesingle{}t be established.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Redis\+::connect() 
+\end{DoxySeeAlso}
+\hypertarget{class_c_i___cache__redis_aa8b9c4d9f0387156736ccd8850f0727e}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!cache\+\_\+info@{cache\+\_\+info}}
+\index{cache\+\_\+info@{cache\+\_\+info}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{cache\+\_\+info(\$type=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}cache\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{}]{\$type = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_aa8b9c4d9f0387156736ccd8850f0727e}
+Get cache driver info
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Not supported in Redis. Only included in order to offer a consistent cache A\+P\+I. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Redis\+::info() 
+\end{DoxySeeAlso}
+\hypertarget{class_c_i___cache__redis_adb40b812890a8bc058bf6b7a0e1a54d9}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!clean@{clean}}
+\index{clean@{clean}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{clean()}]{\setlength{\rightskip}{0pt plus 5cm}clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_adb40b812890a8bc058bf6b7a0e1a54d9}
+Clean cache
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Redis\+::flush\+D\+B() 
+\end{DoxySeeAlso}
+\hypertarget{class_c_i___cache__redis_a4eb1c2772c8efc48c411ea060dd040b7}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!decrement@{decrement}}
+\index{decrement@{decrement}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{decrement(\$id, \$offset=1)}]{\setlength{\rightskip}{0pt plus 5cm}decrement (
+\begin{DoxyParamCaption}
+\item[{}]{\$id, }
+\item[{}]{\$offset = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a4eb1c2772c8efc48c411ea060dd040b7}
+Decrement a raw value
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & Cache I\+D \\
+\hline
+int & {\em \$offset} & Step/value to reduce by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed New value on success or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_aa74a2edd6f3cbb5c5353f7faa97b6d70}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!delete@{delete}}
+\index{delete@{delete}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{delete(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}delete (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_aa74a2edd6f3cbb5c5353f7faa97b6d70}
+Delete from cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Cache key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_a24a9bf83a1002d46ece83a93d14bd921}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!get@{get}}
+\index{get@{get}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{get(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a24a9bf83a1002d46ece83a93d14bd921}
+Get cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Cache I\+D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_ae0041475d947465622dfcef1fc53e43d}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!get\+\_\+metadata@{get\+\_\+metadata}}
+\index{get\+\_\+metadata@{get\+\_\+metadata}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{get\+\_\+metadata(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+metadata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_ae0041475d947465622dfcef1fc53e43d}
+Get cache metadata
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Cache key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_a2f07a4e09b57f4460d49852497d1808f}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!increment@{increment}}
+\index{increment@{increment}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{increment(\$id, \$offset=1)}]{\setlength{\rightskip}{0pt plus 5cm}increment (
+\begin{DoxyParamCaption}
+\item[{}]{\$id, }
+\item[{}]{\$offset = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a2f07a4e09b57f4460d49852497d1808f}
+Increment a raw value
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & Cache I\+D \\
+\hline
+int & {\em \$offset} & Step/value to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed New value on success or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_a98c68fd153468bc148c4ed8c716859fc}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!is\+\_\+supported@{is\+\_\+supported}}
+\index{is\+\_\+supported@{is\+\_\+supported}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{is\+\_\+supported()}]{\setlength{\rightskip}{0pt plus 5cm}is\+\_\+supported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a98c68fd153468bc148c4ed8c716859fc}
+Check if Redis driver is supported
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___cache__redis_a472645db04a8ce4b040b789a3062a7d2}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!save@{save}}
+\index{save@{save}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{save(\$id, \$data, \$ttl=60, \$raw=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}save (
+\begin{DoxyParamCaption}
+\item[{}]{\$id, }
+\item[{}]{\$data, }
+\item[{}]{\$ttl = {\ttfamily 60}, }
+\item[{}]{\$raw = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___cache__redis_a472645db04a8ce4b040b789a3062a7d2}
+Save cache
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & Cache I\+D \\
+\hline
+mixed & {\em \$data} & Data to save \\
+\hline
+int & {\em \$ttl} & Time to live in seconds \\
+\hline
+bool & {\em \$raw} & Whether to store the raw value (unused) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool T\+R\+U\+E on success, F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___cache__redis_afbad69596f851c659fd07255c321fb97}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!\$\+\_\+default\+\_\+config@{\$\+\_\+default\+\_\+config}}
+\index{\$\+\_\+default\+\_\+config@{\$\+\_\+default\+\_\+config}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{\$\+\_\+default\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+default\+\_\+config\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_c_i___cache__redis_afbad69596f851c659fd07255c321fb97}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array(
+        \textcolor{stringliteral}{'socket\_type'} => \textcolor{stringliteral}{'tcp'},
+        \textcolor{stringliteral}{'host'} => \textcolor{stringliteral}{'127.0.0.1'},
+        \textcolor{stringliteral}{'password'} => NULL,
+        \textcolor{stringliteral}{'port'} => 6379,
+        \textcolor{stringliteral}{'timeout'} => 0
+    )
+\end{DoxyCode}
+\hypertarget{class_c_i___cache__redis_a36de60a8fcbe3efac91a87577d0728de}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!\$\+\_\+redis@{\$\+\_\+redis}}
+\index{\$\+\_\+redis@{\$\+\_\+redis}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{\$\+\_\+redis}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+redis\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___cache__redis_a36de60a8fcbe3efac91a87577d0728de}
+\hypertarget{class_c_i___cache__redis_a138ded30ad61d04611681cdf7060a6cf}{}\index{C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}!\$\+\_\+serialized@{\$\+\_\+serialized}}
+\index{\$\+\_\+serialized@{\$\+\_\+serialized}!C\+I\+\_\+\+Cache\+\_\+redis@{C\+I\+\_\+\+Cache\+\_\+redis}}
+\subsubsection[{\$\+\_\+serialized}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+serialized = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___cache__redis_a138ded30ad61d04611681cdf7060a6cf}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/libraries/\+Cache/drivers/\hyperlink{_cache__redis_8php}{Cache\+\_\+redis.\+php}\end{DoxyCompactItemize}

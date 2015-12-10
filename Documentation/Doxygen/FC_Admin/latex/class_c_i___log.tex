@@ -1,0 +1,100 @@
+\hypertarget{class_c_i___log}{}\section{C\+I\+\_\+\+Log Class Reference}
+\label{class_c_i___log}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___log_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_c_i___log_ae63dcdf6d5a7f494d7e401e3fc6da2b4}{write\+\_\+log} (\$level, \$msg)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___log_a3eaf9e92941ee6be33bc972ab76b4caf}{\$\+\_\+log\+\_\+path}
+\item 
+\hyperlink{class_c_i___log_a8a805f532669024e8868a5cca0d6f97b}{\$\+\_\+file\+\_\+permissions} = 0644
+\item 
+\hyperlink{class_c_i___log_a0fc9914bdaf300fa9a1745201204e73f}{\$\+\_\+threshold} = 1
+\item 
+\hyperlink{class_c_i___log_a95562d965f341c55d2c997ed12b4b721}{\$\+\_\+threshold\+\_\+array} = array()
+\item 
+\hyperlink{class_c_i___log_aab5c1870169c8e04ede18245f04ad85c}{\$\+\_\+date\+\_\+fmt} = \textquotesingle{}Y-\/m-\/\hyperlink{assets_2js_2bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d} H\+:i\+:s\textquotesingle{}
+\item 
+\hyperlink{class_c_i___log_ad0c7fa3db6c5e41616bbdf4719492518}{\$\+\_\+file\+\_\+ext}
+\item 
+\hyperlink{class_c_i___log_af8233d47e8ad3e624ba168154d2f383d}{\$\+\_\+enabled} = T\+R\+U\+E
+\item 
+\hyperlink{class_c_i___log_aeb1c4747136537731b6cfed6f1e64941}{\$\+\_\+levels} = array(\textquotesingle{}E\+R\+R\+O\+R\textquotesingle{} =$>$ 1, \textquotesingle{}D\+E\+B\+U\+G\textquotesingle{} =$>$ 2, \textquotesingle{}I\+N\+F\+O\textquotesingle{} =$>$ 3, \textquotesingle{}A\+L\+L\textquotesingle{} =$>$ 4)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___log_a095c5d389db211932136b53f25f39685}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___log_a095c5d389db211932136b53f25f39685}
+Class constructor
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___log_ae63dcdf6d5a7f494d7e401e3fc6da2b4}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!write\+\_\+log@{write\+\_\+log}}
+\index{write\+\_\+log@{write\+\_\+log}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{write\+\_\+log(\$level, \$msg)}]{\setlength{\rightskip}{0pt plus 5cm}write\+\_\+log (
+\begin{DoxyParamCaption}
+\item[{}]{\$level, }
+\item[{}]{\$msg}
+\end{DoxyParamCaption}
+)}\label{class_c_i___log_ae63dcdf6d5a7f494d7e401e3fc6da2b4}
+Write Log File
+
+Generally this function will be called using the global log\+\_\+message() function
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the error level\+: \textquotesingle{}error\textquotesingle{}, \textquotesingle{}debug\textquotesingle{} or \textquotesingle{}info\textquotesingle{} \\
+\hline
+{\em string} & the error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___log_aab5c1870169c8e04ede18245f04ad85c}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+date\+\_\+fmt@{\$\+\_\+date\+\_\+fmt}}
+\index{\$\+\_\+date\+\_\+fmt@{\$\+\_\+date\+\_\+fmt}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+date\+\_\+fmt}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+date\+\_\+fmt = \textquotesingle{}Y-\/m-\/{\bf d} H\+:i\+:s\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_aab5c1870169c8e04ede18245f04ad85c}
+\hypertarget{class_c_i___log_af8233d47e8ad3e624ba168154d2f383d}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+enabled@{\$\+\_\+enabled}}
+\index{\$\+\_\+enabled@{\$\+\_\+enabled}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+enabled}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+enabled = T\+R\+U\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_af8233d47e8ad3e624ba168154d2f383d}
+\hypertarget{class_c_i___log_ad0c7fa3db6c5e41616bbdf4719492518}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+file\+\_\+ext@{\$\+\_\+file\+\_\+ext}}
+\index{\$\+\_\+file\+\_\+ext@{\$\+\_\+file\+\_\+ext}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+file\+\_\+ext}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+file\+\_\+ext\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_ad0c7fa3db6c5e41616bbdf4719492518}
+\hypertarget{class_c_i___log_a8a805f532669024e8868a5cca0d6f97b}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+file\+\_\+permissions@{\$\+\_\+file\+\_\+permissions}}
+\index{\$\+\_\+file\+\_\+permissions@{\$\+\_\+file\+\_\+permissions}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+file\+\_\+permissions}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+file\+\_\+permissions = 0644\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_a8a805f532669024e8868a5cca0d6f97b}
+\hypertarget{class_c_i___log_aeb1c4747136537731b6cfed6f1e64941}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+levels@{\$\+\_\+levels}}
+\index{\$\+\_\+levels@{\$\+\_\+levels}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+levels}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+levels = array(\textquotesingle{}E\+R\+R\+O\+R\textquotesingle{} =$>$ 1, \textquotesingle{}D\+E\+B\+U\+G\textquotesingle{} =$>$ 2, \textquotesingle{}I\+N\+F\+O\textquotesingle{} =$>$ 3, \textquotesingle{}A\+L\+L\textquotesingle{} =$>$ 4)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_aeb1c4747136537731b6cfed6f1e64941}
+\hypertarget{class_c_i___log_a3eaf9e92941ee6be33bc972ab76b4caf}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+log\+\_\+path@{\$\+\_\+log\+\_\+path}}
+\index{\$\+\_\+log\+\_\+path@{\$\+\_\+log\+\_\+path}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+log\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+log\+\_\+path\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_a3eaf9e92941ee6be33bc972ab76b4caf}
+\hypertarget{class_c_i___log_a0fc9914bdaf300fa9a1745201204e73f}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+threshold@{\$\+\_\+threshold}}
+\index{\$\+\_\+threshold@{\$\+\_\+threshold}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+threshold}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+threshold = 1\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_a0fc9914bdaf300fa9a1745201204e73f}
+\hypertarget{class_c_i___log_a95562d965f341c55d2c997ed12b4b721}{}\index{C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}!\$\+\_\+threshold\+\_\+array@{\$\+\_\+threshold\+\_\+array}}
+\index{\$\+\_\+threshold\+\_\+array@{\$\+\_\+threshold\+\_\+array}!C\+I\+\_\+\+Log@{C\+I\+\_\+\+Log}}
+\subsubsection[{\$\+\_\+threshold\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+threshold\+\_\+array = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___log_a95562d965f341c55d2c997ed12b4b721}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/core/\hyperlink{_log_8php}{Log.\+php}\end{DoxyCompactItemize}

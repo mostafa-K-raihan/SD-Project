@@ -1,7 +1,6 @@
 <?php
 /**
-	LAST UPDATED: 30-06-2015 04:32 pm
-	STATUS: REPLICATION COMPLETE
+*	Defines Server Actions For Team Tab
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -9,15 +8,19 @@ class Match extends CI_Controller {
 	  
 	 public function __construct()
      {
-          parent::__construct();
+        parent::__construct();
 		  
-		  //Load Necessary Libraries and helpers
-          $this->load->library('session');
-          $this->load->helper('form');
-          $this->load->helper('url');
-          $this->load->helper('html');
-		  $this->load->library('form_validation');
-		  
+		/// Load Necessary Libraries and helpers
+        $this->load->library('session');
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->helper('html');
+		$this->load->library('form_validation');
+		
+		/**
+			\brief If any user is logged in from the same browser, donot allow admin to operate.	
+			Just used for safety considering cache operations
+		*/			
 		if(isset($_SESSION["user_id"]))
 		{
 			die("Please Log out from your user account. ");
@@ -35,21 +38,22 @@ class Match extends CI_Controller {
 		$this->load->model('team_model');
 		$this->load->model('match_model');
 		
-		//$data['active_page']='match';
 		$this->load->view('templates/header');
 		
     }
 	 
-	
+	/**
+		Empty
+	*/
 	public function index()
 	{
 	
 	}
 	
-	/**
-	*Update Match Table
-	*/
 	
+	/**
+		Create a match : Gather data and Show UI
+	*/
 	public function createMatch()
 	{
 		
@@ -72,6 +76,9 @@ class Match extends CI_Controller {
 		}
 	}
 	
+	/**
+		Create a match : procede with user input
+	*/
 	public function createMatch_proc()
 	{
 		if(!(isset($_POST['start_year']) && ($_POST['start_month']) && ($_POST['start_day']) && ($_POST['start_hour']) && ($_POST['start_min'])))
@@ -106,6 +113,9 @@ class Match extends CI_Controller {
 		}
 	}
 	
+	/**
+		Update a match information : Gather match data and Show UI to select a match
+	*/
 	public function updateMatchInfo()
 	{
 		$query= $this->tournament_model->get_fixture();		
@@ -122,10 +132,12 @@ class Match extends CI_Controller {
 		}
 	}
 	
+	/**
+		Update a match information : Show UI to update information
+	*/
 	public function updateMatchInfo_1()
 	{
 		$match_id = $_POST['match_id'];
-		//Load Match Updater Form
 		$data['step']=1;
 		$data['match']=$this->match_model->get_match_info($match_id)->row_array();
 		$data['tournament_name']=$this->tournament_model->get_active_tournament_name();
@@ -133,7 +145,9 @@ class Match extends CI_Controller {
 		$this->load->view('updateMatch',$data);
 	}
 	
-	
+	/**
+		Update a match information : procede with user input
+	*/
 	public function updateMatchInfo_proc()
 	{
 		$t_data['start_time']=$_POST['start_year'].'-'.$_POST['start_month'].'-'.$_POST['start_day'].' '.$_POST['start_hour'].':'.$_POST['start_min'].':'.'00';
@@ -148,8 +162,10 @@ class Match extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
-	
-	public function updateMatchStat()		//STEP -01 : SELECT MATCH
+	/**
+		Update Match Statistics : Show UI to select match
+	*/
+	public function updateMatchStat()		
 	{
 		$query= $this->tournament_model->get_fixture();		
 		
@@ -165,17 +181,17 @@ class Match extends CI_Controller {
 		}
 	}
 	
-	
-	public function updateMatchStat_1()		//STEP -02 : UPDATE HOME TEAM STATS FORM
+	/**
+		Update Match Statistics : UPDATE HOME TEAM STATS FORM
+	*/
+	public function updateMatchStat_1()
 	{
 		$match_id = $_POST['match_id'];
-		//Load Match Updater Form
 		$data['step']=1;
 
 		$match=$this->match_model->get_match_info($match_id)->row_array();
 		$team['team_id']=$match['home_team_id'];
 
-		//$team['team2_id']=$data['away_team_id'];
 		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
 		$_SESSION['match_id']=$match_id;
 
@@ -184,21 +200,19 @@ class Match extends CI_Controller {
 
 
 		$this->load->view('updateMatchStats',$data);
-		
-		
 	}
 
-
-	public function updateMatchStat_2()		//STEP-03 : UPDATE AWAY TEAM STATS FORM
+	/**
+		Update Match Statistics : UPDATE AWAY TEAM STATS FORM
+	*/
+	public function updateMatchStat_2()	
 	{
 		$match_id = $_SESSION['match_id'];
-		//Load Match Updater Form
 		$data['step']=2;
 
 		$match=$this->match_model->get_match_info($match_id)->row_array();
 		$team['team_id']=$match['away_team_id'];
 
-		//$team['team2_id']=$data['away_team_id'];
 		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
 		
 		
@@ -207,53 +221,48 @@ class Match extends CI_Controller {
 
 
 		$this->load->view('updateMatchStats',$data);
-		
-		
 	}
 
+	/**
+		Update Match Statistics : GET MAN OF THE MATCH INPUT THROUGH A VIEW
+	*/
 	public function updateMatchStat_3()
 	{
-		//GET MAN OF THE MATCH INPUT	THROUGH A VIEW
-		/*
+		/**
 			This function is for supplying data to that view
 		*/
 		
 		$match_id = $_SESSION['match_id'];
 		
 		$match=$this->match_model->get_match_info($match_id)->row_array();
-		//print_r($match);
 		
 		$team['team_id']=$match['home_team_id'];
 		$team['tournament_id']=$this->tournament_model->get_active_tournament_id();
-		//print_r($team);
 		
 		$team_name=$match['home_team_name'];
 		
 		$team_players=$this->team_model->get_tournament_team_players($team)->result_array();
-		//print_r($team_players);
 		
 		$team1=array("team_name"=>$team_name, "team_players"=>$team_players);
-		//print_r($team1);
 		
 		$team['team_id']=$match['away_team_id'];
 		
 		$team_name=$this->team_model->get_team_name($team['team_id']);
-		//print_r($team);
 		$team_players=$this->team_model->get_tournament_team_players($team)->result_array();
 		$team2=array("team_name"=>$team_name, "team_players"=>$team_players);
-		//print_r($team2);
 		
 		$team_array=array();
 		$team_array[1]=$team1;
 		$team_array[2]=$team2;
 		$data['team_array']=$team_array;
 		
-		//LOAD view
 		$this->load->view('update_motm',$data);
-		
 	}
 	
-	public function updateMatchStat_proc($num)		//UPDATE STATS IN DATABASE
+	/**
+		Update Match Statistics : UPDATE STATS IN DATABASE
+	*/
+	public function updateMatchStat_proc($num)		
 	{		
 		$i=$_SESSION['noPlayers'];
 		$match_id = $_SESSION['match_id'];
@@ -273,7 +282,6 @@ class Match extends CI_Controller {
 		      	$id_var="player_id".$count;	
 			
 			$this->input->post($id_var)."<br>";
-			//UPDATE
 			$data['runs_scored']=$this->input->post($score_var);
 			$data['balls_played']=$this->input->post($balls_play_var);
 			$data['fours']=$this->input->post($fours_var);
@@ -288,10 +296,6 @@ class Match extends CI_Controller {
 
 			$data['player_id']=$this->input->post($id_var);
 			$data['match_id']=$match_id;
-			
-			//echo $count."=>";
-			//print_r($data);
-			//echo "<br>";
 			
 			$this->match_model->update_match_points($data);
 			
@@ -308,23 +312,21 @@ class Match extends CI_Controller {
 		}
 		else if($num==2)
 		{
-			/*
-			DO THE FOLLOWING AFTER THE FORM IS SUBMITTED:
+			/**
+				DO THE FOLLOWING AFTER THE FORM IS SUBMITTED:
 			*/
 			
-			//code to insert man of the match in database:
+			/// 1. insert man of the match in database:
 			//get player_id from the form
 			$player_id=$_POST['player_id'];
 			$this->match_model->update_motm_id($match_id,$player_id);
 			//done
 			
 			
-			//ALREADY DONE
-			
-			//update match summary and points
+			/// 2. update match summary and points
 			
 			$this->match_model->update_match_summary($match_id);
-			$this->match_model->update_motm_point($match_id);			//INSERT MOTM IN FORM AND UPDATE HIS POINT ----->> Remaining Task
+			$this->match_model->update_motm_point($match_id);			
 			
 			if(isset($_SESSION['match_id']) && isset($_SESSION['noPlayers']))
 			{

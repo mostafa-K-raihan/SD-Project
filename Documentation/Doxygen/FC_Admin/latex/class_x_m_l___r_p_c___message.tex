@@ -1,0 +1,226 @@
+\hypertarget{class_x_m_l___r_p_c___message}{}\section{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message Class Reference}
+\label{class_x_m_l___r_p_c___message}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+Inheritance diagram for X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_x_m_l___r_p_c___message}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a099ea001f597681d3e5d9004923ccbcf}{\+\_\+\+\_\+construct} (\$\hyperlink{class_c_i___xmlrpc_a3d7e090549ec52eba8cf65598eefa72c}{method}, \$pars=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a9db0a53d149ebbb907ef60a27bbc9f1c}{create\+Payload} ()
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_ab1b93386615fce804baf236bf660a646}{parse\+Response} (\$fp)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a7709ec5b6f0e3769592f8afdc23b9169}{open\+\_\+tag} (\$the\+\_\+parser, \$name)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a6f0fbd9812fbf30516fa22d5743d9e89}{closing\+\_\+tag} (\$the\+\_\+parser, \$name)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_ae10d173fc93c23cb233ff01acb2afbe2}{character\+\_\+data} (\$the\+\_\+parser, \$data)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a8000e3ae75e90052e5ee10febb9ce2d0}{add\+Param} (\$par)
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a763d97af7e5ff17493db7ecbd1064ba9}{output\+\_\+parameters} (array \$array=array())
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a76c958448d4b6569bfab9bfd2fb3dff0}{decode\+\_\+message} (\$param)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_ab6c08f2335783abfa1bce5d22fb3466e}{\$payload}
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_a88c34f4701e451bbcef63e44e5902ebd}{\$method\+\_\+name}
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_afe68e6fbe7acfbffc0af0c84a1996466}{\$params} = array()
+\item 
+\hyperlink{class_x_m_l___r_p_c___message_aad3b174789357e147f0daa5b69930ac8}{\$xh} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_x_m_l___r_p_c___message_a099ea001f597681d3e5d9004923ccbcf}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{\+\_\+\+\_\+construct(\$method, \$pars=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$method, }
+\item[{}]{\$pars = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a099ea001f597681d3e5d9004923ccbcf}
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$method} & \\
+\hline
+array & {\em \$pars} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_x_m_l___r_p_c___message_a8000e3ae75e90052e5ee10febb9ce2d0}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!add\+Param@{add\+Param}}
+\index{add\+Param@{add\+Param}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{add\+Param(\$par)}]{\setlength{\rightskip}{0pt plus 5cm}add\+Param (
+\begin{DoxyParamCaption}
+\item[{}]{\$par}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a8000e3ae75e90052e5ee10febb9ce2d0}
+Add parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_ae10d173fc93c23cb233ff01acb2afbe2}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!character\+\_\+data@{character\+\_\+data}}
+\index{character\+\_\+data@{character\+\_\+data}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{character\+\_\+data(\$the\+\_\+parser, \$data)}]{\setlength{\rightskip}{0pt plus 5cm}character\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{}]{\$the\+\_\+parser, }
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_ae10d173fc93c23cb233ff01acb2afbe2}
+Parse character data
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_a6f0fbd9812fbf30516fa22d5743d9e89}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!closing\+\_\+tag@{closing\+\_\+tag}}
+\index{closing\+\_\+tag@{closing\+\_\+tag}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{closing\+\_\+tag(\$the\+\_\+parser, \$name)}]{\setlength{\rightskip}{0pt plus 5cm}closing\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{}]{\$the\+\_\+parser, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a6f0fbd9812fbf30516fa22d5743d9e89}
+End Element Handler
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_a9db0a53d149ebbb907ef60a27bbc9f1c}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!create\+Payload@{create\+Payload}}
+\index{create\+Payload@{create\+Payload}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{create\+Payload()}]{\setlength{\rightskip}{0pt plus 5cm}create\+Payload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a9db0a53d149ebbb907ef60a27bbc9f1c}
+Create Payload to Send
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_a76c958448d4b6569bfab9bfd2fb3dff0}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!decode\+\_\+message@{decode\+\_\+message}}
+\index{decode\+\_\+message@{decode\+\_\+message}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{decode\+\_\+message(\$param)}]{\setlength{\rightskip}{0pt plus 5cm}decode\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{}]{\$param}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a76c958448d4b6569bfab9bfd2fb3dff0}
+Decode message
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_a7709ec5b6f0e3769592f8afdc23b9169}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!open\+\_\+tag@{open\+\_\+tag}}
+\index{open\+\_\+tag@{open\+\_\+tag}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{open\+\_\+tag(\$the\+\_\+parser, \$name)}]{\setlength{\rightskip}{0pt plus 5cm}open\+\_\+tag (
+\begin{DoxyParamCaption}
+\item[{}]{\$the\+\_\+parser, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a7709ec5b6f0e3769592f8afdc23b9169}
+Start Element Handler
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+An Invalid Element is Found, so we have trouble \hypertarget{class_x_m_l___r_p_c___message_a763d97af7e5ff17493db7ecbd1064ba9}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!output\+\_\+parameters@{output\+\_\+parameters}}
+\index{output\+\_\+parameters@{output\+\_\+parameters}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{output\+\_\+parameters(array \$array=array())}]{\setlength{\rightskip}{0pt plus 5cm}output\+\_\+parameters (
+\begin{DoxyParamCaption}
+\item[{array}]{\$array = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_a763d97af7e5ff17493db7ecbd1064ba9}
+Output parameters
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$array} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_x_m_l___r_p_c___message_ab1b93386615fce804baf236bf660a646}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!parse\+Response@{parse\+Response}}
+\index{parse\+Response@{parse\+Response}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{parse\+Response(\$fp)}]{\setlength{\rightskip}{0pt plus 5cm}parse\+Response (
+\begin{DoxyParamCaption}
+\item[{}]{\$fp}
+\end{DoxyParamCaption}
+)}\label{class_x_m_l___r_p_c___message_ab1b93386615fce804baf236bf660a646}
+Parse External X\+M\+L-\/\+R\+P\+C Server\textquotesingle{}s Response
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_x_m_l___r_p_c___message_a88c34f4701e451bbcef63e44e5902ebd}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!\$method\+\_\+name@{\$method\+\_\+name}}
+\index{\$method\+\_\+name@{\$method\+\_\+name}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{\$method\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}\$method\+\_\+name}\label{class_x_m_l___r_p_c___message_a88c34f4701e451bbcef63e44e5902ebd}
+\hypertarget{class_x_m_l___r_p_c___message_afe68e6fbe7acfbffc0af0c84a1996466}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!\$params@{\$params}}
+\index{\$params@{\$params}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{\$params}]{\setlength{\rightskip}{0pt plus 5cm}\$params = array()}\label{class_x_m_l___r_p_c___message_afe68e6fbe7acfbffc0af0c84a1996466}
+\hypertarget{class_x_m_l___r_p_c___message_ab6c08f2335783abfa1bce5d22fb3466e}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!\$payload@{\$payload}}
+\index{\$payload@{\$payload}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{\$payload}]{\setlength{\rightskip}{0pt plus 5cm}\$payload}\label{class_x_m_l___r_p_c___message_ab6c08f2335783abfa1bce5d22fb3466e}
+\hypertarget{class_x_m_l___r_p_c___message_aad3b174789357e147f0daa5b69930ac8}{}\index{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}!\$xh@{\$xh}}
+\index{\$xh@{\$xh}!X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message@{X\+M\+L\+\_\+\+R\+P\+C\+\_\+\+Message}}
+\subsubsection[{\$xh}]{\setlength{\rightskip}{0pt plus 5cm}\$xh = array()}\label{class_x_m_l___r_p_c___message_aad3b174789357e147f0daa5b69930ac8}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/libraries/\hyperlink{_xmlrpc_8php}{Xmlrpc.\+php}\end{DoxyCompactItemize}

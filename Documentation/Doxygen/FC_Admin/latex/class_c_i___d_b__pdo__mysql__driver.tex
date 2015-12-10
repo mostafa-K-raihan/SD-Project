@@ -1,0 +1,215 @@
+\hypertarget{class_c_i___d_b__pdo__mysql__driver}{}\section{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver Class Reference}
+\label{class_c_i___d_b__pdo__mysql__driver}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_c_i___d_b__pdo__mysql__driver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a9162320adff1a1a4afd7f2372f753a3e}{\+\_\+\+\_\+construct} (\$params)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a52bf595e79e96cc0a7c907a9b45aeb4d}{db\+\_\+connect} (\$persistent=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a0f25caba4648e1a5ec88fcfe767d5f12}{db\+\_\+select} (\$database= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a90355121e1ed009e0efdbd544ab56efa}{field\+\_\+data} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a1322ca756348b11d080cb7a4f590de15}{\$subdriver} = \textquotesingle{}mysql\textquotesingle{}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_abf799de0d30288b91ee73769281dd69d}{\$compress} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_afb42d9811bec1da94506e5764e1439e0}{\$stricton} = F\+A\+L\+S\+E
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a435c0f3ce54fe7daa178baa8532ebd54}{\+\_\+list\+\_\+tables} (\$prefix\+\_\+limit=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_a2a81bb476a5c76fe6f763b0557c1e4c2}{\+\_\+list\+\_\+columns} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_aa029600528fc1ce660a23ff4b4667f95}{\+\_\+truncate} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_aef43f7e3e7b71d337ff3724c5eb14f10}{\+\_\+from\+\_\+tables} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__mysql__driver_aaec2fb0112850159063a8e47ad3aed6e}{\$\+\_\+escape\+\_\+char} = \textquotesingle{}`\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a9162320adff1a1a4afd7f2372f753a3e}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\+\_\+\+\_\+construct(\$params)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$params}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__mysql__driver_a9162320adff1a1a4afd7f2372f753a3e}
+Class constructor
+
+Builds the D\+S\+N if not already set.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_aef43f7e3e7b71d337ff3724c5eb14f10}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\+\_\+from\+\_\+tables@{\+\_\+from\+\_\+tables}}
+\index{\+\_\+from\+\_\+tables@{\+\_\+from\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\+\_\+from\+\_\+tables()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+from\+\_\+tables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__driver_aef43f7e3e7b71d337ff3724c5eb14f10}
+F\+R\+O\+M tables
+
+Groups tables in F\+R\+O\+M clauses if needed, so there is no confusion about operator precedence.
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a2a81bb476a5c76fe6f763b0557c1e4c2}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\+\_\+list\+\_\+columns@{\+\_\+list\+\_\+columns}}
+\index{\+\_\+list\+\_\+columns@{\+\_\+list\+\_\+columns}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\+\_\+list\+\_\+columns(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+list\+\_\+columns (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__driver_a2a81bb476a5c76fe6f763b0557c1e4c2}
+Show column query
+
+Generates a platform-\/specific query string so that the column names can be fetched
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a435c0f3ce54fe7daa178baa8532ebd54}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}}
+\index{\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\+\_\+list\+\_\+tables(\$prefix\+\_\+limit=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+list\+\_\+tables (
+\begin{DoxyParamCaption}
+\item[{}]{\$prefix\+\_\+limit = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__driver_a435c0f3ce54fe7daa178baa8532ebd54}
+Show table query
+
+Generates a platform-\/specific query string so that the table names can be fetched
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$prefix\+\_\+limit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_aa029600528fc1ce660a23ff4b4667f95}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\+\_\+truncate@{\+\_\+truncate}}
+\index{\+\_\+truncate@{\+\_\+truncate}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\+\_\+truncate(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+truncate (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__driver_aa029600528fc1ce660a23ff4b4667f95}
+Truncate statement
+
+Generates a platform-\/specific truncate string from the supplied data
+
+If the database does not support the T\+R\+U\+N\+C\+A\+T\+E statement, then this method maps to \textquotesingle{}D\+E\+L\+E\+T\+E F\+R\+O\+M table\textquotesingle{}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a52bf595e79e96cc0a7c907a9b45aeb4d}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!db\+\_\+connect@{db\+\_\+connect}}
+\index{db\+\_\+connect@{db\+\_\+connect}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{db\+\_\+connect(\$persistent=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}db\+\_\+connect (
+\begin{DoxyParamCaption}
+\item[{}]{\$persistent = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__mysql__driver_a52bf595e79e96cc0a7c907a9b45aeb4d}
+Database connection
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$persistent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]S\+S\+L support \end{DoxyRefDesc}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a0f25caba4648e1a5ec88fcfe767d5f12}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!db\+\_\+select@{db\+\_\+select}}
+\index{db\+\_\+select@{db\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{db\+\_\+select(\$database= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}db\+\_\+select (
+\begin{DoxyParamCaption}
+\item[{}]{\$database = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__mysql__driver_a0f25caba4648e1a5ec88fcfe767d5f12}
+Select the database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$database} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a90355121e1ed009e0efdbd544ab56efa}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!field\+\_\+data@{field\+\_\+data}}
+\index{field\+\_\+data@{field\+\_\+data}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{field\+\_\+data(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}field\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__mysql__driver_a90355121e1ed009e0efdbd544ab56efa}
+Returns an object with field data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_aaec2fb0112850159063a8e47ad3aed6e}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\$\+\_\+escape\+\_\+char@{\$\+\_\+escape\+\_\+char}}
+\index{\$\+\_\+escape\+\_\+char@{\$\+\_\+escape\+\_\+char}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\$\+\_\+escape\+\_\+char}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+escape\+\_\+char = \textquotesingle{}`\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__mysql__driver_aaec2fb0112850159063a8e47ad3aed6e}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_abf799de0d30288b91ee73769281dd69d}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\$compress@{\$compress}}
+\index{\$compress@{\$compress}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\$compress}]{\setlength{\rightskip}{0pt plus 5cm}\$compress = F\+A\+L\+S\+E}\label{class_c_i___d_b__pdo__mysql__driver_abf799de0d30288b91ee73769281dd69d}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_afb42d9811bec1da94506e5764e1439e0}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\$stricton@{\$stricton}}
+\index{\$stricton@{\$stricton}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\$stricton}]{\setlength{\rightskip}{0pt plus 5cm}\$stricton = F\+A\+L\+S\+E}\label{class_c_i___d_b__pdo__mysql__driver_afb42d9811bec1da94506e5764e1439e0}
+\hypertarget{class_c_i___d_b__pdo__mysql__driver_a1322ca756348b11d080cb7a4f590de15}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}!\$subdriver@{\$subdriver}}
+\index{\$subdriver@{\$subdriver}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+mysql\+\_\+driver}}
+\subsubsection[{\$subdriver}]{\setlength{\rightskip}{0pt plus 5cm}\$subdriver = \textquotesingle{}mysql\textquotesingle{}}\label{class_c_i___d_b__pdo__mysql__driver_a1322ca756348b11d080cb7a4f590de15}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/database/drivers/pdo/subdrivers/\hyperlink{pdo__mysql__driver_8php}{pdo\+\_\+mysql\+\_\+driver.\+php}\end{DoxyCompactItemize}

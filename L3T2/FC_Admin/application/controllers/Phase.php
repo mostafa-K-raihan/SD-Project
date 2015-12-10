@@ -1,7 +1,6 @@
 <?php
 /**
-	LAST MODIFIED: 30-06-2015
-	STATUS: REPLICATION COMPLETE
+*	Defines Server Actions For Phase Tab
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -11,7 +10,7 @@ class Phase extends CI_Controller {
      {
           parent::__construct();
 		  
-		  //Load Necessary Libraries and helpers
+		  /// Load Necessary Libraries and helpers
           $this->load->library('session');
           $this->load->helper('form');
           $this->load->helper('url');
@@ -37,17 +36,18 @@ class Phase extends CI_Controller {
 		$this->load->view('templates/header');
      }
 	 
+	/**
+		EMPTY
+	*/	
 	public function index()
 	{
 	
 	}
 	
 	/**
-	* Update Phase Table
+		Create a phase : Show view
 	*/
-	
-	
-	public function addPhases()	//done
+	public function addPhases()	
 	{
 	
 		if(isset($_POST['phases']) && isset($_POST['tournament_name']))
@@ -81,8 +81,10 @@ class Phase extends CI_Controller {
 		
 	}
 	
-	
-	public function addPhases_proc()	//done
+	/**
+		Create a phase : Process user input
+	*/
+	public function addPhases_proc()	
 	{
 		$tournament_id=$_SESSION['tournament_id'];
 		$count=$_SESSION['phases'];
@@ -144,19 +146,10 @@ class Phase extends CI_Controller {
 		$data['fail_message']="Something went wrong. Please try again";
 		$this->load->view('status_message',$data);
 	}
-	
+
 	/**
-	public function deletePhase()
-	{
-	
-	}
-	
-	public function deletePhase_proc()
-	{
-	
-	}
+		Update Phase Information : Show View to select tournament
 	*/
-	
 	public function updatePhases()
 	{
 		$query=$this->tournament_model->view_tournaments();
@@ -165,11 +158,13 @@ class Phase extends CI_Controller {
 		$this->load->view('updatePhase',$data);
 	}
 	
+	/**
+		Update Phase Information : Show view to update info
+	*/
 	public function updatePhases_proc()
 	{
 			$data['tournament_id']=$this->input->post('tournament_id');
 			$result=$this->tournament_model->get_tournament_info($data['tournament_id']);
-			//$data['tournament_name']=$this->tournament_model->get_tournament_name($data['tournament_id']);
 			$data['tournament_name']=$result['tournament_name'];
 			$data['start_date']=$result['start_date'];
 			$data['end_date']=$result['end_date'];
@@ -189,6 +184,9 @@ class Phase extends CI_Controller {
 			$this->load->view('updatePhase',$data);
 	}
 	
+	/**
+		Update Phase Information : Process user input
+	*/
 	public function updatePhases_proc2()
 	{
 		

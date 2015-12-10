@@ -1,0 +1,170 @@
+Status \+: \href{http://travis-ci.org/bcit-ci/CodeIgniter}{\tt !\mbox{[}Build Status\mbox{]}(https\+://secure.\+travis-\/ci.\+org/bcit-\/ci/\+Code\+Igniter.\+png?branch=develop)}
+
+\subsubsection*{Introduction\+:}
+
+This is the preliminary \hyperlink{namespace_code_igniter}{Code\+Igniter} testing documentation. It will cover both internal as well as external A\+P\+Is and the reasoning behind their implemenation, where appropriate. As with all \hyperlink{namespace_code_igniter}{Code\+Igniter} documentation, this file should maintain a mostly human readable format to facilitate clean api design. \mbox{[}see \href{http://arrenbrecht.ch/testing/}{\tt http\+://arrenbrecht.\+ch/testing/}\mbox{]}
+
+{\itshape First public draft\+: everything is subject to change}
+
+\subsubsection*{Requirements}
+
+P\+H\+P Unit $>$= 3.\+5.\+6 \begin{DoxyVerb}pear channel-discover pear.phpunit.de
+pear channel-discover pear.symfony.com
+pear install phpunit/PHPUnit
+\end{DoxyVerb}
+
+
+vfs\+Stream \begin{DoxyVerb}pear channel-discover pear.bovigo.org
+pear install bovigo/vfsStream-beta
+\end{DoxyVerb}
+
+
+\paragraph*{Installation of P\+E\+A\+R and P\+H\+P\+Unit on Ubuntu}
+
+Installation on Ubuntu requires a few steps. Depending on your setup you may need to use \textquotesingle{}sudo\textquotesingle{} to install these. Mileage may vary but these steps are a good start.
+
+\section*{Install the P\+E\+A\+R package}
+
+sudo apt-\/get install php-\/pear
+
+\section*{Add a few sources to P\+E\+A\+R}
+
+pear channel-\/discover pear.\+phpunit.\+de pear channel-\/discover pear.\+symfony-\/project.\+com pear channel-\/discover components.\+ez.\+no pear channel-\/discover pear.\+bovigo.\+org
+
+\section*{Finally install P\+H\+P\+Unit and vfs\+Stream (including dependencies)}
+
+pear install --alldeps phpunit/\+P\+H\+P\+Unit pear install --alldeps bovigo/vfs\+Stream-\/beta
+
+\section*{Finally, run \textquotesingle{}phpunit\textquotesingle{} from within the ./tests directory}
+
+\section*{and you should be on your way!}
+
+\subsection*{Test Suites\+:}
+
+\hyperlink{namespace_code_igniter}{Code\+Igniter} bootstraps a request very directly, with very flat class hierarchy. As a result, there is no main \hyperlink{namespace_code_igniter}{Code\+Igniter} class until the controller is instantiated.
+
+This has forced the core classes to be relatively decoupled, which is a good thing. However, it makes that portion of code relatively hard to test.
+
+Right now that means we\textquotesingle{}ll probably have two core test suites, along with a base for application and package tests. That gives us\+:
+
+
+\begin{DoxyEnumerate}
+\item Bootstrap Test -\/ test common.\+php and sanity check codeigniter.\+php \mbox{[}in planning\mbox{]}
+\item System Test -\/ test core components in relative isolation \mbox{[}in development\mbox{]}
+\item Application Test -\/ bootstrapping for application/tests \mbox{[}not started\mbox{]}
+\item Package Test -\/ bootstrapping for $<$package$>$/tests \mbox{[}not started\mbox{]}
+\end{DoxyEnumerate}
+
+\subsubsection*{Test Environment\+:}
+
+The test/\+Bootstrap.\+php file establishes global constants such as B\+A\+S\+E\+P\+A\+T\+H, A\+P\+P\+P\+A\+T\+H, and V\+I\+E\+W\+P\+A\+T\+H, initializing them to point to V\+F\+S locations. The test case class employs vfs\+Stream to make a clean virtual filesystem with the necessary paths for every individual test.
+
+Within each test case, V\+F\+S directory objects are available to use as arguments to the V\+F\+S convenience functions (see below)\+:
+
+
+\begin{DoxyItemize}
+\item ci\+\_\+vfs\+\_\+root\+: V\+F\+S filesystem root
+\item ci\+\_\+app\+\_\+root\+: Application directory
+\item ci\+\_\+base\+\_\+root\+: System directory
+\item ci\+\_\+view\+\_\+root\+: Views directory
+\end{DoxyItemize}
+
+Classes being instantiated for testing are read from the actual filesystem by the unit test autoloader, as are mockups created in tests/mocks. If you need access to the real system directory, the S\+Y\+S\+T\+E\+M\+\_\+\+P\+A\+T\+H constant always points to it.
+
+Any other resources which need to be read from the path constants must be created or cloned within your test. Functions for doing so are outlined below.
+
+\subsubsection*{\hyperlink{class_c_i___test_case}{C\+I\+\_\+\+Test\+Case} Documentation}
+
+Test cases should extend \hyperlink{class_c_i___test_case}{C\+I\+\_\+\+Test\+Case}. This internally extends P\+H\+P\+Unit\+\_\+\+Framework\+\_\+\+Test\+Case, so you have access to all of your usual P\+H\+P\+Unit methods.
+
+We need to provide a simple way to modify the globals and the common function output. We also need to be able to mock up the super object as we please.
+
+Current A\+P\+I is {\itshape not stable}. Names and implementations will change. \begin{DoxyVerb}$this->ci_set_config($key, $val)
+\end{DoxyVerb}
+
+
+Set the global config variables in a mock Config object. If key is an array, it will replace the entire config array. They are {\itshape not} merged. If called without any parameters, it will create the mock object but not set any values. The mock Config object also provides rudimentary item() and load() stubs for delivering configured values to classes being tested and handling config load calls, respectively. The load() stub does {\itshape not} actually load any files, it only records the filename provided. Check the config-\/$>$loaded array to verify calls made. \begin{DoxyVerb}$this->ci_instance($obj)
+\end{DoxyVerb}
+
+
+Set the object to use as the \char`\"{}super object\char`\"{}, in a lot of cases this will be a simple std\+Class with the attributes you need it to have. If no parameter, will return the instance. \begin{DoxyVerb}$this->ci_instance_var($name, $val)
+\end{DoxyVerb}
+
+
+Add an attribute to the super object. This is useful if you set up a simple instance in set\+Up and then need to add different class mockups to your super object. \begin{DoxyVerb}$this->ci_core_class($name)
+\end{DoxyVerb}
+
+
+Get the {\itshape class name} of a core class, so that you can instantiate it. The variable is returned by reference and is tied to the correct \$\+G\+L\+O\+B\+A\+L\+S key. For example\+: \begin{DoxyVerb}$cfg =& $this->ci_core_class('cfg'); // returns 'CI_Config'
+$cfg = new $cfg; // instantiates config and overwrites the CFG global
+
+$this->ci_set_core_class($name, $obj)
+\end{DoxyVerb}
+
+
+An alternative way to set one of the core globals. \begin{DoxyVerb}$this->ci_vfs_mkdir($name, $root)
+\end{DoxyVerb}
+
+
+Creates a new directory in the test V\+F\+S. Pass a directory object to be the parent directory or none to create a root-\/level directory. Returns the new directory object. \begin{DoxyVerb}$this->ci_vfs_create($file, $content, $root, $path)
+\end{DoxyVerb}
+
+
+Creates a new V\+F\+S file. \textquotesingle{}.php\textquotesingle{} is automatically appended to the filename if it has no extension. Pass a directory object as the root, and an optional path to recurse and/or create for containing the file. Path may be a string (such as \textquotesingle{}models/subdir\textquotesingle{}) or an array (e.\+g. -\/ array(\textquotesingle{}models\textquotesingle{}, \textquotesingle{}subdir\textquotesingle{}) ). Existing directories in the V\+F\+S root will be recursed until a new directory is identified -\/ all others in the path will be created, so you can mix-\/and-\/match old and new directories. If \$file is an array (key = name, value = content), multiple files will be created in the same path. \begin{DoxyVerb}$this->ci_vfs_clone($path)
+\end{DoxyVerb}
+
+
+Clones an existing file from the real filesystem to exist in the same path of the V\+F\+S. Path must be relative to the project root (i.\+e. -\/ starting with \textquotesingle{}system\textquotesingle{} or \textquotesingle{}application\textquotesingle{}). \begin{DoxyVerb}$this->ci_vfs_path($path, $base)
+\end{DoxyVerb}
+
+
+Creates a V\+F\+S file path string suitable for use with P\+H\+P file operations. Path may be absolute from the V\+F\+S root, or relative to a base path. It is often useful to use A\+P\+P\+P\+A\+T\+H or B\+A\+S\+E\+P\+A\+T\+H as the base. \begin{DoxyVerb}$this->helper($name)
+\end{DoxyVerb}
+
+
+Loads a helper from the real filesystem. \begin{DoxyVerb}$this->lang($name)
+\end{DoxyVerb}
+
+
+Loads a language file from the real filesystem and returns the \$lang array. \begin{DoxyVerb}$this->ci_get_config()  __internal__
+\end{DoxyVerb}
+
+
+Returns the global config array. Internal as you shouldn\textquotesingle{}t need to call this (you\textquotesingle{}re setting it, after all). Used internally to make C\+I\textquotesingle{}s get\+\_\+config() work. \begin{DoxyVerb}CI_TestCase::instance()  __internal__
+\end{DoxyVerb}
+
+
+Returns an instance of the current test case. We force phpunit to run with backup-\/globals enabled, so this will always be the instance of the currently running test class.
+
+\subsubsection*{Going forward}
+
+\paragraph*{1. Bootstrap Test}
+
+Testing common.\+php should be pretty simple. Include the file, and test the functions. May require some tweaking so that we can grab the statics from all methods (see is\+\_\+loaded()). Testing the actual Code\+Igniter.\+php file will most likely be an output test for the default view, with some object checking after the file runs. Needs consideration.
+
+\paragraph*{2. System Test}
+
+Testing the core system relies on being able to isolate the core components as much as possible. A few of them access other core classes as globals. These should be mocked up and easy to manipulate.
+
+All functions in common.\+php should be a minimal implementation, or and mapped to a method in the test\textquotesingle{}s parent class to gives us full control of their output.
+
+\paragraph*{3. Application Test\+:}
+
+Not sure yet, needs to handle\+:
+
+
+\begin{DoxyItemize}
+\item Libraries
+\item Helpers
+\item Models
+\item M\+Y\+\_\+$\ast$ files
+\item Controllers (uh...?)
+\item Views? (watir, selenium, cucumber?)
+\item Database Testing
+\end{DoxyItemize}
+
+\paragraph*{4. Package Test\+:}
+
+I don\textquotesingle{}t have a clue how this will work.
+
+Needs to be able to handle packages that are used multiple times within the application (i.\+e. E\+E/\+Pyro modules) as well as packages that are used by multiple applications (library distributions) 
