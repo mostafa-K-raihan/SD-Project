@@ -1,16 +1,18 @@
 <?php
 /**
-	LAST UPDATED: 30-06-2015
-	STATUS: REPLICATION COMPLETE
+	Provides Database Level Operations for `team` entity
 */
 class Team_model extends CI_Model 
 {
-    public function __construct()	//DONE
+    public function __construct()	
 	{
         $this->load->database();
 	}
 	
-	public function get_team_name($team_id)	//DONE
+	/**
+		Returns `team_name` (string) for a given `team_id`
+	*/
+	public function get_team_name($team_id)	
 	{
 		$sql = 'SELECT `team_name` FROM `team` where `team_id`=?';				
 		$query=$this->db->query($sql,$team_id); 
@@ -19,7 +21,12 @@ class Team_model extends CI_Model
 		return $result['team_name'];
 	}
 	
-	public function get_team_id($team_name)	//DONE
+	/**
+		\brief Returns `team_id` for a given `team_name`
+		
+		It is discouraged to use this function.
+	*/
+	public function get_team_id($team_name)	
 	{
 		$sql = 'SELECT `team_id` FROM `team` where `team_name`=?';				
 		$query=$this->db->query($sql,$team_name);
@@ -29,8 +36,10 @@ class Team_model extends CI_Model
 		return $result['team_id'];
 	}
 	
-	
-	public function get_all_teams()	//DONE
+	/**
+		Get all team information from the database
+	*/
+	public function get_all_teams()
 	{
 		$sql = 	'SELECT * from `team` ORDER BY `team_name`';
 				
@@ -39,15 +48,20 @@ class Team_model extends CI_Model
 		return $query;
 	}
 	
-	public function get_team_players($team_id)	//DONE
+	/**
+		Get information of all players of a particular team (given by team_id)
+	*/
+	public function get_team_players($team_id)	
 	{
 		$sql = 	'SELECT * from `player` where `team_id`=? ORDER BY `player_cat` ASC, `name` ASC';			
 		$query=$this->db->query($sql,$team_id); 
 		return $query;
 	}
 
-	
-	public function get_tournament_team_players($team)	//done
+	/**
+		Get name and id of all players in current tournament
+	*/
+	public function get_tournament_team_players($team)	
 	{
 		$sql = 'select P.`name` as PLAYER_NAME, P.`player_id` as PLAYER_ID
 				from `player` P, `player_tournament` PT

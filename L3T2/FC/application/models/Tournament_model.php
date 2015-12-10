@@ -1,26 +1,38 @@
 <?php
+/**
+	Provides Database Level Operations for `tournament` entity and related functions
+*/
 class Tournament_model extends CI_Model 
 {
 
-    public function __construct()	//done
+    public function __construct()	
 	{
         $this->load->database();
 	}
 	
-	public function get_active_tournament()		//DONE
+	/**
+		Get information about currently running tournament.
+	*/
+	public function get_active_tournament()		
 	{
 		$sql = 'SELECT * FROM `tournament` where `is_active`=1';				
 		$query=$this->db->query($sql); 
 		return $query;
 	}
 	
-	public function get_active_tournament_id()		//Done
+	/**
+		Get `tournament_id` of current tournament
+	*/
+	public function get_active_tournament_id()		
 	{
 		$sql = 'SELECT `tournament_id` FROM `tournament` where `is_active`=1';				
 		$result=$this->db->query($sql)->row_array(); 
 		return $result['tournament_id'];
 	}
 	
+	/**
+		Get current `phase_id` of current tournament
+	*/
 	public function get_current_phase()
 	{
 		$sql = 'SELECT current_phase() as phase_id';				
@@ -28,7 +40,12 @@ class Tournament_model extends CI_Model
 		return $result['phase_id'];
 	}
 	
-	public function get_upcoming_phase()		//DONE
+	/**
+		\brief Get next `phase_id` of current tournament
+		
+		This function is only used during "Change Team" when current phase_id is NULL (Currently , no phase)
+	*/
+	public function get_upcoming_phase()		
 	{
 		$tournament_id=$this->get_active_tournament_id();
 		$sql = 'SELECT * FROM `phase` 
@@ -44,7 +61,10 @@ class Tournament_model extends CI_Model
 		return $query['phase_id'];
 	}
 	
-	public function get_active_tournament_teams()	//DONE
+	/**
+		Get information of all teams participating in the current tournament
+	*/
+	public function get_active_tournament_teams()	
 	{
 	
 		$result = $this->get_active_tournament()->row_array();
@@ -60,8 +80,10 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	/*GENERATES DATA FOR CREATE_TEAM VIEW*/
-	/*maybe also for change_team view (not adjusted)
+	/**
+		GENERATES player data (all players participating in given tournament) FOR CREATE_TEAM VIEW.
+		
+		input: $team: array('tournament_id' => ?)
 	*/
 	
 	public function get_tournament_players($team)
@@ -74,6 +96,9 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
+	/**
+		Get players information for a given category in current tournament
+	*/
 	public function get_tournament_players_by_category($cat)
 	{
 		$sql = 'select P.name as player_name, P.player_id as player_id, P.player_cat as category, P.price as price, T.team_name as team_name
@@ -100,7 +125,7 @@ class Tournament_model extends CI_Model
 	/**
 		Return match schedule
 	*/
-	public function get_fixture($tournament_id=0)		//DONE
+	public function get_fixture($tournament_id=0)	
 	{
 		if($tournament_id==0)
 		{
@@ -121,7 +146,7 @@ class Tournament_model extends CI_Model
 	/**
 		Return completed match results
 	*/
-	public function get_result($tournament_id=0)	//DONE
+	public function get_result($tournament_id=0)	
 	{
 		if($tournament_id==0)
 		{
@@ -143,13 +168,19 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
-	public function view_tournaments()	//done
+	/**
+		Return all data from `tournament` table
+	*/
+	public function view_tournaments()	
 	{
 		$sql = 'SELECT * FROM `tournament`';		
 		return $query=$this->db->query($sql);
 	}
 	
-	public function get_tournament_name($tournament_id)	//done
+	/**
+		Return tournament_name for a given tournament_id
+	*/
+	public function get_tournament_name($tournament_id)	
 	{
 		$sql = 'SELECT `tournament_name` FROM `tournament` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
@@ -158,6 +189,7 @@ class Tournament_model extends CI_Model
 		return $result['tournament_name'];
 	}
 	
+	/*
 	public function team_exists_tournament($tournament_id,$team_id)	//done
 	{
 		
@@ -170,22 +202,25 @@ class Tournament_model extends CI_Model
 		if($rs['COUNT(*)']==0) return 0;
 		else return 1;
 	}
-	
+	*/
+	/*
 	public function get_tournament_info($tournament_id)	//done
 	{
 		$sql = 'SELECT * FROM `tournament` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
 		return $result=$query->row_array();
 	}
-	
+	*/
+	/*
 	public function get_phase_info($tournament_id)	//done
 	{
 		$sql = 'SELECT * FROM `phase` where `tournament_id`=?';				
 		$query=$this->db->query($sql,$tournament_id); 
 		return $result=$query->result_array();
 	}
-	
-	public function get_active_tournament_name()	//done
+	*/
+	/*
+	public function get_active_tournament_name()	
 	{
 		$sql = 'SELECT `tournament_name` FROM `tournament` where `is_active`=1';				
 		
@@ -195,8 +230,12 @@ class Tournament_model extends CI_Model
 		
 		return $result['tournament_name'];
 	}
+	*/
 	
-	public function get_previous_match()		//done
+	/**
+		Get previous match information (started by admin)
+	*/
+	public function get_previous_match()		
 	{
 		$cur_tour=$this->get_active_tournament_id();
 		
@@ -213,6 +252,9 @@ class Tournament_model extends CI_Model
 		return $query;
 	}
 	
+	/**
+		Get previous match id (started by admin)
+	*/
 	public function get_previous_match_id()
 	{
 		$sql = 'SELECT match_id FROM `match` 
@@ -228,59 +270,4 @@ class Tournament_model extends CI_Model
 		return $query->row_array();
 	}
 	
-	/**Unprocessed*/
-	
-	
-	
-	/**
-	
-	
-	public function get_last_completed_phase($tournament_id)
-	{
-		$sql = 	'SELECT * FROM "phase" 
-				WHERE "tournament_id"=1 AND "is_complete"=0 AND (CURRENT_TIMESTAMP-"finish_time") = 
-				(	
-					SELECT MIN(CURRENT_TIMESTAMP-"finish_time")
-					FROM "phase" 
-					WHERE (CURRENT_TIMESTAMP> "finish_time")
-				)';
-				
-		$query=$this->db->query($sql,$tournament_id); 
-		
-		//$result=$query->row_array();
-		
-		return $query;
-	}
-	
-	public function get_tournament_teams($tournament_id)
-	{
-		$sql = 	'SELECT "team_id" from "team_tournament" where "tournament_id"=?';			
-		$query=$this->db->query($sql,$tournament_id); 
-		return $query;
-	}
-	
-	
-	//add_tournament_team($tid);
-	
-	public function team_exists($team_id)
-	{
-		$result = $this->get_active_tournament()->row_array();
-		$cur_tournament_id = $result['tournament_id'];
-		
-		$sql = 	'SELECT "COUNT"(*) FROM "team_tournament" where "team_id" = ? AND "tournament_id" = ?';
-				
-		$query=$this->db->query($sql,array($team_id,$cur_tournament_id)); 
-		
-		$rs = $query->row_array();
-		
-		if($rs['"COUNT"(*)']==0) return 0;
-		else return 1;
-	}
-	
-	
-	
-	
-	*/
-	
-
 }
