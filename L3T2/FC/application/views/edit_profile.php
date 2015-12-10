@@ -4,21 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy Cricket</title>
-
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+	
+	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
+	
 	<style>
-		.navbar-inverse{
-			background : #c4c4c4;
-		}
-		.navbar-inverse .navbar-brand{
-			color : Navy; 
-		}
-		.navbar-inverse .navbar-nav > li > a {
-			color: #000;
-		}
 		body{
 			background-color: #f9f9f9;
 		}
@@ -53,13 +44,21 @@
 
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>
         <li><a href="<?php echo site_url('user/topplayers'); ?>">Top Scorers </a></li>
-        <li><a href="#">Prizes </a></li>
+        <li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Statistics<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="<?php echo site_url('stat/per_category_per_team_stat'); ?>">Per Category Per Team</a></li>
+					<li><a href="<?php echo site_url('stat/stat_per_match'); ?>">Match by Match</a></li>
+					<li><a href="<?php echo site_url('stat/player_overall_stat'); ?>">Player by Player</a></li>
+					
+				</ul>
+		</li>
+		<li><a href="#">Prizes </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 			<li class="active" class="dropdown">
-				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
+				<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['user_name'];?> <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">Edit Profile</a></li>
 					<li><a href="<?php echo site_url('user/changePassword'); ?>">Change Password</a></li>
 					<li><a href="<?php echo site_url('user/logout'); ?>">Sign Out</a></li>
 				</ul>

@@ -10,19 +10,6 @@
 		body{
 			background-color:teal;
 		}
-		#mainTabs li a{
-			color: white;
-		}
-		.nav-tabs > li.active > a,
-        .nav-tabs > li.active > a:hover,
-        .nav-tabs > li.active > a:focus{
-            color: #555555;
-            background-color: DarkGray;  
-        } 
-		
-		.nav-tabs > li > a:hover{
-			background-color: Tomato;
-		}
 		#comboTable td,th{
 			color: black;
 			text-align:center;
