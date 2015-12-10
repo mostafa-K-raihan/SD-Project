@@ -468,7 +468,9 @@ class User_model extends CI_Model
 		return $total;
 	}
 	
-	
+	/**
+		Get team name of a user (given by user_id)
+	*/
 	public function user_team_name($user_id)
 	{
 		$tournament_id=$this->tournament_model->get_active_tournament_id();
@@ -477,7 +479,9 @@ class User_model extends CI_Model
 		return $query['user_team_name'];
 	}
 	
-	
+	/**
+		Replace previous captain by new captain ($new_captain_id)
+	*/
 	public function change_captain($user_id,$match_id,$new_captain_id)
 	{
 		$sql='UPDATE user_match_team 
@@ -544,13 +548,18 @@ class User_model extends CI_Model
 		These are used to differentiate between first phase of (new)user
 	*/
 	
-	//used for admin module
+	/**
+		used for admin module
+	*/
 	public function create_user_phase_transfer($user_id, $phase_id)
 	{
 		$sql='INSERT into user_phase_transfer VALUES(\'\',?,?,0)';
 		$query=$this->db->query($sql,array($user_id,$phase_id));
 	}
-	//used for user module
+	
+	/**
+		used for user module
+	*/
 	public function create_user_phase_transfer_from_user($user_id, $phase_id)
 	{
 		$sql='INSERT into user_phase_transfer VALUES(\'\',?,?,NULL)';
@@ -601,6 +610,9 @@ class User_model extends CI_Model
 		}
 	}
 	
+	/**
+		Get information of a user (given bu user_id)
+	*/
 	public function get_user_info($user_id)
 	{
 		$sql='SELECT ui.user_name,ui.country,ut.user_team_name from user_tournament ut, userinfo ui WHERE ut.user_id=ui.user_id and ui.user_id=?';
@@ -608,6 +620,9 @@ class User_model extends CI_Model
 		return $result;
 	}
 	
+	/**
+		Update user's password
+	*/
 	public function update_password($user_id,$password)
 	{
 		$sql='UPDATE userinfo SET password=? WHERE user_id=?';
