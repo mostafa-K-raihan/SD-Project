@@ -1,0 +1,567 @@
+\hypertarget{class_c_i___session}{}\section{C\+I\+\_\+\+Session Class Reference}
+\label{class_c_i___session}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+Inheritance diagram for C\+I\+\_\+\+Session\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_i___session}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session_a85ac5b7f54ad67ec6b5b9dc282717602}{\+\_\+\+\_\+construct} (array \$params=array())
+\item 
+\hyperlink{class_c_i___session_a81fdbc2498fc26532aee037f03dbaf55}{mark\+\_\+as\+\_\+flash} (\$key)
+\item 
+\hyperlink{class_c_i___session_a996e70387750cdc480712c1585743d8d}{get\+\_\+flash\+\_\+keys} ()
+\item 
+\hyperlink{class_c_i___session_a8e89303bfdff75a20528986c2bcdba86}{unmark\+\_\+flash} (\$key)
+\item 
+\hyperlink{class_c_i___session_ab55f3c6806c359d98edd6138ef33ecf0}{mark\+\_\+as\+\_\+temp} (\$key, \$ttl=300)
+\item 
+\hyperlink{class_c_i___session_a4fd9f48ff9bcf093778529cb7389eddb}{get\+\_\+temp\+\_\+keys} ()
+\item 
+\hyperlink{class_c_i___session_a602eaf2b4a6936ed9bb8750892fac551}{unmark\+\_\+temp} (\$key)
+\item 
+\hyperlink{class_c_i___session_a4537dad3b44254124991341cc91b28fb}{\+\_\+\+\_\+get} (\$key)
+\item 
+\hyperlink{class_c_i___session_a79b36d71c6f1d4f9e6c4c3e34c081456}{\+\_\+\+\_\+set} (\$key, \$value)
+\item 
+\hyperlink{class_c_i___session_a9451d1625c402b8d712aedaa5ebc752d}{sess\+\_\+destroy} ()
+\item 
+\hyperlink{class_c_i___session_afec342ef8722ac0ce4a672e6cfad60c0}{sess\+\_\+regenerate} (\$destroy=F\+A\+L\+S\+E)
+\item 
+\& \hyperlink{class_c_i___session_a85456fcd9f556e20767051fc33762607}{get\+\_\+userdata} ()
+\item 
+\hyperlink{class_c_i___session_ab10006d10762845f93392ef4c2884df6}{userdata} (\$key=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___session_a17de7d10cbbe8162d16bfc43083e74aa}{set\+\_\+userdata} (\$data, \$value=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___session_a8d3a4935d2ff2088f11654445d9a0122}{unset\+\_\+userdata} (\$key)
+\item 
+\hyperlink{class_c_i___session_a974fa60ddc074b14ffcc78ef9902bc5c}{all\+\_\+userdata} ()
+\item 
+\hyperlink{class_c_i___session_a25f39652bb0f716817e5e1e778729bea}{has\+\_\+userdata} (\$key)
+\item 
+\hyperlink{class_c_i___session_acc27ddf9dd242d2c887eca2504136cff}{flashdata} (\$key=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___session_a177029809f00f95b6a83cc137a45ff4e}{set\+\_\+flashdata} (\$data, \$value=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___session_a1e25514ba8dbd132db06cbedc6412158}{keep\+\_\+flashdata} (\$key)
+\item 
+\hyperlink{class_c_i___session_a0bd79cb5948499f7c43adbe29f0c24a9}{tempdata} (\$key=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___session_a51cac8d017a43882b365aa45745dc892}{set\+\_\+tempdata} (\$data, \$value=N\+U\+L\+L, \$ttl=300)
+\item 
+\hyperlink{class_c_i___session_a79d3115c19f6dfa873ca5f3a7929f24a}{unset\+\_\+tempdata} (\$key)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session_af70e594e86a310311c717b13e6ecac00}{\$userdata}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session_ae4203f92a9f8a01d2498649f79acb0f9}{\+\_\+ci\+\_\+load\+\_\+classes} (\$driver)
+\item 
+\hyperlink{class_c_i___session_a71e7f49b0627505b4a7dbc8ce368279b}{\+\_\+configure} (\&\$params)
+\item 
+\hyperlink{class_c_i___session_a143bee24c36e5fd566b58bed89cd8463}{\+\_\+ci\+\_\+init\+\_\+vars} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___session_a538d24348271772aa61f8239cc6431dd}{\$\+\_\+driver} = \textquotesingle{}files\textquotesingle{}
+\item 
+\hyperlink{class_c_i___session_a4d4ad4af1600438042f93a4492f8dbbe}{\$\+\_\+config}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___session_a85ac5b7f54ad67ec6b5b9dc282717602}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+\+\_\+construct(array \$params=array())}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{array}]{\$params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a85ac5b7f54ad67ec6b5b9dc282717602}
+Class constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & Configuration parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___session_a4537dad3b44254124991341cc91b28fb}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+\+\_\+get@{\+\_\+\+\_\+get}}
+\index{\+\_\+\+\_\+get@{\+\_\+\+\_\+get}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+\+\_\+get(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a4537dad3b44254124991341cc91b28fb}
+\hyperlink{class_c_i___session_a4537dad3b44254124991341cc91b28fb}{\+\_\+\+\_\+get()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \textquotesingle{}session\+\_\+id\textquotesingle{} or a session data key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a79b36d71c6f1d4f9e6c4c3e34c081456}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+\+\_\+set@{\+\_\+\+\_\+set}}
+\index{\+\_\+\+\_\+set@{\+\_\+\+\_\+set}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+\+\_\+set(\$key, \$value)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a79b36d71c6f1d4f9e6c4c3e34c081456}
+\hyperlink{class_c_i___session_a79b36d71c6f1d4f9e6c4c3e34c081456}{\+\_\+\+\_\+set()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Session data key \\
+\hline
+mixed & {\em \$value} & Session data value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a143bee24c36e5fd566b58bed89cd8463}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+ci\+\_\+init\+\_\+vars@{\+\_\+ci\+\_\+init\+\_\+vars}}
+\index{\+\_\+ci\+\_\+init\+\_\+vars@{\+\_\+ci\+\_\+init\+\_\+vars}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+ci\+\_\+init\+\_\+vars()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+ci\+\_\+init\+\_\+vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session_a143bee24c36e5fd566b58bed89cd8463}
+Handle temporary variables
+
+Clears old \char`\"{}flash\char`\"{} data, marks the new one for deletion and handles \char`\"{}temp\char`\"{} data deletion.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_ae4203f92a9f8a01d2498649f79acb0f9}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+ci\+\_\+load\+\_\+classes@{\+\_\+ci\+\_\+load\+\_\+classes}}
+\index{\+\_\+ci\+\_\+load\+\_\+classes@{\+\_\+ci\+\_\+load\+\_\+classes}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+ci\+\_\+load\+\_\+classes(\$driver)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+ci\+\_\+load\+\_\+classes (
+\begin{DoxyParamCaption}
+\item[{}]{\$driver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session_ae4203f92a9f8a01d2498649f79acb0f9}
+C\+I Load Classes
+
+An internal method to load all possible dependency and extension classes. It kind of emulates the \hyperlink{class_c_i___driver}{C\+I\+\_\+\+Driver} library, but is self-\/sufficient.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$driver} & Driver name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Driver class name 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a71e7f49b0627505b4a7dbc8ce368279b}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\+\_\+configure@{\+\_\+configure}}
+\index{\+\_\+configure@{\+\_\+configure}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\+\_\+configure(\&\$params)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+configure (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session_a71e7f49b0627505b4a7dbc8ce368279b}
+Configuration
+
+Handle input parameters and configuration defaults
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$params} & Input parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a974fa60ddc074b14ffcc78ef9902bc5c}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!all\+\_\+userdata@{all\+\_\+userdata}}
+\index{all\+\_\+userdata@{all\+\_\+userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{all\+\_\+userdata()}]{\setlength{\rightskip}{0pt plus 5cm}all\+\_\+userdata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a974fa60ddc074b14ffcc78ef9902bc5c}
+All userdata (fetch)
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+\begin{DoxyReturn}{Returns}
+array \$\+\_\+\+S\+E\+S\+S\+I\+O\+N, excluding flash data items 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_acc27ddf9dd242d2c887eca2504136cff}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!flashdata@{flashdata}}
+\index{flashdata@{flashdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{flashdata(\$key=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}flashdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_acc27ddf9dd242d2c887eca2504136cff}
+Flashdata (fetch)
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Session data key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Session data value or N\+U\+L\+L if not found 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a996e70387750cdc480712c1585743d8d}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!get\+\_\+flash\+\_\+keys@{get\+\_\+flash\+\_\+keys}}
+\index{get\+\_\+flash\+\_\+keys@{get\+\_\+flash\+\_\+keys}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{get\+\_\+flash\+\_\+keys()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+flash\+\_\+keys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a996e70387750cdc480712c1585743d8d}
+Get flash keys
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a4fd9f48ff9bcf093778529cb7389eddb}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!get\+\_\+temp\+\_\+keys@{get\+\_\+temp\+\_\+keys}}
+\index{get\+\_\+temp\+\_\+keys@{get\+\_\+temp\+\_\+keys}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{get\+\_\+temp\+\_\+keys()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+temp\+\_\+keys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a4fd9f48ff9bcf093778529cb7389eddb}
+Get temp keys
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a85456fcd9f556e20767051fc33762607}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!get\+\_\+userdata@{get\+\_\+userdata}}
+\index{get\+\_\+userdata@{get\+\_\+userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{get\+\_\+userdata()}]{\setlength{\rightskip}{0pt plus 5cm}\& get\+\_\+userdata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a85456fcd9f556e20767051fc33762607}
+Get userdata reference
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a25f39652bb0f716817e5e1e778729bea}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!has\+\_\+userdata@{has\+\_\+userdata}}
+\index{has\+\_\+userdata@{has\+\_\+userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{has\+\_\+userdata(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}has\+\_\+userdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a25f39652bb0f716817e5e1e778729bea}
+Has userdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Session data key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a1e25514ba8dbd132db06cbedc6412158}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!keep\+\_\+flashdata@{keep\+\_\+flashdata}}
+\index{keep\+\_\+flashdata@{keep\+\_\+flashdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{keep\+\_\+flashdata(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}keep\+\_\+flashdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a1e25514ba8dbd132db06cbedc6412158}
+Keep flashdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$key} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a81fdbc2498fc26532aee037f03dbaf55}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!mark\+\_\+as\+\_\+flash@{mark\+\_\+as\+\_\+flash}}
+\index{mark\+\_\+as\+\_\+flash@{mark\+\_\+as\+\_\+flash}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{mark\+\_\+as\+\_\+flash(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}mark\+\_\+as\+\_\+flash (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a81fdbc2498fc26532aee037f03dbaf55}
+Mark as flash
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$key} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_ab55f3c6806c359d98edd6138ef33ecf0}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!mark\+\_\+as\+\_\+temp@{mark\+\_\+as\+\_\+temp}}
+\index{mark\+\_\+as\+\_\+temp@{mark\+\_\+as\+\_\+temp}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{mark\+\_\+as\+\_\+temp(\$key, \$ttl=300)}]{\setlength{\rightskip}{0pt plus 5cm}mark\+\_\+as\+\_\+temp (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$ttl = {\ttfamily 300}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_ab55f3c6806c359d98edd6138ef33ecf0}
+Mark as temp
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$key} & Session data key(s) \\
+\hline
+int & {\em \$ttl} & Time-\/to-\/live in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a9451d1625c402b8d712aedaa5ebc752d}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!sess\+\_\+destroy@{sess\+\_\+destroy}}
+\index{sess\+\_\+destroy@{sess\+\_\+destroy}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{sess\+\_\+destroy()}]{\setlength{\rightskip}{0pt plus 5cm}sess\+\_\+destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a9451d1625c402b8d712aedaa5ebc752d}
+Session destroy
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_afec342ef8722ac0ce4a672e6cfad60c0}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!sess\+\_\+regenerate@{sess\+\_\+regenerate}}
+\index{sess\+\_\+regenerate@{sess\+\_\+regenerate}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{sess\+\_\+regenerate(\$destroy=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}sess\+\_\+regenerate (
+\begin{DoxyParamCaption}
+\item[{}]{\$destroy = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_afec342ef8722ac0ce4a672e6cfad60c0}
+Session regenerate
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$destroy} & Destroy old session data flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a177029809f00f95b6a83cc137a45ff4e}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!set\+\_\+flashdata@{set\+\_\+flashdata}}
+\index{set\+\_\+flashdata@{set\+\_\+flashdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{set\+\_\+flashdata(\$data, \$value=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+flashdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$data, }
+\item[{}]{\$value = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a177029809f00f95b6a83cc137a45ff4e}
+Set flashdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibiliy method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$data} & Session data key or an associative array \\
+\hline
+mixed & {\em \$value} & Value to store \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a51cac8d017a43882b365aa45745dc892}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!set\+\_\+tempdata@{set\+\_\+tempdata}}
+\index{set\+\_\+tempdata@{set\+\_\+tempdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{set\+\_\+tempdata(\$data, \$value=\+N\+U\+L\+L, \$ttl=300)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+tempdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$data, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$ttl = {\ttfamily 300}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a51cac8d017a43882b365aa45745dc892}
+Set tempdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$data} & Session data key or an associative array of items \\
+\hline
+mixed & {\em \$value} & Value to store \\
+\hline
+int & {\em \$ttl} & Time-\/to-\/live in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a17de7d10cbbe8162d16bfc43083e74aa}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!set\+\_\+userdata@{set\+\_\+userdata}}
+\index{set\+\_\+userdata@{set\+\_\+userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{set\+\_\+userdata(\$data, \$value=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+userdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$data, }
+\item[{}]{\$value = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a17de7d10cbbe8162d16bfc43083e74aa}
+Set userdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$data} & Session data key or an associative array \\
+\hline
+mixed & {\em \$value} & Value to store \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a0bd79cb5948499f7c43adbe29f0c24a9}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!tempdata@{tempdata}}
+\index{tempdata@{tempdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{tempdata(\$key=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}tempdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a0bd79cb5948499f7c43adbe29f0c24a9}
+Temp data (fetch)
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Session data key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Session data value or N\+U\+L\+L if not found 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a8e89303bfdff75a20528986c2bcdba86}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!unmark\+\_\+flash@{unmark\+\_\+flash}}
+\index{unmark\+\_\+flash@{unmark\+\_\+flash}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{unmark\+\_\+flash(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}unmark\+\_\+flash (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a8e89303bfdff75a20528986c2bcdba86}
+Unmark flash
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$key} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a602eaf2b4a6936ed9bb8750892fac551}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!unmark\+\_\+temp@{unmark\+\_\+temp}}
+\index{unmark\+\_\+temp@{unmark\+\_\+temp}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{unmark\+\_\+temp(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}unmark\+\_\+temp (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a602eaf2b4a6936ed9bb8750892fac551}
+Unmark flash
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$key} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a79d3115c19f6dfa873ca5f3a7929f24a}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!unset\+\_\+tempdata@{unset\+\_\+tempdata}}
+\index{unset\+\_\+tempdata@{unset\+\_\+tempdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{unset\+\_\+tempdata(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}unset\+\_\+tempdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a79d3115c19f6dfa873ca5f3a7929f24a}
+Unset tempdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$data} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_a8d3a4935d2ff2088f11654445d9a0122}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!unset\+\_\+userdata@{unset\+\_\+userdata}}
+\index{unset\+\_\+userdata@{unset\+\_\+userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{unset\+\_\+userdata(\$key)}]{\setlength{\rightskip}{0pt plus 5cm}unset\+\_\+userdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_a8d3a4935d2ff2088f11654445d9a0122}
+Unset userdata
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$data} & Session data key(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___session_ab10006d10762845f93392ef4c2884df6}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!userdata@{userdata}}
+\index{userdata@{userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{userdata(\$key=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}userdata (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___session_ab10006d10762845f93392ef4c2884df6}
+Userdata (fetch)
+
+Legacy \hyperlink{class_c_i___session}{C\+I\+\_\+\+Session} compatibility method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Session data key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Session data value or N\+U\+L\+L if not found 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___session_a4d4ad4af1600438042f93a4492f8dbbe}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\$\+\_\+config@{\$\+\_\+config}}
+\index{\$\+\_\+config@{\$\+\_\+config}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\$\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session_a4d4ad4af1600438042f93a4492f8dbbe}
+\hypertarget{class_c_i___session_a538d24348271772aa61f8239cc6431dd}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\$\+\_\+driver@{\$\+\_\+driver}}
+\index{\$\+\_\+driver@{\$\+\_\+driver}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\$\+\_\+driver}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+driver = \textquotesingle{}files\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___session_a538d24348271772aa61f8239cc6431dd}
+\hypertarget{class_c_i___session_af70e594e86a310311c717b13e6ecac00}{}\index{C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}!\$userdata@{\$userdata}}
+\index{\$userdata@{\$userdata}!C\+I\+\_\+\+Session@{C\+I\+\_\+\+Session}}
+\subsubsection[{\$userdata}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf userdata}}\label{class_c_i___session_af70e594e86a310311c717b13e6ecac00}
+Userdata array
+
+Just a reference to \$\+\_\+\+S\+E\+S\+S\+I\+O\+N, for B\+C purposes. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/libraries/\+Session/\hyperlink{system_2libraries_2_session_2_session_8php}{Session.\+php}\end{DoxyCompactItemize}

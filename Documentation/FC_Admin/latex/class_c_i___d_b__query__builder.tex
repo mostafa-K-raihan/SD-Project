@@ -1,0 +1,2039 @@
+\hypertarget{class_c_i___d_b__query__builder}{}\section{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder Class Reference}
+\label{class_c_i___d_b__query__builder}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_c_i___d_b__query__builder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select} (\$select= \textquotesingle{}$\ast$\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3283a75881bf34d98cc13aa5a187c8ac}{select\+\_\+max} (\$\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select}= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a460e37c355e9531b238b7c34d5979164}{select\+\_\+min} (\$\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select}= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7c1b8ed90462898bd0d4e95ac3ba1539}{select\+\_\+avg} (\$\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select}= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aeb58275ab60ed426ce60ead616477e82}{select\+\_\+sum} (\$\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select}= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a65b172f03eea17b7fa243f5732a592bd}{distinct} (\$val=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}{from} (\$from)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}{join} (\$table, \$cond, \$type= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where} (\$key, \$value=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a8d25e93a09f60fbe77541d0faef29bf0}{or\+\_\+where} (\$key, \$value=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ad74b2c2b21b33f4aa54229a323b7ba59}{where\+\_\+in} (\$key=N\+U\+L\+L, \$values=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a9c3f8f4d2f9b9b033a27a2d868278662}{or\+\_\+where\+\_\+in} (\$key=N\+U\+L\+L, \$values=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ab9f1b5e0622e0392796c5c9f4cca705a}{where\+\_\+not\+\_\+in} (\$key=N\+U\+L\+L, \$values=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ace5f568aace8a66636091e220fcd03c3}{or\+\_\+where\+\_\+not\+\_\+in} (\$key=N\+U\+L\+L, \$values=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a833856c9ac2aa0aa4b75c42149e3e2de}{like} (\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ac30de36991c5c11d195b3aefe7a65b8a}{not\+\_\+like} (\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a9c871134a85fe18a5413d4754baed8c7}{or\+\_\+like} (\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a8ba35a82402da3afe51240acee96c3a1}{or\+\_\+not\+\_\+like} (\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7a7026d58f7388d90d31475a66a2a2d1}{group\+\_\+start} (\$not= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}A\+N\+D \textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a80d5e4a0d8f2d0f202e8df6816865838}{or\+\_\+group\+\_\+start} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ae0b543e6db440c4a717714b5d5782e7a}{not\+\_\+group\+\_\+start} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a16a0c2a5f37a7be4c487670650d13faf}{or\+\_\+not\+\_\+group\+\_\+start} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ad97adc35e18afc9d4f26e0f568cdc6ed}{group\+\_\+end} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a111cc822f85357c4cfe37886e6315dce}{group\+\_\+by} (\$by, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_af19efb51311e6f648a0035a0f94fceb6}{having} (\$key, \$value=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a14528cda8dcca86ebb9b597d9c8d1c14}{or\+\_\+having} (\$key, \$value=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_af4bc938040ad30a93e4880f61568c72e}{order\+\_\+by} (\$orderby, \$direction= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{limit} (\$value, \$\hyperlink{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}{offset}=0)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}{offset} (\$offset)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set} (\$key, \$value= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ad02ec84bdb2bc9019a29baf0f27eb6bc}{get\+\_\+compiled\+\_\+select} (\$table= \textquotesingle{}\textquotesingle{}, \$reset=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a9e31f9f0d21d026e3e58b8225b79b8c1}{get} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{limit}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}{offset}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a682ce62db0b118f0803df661c82d4fd8}{count\+\_\+all\+\_\+results} (\$table= \textquotesingle{}\textquotesingle{}, \$reset=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7b120c9cf6f8aac4b82750bf8f7c9f17}{get\+\_\+where} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{limit}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}{offset}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a1cee06687b1da4d58959993bdd69c9c2}{insert\+\_\+batch} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a373d04f66d9bf73c7aceb1a925697a54}{set\+\_\+insert\+\_\+batch} (\$key, \$value= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ab24af8f4b84f989cc09aa7c82e9c9721}{get\+\_\+compiled\+\_\+insert} (\$table= \textquotesingle{}\textquotesingle{}, \$reset=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7913ac1869e54b240f10ca866cee1878}{insert} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a71a4809228dce3974013c0db36a5f281}{replace} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ac4dfdf5d7bf2a6545312ddb9711e8105}{get\+\_\+compiled\+\_\+update} (\$table= \textquotesingle{}\textquotesingle{}, \$reset=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7f1bcfcca3cb9fe450f21737028040a7}{update} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where}=N\+U\+L\+L, \$\hyperlink{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{limit}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3a7d52e50b609117b3ca44a4dfeca263}{update\+\_\+batch} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{set}=N\+U\+L\+L, \$index=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ad1ee3730f9e7ca2f6613a7bae29f61bf}{set\+\_\+update\+\_\+batch} (\$key, \$index= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_adb594700d683271e17cc5041099d8d40}{empty\+\_\+table} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a59e71805908a91d2b45089c0137b5bc7}{truncate} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a0e5685905e73c6604c986e3f6e2ff973}{get\+\_\+compiled\+\_\+delete} (\$table= \textquotesingle{}\textquotesingle{}, \$reset=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a98c786dcc4964dbb2307636c523c1ebd}{delete} (\$table= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where}= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{limit}=N\+U\+L\+L, \$reset\+\_\+data=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a1e6bfc7a51f973e57bc948474e699e96}{dbprefix} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a18182914d989b4d6781bda1163db31d7}{set\+\_\+dbprefix} (\$prefix= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a2d4f0c7b71f87dc7ca7f7fcfbdd12ba0}{start\+\_\+cache} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a612e54a6230b7e899c4d2a42a234bd5a}{stop\+\_\+cache} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aa3c94d79d552f6e10277b01c447ebbb6}{flush\+\_\+cache} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a66636a017a1115d983424cdfca677ddf}{reset\+\_\+query} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ab51e293829027327d05172aaf0720f70}{\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum} (\$\hyperlink{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{select}= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}M\+A\+X\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a194edea7be9a8636b67b7d2c8a3de04e}{\+\_\+create\+\_\+alias\+\_\+from\+\_\+table} (\$item)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ada64568400d6e49136417e699ec2479d}{\+\_\+wh} (\$qb\+\_\+key, \$key, \$value=N\+U\+L\+L, \$type= \textquotesingle{}A\+N\+D \textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a457cb8b8aebdaa5f98489fd31de8e19e}{\+\_\+where\+\_\+in} (\$key=N\+U\+L\+L, \$values=N\+U\+L\+L, \$not=F\+A\+L\+S\+E, \$type= \textquotesingle{}A\+N\+D \textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a72f687f2df9c46553fe2c6f58f7c3f1d}{\+\_\+like} (\$field, \$match= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}A\+N\+D \textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$not= \textquotesingle{}\textquotesingle{}, \$\hyperlink{class_c_i___d_b__driver_ac8f37ca5703d4558c732e692194f8cd6}{escape}=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a0101619da9c48cfa269730ace38a774a}{\+\_\+group\+\_\+get\+\_\+type} (\$type)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3a02ea06541b8ecc25a33a61651562c8}{\+\_\+limit} (\$sql)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a1978e1358c812587a46e242630365099}{\+\_\+insert\+\_\+batch} (\$table, \$keys, \$values)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a48d1269c7c90fd697ed3212ddf3d4647}{\+\_\+validate\+\_\+insert} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ae0adf73984daf2d42ad29b66c484c82b}{\+\_\+replace} (\$table, \$keys, \$values)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aef43f7e3e7b71d337ff3724c5eb14f10}{\+\_\+from\+\_\+tables} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a51e02a6f3e72f26131f6e2189ee2f81c}{\+\_\+validate\+\_\+update} (\$table= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a336b9ebb119e47b6a84bb7fc9d4dae93}{\+\_\+update\+\_\+batch} (\$table, \$values, \$index)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aa029600528fc1ce660a23ff4b4667f95}{\+\_\+truncate} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a133ea8446ded52589bd22cc9163d0896}{\+\_\+delete} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_afb539c1557a7cb20a190f5b68d96b74a}{\+\_\+track\+\_\+aliases} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a441f6e994a212cfa12dd33d92973915b}{\+\_\+compile\+\_\+select} (\$select\+\_\+override=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3d2301b84734fd18a0db6d0602106f48}{\+\_\+compile\+\_\+wh} (\$qb\+\_\+key)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a953e760f382d7187dc5d7b238a7ff439}{\+\_\+compile\+\_\+group\+\_\+by} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a78ef026e2ca49e2b371f9cc577f6e777}{\+\_\+compile\+\_\+order\+\_\+by} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a50b3069661bbf4605b6b561f38eae849}{\+\_\+object\+\_\+to\+\_\+array} (\$object)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ab53f659c5df0b0b6d30eaab74f507dc5}{\+\_\+object\+\_\+to\+\_\+array\+\_\+batch} (\$object)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aeee4c0cf664e1a65d7eb8a3c8e9970c6}{\+\_\+merge\+\_\+cache} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a645d9af97f1d078041e8ae451fae9e1b}{\+\_\+is\+\_\+literal} (\$str)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aebc5876417533f3347aeae458ccde988}{\+\_\+reset\+\_\+run} (\$qb\+\_\+reset\+\_\+items)
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a7c6cc16411b9c36fbfd42a9317f64317}{\+\_\+reset\+\_\+select} ()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ae49808f6becc0366eef957756c8309e4}{\+\_\+reset\+\_\+write} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aee0c1cc88062e1b49fe9e057bfb288e6}{\$return\+\_\+delete\+\_\+sql} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aaeed877e8b1faeddaecaec6c890567ef}{\$reset\+\_\+delete\+\_\+data} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a0ffc5292702e6f9ffbd830f149762e87}{\$qb\+\_\+select} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ab25ffde080220f90531e2c7fb63dae61}{\$qb\+\_\+distinct} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ae3b7c9b5e80df14e86603e12e5af7878}{\$qb\+\_\+from} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a21c59bf512aeedb532e61ef101aefc17}{\$qb\+\_\+join} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_afc34268c5a4d034aa3802e3310ec9419}{\$qb\+\_\+where} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a93e14f322d0e6e6cbc3eebe21ce6a034}{\$qb\+\_\+groupby} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3f6570da7e71b44280a01265f18e1a54}{\$qb\+\_\+having} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a08fe63db41a3e804650206850175c1dc}{\$qb\+\_\+keys} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a383e4f5a10c762a271105c85b3ebca61}{\$qb\+\_\+limit} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aa45418e873986d0f6e6bc768ea5567e5}{\$qb\+\_\+offset} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a8e856c95a5ca3df7c7deba3782182a3e}{\$qb\+\_\+orderby} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a377913806717a7b6bcd35ed1df5ac072}{\$qb\+\_\+set} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a1a27aa0ceada8a74b23613bf3cd04e65}{\$qb\+\_\+aliased\+\_\+tables} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aaae9d24ab424373f1bdbc1b601074433}{\$qb\+\_\+where\+\_\+group\+\_\+started} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a2fcbcc620115436314a2d25e7c9ce366}{\$qb\+\_\+where\+\_\+group\+\_\+count} = 0
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aa1fb22248b06dc9b0b803ba19e54bcbd}{\$qb\+\_\+caching} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a895766ccda772ba2c14b755e5eed3615}{\$qb\+\_\+cache\+\_\+exists} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a5fd3adf4f7eb7361b707c1172bd9581e}{\$qb\+\_\+cache\+\_\+select} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a37229f5eb9d9d16137a76956d12c31a1}{\$qb\+\_\+cache\+\_\+from} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ae4641bc6264db400498f5ed8e9ec683e}{\$qb\+\_\+cache\+\_\+join} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_ac325a253ad5ee9ac7fd5cbdad2603de3}{\$qb\+\_\+cache\+\_\+where} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_af74e5310be3853a3ed7a62666b9a8da3}{\$qb\+\_\+cache\+\_\+groupby} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a37ceb9118d6a143e889dca4493a42cb2}{\$qb\+\_\+cache\+\_\+having} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a0ff4129b83d9dd14b978c25d0a25a4d1}{\$qb\+\_\+cache\+\_\+orderby} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a3f8cb0d781813dbc441265cfc1371a00}{\$qb\+\_\+cache\+\_\+set} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_a95b3a934937b47f5c90f381cf8a50860}{\$qb\+\_\+no\+\_\+escape} = array()
+\item 
+\hyperlink{class_c_i___d_b__query__builder_aab4ea89afea227fad65eec8dfb3844b3}{\$qb\+\_\+cache\+\_\+no\+\_\+escape} = array()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__query__builder_a953e760f382d7187dc5d7b238a7ff439}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+compile\+\_\+group\+\_\+by@{\+\_\+compile\+\_\+group\+\_\+by}}
+\index{\+\_\+compile\+\_\+group\+\_\+by@{\+\_\+compile\+\_\+group\+\_\+by}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+compile\+\_\+group\+\_\+by()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+compile\+\_\+group\+\_\+by (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a953e760f382d7187dc5d7b238a7ff439}
+Compile G\+R\+O\+U\+P B\+Y
+
+Escapes identifiers in G\+R\+O\+U\+P B\+Y statements at execution time.
+
+Required so that aliases are tracked properly, regardless of wether \hyperlink{class_c_i___d_b__query__builder_a111cc822f85357c4cfe37886e6315dce}{group\+\_\+by()} is called prior to \hyperlink{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}{from()}, \hyperlink{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}{join()} and dbprefix is added only if needed.
+
+\begin{DoxyReturn}{Returns}
+string S\+Q\+L statement 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a78ef026e2ca49e2b371f9cc577f6e777}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+compile\+\_\+order\+\_\+by@{\+\_\+compile\+\_\+order\+\_\+by}}
+\index{\+\_\+compile\+\_\+order\+\_\+by@{\+\_\+compile\+\_\+order\+\_\+by}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+compile\+\_\+order\+\_\+by()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+compile\+\_\+order\+\_\+by (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a78ef026e2ca49e2b371f9cc577f6e777}
+Compile O\+R\+D\+E\+R B\+Y
+
+Escapes identifiers in O\+R\+D\+E\+R B\+Y statements at execution time.
+
+Required so that aliases are tracked properly, regardless of wether \hyperlink{class_c_i___d_b__query__builder_af4bc938040ad30a93e4880f61568c72e}{order\+\_\+by()} is called prior to \hyperlink{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}{from()}, \hyperlink{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}{join()} and dbprefix is added only if needed.
+
+\begin{DoxyReturn}{Returns}
+string S\+Q\+L statement 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a441f6e994a212cfa12dd33d92973915b}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+compile\+\_\+select@{\+\_\+compile\+\_\+select}}
+\index{\+\_\+compile\+\_\+select@{\+\_\+compile\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+compile\+\_\+select(\$select\+\_\+override=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+compile\+\_\+select (
+\begin{DoxyParamCaption}
+\item[{}]{\$select\+\_\+override = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a441f6e994a212cfa12dd33d92973915b}
+Compile the S\+E\+L\+E\+C\+T statement
+
+Generates a query string based on which functions were used. Should not be called directly.
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$select\+\_\+override} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a3d2301b84734fd18a0db6d0602106f48}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+compile\+\_\+wh@{\+\_\+compile\+\_\+wh}}
+\index{\+\_\+compile\+\_\+wh@{\+\_\+compile\+\_\+wh}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+compile\+\_\+wh(\$qb\+\_\+key)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+compile\+\_\+wh (
+\begin{DoxyParamCaption}
+\item[{}]{\$qb\+\_\+key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a3d2301b84734fd18a0db6d0602106f48}
+Compile W\+H\+E\+R\+E, H\+A\+V\+I\+N\+G statements
+
+Escapes identifiers in W\+H\+E\+R\+E and H\+A\+V\+I\+N\+G statements at execution time.
+
+Required so that aliases are tracked properly, regardless of wether \hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where()}, \hyperlink{class_c_i___d_b__query__builder_a8d25e93a09f60fbe77541d0faef29bf0}{or\+\_\+where()}, \hyperlink{class_c_i___d_b__query__builder_af19efb51311e6f648a0035a0f94fceb6}{having()}, or\+\_\+having are called prior to \hyperlink{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}{from()}, \hyperlink{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}{join()} and dbprefix is added only if needed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$qb\+\_\+key} & \textquotesingle{}qb\+\_\+where\textquotesingle{} or \textquotesingle{}qb\+\_\+having\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string S\+Q\+L statement 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a194edea7be9a8636b67b7d2c8a3de04e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+create\+\_\+alias\+\_\+from\+\_\+table@{\+\_\+create\+\_\+alias\+\_\+from\+\_\+table}}
+\index{\+\_\+create\+\_\+alias\+\_\+from\+\_\+table@{\+\_\+create\+\_\+alias\+\_\+from\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+create\+\_\+alias\+\_\+from\+\_\+table(\$item)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+create\+\_\+alias\+\_\+from\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a194edea7be9a8636b67b7d2c8a3de04e}
+Determines the alias name based on the table
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a133ea8446ded52589bd22cc9163d0896}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+delete@{\+\_\+delete}}
+\index{\+\_\+delete@{\+\_\+delete}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+delete(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a133ea8446ded52589bd22cc9163d0896}
+Delete statement
+
+Generates a platform-\/specific delete string from the supplied data
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aef43f7e3e7b71d337ff3724c5eb14f10}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+from\+\_\+tables@{\+\_\+from\+\_\+tables}}
+\index{\+\_\+from\+\_\+tables@{\+\_\+from\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+from\+\_\+tables()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+from\+\_\+tables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aef43f7e3e7b71d337ff3724c5eb14f10}
+F\+R\+O\+M tables
+
+Groups tables in F\+R\+O\+M clauses if needed, so there is no confusion about operator precedence.
+
+Note\+: This is only used (and overridden) by My\+S\+Q\+L and C\+U\+B\+R\+I\+D.
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a0101619da9c48cfa269730ace38a774a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+group\+\_\+get\+\_\+type@{\+\_\+group\+\_\+get\+\_\+type}}
+\index{\+\_\+group\+\_\+get\+\_\+type@{\+\_\+group\+\_\+get\+\_\+type}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+group\+\_\+get\+\_\+type(\$type)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+group\+\_\+get\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{}]{\$type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a0101619da9c48cfa269730ace38a774a}
+Group\+\_\+get\+\_\+type
+
+-\/by \hyperlink{class_c_i___d_b__query__builder_a7a7026d58f7388d90d31475a66a2a2d1}{group\+\_\+start()} -\/by \hyperlink{class_c_i___d_b__query__builder_a72f687f2df9c46553fe2c6f58f7c3f1d}{\+\_\+like()} -\/by \hyperlink{class_c_i___d_b__query__builder_ada64568400d6e49136417e699ec2479d}{\+\_\+wh()} -\/by \hyperlink{class_c_i___d_b__query__builder_a457cb8b8aebdaa5f98489fd31de8e19e}{\+\_\+where\+\_\+in()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a1978e1358c812587a46e242630365099}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+insert\+\_\+batch@{\+\_\+insert\+\_\+batch}}
+\index{\+\_\+insert\+\_\+batch@{\+\_\+insert\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+insert\+\_\+batch(\$table, \$keys, \$values)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+insert\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$keys, }
+\item[{}]{\$values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a1978e1358c812587a46e242630365099}
+Insert batch statement
+
+Generates a platform-\/specific insert string from the supplied data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+array & {\em \$keys} & I\+N\+S\+E\+R\+T keys \\
+\hline
+array & {\em \$values} & I\+N\+S\+E\+R\+T values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a645d9af97f1d078041e8ae451fae9e1b}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+is\+\_\+literal@{\+\_\+is\+\_\+literal}}
+\index{\+\_\+is\+\_\+literal@{\+\_\+is\+\_\+literal}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+is\+\_\+literal(\$str)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+is\+\_\+literal (
+\begin{DoxyParamCaption}
+\item[{}]{\$str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a645d9af97f1d078041e8ae451fae9e1b}
+Is literal
+
+Determines if a string represents a literal value or a field name
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a72f687f2df9c46553fe2c6f58f7c3f1d}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+like@{\+\_\+like}}
+\index{\+\_\+like@{\+\_\+like}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+like(\$field, \$match= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}\+A\+N\+D \textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$not= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+like (
+\begin{DoxyParamCaption}
+\item[{}]{\$field, }
+\item[{}]{\$match = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}AND~\textquotesingle{}}, }
+\item[{}]{\$side = {\ttfamily \textquotesingle{}both\textquotesingle{}}, }
+\item[{}]{\$not = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a72f687f2df9c46553fe2c6f58f7c3f1d}
+Internal L\+I\+K\+E
+
+-\/by \hyperlink{class_c_i___d_b__query__builder_a833856c9ac2aa0aa4b75c42149e3e2de}{like()} -\/by \hyperlink{class_c_i___d_b__query__builder_a9c871134a85fe18a5413d4754baed8c7}{or\+\_\+like()} -\/by \hyperlink{class_c_i___d_b__query__builder_ac30de36991c5c11d195b3aefe7a65b8a}{not\+\_\+like()} -\/by \hyperlink{class_c_i___d_b__query__builder_a8ba35a82402da3afe51240acee96c3a1}{or\+\_\+not\+\_\+like()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$field} & \\
+\hline
+string & {\em \$match} & \\
+\hline
+string & {\em \$type} & \\
+\hline
+string & {\em \$side} & \\
+\hline
+string & {\em \$not} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a3a02ea06541b8ecc25a33a61651562c8}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+limit@{\+\_\+limit}}
+\index{\+\_\+limit@{\+\_\+limit}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+limit(\$sql)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+limit (
+\begin{DoxyParamCaption}
+\item[{}]{\$sql}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a3a02ea06541b8ecc25a33a61651562c8}
+L\+I\+M\+I\+T string
+
+Generates a platform-\/specific L\+I\+M\+I\+T clause.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & S\+Q\+L Query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ab51e293829027327d05172aaf0720f70}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum@{\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum}}
+\index{\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum@{\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum(\$select= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}\+M\+A\+X\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+max\+\_\+min\+\_\+avg\+\_\+sum (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$alias = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}MAX\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ab51e293829027327d05172aaf0720f70}
+S\+E\+L\+E\+C\+T \mbox{[}M\+A\+X$\vert$\+M\+I\+N$\vert$\+A\+V\+G$\vert$\+S\+U\+M\mbox{]}()
+
+-\/by \hyperlink{class_c_i___d_b__query__builder_a3283a75881bf34d98cc13aa5a187c8ac}{select\+\_\+max()} -\/by \hyperlink{class_c_i___d_b__query__builder_a460e37c355e9531b238b7c34d5979164}{select\+\_\+min()} -\/by \hyperlink{class_c_i___d_b__query__builder_a7c1b8ed90462898bd0d4e95ac3ba1539}{select\+\_\+avg()} -\/by \hyperlink{class_c_i___d_b__query__builder_aeb58275ab60ed426ce60ead616477e82}{select\+\_\+sum()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$select} & Field name \\
+\hline
+string & {\em \$alias} & \\
+\hline
+string & {\em \$type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aeee4c0cf664e1a65d7eb8a3c8e9970c6}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+merge\+\_\+cache@{\+\_\+merge\+\_\+cache}}
+\index{\+\_\+merge\+\_\+cache@{\+\_\+merge\+\_\+cache}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+merge\+\_\+cache()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+merge\+\_\+cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aeee4c0cf664e1a65d7eb8a3c8e9970c6}
+Merge Cache
+
+When called, this function merges any cached Q\+B arrays with locally called ones.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a50b3069661bbf4605b6b561f38eae849}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+object\+\_\+to\+\_\+array@{\+\_\+object\+\_\+to\+\_\+array}}
+\index{\+\_\+object\+\_\+to\+\_\+array@{\+\_\+object\+\_\+to\+\_\+array}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+object\+\_\+to\+\_\+array(\$object)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+object\+\_\+to\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{}]{\$object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a50b3069661bbf4605b6b561f38eae849}
+Object to Array
+
+Takes an object as input and converts the class variables to array key/vals
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ab53f659c5df0b0b6d30eaab74f507dc5}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+object\+\_\+to\+\_\+array\+\_\+batch@{\+\_\+object\+\_\+to\+\_\+array\+\_\+batch}}
+\index{\+\_\+object\+\_\+to\+\_\+array\+\_\+batch@{\+\_\+object\+\_\+to\+\_\+array\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+object\+\_\+to\+\_\+array\+\_\+batch(\$object)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+object\+\_\+to\+\_\+array\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ab53f659c5df0b0b6d30eaab74f507dc5}
+Object to Array
+
+Takes an object as input and converts the class variables to array key/vals
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ae0adf73984daf2d42ad29b66c484c82b}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+replace@{\+\_\+replace}}
+\index{\+\_\+replace@{\+\_\+replace}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+replace(\$table, \$keys, \$values)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+replace (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$keys, }
+\item[{}]{\$values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ae0adf73984daf2d42ad29b66c484c82b}
+Replace statement
+
+Generates a platform-\/specific replace string from the supplied data
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table name \\
+\hline
+{\em array} & the insert keys \\
+\hline
+{\em array} & the insert values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aebc5876417533f3347aeae458ccde988}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+reset\+\_\+run@{\+\_\+reset\+\_\+run}}
+\index{\+\_\+reset\+\_\+run@{\+\_\+reset\+\_\+run}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+reset\+\_\+run(\$qb\+\_\+reset\+\_\+items)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+reset\+\_\+run (
+\begin{DoxyParamCaption}
+\item[{}]{\$qb\+\_\+reset\+\_\+items}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aebc5876417533f3347aeae458ccde988}
+Resets the query builder values. Called by the \hyperlink{class_c_i___d_b__query__builder_a9e31f9f0d21d026e3e58b8225b79b8c1}{get()} function
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & An array of fields to reset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7c6cc16411b9c36fbfd42a9317f64317}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+reset\+\_\+select@{\+\_\+reset\+\_\+select}}
+\index{\+\_\+reset\+\_\+select@{\+\_\+reset\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+reset\+\_\+select()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+reset\+\_\+select (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a7c6cc16411b9c36fbfd42a9317f64317}
+Resets the query builder values. Called by the \hyperlink{class_c_i___d_b__query__builder_a9e31f9f0d21d026e3e58b8225b79b8c1}{get()} function
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ae49808f6becc0366eef957756c8309e4}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+reset\+\_\+write@{\+\_\+reset\+\_\+write}}
+\index{\+\_\+reset\+\_\+write@{\+\_\+reset\+\_\+write}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+reset\+\_\+write()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+reset\+\_\+write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ae49808f6becc0366eef957756c8309e4}
+Resets the query builder \char`\"{}write\char`\"{} values.
+
+Called by the \hyperlink{class_c_i___d_b__query__builder_a7913ac1869e54b240f10ca866cee1878}{insert()} \hyperlink{class_c_i___d_b__query__builder_a7f1bcfcca3cb9fe450f21737028040a7}{update()} \hyperlink{class_c_i___d_b__query__builder_a1cee06687b1da4d58959993bdd69c9c2}{insert\+\_\+batch()} \hyperlink{class_c_i___d_b__query__builder_a3a7d52e50b609117b3ca44a4dfeca263}{update\+\_\+batch()} and \hyperlink{class_c_i___d_b__query__builder_a98c786dcc4964dbb2307636c523c1ebd}{delete()} functions
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_afb539c1557a7cb20a190f5b68d96b74a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+track\+\_\+aliases@{\+\_\+track\+\_\+aliases}}
+\index{\+\_\+track\+\_\+aliases@{\+\_\+track\+\_\+aliases}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+track\+\_\+aliases(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+track\+\_\+aliases (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_afb539c1557a7cb20a190f5b68d96b74a}
+Track Aliases
+
+Used to track S\+Q\+L statements written with aliased tables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The table to inspect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aa029600528fc1ce660a23ff4b4667f95}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+truncate@{\+\_\+truncate}}
+\index{\+\_\+truncate@{\+\_\+truncate}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+truncate(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+truncate (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aa029600528fc1ce660a23ff4b4667f95}
+Truncate statement
+
+Generates a platform-\/specific truncate string from the supplied data
+
+If the database does not support the \hyperlink{class_c_i___d_b__query__builder_a59e71805908a91d2b45089c0137b5bc7}{truncate()} command, then this method maps to \textquotesingle{}D\+E\+L\+E\+T\+E F\+R\+O\+M table\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a336b9ebb119e47b6a84bb7fc9d4dae93}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+update\+\_\+batch@{\+\_\+update\+\_\+batch}}
+\index{\+\_\+update\+\_\+batch@{\+\_\+update\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+update\+\_\+batch(\$table, \$values, \$index)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+update\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$values, }
+\item[{}]{\$index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a336b9ebb119e47b6a84bb7fc9d4dae93}
+Update\+\_\+\+Batch statement
+
+Generates a platform-\/specific batch update string from the supplied data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+array & {\em \$values} & Update data \\
+\hline
+string & {\em \$index} & W\+H\+E\+R\+E key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a48d1269c7c90fd697ed3212ddf3d4647}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+validate\+\_\+insert@{\+\_\+validate\+\_\+insert}}
+\index{\+\_\+validate\+\_\+insert@{\+\_\+validate\+\_\+insert}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+validate\+\_\+insert(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+validate\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a48d1269c7c90fd697ed3212ddf3d4647}
+Validate Insert
+
+This method is used by both \hyperlink{class_c_i___d_b__query__builder_a7913ac1869e54b240f10ca866cee1878}{insert()} and \hyperlink{class_c_i___d_b__query__builder_ab24af8f4b84f989cc09aa7c82e9c9721}{get\+\_\+compiled\+\_\+insert()} to validate that the there data is actually being set and that table has been chosen to be inserted into.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to insert data into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a51e02a6f3e72f26131f6e2189ee2f81c}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+validate\+\_\+update@{\+\_\+validate\+\_\+update}}
+\index{\+\_\+validate\+\_\+update@{\+\_\+validate\+\_\+update}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+validate\+\_\+update(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+validate\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a51e02a6f3e72f26131f6e2189ee2f81c}
+Validate Update
+
+This method is used by both \hyperlink{class_c_i___d_b__query__builder_a7f1bcfcca3cb9fe450f21737028040a7}{update()} and \hyperlink{class_c_i___d_b__query__builder_ac4dfdf5d7bf2a6545312ddb9711e8105}{get\+\_\+compiled\+\_\+update()} to validate that data is actually being set and that a table has been chosen to be update.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to update data on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ada64568400d6e49136417e699ec2479d}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+wh@{\+\_\+wh}}
+\index{\+\_\+wh@{\+\_\+wh}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+wh(\$qb\+\_\+key, \$key, \$value=\+N\+U\+L\+L, \$type= \textquotesingle{}\+A\+N\+D \textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+wh (
+\begin{DoxyParamCaption}
+\item[{}]{\$qb\+\_\+key, }
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}AND~\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ada64568400d6e49136417e699ec2479d}
+W\+H\+E\+R\+E, H\+A\+V\+I\+N\+G
+
+-\/by \hyperlink{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{where()} -\/by \hyperlink{class_c_i___d_b__query__builder_a8d25e93a09f60fbe77541d0faef29bf0}{or\+\_\+where()} -\/by \hyperlink{class_c_i___d_b__query__builder_af19efb51311e6f648a0035a0f94fceb6}{having()} -\/by \hyperlink{class_c_i___d_b__query__builder_a14528cda8dcca86ebb9b597d9c8d1c14}{or\+\_\+having()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$qb\+\_\+key} & \textquotesingle{}qb\+\_\+where\textquotesingle{} or \textquotesingle{}qb\+\_\+having\textquotesingle{} \\
+\hline
+mixed & {\em \$key} & \\
+\hline
+mixed & {\em \$value} & \\
+\hline
+string & {\em \$type} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a457cb8b8aebdaa5f98489fd31de8e19e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\+\_\+where\+\_\+in@{\+\_\+where\+\_\+in}}
+\index{\+\_\+where\+\_\+in@{\+\_\+where\+\_\+in}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\+\_\+where\+\_\+in(\$key=\+N\+U\+L\+L, \$values=\+N\+U\+L\+L, \$not=\+F\+A\+L\+S\+E, \$type= \textquotesingle{}\+A\+N\+D \textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+where\+\_\+in (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}, }
+\item[{}]{\$values = {\ttfamily NULL}, }
+\item[{}]{\$not = {\ttfamily FALSE}, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}AND~\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a457cb8b8aebdaa5f98489fd31de8e19e}
+Internal W\+H\+E\+R\+E I\+N
+
+-\/by \hyperlink{class_c_i___d_b__query__builder_ad74b2c2b21b33f4aa54229a323b7ba59}{where\+\_\+in()} -\/by \hyperlink{class_c_i___d_b__query__builder_a9c3f8f4d2f9b9b033a27a2d868278662}{or\+\_\+where\+\_\+in()} -\/by \hyperlink{class_c_i___d_b__query__builder_ab9f1b5e0622e0392796c5c9f4cca705a}{where\+\_\+not\+\_\+in()} -\/by \hyperlink{class_c_i___d_b__query__builder_ace5f568aace8a66636091e220fcd03c3}{or\+\_\+where\+\_\+not\+\_\+in()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The field to search \\
+\hline
+array & {\em \$values} & The values searched on \\
+\hline
+bool & {\em \$not} & If the statement would be I\+N or N\+O\+T I\+N \\
+\hline
+string & {\em \$type} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a682ce62db0b118f0803df661c82d4fd8}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!count\+\_\+all\+\_\+results@{count\+\_\+all\+\_\+results}}
+\index{count\+\_\+all\+\_\+results@{count\+\_\+all\+\_\+results}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{count\+\_\+all\+\_\+results(\$table= \textquotesingle{}\textquotesingle{}, \$reset=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}count\+\_\+all\+\_\+results (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$reset = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a682ce62db0b118f0803df661c82d4fd8}
+\char`\"{}\+Count All Results\char`\"{} query
+
+Generates a platform-\/specific query string that counts all records returned by an Query Builder query.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em bool} & the reset clause \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a1e6bfc7a51f973e57bc948474e699e96}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!dbprefix@{dbprefix}}
+\index{dbprefix@{dbprefix}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{dbprefix(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}dbprefix (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a1e6bfc7a51f973e57bc948474e699e96}
+D\+B Prefix
+
+Prepends a database prefix if one exists in configuration
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a98c786dcc4964dbb2307636c523c1ebd}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!delete@{delete}}
+\index{delete@{delete}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{delete(\$table= \textquotesingle{}\textquotesingle{}, \$where= \textquotesingle{}\textquotesingle{}, \$limit=\+N\+U\+L\+L, \$reset\+\_\+data=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}delete (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$where = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$limit = {\ttfamily NULL}, }
+\item[{}]{\$reset\+\_\+data = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a98c786dcc4964dbb2307636c523c1ebd}
+Delete
+
+Compiles a delete string and runs the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & the table(s) to delete from. String or array \\
+\hline
+{\em mixed} & the where clause \\
+\hline
+{\em mixed} & the limit clause \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a65b172f03eea17b7fa243f5732a592bd}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!distinct@{distinct}}
+\index{distinct@{distinct}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{distinct(\$val=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}distinct (
+\begin{DoxyParamCaption}
+\item[{}]{\$val = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a65b172f03eea17b7fa243f5732a592bd}
+D\+I\+S\+T\+I\+N\+C\+T
+
+Sets a flag which tells the query string compiler to add D\+I\+S\+T\+I\+N\+C\+T
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_adb594700d683271e17cc5041099d8d40}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!empty\+\_\+table@{empty\+\_\+table}}
+\index{empty\+\_\+table@{empty\+\_\+table}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{empty\+\_\+table(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}empty\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_adb594700d683271e17cc5041099d8d40}
+Empty Table
+
+Compiles a delete string and runs \char`\"{}\+D\+E\+L\+E\+T\+E F\+R\+O\+M table\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to empty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aa3c94d79d552f6e10277b01c447ebbb6}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!flush\+\_\+cache@{flush\+\_\+cache}}
+\index{flush\+\_\+cache@{flush\+\_\+cache}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{flush\+\_\+cache()}]{\setlength{\rightskip}{0pt plus 5cm}flush\+\_\+cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_aa3c94d79d552f6e10277b01c447ebbb6}
+Flush Cache
+
+Empties the Q\+B cache
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!from@{from}}
+\index{from@{from}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{from(\$from)}]{\setlength{\rightskip}{0pt plus 5cm}from (
+\begin{DoxyParamCaption}
+\item[{}]{\$from}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a91f5f004ed8e2237a4decc5d23ac3457}
+From
+
+Generates the F\+R\+O\+M portion of the query
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$from} & can be a string or array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a9e31f9f0d21d026e3e58b8225b79b8c1}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get@{get}}
+\index{get@{get}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get(\$table= \textquotesingle{}\textquotesingle{}, \$limit=\+N\+U\+L\+L, \$offset=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}get (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$limit = {\ttfamily NULL}, }
+\item[{}]{\$offset = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a9e31f9f0d21d026e3e58b8225b79b8c1}
+Get
+
+Compiles the select statement based on the other functions called and runs the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table \\
+\hline
+{\em string} & the limit clause \\
+\hline
+{\em string} & the offset clause \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a0e5685905e73c6604c986e3f6e2ff973}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get\+\_\+compiled\+\_\+delete@{get\+\_\+compiled\+\_\+delete}}
+\index{get\+\_\+compiled\+\_\+delete@{get\+\_\+compiled\+\_\+delete}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get\+\_\+compiled\+\_\+delete(\$table= \textquotesingle{}\textquotesingle{}, \$reset=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+compiled\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$reset = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a0e5685905e73c6604c986e3f6e2ff973}
+Get D\+E\+L\+E\+T\+E query string
+
+Compiles a delete query string and returns the sql
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to delete from \\
+\hline
+{\em bool} & T\+R\+U\+E\+: reset Q\+B values; F\+A\+L\+S\+E\+: leave Q\+B values alone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ab24af8f4b84f989cc09aa7c82e9c9721}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get\+\_\+compiled\+\_\+insert@{get\+\_\+compiled\+\_\+insert}}
+\index{get\+\_\+compiled\+\_\+insert@{get\+\_\+compiled\+\_\+insert}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get\+\_\+compiled\+\_\+insert(\$table= \textquotesingle{}\textquotesingle{}, \$reset=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+compiled\+\_\+insert (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$reset = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ab24af8f4b84f989cc09aa7c82e9c9721}
+Get I\+N\+S\+E\+R\+T query string
+
+Compiles an insert query and returns the sql
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to insert into \\
+\hline
+{\em bool} & T\+R\+U\+E\+: reset Q\+B values; F\+A\+L\+S\+E\+: leave Q\+B values alone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ad02ec84bdb2bc9019a29baf0f27eb6bc}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get\+\_\+compiled\+\_\+select@{get\+\_\+compiled\+\_\+select}}
+\index{get\+\_\+compiled\+\_\+select@{get\+\_\+compiled\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get\+\_\+compiled\+\_\+select(\$table= \textquotesingle{}\textquotesingle{}, \$reset=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+compiled\+\_\+select (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$reset = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ad02ec84bdb2bc9019a29baf0f27eb6bc}
+Get S\+E\+L\+E\+C\+T query string
+
+Compiles a S\+E\+L\+E\+C\+T query string and returns the sql.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table name to select from (optional) \\
+\hline
+{\em bool} & T\+R\+U\+E\+: resets Q\+B values; F\+A\+L\+S\+E\+: leave Q\+B vaules alone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ac4dfdf5d7bf2a6545312ddb9711e8105}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get\+\_\+compiled\+\_\+update@{get\+\_\+compiled\+\_\+update}}
+\index{get\+\_\+compiled\+\_\+update@{get\+\_\+compiled\+\_\+update}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get\+\_\+compiled\+\_\+update(\$table= \textquotesingle{}\textquotesingle{}, \$reset=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+compiled\+\_\+update (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$reset = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ac4dfdf5d7bf2a6545312ddb9711e8105}
+Get U\+P\+D\+A\+T\+E query string
+
+Compiles an update query and returns the sql
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to update \\
+\hline
+{\em bool} & T\+R\+U\+E\+: reset Q\+B values; F\+A\+L\+S\+E\+: leave Q\+B values alone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7b120c9cf6f8aac4b82750bf8f7c9f17}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!get\+\_\+where@{get\+\_\+where}}
+\index{get\+\_\+where@{get\+\_\+where}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{get\+\_\+where(\$table= \textquotesingle{}\textquotesingle{}, \$where=\+N\+U\+L\+L, \$limit=\+N\+U\+L\+L, \$offset=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+where (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$where = {\ttfamily NULL}, }
+\item[{}]{\$limit = {\ttfamily NULL}, }
+\item[{}]{\$offset = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a7b120c9cf6f8aac4b82750bf8f7c9f17}
+Get\+\_\+\+Where
+
+Allows the where clause, limit and offset to be added directly
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+string & {\em \$where} & \\
+\hline
+int & {\em \$limit} & \\
+\hline
+int & {\em \$offset} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a111cc822f85357c4cfe37886e6315dce}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!group\+\_\+by@{group\+\_\+by}}
+\index{group\+\_\+by@{group\+\_\+by}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{group\+\_\+by(\$by, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}group\+\_\+by (
+\begin{DoxyParamCaption}
+\item[{}]{\$by, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a111cc822f85357c4cfe37886e6315dce}
+G\+R\+O\+U\+P B\+Y
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$by} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ad97adc35e18afc9d4f26e0f568cdc6ed}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!group\+\_\+end@{group\+\_\+end}}
+\index{group\+\_\+end@{group\+\_\+end}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{group\+\_\+end()}]{\setlength{\rightskip}{0pt plus 5cm}group\+\_\+end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ad97adc35e18afc9d4f26e0f568cdc6ed}
+Ends a query group
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7a7026d58f7388d90d31475a66a2a2d1}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!group\+\_\+start@{group\+\_\+start}}
+\index{group\+\_\+start@{group\+\_\+start}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{group\+\_\+start(\$not= \textquotesingle{}\textquotesingle{}, \$type= \textquotesingle{}\+A\+N\+D \textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}group\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{}]{\$not = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}AND~\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a7a7026d58f7388d90d31475a66a2a2d1}
+Starts a query group.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$not} & (Internal use only) \\
+\hline
+string & {\em \$type} & (Internal use only) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_af19efb51311e6f648a0035a0f94fceb6}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!having@{having}}
+\index{having@{having}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{having(\$key, \$value=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}having (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_af19efb51311e6f648a0035a0f94fceb6}
+H\+A\+V\+I\+N\+G
+
+Separates multiple calls with \textquotesingle{}A\+N\+D\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7913ac1869e54b240f10ca866cee1878}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!insert@{insert}}
+\index{insert@{insert}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{insert(\$table= \textquotesingle{}\textquotesingle{}, \$set=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}insert (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$set = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a7913ac1869e54b240f10ca866cee1878}
+Insert
+
+Compiles an insert string and runs the query
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em string} & the table to insert data into \\
+\hline
+ & {\em array} & an associative array of insert values \\
+\hline
+bool & {\em \$escape} & Whether to escape values and identifiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a1cee06687b1da4d58959993bdd69c9c2}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!insert\+\_\+batch@{insert\+\_\+batch}}
+\index{insert\+\_\+batch@{insert\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{insert\+\_\+batch(\$table= \textquotesingle{}\textquotesingle{}, \$set=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}insert\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$set = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a1cee06687b1da4d58959993bdd69c9c2}
+Insert\+\_\+\+Batch
+
+Compiles batch insert strings and runs the queries
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table to insert into \\
+\hline
+array & {\em \$set} & An associative array of insert values \\
+\hline
+bool & {\em \$escape} & Whether to escape values and identifiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of rows inserted or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!join@{join}}
+\index{join@{join}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{join(\$table, \$cond, \$type= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}join (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$cond, }
+\item[{}]{\$type = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ac52e03e702734b072159a6007d1793d0}
+J\+O\+I\+N
+
+Generates the J\+O\+I\+N portion of the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em string} & the join condition \\
+\hline
+{\em string} & the type of join \\
+\hline
+{\em string} & whether not to try to escape identifiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a833856c9ac2aa0aa4b75c42149e3e2de}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!like@{like}}
+\index{like@{like}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{like(\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}like (
+\begin{DoxyParamCaption}
+\item[{}]{\$field, }
+\item[{}]{\$match = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$side = {\ttfamily \textquotesingle{}both\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a833856c9ac2aa0aa4b75c42149e3e2de}
+L\+I\+K\+E
+
+Generates a L\+I\+K\+E\% portion of the query. Separates multiple calls with \textquotesingle{}A\+N\+D\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$field} & \\
+\hline
+string & {\em \$match} & \\
+\hline
+string & {\em \$side} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!limit@{limit}}
+\index{limit@{limit}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{limit(\$value, \$offset=0)}]{\setlength{\rightskip}{0pt plus 5cm}limit (
+\begin{DoxyParamCaption}
+\item[{}]{\$value, }
+\item[{}]{\$offset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a875b0d4703f176c36e771d728a9a04a0}
+L\+I\+M\+I\+T
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$value} & L\+I\+M\+I\+T value \\
+\hline
+int & {\em \$offset} & O\+F\+F\+S\+E\+T value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ae0b543e6db440c4a717714b5d5782e7a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!not\+\_\+group\+\_\+start@{not\+\_\+group\+\_\+start}}
+\index{not\+\_\+group\+\_\+start@{not\+\_\+group\+\_\+start}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{not\+\_\+group\+\_\+start()}]{\setlength{\rightskip}{0pt plus 5cm}not\+\_\+group\+\_\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ae0b543e6db440c4a717714b5d5782e7a}
+Starts a query group, but N\+O\+Ts the group
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ac30de36991c5c11d195b3aefe7a65b8a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!not\+\_\+like@{not\+\_\+like}}
+\index{not\+\_\+like@{not\+\_\+like}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{not\+\_\+like(\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}not\+\_\+like (
+\begin{DoxyParamCaption}
+\item[{}]{\$field, }
+\item[{}]{\$match = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$side = {\ttfamily \textquotesingle{}both\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ac30de36991c5c11d195b3aefe7a65b8a}
+N\+O\+T L\+I\+K\+E
+
+Generates a N\+O\+T L\+I\+K\+E portion of the query. Separates multiple calls with \textquotesingle{}A\+N\+D\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$field} & \\
+\hline
+string & {\em \$match} & \\
+\hline
+string & {\em \$side} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!offset@{offset}}
+\index{offset@{offset}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{offset(\$offset)}]{\setlength{\rightskip}{0pt plus 5cm}offset (
+\begin{DoxyParamCaption}
+\item[{}]{\$offset}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_afd31b65425a2b5cf30711bf29e1b1851}
+Sets the O\+F\+F\+S\+E\+T value
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$offset} & O\+F\+F\+S\+E\+T value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a80d5e4a0d8f2d0f202e8df6816865838}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+group\+\_\+start@{or\+\_\+group\+\_\+start}}
+\index{or\+\_\+group\+\_\+start@{or\+\_\+group\+\_\+start}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+group\+\_\+start()}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+group\+\_\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a80d5e4a0d8f2d0f202e8df6816865838}
+Starts a query group, but O\+Rs the group
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a14528cda8dcca86ebb9b597d9c8d1c14}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+having@{or\+\_\+having}}
+\index{or\+\_\+having@{or\+\_\+having}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+having(\$key, \$value=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+having (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a14528cda8dcca86ebb9b597d9c8d1c14}
+O\+R H\+A\+V\+I\+N\+G
+
+Separates multiple calls with \textquotesingle{}O\+R\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a9c871134a85fe18a5413d4754baed8c7}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+like@{or\+\_\+like}}
+\index{or\+\_\+like@{or\+\_\+like}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+like(\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+like (
+\begin{DoxyParamCaption}
+\item[{}]{\$field, }
+\item[{}]{\$match = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$side = {\ttfamily \textquotesingle{}both\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a9c871134a85fe18a5413d4754baed8c7}
+O\+R L\+I\+K\+E
+
+Generates a L\+I\+K\+E\% portion of the query. Separates multiple calls with \textquotesingle{}O\+R\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$field} & \\
+\hline
+string & {\em \$match} & \\
+\hline
+string & {\em \$side} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a16a0c2a5f37a7be4c487670650d13faf}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+not\+\_\+group\+\_\+start@{or\+\_\+not\+\_\+group\+\_\+start}}
+\index{or\+\_\+not\+\_\+group\+\_\+start@{or\+\_\+not\+\_\+group\+\_\+start}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+not\+\_\+group\+\_\+start()}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+not\+\_\+group\+\_\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a16a0c2a5f37a7be4c487670650d13faf}
+Starts a query group, but O\+R N\+O\+Ts the group
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a8ba35a82402da3afe51240acee96c3a1}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+not\+\_\+like@{or\+\_\+not\+\_\+like}}
+\index{or\+\_\+not\+\_\+like@{or\+\_\+not\+\_\+like}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+not\+\_\+like(\$field, \$match= \textquotesingle{}\textquotesingle{}, \$side= \textquotesingle{}both\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+not\+\_\+like (
+\begin{DoxyParamCaption}
+\item[{}]{\$field, }
+\item[{}]{\$match = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$side = {\ttfamily \textquotesingle{}both\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a8ba35a82402da3afe51240acee96c3a1}
+O\+R N\+O\+T L\+I\+K\+E
+
+Generates a N\+O\+T L\+I\+K\+E portion of the query. Separates multiple calls with \textquotesingle{}O\+R\textquotesingle{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$field} & \\
+\hline
+string & {\em \$match} & \\
+\hline
+string & {\em \$side} & \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a8d25e93a09f60fbe77541d0faef29bf0}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+where@{or\+\_\+where}}
+\index{or\+\_\+where@{or\+\_\+where}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+where(\$key, \$value=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+where (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a8d25e93a09f60fbe77541d0faef29bf0}
+O\+R W\+H\+E\+R\+E
+
+Generates the W\+H\+E\+R\+E portion of the query. Separates multiple calls with \textquotesingle{}O\+R\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & \\
+\hline
+{\em mixed} & \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a9c3f8f4d2f9b9b033a27a2d868278662}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+where\+\_\+in@{or\+\_\+where\+\_\+in}}
+\index{or\+\_\+where\+\_\+in@{or\+\_\+where\+\_\+in}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+where\+\_\+in(\$key=\+N\+U\+L\+L, \$values=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+where\+\_\+in (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}, }
+\item[{}]{\$values = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a9c3f8f4d2f9b9b033a27a2d868278662}
+O\+R W\+H\+E\+R\+E I\+N
+
+Generates a W\+H\+E\+R\+E field I\+N(\textquotesingle{}item\textquotesingle{}, \textquotesingle{}item\textquotesingle{}) S\+Q\+L query, joined with \textquotesingle{}O\+R\textquotesingle{} if appropriate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The field to search \\
+\hline
+array & {\em \$values} & The values searched on \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ace5f568aace8a66636091e220fcd03c3}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!or\+\_\+where\+\_\+not\+\_\+in@{or\+\_\+where\+\_\+not\+\_\+in}}
+\index{or\+\_\+where\+\_\+not\+\_\+in@{or\+\_\+where\+\_\+not\+\_\+in}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{or\+\_\+where\+\_\+not\+\_\+in(\$key=\+N\+U\+L\+L, \$values=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}or\+\_\+where\+\_\+not\+\_\+in (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}, }
+\item[{}]{\$values = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ace5f568aace8a66636091e220fcd03c3}
+O\+R W\+H\+E\+R\+E N\+O\+T I\+N
+
+Generates a W\+H\+E\+R\+E field N\+O\+T I\+N(\textquotesingle{}item\textquotesingle{}, \textquotesingle{}item\textquotesingle{}) S\+Q\+L query, joined with \textquotesingle{}O\+R\textquotesingle{} if appropriate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The field to search \\
+\hline
+array & {\em \$values} & The values searched on \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_af4bc938040ad30a93e4880f61568c72e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!order\+\_\+by@{order\+\_\+by}}
+\index{order\+\_\+by@{order\+\_\+by}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{order\+\_\+by(\$orderby, \$direction= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}order\+\_\+by (
+\begin{DoxyParamCaption}
+\item[{}]{\$orderby, }
+\item[{}]{\$direction = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_af4bc938040ad30a93e4880f61568c72e}
+O\+R\+D\+E\+R B\+Y
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$orderby} & \\
+\hline
+string & {\em \$direction} & A\+S\+C, D\+E\+S\+C or R\+A\+N\+D\+O\+M \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a71a4809228dce3974013c0db36a5f281}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!replace@{replace}}
+\index{replace@{replace}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{replace(\$table= \textquotesingle{}\textquotesingle{}, \$set=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}replace (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$set = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a71a4809228dce3974013c0db36a5f281}
+Replace
+
+Compiles an replace into string and runs the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to replace data into \\
+\hline
+{\em array} & an associative array of insert values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a66636a017a1115d983424cdfca677ddf}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!reset\+\_\+query@{reset\+\_\+query}}
+\index{reset\+\_\+query@{reset\+\_\+query}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{reset\+\_\+query()}]{\setlength{\rightskip}{0pt plus 5cm}reset\+\_\+query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a66636a017a1115d983424cdfca677ddf}
+Reset Query Builder values.
+
+Publicly-\/visible method to reset the Q\+B values.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!select@{select}}
+\index{select@{select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{select(\$select= \textquotesingle{}$\ast$\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}select (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}$\ast$\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ac6194faecb10a2731d6e6016f1714531}
+Select
+
+Generates the S\+E\+L\+E\+C\+T portion of the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em mixed} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7c1b8ed90462898bd0d4e95ac3ba1539}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!select\+\_\+avg@{select\+\_\+avg}}
+\index{select\+\_\+avg@{select\+\_\+avg}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{select\+\_\+avg(\$select= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}select\+\_\+avg (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$alias = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a7c1b8ed90462898bd0d4e95ac3ba1539}
+Select Average
+
+Generates a S\+E\+L\+E\+C\+T A\+V\+G(field) portion of a query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the field \\
+\hline
+{\em string} & an alias \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a3283a75881bf34d98cc13aa5a187c8ac}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!select\+\_\+max@{select\+\_\+max}}
+\index{select\+\_\+max@{select\+\_\+max}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{select\+\_\+max(\$select= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}select\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$alias = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a3283a75881bf34d98cc13aa5a187c8ac}
+Select Max
+
+Generates a S\+E\+L\+E\+C\+T M\+A\+X(field) portion of a query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the field \\
+\hline
+{\em string} & an alias \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a460e37c355e9531b238b7c34d5979164}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!select\+\_\+min@{select\+\_\+min}}
+\index{select\+\_\+min@{select\+\_\+min}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{select\+\_\+min(\$select= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}select\+\_\+min (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$alias = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a460e37c355e9531b238b7c34d5979164}
+Select Min
+
+Generates a S\+E\+L\+E\+C\+T M\+I\+N(field) portion of a query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the field \\
+\hline
+{\em string} & an alias \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_aeb58275ab60ed426ce60ead616477e82}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!select\+\_\+sum@{select\+\_\+sum}}
+\index{select\+\_\+sum@{select\+\_\+sum}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{select\+\_\+sum(\$select= \textquotesingle{}\textquotesingle{}, \$alias= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}select\+\_\+sum (
+\begin{DoxyParamCaption}
+\item[{}]{\$select = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$alias = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_aeb58275ab60ed426ce60ead616477e82}
+Select Sum
+
+Generates a S\+E\+L\+E\+C\+T S\+U\+M(field) portion of a query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the field \\
+\hline
+{\em string} & an alias \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!set@{set}}
+\index{set@{set}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{set(\$key, \$value= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ad24529c8e6cd4e3f58c0a3e55815b532}
+The \char`\"{}set\char`\"{} function.
+
+Allows key/value pairs to be set for inserting or updating
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & \\
+\hline
+{\em string} & \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a18182914d989b4d6781bda1163db31d7}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!set\+\_\+dbprefix@{set\+\_\+dbprefix}}
+\index{set\+\_\+dbprefix@{set\+\_\+dbprefix}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{set\+\_\+dbprefix(\$prefix= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+dbprefix (
+\begin{DoxyParamCaption}
+\item[{}]{\$prefix = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a18182914d989b4d6781bda1163db31d7}
+Set D\+B Prefix
+
+Set\textquotesingle{}s the D\+B Prefix to something new without needing to reconnect
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the prefix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a373d04f66d9bf73c7aceb1a925697a54}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!set\+\_\+insert\+\_\+batch@{set\+\_\+insert\+\_\+batch}}
+\index{set\+\_\+insert\+\_\+batch@{set\+\_\+insert\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{set\+\_\+insert\+\_\+batch(\$key, \$value= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+insert\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a373d04f66d9bf73c7aceb1a925697a54}
+The \char`\"{}set\+\_\+insert\+\_\+batch\char`\"{} function. Allows key/value pairs to be set for batch inserts
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & \\
+\hline
+{\em string} & \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ad1ee3730f9e7ca2f6613a7bae29f61bf}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!set\+\_\+update\+\_\+batch@{set\+\_\+update\+\_\+batch}}
+\index{set\+\_\+update\+\_\+batch@{set\+\_\+update\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{set\+\_\+update\+\_\+batch(\$key, \$index= \textquotesingle{}\textquotesingle{}, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+update\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$index = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ad1ee3730f9e7ca2f6613a7bae29f61bf}
+The \char`\"{}set\+\_\+update\+\_\+batch\char`\"{} function. Allows key/value pairs to be set for batch updating
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \\
+\hline
+{\em string} & \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a2d4f0c7b71f87dc7ca7f7fcfbdd12ba0}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!start\+\_\+cache@{start\+\_\+cache}}
+\index{start\+\_\+cache@{start\+\_\+cache}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{start\+\_\+cache()}]{\setlength{\rightskip}{0pt plus 5cm}start\+\_\+cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a2d4f0c7b71f87dc7ca7f7fcfbdd12ba0}
+Start Cache
+
+Starts Q\+B caching
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a612e54a6230b7e899c4d2a42a234bd5a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!stop\+\_\+cache@{stop\+\_\+cache}}
+\index{stop\+\_\+cache@{stop\+\_\+cache}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{stop\+\_\+cache()}]{\setlength{\rightskip}{0pt plus 5cm}stop\+\_\+cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a612e54a6230b7e899c4d2a42a234bd5a}
+Stop Cache
+
+Stops Q\+B caching
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a59e71805908a91d2b45089c0137b5bc7}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!truncate@{truncate}}
+\index{truncate@{truncate}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{truncate(\$table= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}truncate (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a59e71805908a91d2b45089c0137b5bc7}
+Truncate
+
+Compiles a truncate string and runs the query If the database does not support the \hyperlink{class_c_i___d_b__query__builder_a59e71805908a91d2b45089c0137b5bc7}{truncate()} command This function maps to \char`\"{}\+D\+E\+L\+E\+T\+E F\+R\+O\+M table\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to truncate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a7f1bcfcca3cb9fe450f21737028040a7}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!update@{update}}
+\index{update@{update}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{update(\$table= \textquotesingle{}\textquotesingle{}, \$set=\+N\+U\+L\+L, \$where=\+N\+U\+L\+L, \$limit=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}update (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$set = {\ttfamily NULL}, }
+\item[{}]{\$where = {\ttfamily NULL}, }
+\item[{}]{\$limit = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a7f1bcfcca3cb9fe450f21737028040a7}
+U\+P\+D\+A\+T\+E
+
+Compiles an update string and runs the query.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+array & {\em \$set} & An associative array of update values \\
+\hline
+mixed & {\em \$where} & \\
+\hline
+int & {\em \$limit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a3a7d52e50b609117b3ca44a4dfeca263}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!update\+\_\+batch@{update\+\_\+batch}}
+\index{update\+\_\+batch@{update\+\_\+batch}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{update\+\_\+batch(\$table= \textquotesingle{}\textquotesingle{}, \$set=\+N\+U\+L\+L, \$index=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+batch (
+\begin{DoxyParamCaption}
+\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$set = {\ttfamily NULL}, }
+\item[{}]{\$index = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a3a7d52e50b609117b3ca44a4dfeca263}
+Update\+\_\+\+Batch
+
+Compiles an update string and runs the query
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the table to retrieve the results from \\
+\hline
+{\em array} & an associative array of update values \\
+\hline
+{\em string} & the where key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int number of rows affected or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!where@{where}}
+\index{where@{where}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{where(\$key, \$value=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}where (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_a2356c4b7b93fb83c62a354a8a0748222}
+W\+H\+E\+R\+E
+
+Generates the W\+H\+E\+R\+E portion of the query. Separates multiple calls with \textquotesingle{}A\+N\+D\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mixed} & \\
+\hline
+{\em mixed} & \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ad74b2c2b21b33f4aa54229a323b7ba59}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!where\+\_\+in@{where\+\_\+in}}
+\index{where\+\_\+in@{where\+\_\+in}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{where\+\_\+in(\$key=\+N\+U\+L\+L, \$values=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}where\+\_\+in (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}, }
+\item[{}]{\$values = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ad74b2c2b21b33f4aa54229a323b7ba59}
+W\+H\+E\+R\+E I\+N
+
+Generates a W\+H\+E\+R\+E field I\+N(\textquotesingle{}item\textquotesingle{}, \textquotesingle{}item\textquotesingle{}) S\+Q\+L query, joined with \textquotesingle{}A\+N\+D\textquotesingle{} if appropriate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The field to search \\
+\hline
+array & {\em \$values} & The values searched on \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__query__builder_ab9f1b5e0622e0392796c5c9f4cca705a}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!where\+\_\+not\+\_\+in@{where\+\_\+not\+\_\+in}}
+\index{where\+\_\+not\+\_\+in@{where\+\_\+not\+\_\+in}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{where\+\_\+not\+\_\+in(\$key=\+N\+U\+L\+L, \$values=\+N\+U\+L\+L, \$escape=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}where\+\_\+not\+\_\+in (
+\begin{DoxyParamCaption}
+\item[{}]{\$key = {\ttfamily NULL}, }
+\item[{}]{\$values = {\ttfamily NULL}, }
+\item[{}]{\$escape = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__query__builder_ab9f1b5e0622e0392796c5c9f4cca705a}
+W\+H\+E\+R\+E N\+O\+T I\+N
+
+Generates a W\+H\+E\+R\+E field N\+O\+T I\+N(\textquotesingle{}item\textquotesingle{}, \textquotesingle{}item\textquotesingle{}) S\+Q\+L query, joined with \textquotesingle{}A\+N\+D\textquotesingle{} if appropriate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The field to search \\
+\hline
+array & {\em \$values} & The values searched on \\
+\hline
+bool & {\em \$escape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___d_b__query__builder}{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder} 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__query__builder_a1a27aa0ceada8a74b23613bf3cd04e65}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+aliased\+\_\+tables@{\$qb\+\_\+aliased\+\_\+tables}}
+\index{\$qb\+\_\+aliased\+\_\+tables@{\$qb\+\_\+aliased\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+aliased\+\_\+tables}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+aliased\+\_\+tables = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a1a27aa0ceada8a74b23613bf3cd04e65}
+\hypertarget{class_c_i___d_b__query__builder_a895766ccda772ba2c14b755e5eed3615}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+exists@{\$qb\+\_\+cache\+\_\+exists}}
+\index{\$qb\+\_\+cache\+\_\+exists@{\$qb\+\_\+cache\+\_\+exists}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+exists}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+exists = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a895766ccda772ba2c14b755e5eed3615}
+\hypertarget{class_c_i___d_b__query__builder_a37229f5eb9d9d16137a76956d12c31a1}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+from@{\$qb\+\_\+cache\+\_\+from}}
+\index{\$qb\+\_\+cache\+\_\+from@{\$qb\+\_\+cache\+\_\+from}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+from}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+from = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a37229f5eb9d9d16137a76956d12c31a1}
+\hypertarget{class_c_i___d_b__query__builder_af74e5310be3853a3ed7a62666b9a8da3}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+groupby@{\$qb\+\_\+cache\+\_\+groupby}}
+\index{\$qb\+\_\+cache\+\_\+groupby@{\$qb\+\_\+cache\+\_\+groupby}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+groupby}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+groupby = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_af74e5310be3853a3ed7a62666b9a8da3}
+\hypertarget{class_c_i___d_b__query__builder_a37ceb9118d6a143e889dca4493a42cb2}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+having@{\$qb\+\_\+cache\+\_\+having}}
+\index{\$qb\+\_\+cache\+\_\+having@{\$qb\+\_\+cache\+\_\+having}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+having}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+having = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a37ceb9118d6a143e889dca4493a42cb2}
+\hypertarget{class_c_i___d_b__query__builder_ae4641bc6264db400498f5ed8e9ec683e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+join@{\$qb\+\_\+cache\+\_\+join}}
+\index{\$qb\+\_\+cache\+\_\+join@{\$qb\+\_\+cache\+\_\+join}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+join}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+join = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ae4641bc6264db400498f5ed8e9ec683e}
+\hypertarget{class_c_i___d_b__query__builder_aab4ea89afea227fad65eec8dfb3844b3}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+no\+\_\+escape@{\$qb\+\_\+cache\+\_\+no\+\_\+escape}}
+\index{\$qb\+\_\+cache\+\_\+no\+\_\+escape@{\$qb\+\_\+cache\+\_\+no\+\_\+escape}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+no\+\_\+escape}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+no\+\_\+escape = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aab4ea89afea227fad65eec8dfb3844b3}
+\hypertarget{class_c_i___d_b__query__builder_a0ff4129b83d9dd14b978c25d0a25a4d1}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+orderby@{\$qb\+\_\+cache\+\_\+orderby}}
+\index{\$qb\+\_\+cache\+\_\+orderby@{\$qb\+\_\+cache\+\_\+orderby}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+orderby}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+orderby = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a0ff4129b83d9dd14b978c25d0a25a4d1}
+\hypertarget{class_c_i___d_b__query__builder_a5fd3adf4f7eb7361b707c1172bd9581e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+select@{\$qb\+\_\+cache\+\_\+select}}
+\index{\$qb\+\_\+cache\+\_\+select@{\$qb\+\_\+cache\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+select}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+select = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a5fd3adf4f7eb7361b707c1172bd9581e}
+\hypertarget{class_c_i___d_b__query__builder_a3f8cb0d781813dbc441265cfc1371a00}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+set@{\$qb\+\_\+cache\+\_\+set}}
+\index{\$qb\+\_\+cache\+\_\+set@{\$qb\+\_\+cache\+\_\+set}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+set = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a3f8cb0d781813dbc441265cfc1371a00}
+\hypertarget{class_c_i___d_b__query__builder_ac325a253ad5ee9ac7fd5cbdad2603de3}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+cache\+\_\+where@{\$qb\+\_\+cache\+\_\+where}}
+\index{\$qb\+\_\+cache\+\_\+where@{\$qb\+\_\+cache\+\_\+where}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+cache\+\_\+where}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+cache\+\_\+where = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ac325a253ad5ee9ac7fd5cbdad2603de3}
+\hypertarget{class_c_i___d_b__query__builder_aa1fb22248b06dc9b0b803ba19e54bcbd}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+caching@{\$qb\+\_\+caching}}
+\index{\$qb\+\_\+caching@{\$qb\+\_\+caching}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+caching}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+caching = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aa1fb22248b06dc9b0b803ba19e54bcbd}
+\hypertarget{class_c_i___d_b__query__builder_ab25ffde080220f90531e2c7fb63dae61}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+distinct@{\$qb\+\_\+distinct}}
+\index{\$qb\+\_\+distinct@{\$qb\+\_\+distinct}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+distinct}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+distinct = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ab25ffde080220f90531e2c7fb63dae61}
+\hypertarget{class_c_i___d_b__query__builder_ae3b7c9b5e80df14e86603e12e5af7878}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+from@{\$qb\+\_\+from}}
+\index{\$qb\+\_\+from@{\$qb\+\_\+from}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+from}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+from = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_ae3b7c9b5e80df14e86603e12e5af7878}
+\hypertarget{class_c_i___d_b__query__builder_a93e14f322d0e6e6cbc3eebe21ce6a034}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+groupby@{\$qb\+\_\+groupby}}
+\index{\$qb\+\_\+groupby@{\$qb\+\_\+groupby}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+groupby}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+groupby = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a93e14f322d0e6e6cbc3eebe21ce6a034}
+\hypertarget{class_c_i___d_b__query__builder_a3f6570da7e71b44280a01265f18e1a54}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+having@{\$qb\+\_\+having}}
+\index{\$qb\+\_\+having@{\$qb\+\_\+having}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+having}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+having = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a3f6570da7e71b44280a01265f18e1a54}
+\hypertarget{class_c_i___d_b__query__builder_a21c59bf512aeedb532e61ef101aefc17}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+join@{\$qb\+\_\+join}}
+\index{\$qb\+\_\+join@{\$qb\+\_\+join}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+join}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+join = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a21c59bf512aeedb532e61ef101aefc17}
+\hypertarget{class_c_i___d_b__query__builder_a08fe63db41a3e804650206850175c1dc}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+keys@{\$qb\+\_\+keys}}
+\index{\$qb\+\_\+keys@{\$qb\+\_\+keys}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+keys = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a08fe63db41a3e804650206850175c1dc}
+\hypertarget{class_c_i___d_b__query__builder_a383e4f5a10c762a271105c85b3ebca61}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+limit@{\$qb\+\_\+limit}}
+\index{\$qb\+\_\+limit@{\$qb\+\_\+limit}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+limit}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+limit = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a383e4f5a10c762a271105c85b3ebca61}
+\hypertarget{class_c_i___d_b__query__builder_a95b3a934937b47f5c90f381cf8a50860}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+no\+\_\+escape@{\$qb\+\_\+no\+\_\+escape}}
+\index{\$qb\+\_\+no\+\_\+escape@{\$qb\+\_\+no\+\_\+escape}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+no\+\_\+escape}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+no\+\_\+escape = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a95b3a934937b47f5c90f381cf8a50860}
+\hypertarget{class_c_i___d_b__query__builder_aa45418e873986d0f6e6bc768ea5567e5}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+offset@{\$qb\+\_\+offset}}
+\index{\$qb\+\_\+offset@{\$qb\+\_\+offset}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+offset}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+offset = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aa45418e873986d0f6e6bc768ea5567e5}
+\hypertarget{class_c_i___d_b__query__builder_a8e856c95a5ca3df7c7deba3782182a3e}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+orderby@{\$qb\+\_\+orderby}}
+\index{\$qb\+\_\+orderby@{\$qb\+\_\+orderby}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+orderby}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+orderby = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a8e856c95a5ca3df7c7deba3782182a3e}
+\hypertarget{class_c_i___d_b__query__builder_a0ffc5292702e6f9ffbd830f149762e87}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+select@{\$qb\+\_\+select}}
+\index{\$qb\+\_\+select@{\$qb\+\_\+select}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+select}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+select = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a0ffc5292702e6f9ffbd830f149762e87}
+\hypertarget{class_c_i___d_b__query__builder_a377913806717a7b6bcd35ed1df5ac072}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+set@{\$qb\+\_\+set}}
+\index{\$qb\+\_\+set@{\$qb\+\_\+set}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+set = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a377913806717a7b6bcd35ed1df5ac072}
+\hypertarget{class_c_i___d_b__query__builder_afc34268c5a4d034aa3802e3310ec9419}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+where@{\$qb\+\_\+where}}
+\index{\$qb\+\_\+where@{\$qb\+\_\+where}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+where}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+where = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_afc34268c5a4d034aa3802e3310ec9419}
+\hypertarget{class_c_i___d_b__query__builder_a2fcbcc620115436314a2d25e7c9ce366}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+where\+\_\+group\+\_\+count@{\$qb\+\_\+where\+\_\+group\+\_\+count}}
+\index{\$qb\+\_\+where\+\_\+group\+\_\+count@{\$qb\+\_\+where\+\_\+group\+\_\+count}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+where\+\_\+group\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+where\+\_\+group\+\_\+count = 0\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_a2fcbcc620115436314a2d25e7c9ce366}
+\hypertarget{class_c_i___d_b__query__builder_aaae9d24ab424373f1bdbc1b601074433}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$qb\+\_\+where\+\_\+group\+\_\+started@{\$qb\+\_\+where\+\_\+group\+\_\+started}}
+\index{\$qb\+\_\+where\+\_\+group\+\_\+started@{\$qb\+\_\+where\+\_\+group\+\_\+started}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$qb\+\_\+where\+\_\+group\+\_\+started}]{\setlength{\rightskip}{0pt plus 5cm}\$qb\+\_\+where\+\_\+group\+\_\+started = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aaae9d24ab424373f1bdbc1b601074433}
+\hypertarget{class_c_i___d_b__query__builder_aaeed877e8b1faeddaecaec6c890567ef}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$reset\+\_\+delete\+\_\+data@{\$reset\+\_\+delete\+\_\+data}}
+\index{\$reset\+\_\+delete\+\_\+data@{\$reset\+\_\+delete\+\_\+data}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$reset\+\_\+delete\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}\$reset\+\_\+delete\+\_\+data = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aaeed877e8b1faeddaecaec6c890567ef}
+\hypertarget{class_c_i___d_b__query__builder_aee0c1cc88062e1b49fe9e057bfb288e6}{}\index{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}!\$return\+\_\+delete\+\_\+sql@{\$return\+\_\+delete\+\_\+sql}}
+\index{\$return\+\_\+delete\+\_\+sql@{\$return\+\_\+delete\+\_\+sql}!C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder@{C\+I\+\_\+\+D\+B\+\_\+query\+\_\+builder}}
+\subsubsection[{\$return\+\_\+delete\+\_\+sql}]{\setlength{\rightskip}{0pt plus 5cm}\$return\+\_\+delete\+\_\+sql = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__query__builder_aee0c1cc88062e1b49fe9e057bfb288e6}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/database/\hyperlink{_d_b__query__builder_8php}{D\+B\+\_\+query\+\_\+builder.\+php}\end{DoxyCompactItemize}

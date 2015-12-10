@@ -1,0 +1,101 @@
+\hypertarget{class_mock___database___d_b}{}\section{Mock\+\_\+\+Database\+\_\+\+D\+B Class Reference}
+\label{class_mock___database___d_b}\index{Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mock___database___d_b_af7f9493844d2d66e924e3c1df51ce616}{\+\_\+\+\_\+construct} (\$\hyperlink{class_mock___database___d_b_a72f857f44ada596d4b82e5ad09f04781}{config}=array())
+\item 
+\hyperlink{class_mock___database___d_b_a30c9205285c7ce4a69e0acf472959310}{set\+\_\+dsn} (\$group= \textquotesingle{}default\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_mock___database___d_b_a72f857f44ada596d4b82e5ad09f04781}{config} (\$driver)
+\item 
+static \hyperlink{class_mock___database___d_b_a980185965f216e04ae5d8c133ae5acaa}{D\+B} (\$group, \$query\+\_\+builder=F\+A\+L\+S\+E)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mock___database___d_b_af7f9493844d2d66e924e3c1df51ce616}{}\index{Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}}
+\subsubsection[{\+\_\+\+\_\+construct(\$config=array())}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$config = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_mock___database___d_b_af7f9493844d2d66e924e3c1df51ce616}
+Prepare database configuration skeleton
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & D\+B configuration to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mock___database___d_b_a72f857f44ada596d4b82e5ad09f04781}{}\index{Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}!config@{config}}
+\index{config@{config}!Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}}
+\subsubsection[{config(\$driver)}]{\setlength{\rightskip}{0pt plus 5cm}static config (
+\begin{DoxyParamCaption}
+\item[{}]{\$driver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_mock___database___d_b_a72f857f44ada596d4b82e5ad09f04781}
+Return a database config array
+
+\begin{DoxySeeAlso}{See also}
+./config 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Driver based configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_mock___database___d_b_a980185965f216e04ae5d8c133ae5acaa}{}\index{Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}!D\+B@{D\+B}}
+\index{D\+B@{D\+B}!Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}}
+\subsubsection[{D\+B(\$group, \$query\+\_\+builder=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}static D\+B (
+\begin{DoxyParamCaption}
+\item[{}]{\$group, }
+\item[{}]{\$query\+\_\+builder = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_mock___database___d_b_a980185965f216e04ae5d8c133ae5acaa}
+Main D\+B method wrapper
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Group or D\+S\+N string \\
+\hline
+{\em bool} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_mock___database___d_b_a30c9205285c7ce4a69e0acf472959310}{}\index{Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}!set\+\_\+dsn@{set\+\_\+dsn}}
+\index{set\+\_\+dsn@{set\+\_\+dsn}!Mock\+\_\+\+Database\+\_\+\+D\+B@{Mock\+\_\+\+Database\+\_\+\+D\+B}}
+\subsubsection[{set\+\_\+dsn(\$group= \textquotesingle{}default\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+dsn (
+\begin{DoxyParamCaption}
+\item[{}]{\$group = {\ttfamily \textquotesingle{}default\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_mock___database___d_b_a30c9205285c7ce4a69e0acf472959310}
+Build D\+S\+N connection string for D\+B driver instantiate process
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Group name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string D\+S\+N Connection string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/tests/mocks/database/\hyperlink{tests_2mocks_2database_2_d_b_8php}{db.\+php}\end{DoxyCompactItemize}

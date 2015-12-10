@@ -1,0 +1,248 @@
+\hypertarget{class_tournament__model}{}\section{Tournament\+\_\+model Class Reference}
+\label{class_tournament__model}\index{Tournament\+\_\+model@{Tournament\+\_\+model}}
+Inheritance diagram for Tournament\+\_\+model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tournament__model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tournament__model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_tournament__model_ae681965e8413c0294e1a4aaeb342c4bf}{get\+\_\+active\+\_\+tournament} ()
+\item 
+\hyperlink{class_tournament__model_a938af0306c1d67227a528fbfae41983e}{get\+\_\+active\+\_\+tournament\+\_\+id} ()
+\item 
+\hyperlink{class_tournament__model_a44a260e1998372620f9fb17568e31283}{get\+\_\+upcoming\+\_\+phase} (\$tournament\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get information of next phase (not started, admin will start) of current tournament. \end{DoxyCompactList}\item 
+\hyperlink{class_tournament__model_abd4c2097e05706af3407615dfaaf9032}{get\+\_\+fixture} (\$tournament\+\_\+id=0)
+\item 
+\hyperlink{class_tournament__model_a840498ff96cdf134d325b23f4983d327}{get\+\_\+result} (\$tournament\+\_\+id=0)
+\item 
+\hyperlink{class_tournament__model_a7abc276bb6a1ca913d154a927cf6c572}{get\+\_\+active\+\_\+tournament\+\_\+teams} ()
+\item 
+\hyperlink{class_tournament__model_a46df199068a44e9ed332e82ed56ebc4f}{player\+\_\+exists} (\$player\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_ad84b3f5fc9f4b4251256beb8f6ee0366}{add\+\_\+tournament\+\_\+player} (\$player\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_aa93b198f1e6bf812215862b632bdacf4}{delete\+\_\+tournament\+\_\+player} (\$player\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a8826dc4b8e2dd947b880342848fd3698}{view\+\_\+tournaments} ()
+\item 
+\hyperlink{class_tournament__model_a784fe6ee7235433416f536c7c00d6277}{create\+\_\+tournament} (\$data)
+\item 
+\hyperlink{class_tournament__model_a4903139706bb30df6eddb06f51bc76f4}{get\+\_\+all\+\_\+tournaments} ()
+\item 
+\hyperlink{class_tournament__model_a7404e01586163cf04959f4748bcd7821}{get\+\_\+tournament\+\_\+name} (\$tournament\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a8bed35a930e28709458de74520659750}{team\+\_\+exists\+\_\+tournament} (\$tournament\+\_\+id, \$team\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a8df521ff35ba8f054f6d9d65da3d66a8}{add\+\_\+tournament\+\_\+team} (\$tournament\+\_\+id, \$team\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a68a322bc7c8b71b81cb1e8f8ee019ac0}{delete\+\_\+tournament\+\_\+team} (\$tournament\+\_\+id, \$team\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a3ae959338caabf554850c1f4ac954726}{update\+\_\+active\+\_\+tournament} (\$tournament\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_adea7ad02f9a5fc39d50c18d80e5cc093}{add\+\_\+tournament\+\_\+phase} (\$phase\+\_\+data)
+\item 
+\hyperlink{class_tournament__model_a66b95b967722916a1d1d11ffbdcd9982}{get\+\_\+tournament\+\_\+info} (\$tournament\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_a907bb55cb08c93041706da20c8cd79b4}{get\+\_\+phase\+\_\+info} (\$tournament\+\_\+id)
+\item 
+\hyperlink{class_tournament__model_abde88ebb17a0c7572ad2575326028768}{update\+\_\+tournament\+\_\+phase} (\$phase\+\_\+data)
+\item 
+\hyperlink{class_tournament__model_a61dc6e29af1a75b337f29a1ec8cf31ae}{get\+\_\+active\+\_\+tournament\+\_\+name} ()
+\item 
+\hyperlink{class_tournament__model_ae9e4f853c3a51ded8eb00303a09023af}{get\+\_\+previous\+\_\+match} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides Database Level Operations for {\ttfamily tournament} entity and related functions 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tournament__model_a095c5d389db211932136b53f25f39685}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a095c5d389db211932136b53f25f39685}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tournament__model_adea7ad02f9a5fc39d50c18d80e5cc093}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!add\+\_\+tournament\+\_\+phase@{add\+\_\+tournament\+\_\+phase}}
+\index{add\+\_\+tournament\+\_\+phase@{add\+\_\+tournament\+\_\+phase}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{add\+\_\+tournament\+\_\+phase(\$phase\+\_\+data)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+tournament\+\_\+phase (
+\begin{DoxyParamCaption}
+\item[{}]{\$phase\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_adea7ad02f9a5fc39d50c18d80e5cc093}
+Insert a tournament phase \hypertarget{class_tournament__model_ad84b3f5fc9f4b4251256beb8f6ee0366}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!add\+\_\+tournament\+\_\+player@{add\+\_\+tournament\+\_\+player}}
+\index{add\+\_\+tournament\+\_\+player@{add\+\_\+tournament\+\_\+player}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{add\+\_\+tournament\+\_\+player(\$player\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+tournament\+\_\+player (
+\begin{DoxyParamCaption}
+\item[{}]{\$player\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_ad84b3f5fc9f4b4251256beb8f6ee0366}
+insert a player into {\ttfamily player\+\_\+tournament} table to indicate that the player is participating in the current tournament \hypertarget{class_tournament__model_a8df521ff35ba8f054f6d9d65da3d66a8}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!add\+\_\+tournament\+\_\+team@{add\+\_\+tournament\+\_\+team}}
+\index{add\+\_\+tournament\+\_\+team@{add\+\_\+tournament\+\_\+team}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{add\+\_\+tournament\+\_\+team(\$tournament\+\_\+id, \$team\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}add\+\_\+tournament\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id, }
+\item[{}]{\$team\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a8df521ff35ba8f054f6d9d65da3d66a8}
+Insert a team into team\+\_\+tournament table to indicate that the team is participating in that tournament \hypertarget{class_tournament__model_a784fe6ee7235433416f536c7c00d6277}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!create\+\_\+tournament@{create\+\_\+tournament}}
+\index{create\+\_\+tournament@{create\+\_\+tournament}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{create\+\_\+tournament(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+tournament (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a784fe6ee7235433416f536c7c00d6277}
+Create a new tournament \hypertarget{class_tournament__model_aa93b198f1e6bf812215862b632bdacf4}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!delete\+\_\+tournament\+\_\+player@{delete\+\_\+tournament\+\_\+player}}
+\index{delete\+\_\+tournament\+\_\+player@{delete\+\_\+tournament\+\_\+player}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{delete\+\_\+tournament\+\_\+player(\$player\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}delete\+\_\+tournament\+\_\+player (
+\begin{DoxyParamCaption}
+\item[{}]{\$player\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_aa93b198f1e6bf812215862b632bdacf4}
+Delete a player from player\+\_\+tournament table to indicate that the player is no longer participating in the current tournament \hypertarget{class_tournament__model_a68a322bc7c8b71b81cb1e8f8ee019ac0}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!delete\+\_\+tournament\+\_\+team@{delete\+\_\+tournament\+\_\+team}}
+\index{delete\+\_\+tournament\+\_\+team@{delete\+\_\+tournament\+\_\+team}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{delete\+\_\+tournament\+\_\+team(\$tournament\+\_\+id, \$team\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}delete\+\_\+tournament\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id, }
+\item[{}]{\$team\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a68a322bc7c8b71b81cb1e8f8ee019ac0}
+Delete a team from team\+\_\+tournament table to indicate that the team is no longer participating in that tournament \hypertarget{class_tournament__model_ae681965e8413c0294e1a4aaeb342c4bf}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+active\+\_\+tournament@{get\+\_\+active\+\_\+tournament}}
+\index{get\+\_\+active\+\_\+tournament@{get\+\_\+active\+\_\+tournament}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+active\+\_\+tournament()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+active\+\_\+tournament (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_ae681965e8413c0294e1a4aaeb342c4bf}
+Get information about currently running tournament. \hypertarget{class_tournament__model_a938af0306c1d67227a528fbfae41983e}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+active\+\_\+tournament\+\_\+id@{get\+\_\+active\+\_\+tournament\+\_\+id}}
+\index{get\+\_\+active\+\_\+tournament\+\_\+id@{get\+\_\+active\+\_\+tournament\+\_\+id}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+active\+\_\+tournament\+\_\+id()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+active\+\_\+tournament\+\_\+id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a938af0306c1d67227a528fbfae41983e}
+Get {\ttfamily tournament\+\_\+id} of current tournament \hypertarget{class_tournament__model_a61dc6e29af1a75b337f29a1ec8cf31ae}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+active\+\_\+tournament\+\_\+name@{get\+\_\+active\+\_\+tournament\+\_\+name}}
+\index{get\+\_\+active\+\_\+tournament\+\_\+name@{get\+\_\+active\+\_\+tournament\+\_\+name}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+active\+\_\+tournament\+\_\+name()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+active\+\_\+tournament\+\_\+name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a61dc6e29af1a75b337f29a1ec8cf31ae}
+Returns the name of currently active tournament \hypertarget{class_tournament__model_a7abc276bb6a1ca913d154a927cf6c572}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+active\+\_\+tournament\+\_\+teams@{get\+\_\+active\+\_\+tournament\+\_\+teams}}
+\index{get\+\_\+active\+\_\+tournament\+\_\+teams@{get\+\_\+active\+\_\+tournament\+\_\+teams}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+active\+\_\+tournament\+\_\+teams()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+active\+\_\+tournament\+\_\+teams (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a7abc276bb6a1ca913d154a927cf6c572}
+Get information of all teams participating in the current tournament \hypertarget{class_tournament__model_a4903139706bb30df6eddb06f51bc76f4}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+all\+\_\+tournaments@{get\+\_\+all\+\_\+tournaments}}
+\index{get\+\_\+all\+\_\+tournaments@{get\+\_\+all\+\_\+tournaments}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+all\+\_\+tournaments()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+all\+\_\+tournaments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a4903139706bb30df6eddb06f51bc76f4}
+Return all data from {\ttfamily tournament} table, sorted by tournament name \hypertarget{class_tournament__model_abd4c2097e05706af3407615dfaaf9032}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+fixture@{get\+\_\+fixture}}
+\index{get\+\_\+fixture@{get\+\_\+fixture}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+fixture(\$tournament\+\_\+id=0)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+fixture (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_abd4c2097e05706af3407615dfaaf9032}
+Return match schedule \hypertarget{class_tournament__model_a907bb55cb08c93041706da20c8cd79b4}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+phase\+\_\+info@{get\+\_\+phase\+\_\+info}}
+\index{get\+\_\+phase\+\_\+info@{get\+\_\+phase\+\_\+info}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+phase\+\_\+info(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+phase\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a907bb55cb08c93041706da20c8cd79b4}
+Get information of all phases of a particular tournament (given by tournament\+\_\+id) \hypertarget{class_tournament__model_ae9e4f853c3a51ded8eb00303a09023af}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+previous\+\_\+match@{get\+\_\+previous\+\_\+match}}
+\index{get\+\_\+previous\+\_\+match@{get\+\_\+previous\+\_\+match}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+previous\+\_\+match()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+previous\+\_\+match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_ae9e4f853c3a51ded8eb00303a09023af}
+Get previous match information (started by admin) \hypertarget{class_tournament__model_a840498ff96cdf134d325b23f4983d327}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+result@{get\+\_\+result}}
+\index{get\+\_\+result@{get\+\_\+result}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+result(\$tournament\+\_\+id=0)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+result (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a840498ff96cdf134d325b23f4983d327}
+Return completed match results \hypertarget{class_tournament__model_a66b95b967722916a1d1d11ffbdcd9982}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+tournament\+\_\+info@{get\+\_\+tournament\+\_\+info}}
+\index{get\+\_\+tournament\+\_\+info@{get\+\_\+tournament\+\_\+info}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+tournament\+\_\+info(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+tournament\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a66b95b967722916a1d1d11ffbdcd9982}
+Get information of a particular tournament (given by tournament\+\_\+id) \hypertarget{class_tournament__model_a7404e01586163cf04959f4748bcd7821}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+tournament\+\_\+name@{get\+\_\+tournament\+\_\+name}}
+\index{get\+\_\+tournament\+\_\+name@{get\+\_\+tournament\+\_\+name}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+tournament\+\_\+name(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+tournament\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a7404e01586163cf04959f4748bcd7821}
+Return tournament\+\_\+name for a given tournament\+\_\+id \hypertarget{class_tournament__model_a44a260e1998372620f9fb17568e31283}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!get\+\_\+upcoming\+\_\+phase@{get\+\_\+upcoming\+\_\+phase}}
+\index{get\+\_\+upcoming\+\_\+phase@{get\+\_\+upcoming\+\_\+phase}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{get\+\_\+upcoming\+\_\+phase(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+upcoming\+\_\+phase (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a44a260e1998372620f9fb17568e31283}
+
+
+Get information of next phase (not started, admin will start) of current tournament. 
+
+This function is only used to show upcoming phase in admin homepage \hypertarget{class_tournament__model_a46df199068a44e9ed332e82ed56ebc4f}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!player\+\_\+exists@{player\+\_\+exists}}
+\index{player\+\_\+exists@{player\+\_\+exists}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{player\+\_\+exists(\$player\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}player\+\_\+exists (
+\begin{DoxyParamCaption}
+\item[{}]{\$player\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a46df199068a44e9ed332e82ed56ebc4f}
+R\+E\+T\+U\+R\+N T\+R\+U\+E I\+F P\+L\+A\+Y\+E\+R E\+X\+I\+S\+T\+S I\+N C\+U\+R\+R\+E\+N\+T T\+O\+U\+R\+N\+A\+M\+E\+N\+T F\+A\+L\+S\+E O\+T\+H\+E\+R\+W\+I\+S\+E \hypertarget{class_tournament__model_a8bed35a930e28709458de74520659750}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!team\+\_\+exists\+\_\+tournament@{team\+\_\+exists\+\_\+tournament}}
+\index{team\+\_\+exists\+\_\+tournament@{team\+\_\+exists\+\_\+tournament}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{team\+\_\+exists\+\_\+tournament(\$tournament\+\_\+id, \$team\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}team\+\_\+exists\+\_\+tournament (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id, }
+\item[{}]{\$team\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a8bed35a930e28709458de74520659750}
+returns 1 if a team is alredy in a tournament; returns 0 otherwise \hypertarget{class_tournament__model_a3ae959338caabf554850c1f4ac954726}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!update\+\_\+active\+\_\+tournament@{update\+\_\+active\+\_\+tournament}}
+\index{update\+\_\+active\+\_\+tournament@{update\+\_\+active\+\_\+tournament}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{update\+\_\+active\+\_\+tournament(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+active\+\_\+tournament (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a3ae959338caabf554850c1f4ac954726}
+Update current tournament id \hypertarget{class_tournament__model_abde88ebb17a0c7572ad2575326028768}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!update\+\_\+tournament\+\_\+phase@{update\+\_\+tournament\+\_\+phase}}
+\index{update\+\_\+tournament\+\_\+phase@{update\+\_\+tournament\+\_\+phase}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{update\+\_\+tournament\+\_\+phase(\$phase\+\_\+data)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+tournament\+\_\+phase (
+\begin{DoxyParamCaption}
+\item[{}]{\$phase\+\_\+data}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_abde88ebb17a0c7572ad2575326028768}
+Update information of a phase \hypertarget{class_tournament__model_a8826dc4b8e2dd947b880342848fd3698}{}\index{Tournament\+\_\+model@{Tournament\+\_\+model}!view\+\_\+tournaments@{view\+\_\+tournaments}}
+\index{view\+\_\+tournaments@{view\+\_\+tournaments}!Tournament\+\_\+model@{Tournament\+\_\+model}}
+\subsubsection[{view\+\_\+tournaments()}]{\setlength{\rightskip}{0pt plus 5cm}view\+\_\+tournaments (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_tournament__model_a8826dc4b8e2dd947b880342848fd3698}
+Return all data from {\ttfamily tournament} table 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/application/models/\hyperlink{_tournament__model_8php}{Tournament\+\_\+model.\+php}\end{DoxyCompactItemize}

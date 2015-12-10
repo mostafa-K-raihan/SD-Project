@@ -1,0 +1,101 @@
+\hypertarget{class_c_i___lang}{}\section{C\+I\+\_\+\+Lang Class Reference}
+\label{class_c_i___lang}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___lang_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_c_i___lang_a5f1be45cb8f84d35e4bd99ac909e5b65}{load} (\$langfile, \$idiom= \textquotesingle{}\textquotesingle{}, \$return=F\+A\+L\+S\+E, \$add\+\_\+suffix=T\+R\+U\+E, \$alt\+\_\+path= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___lang_a60a06468111224f49dd5cd51e5dc1410}{line} (\$line, \$log\+\_\+errors=T\+R\+U\+E)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___lang_a83170d318260a5a2e2a79dccdd371b10}{\$language} = array()
+\item 
+\hyperlink{class_c_i___lang_a908e9ad52a5d1956d360689452f6bdbe}{\$is\+\_\+loaded} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___lang_a095c5d389db211932136b53f25f39685}{}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___lang_a095c5d389db211932136b53f25f39685}
+Class constructor
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___lang_a60a06468111224f49dd5cd51e5dc1410}{}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}!line@{line}}
+\index{line@{line}!C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsubsection[{line(\$line, \$log\+\_\+errors=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}line (
+\begin{DoxyParamCaption}
+\item[{}]{\$line, }
+\item[{}]{\$log\+\_\+errors = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___lang_a60a06468111224f49dd5cd51e5dc1410}
+Language line
+
+Fetches a single line of text from the language array
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$line} & Language line key \\
+\hline
+bool & {\em \$log\+\_\+errors} & Whether to log an error message if the line is not found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Translation 
+\end{DoxyReturn}
+\hypertarget{class_c_i___lang_a5f1be45cb8f84d35e4bd99ac909e5b65}{}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}!load@{load}}
+\index{load@{load}!C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsubsection[{load(\$langfile, \$idiom= \textquotesingle{}\textquotesingle{}, \$return=\+F\+A\+L\+S\+E, \$add\+\_\+suffix=\+T\+R\+U\+E, \$alt\+\_\+path= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}load (
+\begin{DoxyParamCaption}
+\item[{}]{\$langfile, }
+\item[{}]{\$idiom = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$return = {\ttfamily FALSE}, }
+\item[{}]{\$add\+\_\+suffix = {\ttfamily TRUE}, }
+\item[{}]{\$alt\+\_\+path = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___lang_a5f1be45cb8f84d35e4bd99ac909e5b65}
+Load a language file
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$langfile} & Language file name \\
+\hline
+string & {\em \$idiom} & Language name (english, etc.) \\
+\hline
+bool & {\em \$return} & Whether to return the loaded array of translations \\
+\hline
+bool & {\em \$add\+\_\+suffix} & Whether to add suffix to \$langfile \\
+\hline
+string & {\em \$alt\+\_\+path} & Alternative path to look for the language file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void$\vert$string\mbox{[}\mbox{]} Array containing translations, if \$return is set to T\+R\+U\+E 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___lang_a908e9ad52a5d1956d360689452f6bdbe}{}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}!\$is\+\_\+loaded@{\$is\+\_\+loaded}}
+\index{\$is\+\_\+loaded@{\$is\+\_\+loaded}!C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsubsection[{\$is\+\_\+loaded}]{\setlength{\rightskip}{0pt plus 5cm}\$is\+\_\+loaded = array()}\label{class_c_i___lang_a908e9ad52a5d1956d360689452f6bdbe}
+\hypertarget{class_c_i___lang_a83170d318260a5a2e2a79dccdd371b10}{}\index{C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}!\$language@{\$language}}
+\index{\$language@{\$language}!C\+I\+\_\+\+Lang@{C\+I\+\_\+\+Lang}}
+\subsubsection[{\$language}]{\setlength{\rightskip}{0pt plus 5cm}\$language = array()}\label{class_c_i___lang_a83170d318260a5a2e2a79dccdd371b10}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/core/\hyperlink{_lang_8php}{Lang.\+php}\end{DoxyCompactItemize}

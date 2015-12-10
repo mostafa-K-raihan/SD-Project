@@ -1,0 +1,409 @@
+\hypertarget{class_user__model}{}\section{User\+\_\+model Class Reference}
+\label{class_user__model}\index{User\+\_\+model@{User\+\_\+model}}
+Inheritance diagram for User\+\_\+model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user__model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user__model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_user__model_a809db9cb3747c310ea13402ab5cb11d4}{get\+\_\+remaining\+\_\+transfers} (\$user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get the number of free transfer remaining for a user (in current phase) \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_ac031a6f376397815b01318081cedebb8}{get\+\_\+transfer\+\_\+outs} (\$user\+\_\+id, \$user\+\_\+team\+\_\+players)
+\begin{DoxyCompactList}\small\item\em \#\+T\+A\+S\+K \+: To find out which players are transferred out from user\textquotesingle{}s team \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a77b8bf0588f557fac2faa0c4cd39faec}{get\+\_\+transfer\+\_\+ins} (\$user\+\_\+id, \$user\+\_\+team\+\_\+players)
+\begin{DoxyCompactList}\small\item\em \#\+T\+A\+S\+K \+: To find out which players are transferred in from user\textquotesingle{}s team \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a3dd5f140152891c2aeb1a5be063a772a}{get\+\_\+used\+\_\+transfers} (\$user\+\_\+id, \$user\+\_\+team\+\_\+players)
+\begin{DoxyCompactList}\small\item\em \#\+T\+A\+S\+K \+: To find out number of transfers used by a user \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a5f339cfcda0ea331041ada24a74dcb16}{get\+\_\+login\+Info} (\$data)
+\begin{DoxyCompactList}\small\item\em \#\+T\+A\+S\+K \+: To get required login info from userinfo table \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_af5353bd19166d507ea0c767d075e41b9}{exist\+\_\+user} (\$email)
+\begin{DoxyCompactList}\small\item\em C\+H\+E\+C\+K W\+H\+E\+T\+H\+E\+R A\+N E\+M\+A\+I\+L I\+S A\+L\+R\+E\+A\+D\+Y R\+E\+G\+I\+S\+T\+E\+R\+E\+D. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_ad2bc607329e3fa62d3b95a76e61b650c}{register} (\$data)
+\begin{DoxyCompactList}\small\item\em C\+O\+M\+P\+L\+E\+T\+E R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N inside database. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a846e1bae3454d58b9a972b12946a046b}{exist\+\_\+tournament\+\_\+user} (\$user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em C\+H\+E\+C\+K W\+H\+E\+T\+H\+E\+R A U\+S\+E\+R H\+A\+S A T\+E\+A\+M F\+O\+R T\+H\+E C\+U\+R\+R\+E\+N\+T T\+O\+U\+R\+N\+A\+M\+E\+N\+T. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a726f155ee806607ba991a97309bd1f4b}{create\+\_\+user\+\_\+match\+\_\+team} (\$user\+\_\+id, \$match\+\_\+id, \$captain\+\_\+id, \$user\+\_\+team, \$team\+\_\+name)
+\begin{DoxyCompactList}\small\item\em C\+O\+M\+P\+L\+E\+T\+E\+S D\+B O\+P\+E\+R\+A\+T\+I\+O\+N\+S F\+O\+R C\+R\+E\+A\+T\+E T\+E\+A\+M A\+C\+T\+I\+O\+N. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a0a5579784d72aa25f657b1577140ff4f}{get\+\_\+current\+\_\+user\+\_\+match\+\_\+team} (\$user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Find the list of players currently in user\textquotesingle{}s team. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a540a77bb05918a80bb54e43b44618fc2}{get\+\_\+user\+\_\+match\+\_\+team} (\$user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Find the list of players who were in user\textquotesingle{}s team in the last(previous) match. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a27ae7e0b4c129bc6060cd152496fbd66}{get\+\_\+user\+\_\+match\+\_\+team\+\_\+id} (\$user\+\_\+id, \$match\+\_\+id)
+\begin{DoxyCompactList}\small\item\em returns the user\+\_\+match\+\_\+team\+\_\+id for a specific user and match \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a37928a3db05e29218412e5c1e7b8d1a1}{get\+\_\+user\+\_\+match\+\_\+point} (\$user\+\_\+id)
+\item 
+\hyperlink{class_user__model_a465e90e3e0f3445c300bc1ccd69f1a07}{get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2} (\$u\+\_\+id, \$m\+\_\+id)
+\begin{DoxyCompactList}\small\item\em returns matchday points of a user for any given match. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a5dc43dd25445e2024e038909d0617a65}{get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2} (\$u\+\_\+id, \$ph\+\_\+id)
+\begin{DoxyCompactList}\small\item\em returns phase points of a user for any given phase. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_aca6bd04f4f18a4003e991aaacdc48d8d}{get\+\_\+user\+\_\+overall\+\_\+point} (\$u\+\_\+id)
+\begin{DoxyCompactList}\small\item\em returns overall points of a user for the current tournament \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a72c1bccab8a3d0b4c23751d18aa73bf9}{user\+\_\+team\+\_\+name} (\$user\+\_\+id)
+\item 
+\hyperlink{class_user__model_a2efb5b80dc97c4b8bd5113082373f0bd}{change\+\_\+captain} (\$user\+\_\+id, \$match\+\_\+id, \$new\+\_\+captain\+\_\+id)
+\item 
+\hyperlink{class_user__model_a557a7229f49a6eb08e689d5e5e206e1f}{replace\+\_\+team\+\_\+players} (\$user\+\_\+match\+\_\+team\+\_\+id, \$ins, \$outs)
+\begin{DoxyCompactList}\small\item\em Used to complete user transfer. \end{DoxyCompactList}\item 
+\hyperlink{class_user__model_a25fb351800264a943c8d9d70385ac1a4}{create\+\_\+user\+\_\+phase\+\_\+transfer} (\$user\+\_\+id, \$phase\+\_\+id)
+\item 
+\hyperlink{class_user__model_a98edfcf920129a0c36a32863253fed00}{create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user} (\$user\+\_\+id, \$phase\+\_\+id)
+\item 
+\hyperlink{class_user__model_a28c1ca8e6087c17c1d23bf5485c88a6e}{top\+\_\+users} ()
+\item 
+\hyperlink{class_user__model_a6566cffe15db2030b92b1dd985b91ac4}{get\+\_\+user\+\_\+info} (\$user\+\_\+id)
+\item 
+\hyperlink{class_user__model_adc9a15f12741c1f9467036734ee4df96}{update\+\_\+password} (\$user\+\_\+id, \$password)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides database support for the controllers to manipulate user related information 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_user__model_a095c5d389db211932136b53f25f39685}{}\index{User\+\_\+model@{User\+\_\+model}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a095c5d389db211932136b53f25f39685}
+Connect to database 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_user__model_a2efb5b80dc97c4b8bd5113082373f0bd}{}\index{User\+\_\+model@{User\+\_\+model}!change\+\_\+captain@{change\+\_\+captain}}
+\index{change\+\_\+captain@{change\+\_\+captain}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{change\+\_\+captain(\$user\+\_\+id, \$match\+\_\+id, \$new\+\_\+captain\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}change\+\_\+captain (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$match\+\_\+id, }
+\item[{}]{\$new\+\_\+captain\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a2efb5b80dc97c4b8bd5113082373f0bd}
+Replace previous captain by new captain (\$new\+\_\+captain\+\_\+id) \hypertarget{class_user__model_a726f155ee806607ba991a97309bd1f4b}{}\index{User\+\_\+model@{User\+\_\+model}!create\+\_\+user\+\_\+match\+\_\+team@{create\+\_\+user\+\_\+match\+\_\+team}}
+\index{create\+\_\+user\+\_\+match\+\_\+team@{create\+\_\+user\+\_\+match\+\_\+team}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{create\+\_\+user\+\_\+match\+\_\+team(\$user\+\_\+id, \$match\+\_\+id, \$captain\+\_\+id, \$user\+\_\+team, \$team\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+user\+\_\+match\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$match\+\_\+id, }
+\item[{}]{\$captain\+\_\+id, }
+\item[{}]{\$user\+\_\+team, }
+\item[{}]{\$team\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a726f155ee806607ba991a97309bd1f4b}
+
+
+C\+O\+M\+P\+L\+E\+T\+E\+S D\+B O\+P\+E\+R\+A\+T\+I\+O\+N\+S F\+O\+R C\+R\+E\+A\+T\+E T\+E\+A\+M A\+C\+T\+I\+O\+N. 
+
+parameters \+:
+
+\$user\+\_\+id --- int
+
+\$match\+\_\+id --- int (id of upcoming match)
+
+\$captain\+\_\+id --- int (id of captain of user\textquotesingle{}s team)
+
+\$user\+\_\+team --- array of int (id of players of user\textquotesingle{}s team)
+
+\$user\+\_\+team\+\_\+name --- string (team name submitted by user) G\+E\+T C\+U\+R\+R\+E\+N\+T T\+O\+U\+R\+N\+A\+M\+E\+N\+T
+
+S\+E\+T N\+E\+W C\+A\+P\+T\+A\+I\+N
+
+C\+R\+E\+A\+T\+E U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M E\+N\+T\+R\+Y
+
+G\+E\+T N\+E\+W M\+A\+T\+C\+H T\+E\+A\+M I\+D
+
+S\+E\+T A\+L\+L P\+L\+A\+Y\+E\+R\+S I\+D I\+N\+T\+O user\+\_\+match\+\_\+team\+\_\+player T\+A\+B\+L\+E \hypertarget{class_user__model_a25fb351800264a943c8d9d70385ac1a4}{}\index{User\+\_\+model@{User\+\_\+model}!create\+\_\+user\+\_\+phase\+\_\+transfer@{create\+\_\+user\+\_\+phase\+\_\+transfer}}
+\index{create\+\_\+user\+\_\+phase\+\_\+transfer@{create\+\_\+user\+\_\+phase\+\_\+transfer}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{create\+\_\+user\+\_\+phase\+\_\+transfer(\$user\+\_\+id, \$phase\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+user\+\_\+phase\+\_\+transfer (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$phase\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a25fb351800264a943c8d9d70385ac1a4}
+used for admin module \hypertarget{class_user__model_a98edfcf920129a0c36a32863253fed00}{}\index{User\+\_\+model@{User\+\_\+model}!create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user@{create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user}}
+\index{create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user@{create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user(\$user\+\_\+id, \$phase\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+user\+\_\+phase\+\_\+transfer\+\_\+from\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$phase\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a98edfcf920129a0c36a32863253fed00}
+used for user module \hypertarget{class_user__model_a846e1bae3454d58b9a972b12946a046b}{}\index{User\+\_\+model@{User\+\_\+model}!exist\+\_\+tournament\+\_\+user@{exist\+\_\+tournament\+\_\+user}}
+\index{exist\+\_\+tournament\+\_\+user@{exist\+\_\+tournament\+\_\+user}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{exist\+\_\+tournament\+\_\+user(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}exist\+\_\+tournament\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a846e1bae3454d58b9a972b12946a046b}
+
+
+C\+H\+E\+C\+K W\+H\+E\+T\+H\+E\+R A U\+S\+E\+R H\+A\+S A T\+E\+A\+M F\+O\+R T\+H\+E C\+U\+R\+R\+E\+N\+T T\+O\+U\+R\+N\+A\+M\+E\+N\+T. 
+
+return -\/ 1 F\+O\+R Y\+E\+S, 0 F\+O\+R N\+O \hypertarget{class_user__model_af5353bd19166d507ea0c767d075e41b9}{}\index{User\+\_\+model@{User\+\_\+model}!exist\+\_\+user@{exist\+\_\+user}}
+\index{exist\+\_\+user@{exist\+\_\+user}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{exist\+\_\+user(\$email)}]{\setlength{\rightskip}{0pt plus 5cm}exist\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{}]{\$email}
+\end{DoxyParamCaption}
+)}\label{class_user__model_af5353bd19166d507ea0c767d075e41b9}
+
+
+C\+H\+E\+C\+K W\+H\+E\+T\+H\+E\+R A\+N E\+M\+A\+I\+L I\+S A\+L\+R\+E\+A\+D\+Y R\+E\+G\+I\+S\+T\+E\+R\+E\+D. 
+
+R\+E\+T\+U\+R\+N 1 I\+F Y\+E\+S, O\+T\+H\+E\+R\+W\+I\+S\+E R\+E\+T\+U\+R\+N 0 \hypertarget{class_user__model_a0a5579784d72aa25f657b1577140ff4f}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+current\+\_\+user\+\_\+match\+\_\+team@{get\+\_\+current\+\_\+user\+\_\+match\+\_\+team}}
+\index{get\+\_\+current\+\_\+user\+\_\+match\+\_\+team@{get\+\_\+current\+\_\+user\+\_\+match\+\_\+team}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+current\+\_\+user\+\_\+match\+\_\+team(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+current\+\_\+user\+\_\+match\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a0a5579784d72aa25f657b1577140ff4f}
+
+
+Find the list of players currently in user\textquotesingle{}s team. 
+
+input \+: \$user\+\_\+id --- int
+
+output \+: array(\textquotesingle{}captain\textquotesingle{}=$>$ int \mbox{[}captain\textquotesingle{}s id\mbox{]} , \textquotesingle{}team\+\_\+players\textquotesingle{}=$>$array(\textquotesingle{}player\+\_\+id\textquotesingle{} =$>$ int \mbox{[}id of each player\mbox{]})) G\+E\+T U\+P\+C\+O\+M\+I\+N\+G M\+A\+T\+C\+H I\+D
+
+G\+E\+T U\+S\+E\+R M\+A\+T\+C\+H T\+E\+A\+M
+
+G\+E\+T C\+A\+P\+T\+A\+I\+N I\+D
+
+G\+E\+T M\+A\+T\+C\+H T\+E\+A\+M I\+D
+
+G\+E\+T A\+L\+L U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S \hypertarget{class_user__model_a5f339cfcda0ea331041ada24a74dcb16}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+login\+Info@{get\+\_\+login\+Info}}
+\index{get\+\_\+login\+Info@{get\+\_\+login\+Info}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+login\+Info(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+login\+Info (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a5f339cfcda0ea331041ada24a74dcb16}
+
+
+\#\+T\+A\+S\+K \+: To get required login info from userinfo table 
+
+\#\+P\+A\+R\+A\+M\+S \+:
+
+\$data --- array(\textquotesingle{}email\textquotesingle{}=$>$ e-\/mail address of user, \textquotesingle{}password\textquotesingle{}=$>$password submitted by user)
+
+\#\+R\+E\+T\+U\+R\+N V\+A\+L\+U\+E \+: the query result. indices follows the column names of database table. i.\+e. user\+\_\+id, email, password etc \hypertarget{class_user__model_a809db9cb3747c310ea13402ab5cb11d4}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+remaining\+\_\+transfers@{get\+\_\+remaining\+\_\+transfers}}
+\index{get\+\_\+remaining\+\_\+transfers@{get\+\_\+remaining\+\_\+transfers}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+remaining\+\_\+transfers(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+remaining\+\_\+transfers (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a809db9cb3747c310ea13402ab5cb11d4}
+
+
+Get the number of free transfer remaining for a user (in current phase) 
+
+param \+: \$user\+\_\+id --- just user\+\_\+id (int)
+
+return value \+: number of remaining transfers (int) No current phase means -\/ during two phases or before the first phase of the tournament. So, user has unlimited transfer access
+
+Otherwise, get number of available free transfers from database\hypertarget{class_user__model_a77b8bf0588f557fac2faa0c4cd39faec}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+transfer\+\_\+ins@{get\+\_\+transfer\+\_\+ins}}
+\index{get\+\_\+transfer\+\_\+ins@{get\+\_\+transfer\+\_\+ins}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+transfer\+\_\+ins(\$user\+\_\+id, \$user\+\_\+team\+\_\+players)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+transfer\+\_\+ins (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$user\+\_\+team\+\_\+players}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a77b8bf0588f557fac2faa0c4cd39faec}
+
+
+\#\+T\+A\+S\+K \+: To find out which players are transferred in from user\textquotesingle{}s team 
+
+\#\+P\+A\+R\+A\+M\+S \+:
+
+\$user\+\_\+id --- int
+
+\$user\+\_\+team\+\_\+players --- array of int (array of player\+\_\+id\textquotesingle{}s of players selected by user after submitting request for transfers)
+
+\#\+R\+E\+T\+U\+R\+N V\+A\+L\+U\+E \+: array(\textquotesingle{}player\+\_\+id\textquotesingle{}=$>$id of the player transferred in , \textquotesingle{}name\textquotesingle{}=$>$ name of the player) \hypertarget{class_user__model_ac031a6f376397815b01318081cedebb8}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+transfer\+\_\+outs@{get\+\_\+transfer\+\_\+outs}}
+\index{get\+\_\+transfer\+\_\+outs@{get\+\_\+transfer\+\_\+outs}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+transfer\+\_\+outs(\$user\+\_\+id, \$user\+\_\+team\+\_\+players)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+transfer\+\_\+outs (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$user\+\_\+team\+\_\+players}
+\end{DoxyParamCaption}
+)}\label{class_user__model_ac031a6f376397815b01318081cedebb8}
+
+
+\#\+T\+A\+S\+K \+: To find out which players are transferred out from user\textquotesingle{}s team 
+
+\#\+P\+A\+R\+A\+M\+S \+:
+
+\$user\+\_\+id --- int
+
+\$user\+\_\+team\+\_\+players --- array of int (array of player\+\_\+id\textquotesingle{}s of players selected by user after submitting request for transfers)
+
+\#\+R\+E\+T\+U\+R\+N V\+A\+L\+U\+E \+: array(\textquotesingle{}player\+\_\+id\textquotesingle{}=$>$id of the player transferred out , \textquotesingle{}name\textquotesingle{}=$>$ name of the player) \hypertarget{class_user__model_a3dd5f140152891c2aeb1a5be063a772a}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+used\+\_\+transfers@{get\+\_\+used\+\_\+transfers}}
+\index{get\+\_\+used\+\_\+transfers@{get\+\_\+used\+\_\+transfers}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+used\+\_\+transfers(\$user\+\_\+id, \$user\+\_\+team\+\_\+players)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+used\+\_\+transfers (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$user\+\_\+team\+\_\+players}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a3dd5f140152891c2aeb1a5be063a772a}
+
+
+\#\+T\+A\+S\+K \+: To find out number of transfers used by a user 
+
+\#\+P\+A\+R\+A\+M\+S \+:
+
+\$user\+\_\+id --- int
+
+\$user\+\_\+team\+\_\+players --- array of int (array of player\+\_\+id\textquotesingle{}s of players selected by user after submitting request for transfers)
+
+\#\+R\+E\+T\+U\+R\+N V\+A\+L\+U\+E \+: int (number of transfers used) \hypertarget{class_user__model_a6566cffe15db2030b92b1dd985b91ac4}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+info@{get\+\_\+user\+\_\+info}}
+\index{get\+\_\+user\+\_\+info@{get\+\_\+user\+\_\+info}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+info(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a6566cffe15db2030b92b1dd985b91ac4}
+Get information of a user (given bu user\+\_\+id) \hypertarget{class_user__model_a37928a3db05e29218412e5c1e7b8d1a1}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+match\+\_\+point@{get\+\_\+user\+\_\+match\+\_\+point}}
+\index{get\+\_\+user\+\_\+match\+\_\+point@{get\+\_\+user\+\_\+match\+\_\+point}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+match\+\_\+point(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+match\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a37928a3db05e29218412e5c1e7b8d1a1}
+Get matchday points of a user (for current match). Uses get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2(\$user\+\_\+id,\$m\+\_\+id) for calculation \hypertarget{class_user__model_a465e90e3e0f3445c300bc1ccd69f1a07}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2@{get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2}}
+\index{get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2@{get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2(\$u\+\_\+id, \$m\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+match\+\_\+point\+\_\+v2 (
+\begin{DoxyParamCaption}
+\item[{}]{\$u\+\_\+id, }
+\item[{}]{\$m\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a465e90e3e0f3445c300bc1ccd69f1a07}
+
+
+returns matchday points of a user for any given match. 
+
+inputs\+: \$u\+\_\+id =$>$ user\+\_\+id , \$m\+\_\+id =$>$ match\+\_\+id for the given match A\+D\+D C\+A\+P\+T\+A\+I\+N\textquotesingle{}S P\+O\+I\+N\+T
+
+A\+D\+D T\+E\+A\+M P\+L\+A\+Y\+E\+R\+S P\+O\+I\+N\+T \hypertarget{class_user__model_a540a77bb05918a80bb54e43b44618fc2}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+match\+\_\+team@{get\+\_\+user\+\_\+match\+\_\+team}}
+\index{get\+\_\+user\+\_\+match\+\_\+team@{get\+\_\+user\+\_\+match\+\_\+team}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+match\+\_\+team(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+match\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a540a77bb05918a80bb54e43b44618fc2}
+
+
+Find the list of players who were in user\textquotesingle{}s team in the last(previous) match. 
+
+input \+: \$user\+\_\+id --- int
+
+output \+: array(\textquotesingle{}captain\textquotesingle{}=$>$ int \mbox{[}captain\textquotesingle{}s id\mbox{]} , \textquotesingle{}team\+\_\+players\textquotesingle{}=$>$array(\textquotesingle{}player\+\_\+id\textquotesingle{} =$>$ int \mbox{[}id of each player\mbox{]})) G\+E\+T P\+R\+E\+V\+I\+O\+U\+S M\+A\+T\+C\+H I\+D
+
+G\+E\+T P\+R\+E\+V\+I\+O\+U\+S U\+S\+E\+R M\+A\+T\+C\+H T\+E\+A\+M
+
+G\+E\+T P\+R\+E\+V\+I\+O\+U\+S C\+A\+P\+T\+A\+I\+N I\+D
+
+G\+E\+T P\+R\+E\+V\+I\+O\+U\+S M\+A\+T\+C\+H T\+E\+A\+M I\+D
+
+G\+E\+T A\+L\+L P\+R\+E\+V\+I\+O\+U\+S U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S \hypertarget{class_user__model_a27ae7e0b4c129bc6060cd152496fbd66}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+match\+\_\+team\+\_\+id@{get\+\_\+user\+\_\+match\+\_\+team\+\_\+id}}
+\index{get\+\_\+user\+\_\+match\+\_\+team\+\_\+id@{get\+\_\+user\+\_\+match\+\_\+team\+\_\+id}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+match\+\_\+team\+\_\+id(\$user\+\_\+id, \$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+match\+\_\+team\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a27ae7e0b4c129bc6060cd152496fbd66}
+
+
+returns the user\+\_\+match\+\_\+team\+\_\+id for a specific user and match 
+
+input\+:
+
+\$user\+\_\+id --- int
+
+\$match\+\_\+id --- int
+
+output\+: int \mbox{[}user\+\_\+match\+\_\+team\+\_\+id\mbox{]} \hypertarget{class_user__model_aca6bd04f4f18a4003e991aaacdc48d8d}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+overall\+\_\+point@{get\+\_\+user\+\_\+overall\+\_\+point}}
+\index{get\+\_\+user\+\_\+overall\+\_\+point@{get\+\_\+user\+\_\+overall\+\_\+point}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+overall\+\_\+point(\$u\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+overall\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{}]{\$u\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_aca6bd04f4f18a4003e991aaacdc48d8d}
+
+
+returns overall points of a user for the current tournament 
+
+inputs\+: \$u\+\_\+id =$>$ user\+\_\+id
+
+output\+: int \mbox{[}overall\+\_\+point\mbox{]} \hypertarget{class_user__model_a5dc43dd25445e2024e038909d0617a65}{}\index{User\+\_\+model@{User\+\_\+model}!get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2@{get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2}}
+\index{get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2@{get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2(\$u\+\_\+id, \$ph\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+user\+\_\+phase\+\_\+point\+\_\+v2 (
+\begin{DoxyParamCaption}
+\item[{}]{\$u\+\_\+id, }
+\item[{}]{\$ph\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a5dc43dd25445e2024e038909d0617a65}
+
+
+returns phase points of a user for any given phase. 
+
+inputs\+: \$u\+\_\+id =$>$ user\+\_\+id , \$ph\+\_\+id =$>$ phase\+\_\+id for the given phase \hypertarget{class_user__model_ad2bc607329e3fa62d3b95a76e61b650c}{}\index{User\+\_\+model@{User\+\_\+model}!register@{register}}
+\index{register@{register}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{register(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}register (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_user__model_ad2bc607329e3fa62d3b95a76e61b650c}
+
+
+C\+O\+M\+P\+L\+E\+T\+E R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N inside database. 
+
+return type \+: void \hypertarget{class_user__model_a557a7229f49a6eb08e689d5e5e206e1f}{}\index{User\+\_\+model@{User\+\_\+model}!replace\+\_\+team\+\_\+players@{replace\+\_\+team\+\_\+players}}
+\index{replace\+\_\+team\+\_\+players@{replace\+\_\+team\+\_\+players}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{replace\+\_\+team\+\_\+players(\$user\+\_\+match\+\_\+team\+\_\+id, \$ins, \$outs)}]{\setlength{\rightskip}{0pt plus 5cm}replace\+\_\+team\+\_\+players (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+match\+\_\+team\+\_\+id, }
+\item[{}]{\$ins, }
+\item[{}]{\$outs}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a557a7229f49a6eb08e689d5e5e206e1f}
+
+
+Used to complete user transfer. 
+
+input\+:
+
+\$user\+\_\+match\+\_\+team\+\_\+id \+: id of the user\+\_\+match\+\_\+team entry , \$ins \+: array of int (player\+\_\+id of transferred in players) , \$outs \+: array of int (player\+\_\+id of transferred out players) U\+P\+D\+A\+T\+E T\+R\+A\+N\+S\+F\+E\+R C\+O\+U\+N\+T I\+F A\+P\+P\+L\+I\+C\+A\+B\+L\+E
+
+D\+O N\+O\+T\+H\+I\+N\+G---T\+H\+E\+R\+E I\+S N\+O E\+N\+T\+R\+Y F\+O\+R C\+U\+R\+R\+E\+N\+T P\+H\+A\+S\+E I.\+E. U\+S\+E\+R H\+A\+V\+E U\+N\+L\+I\+M\+I\+T\+E\+D F\+R\+E\+E T\+R\+A\+N\+S\+F\+E\+R\+S \hypertarget{class_user__model_a28c1ca8e6087c17c1d23bf5485c88a6e}{}\index{User\+\_\+model@{User\+\_\+model}!top\+\_\+users@{top\+\_\+users}}
+\index{top\+\_\+users@{top\+\_\+users}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{top\+\_\+users()}]{\setlength{\rightskip}{0pt plus 5cm}top\+\_\+users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a28c1ca8e6087c17c1d23bf5485c88a6e}
+Find top users based on overall points. Returns the array in a sorted order (descending) of points \hypertarget{class_user__model_adc9a15f12741c1f9467036734ee4df96}{}\index{User\+\_\+model@{User\+\_\+model}!update\+\_\+password@{update\+\_\+password}}
+\index{update\+\_\+password@{update\+\_\+password}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{update\+\_\+password(\$user\+\_\+id, \$password)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+password (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$password}
+\end{DoxyParamCaption}
+)}\label{class_user__model_adc9a15f12741c1f9467036734ee4df96}
+Update user\textquotesingle{}s password \hypertarget{class_user__model_a72c1bccab8a3d0b4c23751d18aa73bf9}{}\index{User\+\_\+model@{User\+\_\+model}!user\+\_\+team\+\_\+name@{user\+\_\+team\+\_\+name}}
+\index{user\+\_\+team\+\_\+name@{user\+\_\+team\+\_\+name}!User\+\_\+model@{User\+\_\+model}}
+\subsubsection[{user\+\_\+team\+\_\+name(\$user\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}user\+\_\+team\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_user__model_a72c1bccab8a3d0b4c23751d18aa73bf9}
+Get team name of a user (given by user\+\_\+id) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/application/models/\hyperlink{_user__model_8php}{User\+\_\+model.\+php}\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\hypertarget{system_2core_2_code_igniter_8php}{}\section{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/core/\+Code\+Igniter.php File Reference}
+\label{system_2core_2_code_igniter_8php}\index{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/core/\+Code\+Igniter.\+php@{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/core/\+Code\+Igniter.\+php}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_code_igniter}{Code\+Igniter}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\& \hyperlink{system_2core_2_code_igniter_8php_a185483844bd20a0e80955460d66d2199}{get\+\_\+instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{system_2core_2_code_igniter_8php_a32e3c3927ba8ec93df92327dfd85d564}{C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N} \textquotesingle{}3.\+0.\+1-\/dev\textquotesingle{}
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a6503a8f8da73cafe64ad07639c198f54}{if} (file\+\_\+exists(A\+P\+P\+P\+A\+T\+H.\textquotesingle{}config/\textquotesingle{}.E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T.\textquotesingle{}/constants.\+php\textquotesingle{}))
+\item 
+\hyperlink{_admin_2assets_2js_2bootstrap_8min_8js_a87cf461060832b8b68a7b48d9e371e4f}{if}(!empty(\$assign\+\_\+to\+\_\+config\mbox{[}\textquotesingle{}subclass\+\_\+prefix\textquotesingle{}\mbox{]})) \hyperlink{_admin_2assets_2js_2bootstrap_8min_8js_a87cf461060832b8b68a7b48d9e371e4f}{if}(\$composer\+\_\+autoload=config\+\_\+item(\textquotesingle{}composer\+\_\+autoload\textquotesingle{})) \hyperlink{system_2core_2_code_igniter_8php_a3efe5c22835162259cd530154490ade3}{\$\+B\+M} =\& load\+\_\+class(\textquotesingle{}Benchmark\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_ab97aae9bc0aae04b84d360a29a3c035b}{\$\+E\+X\+T} =\& load\+\_\+class(\textquotesingle{}Hooks\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_adb9373e11e42b2cd55d1fe249ae72deb}{\$\+C\+F\+G} =\& load\+\_\+class(\textquotesingle{}Config\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{_admin_2assets_2js_2bootstrap_8min_8js_a87cf461060832b8b68a7b48d9e371e4f}{if}(isset(\$assign\+\_\+to\+\_\+config)\&\&is\+\_\+array(\$assign\+\_\+to\+\_\+config)) \hyperlink{system_2core_2_code_igniter_8php_acf3a97185c56fefd63af2d2af8676bd9}{\$charset} = strtoupper(config\+\_\+item(\textquotesingle{}charset\textquotesingle{}))
+\item 
+\hyperlink{_admin_2assets_2js_2bootstrap_8min_8js_a87cf461060832b8b68a7b48d9e371e4f}{if}(extension\+\_\+loaded(\textquotesingle{}mbstring\textquotesingle{})) \hyperlink{system_2core_2_code_igniter_8php_ac5109000d551293e102a2bc06f29cda4}{else}
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a2060dabd8d00b5b0539bd041bf450924}{\$\+U\+N\+I} =\& load\+\_\+class(\textquotesingle{}Utf8\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a630d83d898b39ad4568906284f7f5336}{\$\+U\+R\+I} =\& load\+\_\+class(\textquotesingle{}U\+R\+I\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a4d6c9285c8483e4708a57a4128fc95f3}{\$\+R\+T\+R} =\& load\+\_\+class(\textquotesingle{}Router\textquotesingle{}, \textquotesingle{}core\textquotesingle{}, isset(\$routing) ? \$routing \+: N\+U\+L\+L)
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_ad437402616c81c82c746f09854b23729}{\$\+O\+U\+T} =\& load\+\_\+class(\textquotesingle{}Output\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{_admin_2assets_2js_2bootstrap_8min_8js_a87cf461060832b8b68a7b48d9e371e4f}{if}(\$E\+X\+T-\/$>$call\+\_\+hook(\textquotesingle{}cache\+\_\+override\textquotesingle{})===F\+A\+L\+S\+E \&\&\$O\+U\+T-\/$>$\+\_\+display\+\_\+cache(\$C\+F\+G, \$U\+R\+I)===T\+R\+U\+E) \hyperlink{system_2core_2_code_igniter_8php_af78ce53fb82103e1165678dd2d3385a4}{\$\+S\+E\+C} =\& load\+\_\+class(\textquotesingle{}Security\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a66d076d48aff75a01bb726f5bdd94d46}{\$\+I\+N} =\& load\+\_\+class(\textquotesingle{}Input\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_afab4eb732acc05cebf41e0afce18681c}{\$\+L\+A\+N\+G} =\& load\+\_\+class(\textquotesingle{}Lang\textquotesingle{}, \textquotesingle{}core\textquotesingle{})
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a20b89fa011927fc498a4a665fa44d061}{\$e404} = F\+A\+L\+S\+E
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a252ba022809910ea710a068fc1bab657}{\$class} = ucfirst(\$R\+T\+R-\/$>$class)
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_a12661b2fc0f57f97e30a1620889ce9c6}{\$method} = \$R\+T\+R-\/$>$method
+\item 
+\hyperlink{system_2core_2_code_igniter_8php_ae0314d046ddf7fcfaec03222977427d3}{\$\+C\+I} = new \$class()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{system_2core_2_code_igniter_8php_a185483844bd20a0e80955460d66d2199}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!get\+\_\+instance@{get\+\_\+instance}}
+\index{get\+\_\+instance@{get\+\_\+instance}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{get\+\_\+instance()}]{\setlength{\rightskip}{0pt plus 5cm}\& get\+\_\+instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{system_2core_2_code_igniter_8php_a185483844bd20a0e80955460d66d2199}
+Reference to the \hyperlink{class_c_i___controller}{C\+I\+\_\+\+Controller} method.
+
+Returns current C\+I instance object
+
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{system_2core_2_code_igniter_8php_a3efe5c22835162259cd530154490ade3}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+B\+M@{\$\+B\+M}}
+\index{\$\+B\+M@{\$\+B\+M}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+B\+M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (!empty(\$assign\+\_\+to\+\_\+config\mbox{[}\textquotesingle{}subclass\+\_\+prefix\textquotesingle{}\mbox{]})) {\bf if} (\$composer\+\_\+autoload=config\+\_\+item(\textquotesingle{}composer\+\_\+autoload\textquotesingle{})) \$B\+M =\& load\+\_\+class(\textquotesingle{}Benchmark\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_a3efe5c22835162259cd530154490ade3}
+\hypertarget{system_2core_2_code_igniter_8php_adb9373e11e42b2cd55d1fe249ae72deb}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+C\+F\+G@{\$\+C\+F\+G}}
+\index{\$\+C\+F\+G@{\$\+C\+F\+G}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+C\+F\+G}]{\setlength{\rightskip}{0pt plus 5cm}\$C\+F\+G =\& load\+\_\+class(\textquotesingle{}Config\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_adb9373e11e42b2cd55d1fe249ae72deb}
+\hypertarget{system_2core_2_code_igniter_8php_acf3a97185c56fefd63af2d2af8676bd9}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$charset@{\$charset}}
+\index{\$charset@{\$charset}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$charset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (isset(\$assign\+\_\+to\+\_\+config)\&\&is\+\_\+array(\$assign\+\_\+to\+\_\+config)) \$charset = strtoupper(config\+\_\+item(\textquotesingle{}charset\textquotesingle{}))}\label{system_2core_2_code_igniter_8php_acf3a97185c56fefd63af2d2af8676bd9}
+\hypertarget{system_2core_2_code_igniter_8php_ae0314d046ddf7fcfaec03222977427d3}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+C\+I@{\$\+C\+I}}
+\index{\$\+C\+I@{\$\+C\+I}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+C\+I}]{\setlength{\rightskip}{0pt plus 5cm}\$C\+I = new \$class()}\label{system_2core_2_code_igniter_8php_ae0314d046ddf7fcfaec03222977427d3}
+\hypertarget{system_2core_2_code_igniter_8php_a252ba022809910ea710a068fc1bab657}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$class@{\$class}}
+\index{\$class@{\$class}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$class}]{\setlength{\rightskip}{0pt plus 5cm}\$class = ucfirst(\$R\+T\+R-\/$>$class)}\label{system_2core_2_code_igniter_8php_a252ba022809910ea710a068fc1bab657}
+\hypertarget{system_2core_2_code_igniter_8php_a20b89fa011927fc498a4a665fa44d061}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$e404@{\$e404}}
+\index{\$e404@{\$e404}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$e404}]{\setlength{\rightskip}{0pt plus 5cm}\$e404 = F\+A\+L\+S\+E}\label{system_2core_2_code_igniter_8php_a20b89fa011927fc498a4a665fa44d061}
+\hypertarget{system_2core_2_code_igniter_8php_ab97aae9bc0aae04b84d360a29a3c035b}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+E\+X\+T@{\$\+E\+X\+T}}
+\index{\$\+E\+X\+T@{\$\+E\+X\+T}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+E\+X\+T}]{\setlength{\rightskip}{0pt plus 5cm}\$E\+X\+T =\& load\+\_\+class(\textquotesingle{}Hooks\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_ab97aae9bc0aae04b84d360a29a3c035b}
+\hypertarget{system_2core_2_code_igniter_8php_a66d076d48aff75a01bb726f5bdd94d46}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+I\+N@{\$\+I\+N}}
+\index{\$\+I\+N@{\$\+I\+N}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\$I\+N =\& load\+\_\+class(\textquotesingle{}Input\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_a66d076d48aff75a01bb726f5bdd94d46}
+\hypertarget{system_2core_2_code_igniter_8php_afab4eb732acc05cebf41e0afce18681c}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+L\+A\+N\+G@{\$\+L\+A\+N\+G}}
+\index{\$\+L\+A\+N\+G@{\$\+L\+A\+N\+G}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+L\+A\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\$L\+A\+N\+G =\& load\+\_\+class(\textquotesingle{}Lang\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_afab4eb732acc05cebf41e0afce18681c}
+\hypertarget{system_2core_2_code_igniter_8php_a12661b2fc0f57f97e30a1620889ce9c6}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$method@{\$method}}
+\index{\$method@{\$method}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$method}]{\setlength{\rightskip}{0pt plus 5cm}\$method = \$R\+T\+R-\/$>$method}\label{system_2core_2_code_igniter_8php_a12661b2fc0f57f97e30a1620889ce9c6}
+\hypertarget{system_2core_2_code_igniter_8php_ad437402616c81c82c746f09854b23729}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+O\+U\+T@{\$\+O\+U\+T}}
+\index{\$\+O\+U\+T@{\$\+O\+U\+T}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+O\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\$O\+U\+T =\& load\+\_\+class(\textquotesingle{}Output\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_ad437402616c81c82c746f09854b23729}
+\hypertarget{system_2core_2_code_igniter_8php_a4d6c9285c8483e4708a57a4128fc95f3}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+R\+T\+R@{\$\+R\+T\+R}}
+\index{\$\+R\+T\+R@{\$\+R\+T\+R}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+R\+T\+R}]{\setlength{\rightskip}{0pt plus 5cm}\$R\+T\+R =\& load\+\_\+class(\textquotesingle{}Router\textquotesingle{}, \textquotesingle{}core\textquotesingle{}, isset(\$routing) ? \$routing \+: N\+U\+L\+L)}\label{system_2core_2_code_igniter_8php_a4d6c9285c8483e4708a57a4128fc95f3}
+\hypertarget{system_2core_2_code_igniter_8php_af78ce53fb82103e1165678dd2d3385a4}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+S\+E\+C@{\$\+S\+E\+C}}
+\index{\$\+S\+E\+C@{\$\+S\+E\+C}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+S\+E\+C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (\$E\+X\+T-\/$>$call\+\_\+hook(\textquotesingle{}cache\+\_\+override\textquotesingle{})===F\+A\+L\+S\+E \&\&\$O\+U\+T-\/$>$\+\_\+display\+\_\+cache(\$C\+F\+G, \$U\+R\+I)===T\+R\+U\+E) \$S\+E\+C =\& load\+\_\+class(\textquotesingle{}Security\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_af78ce53fb82103e1165678dd2d3385a4}
+\hypertarget{system_2core_2_code_igniter_8php_a2060dabd8d00b5b0539bd041bf450924}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+U\+N\+I@{\$\+U\+N\+I}}
+\index{\$\+U\+N\+I@{\$\+U\+N\+I}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+U\+N\+I}]{\setlength{\rightskip}{0pt plus 5cm}\$U\+N\+I =\& load\+\_\+class(\textquotesingle{}Utf8\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_a2060dabd8d00b5b0539bd041bf450924}
+\hypertarget{system_2core_2_code_igniter_8php_a630d83d898b39ad4568906284f7f5336}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!\$\+U\+R\+I@{\$\+U\+R\+I}}
+\index{\$\+U\+R\+I@{\$\+U\+R\+I}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{\$\+U\+R\+I}]{\setlength{\rightskip}{0pt plus 5cm}\$U\+R\+I =\& load\+\_\+class(\textquotesingle{}U\+R\+I\textquotesingle{}, \textquotesingle{}core\textquotesingle{})}\label{system_2core_2_code_igniter_8php_a630d83d898b39ad4568906284f7f5336}
+\hypertarget{system_2core_2_code_igniter_8php_a32e3c3927ba8ec93df92327dfd85d564}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N@{C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N@{C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const C\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N \textquotesingle{}3.\+0.\+1-\/dev\textquotesingle{}}\label{system_2core_2_code_igniter_8php_a32e3c3927ba8ec93df92327dfd85d564}
+\hypertarget{system_2core_2_code_igniter_8php_ac5109000d551293e102a2bc06f29cda4}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!else@{else}}
+\index{else@{else}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{else}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (empty(\$class) O\+R!file\+\_\+exists(A\+P\+P\+P\+A\+T\+H.\textquotesingle{}controllers/\textquotesingle{}.\$R\+T\+R-\/$>$directory.\$class.\textquotesingle{}.php\textquotesingle{})) else}\label{system_2core_2_code_igniter_8php_ac5109000d551293e102a2bc06f29cda4}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        define(\textcolor{stringliteral}{'MB\_ENABLED'}, FALSE)
+\end{DoxyCode}
+\hypertarget{system_2core_2_code_igniter_8php_a6503a8f8da73cafe64ad07639c198f54}{}\index{system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}!if@{if}}
+\index{if@{if}!system/core/\+Code\+Igniter.\+php@{system/core/\+Code\+Igniter.\+php}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if({\bf is\+\_\+php}(\textquotesingle{}5.\+6\textquotesingle{}))}\label{system_2core_2_code_igniter_8php_a6503a8f8da73cafe64ad07639c198f54}

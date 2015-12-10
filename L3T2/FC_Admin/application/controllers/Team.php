@@ -1,17 +1,16 @@
 <?php
 /**
-	LAST UPDATE: 29-06-2015 04:23 PM
-	STATUS: COMPLETE
+	Provide database support(CRUD) for `team` entity and related functionality
 */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Team extends CI_Controller {
 		  
-	public function __construct()		//DONE
+	public function __construct()		
     {
          parent::__construct();
 		  
-		 //Load Necessary Libraries and helpers
+		 /// Load Necessary Libraries and helpers
          $this->load->library('session');
          $this->load->helper('form');
          $this->load->helper('url');
@@ -39,17 +38,19 @@ class Team extends CI_Controller {
     }
 	
 	
-	public function index()			//DONE
+	public function index()			
 	{
 		redirect('team/createTeam');
 	}
 	
 	/**
-	*	USE CASE:: CREATE A TEAM
+	*	CREATE A TEAM : Show View
 	*/
-	
-	public function createTeam()	//DONE
+	public function createTeam()	
 	{
+		/**
+		*	CREATE A TEAM : Show View to input player info
+		*/
 		if(isset($_POST['players']) && isset($_POST['team_name']))
 		{
 			$data['players']=$this->input->post('players');
@@ -72,7 +73,9 @@ class Team extends CI_Controller {
 			}
 			else $this->load->view('admin_addTeam',$data);
 		}
-
+		/**
+		*	CREATE A TEAM : Show View to input team name and number of players
+		*/
 		else
 		{
 			$data['players']=0;
@@ -82,7 +85,10 @@ class Team extends CI_Controller {
 		}
 	}
 
-	public function createTeam_proc()	//DONE
+	/**
+	*	CREATE A TEAM : Process User Input
+	*/
+	public function createTeam_proc()	
 	{
 		$team = $_SESSION['team_name'];
 		$team_id=$this->team_model->get_team_id($team);
@@ -119,23 +125,19 @@ class Team extends CI_Controller {
 	}
 
 	/**
-	*	USE CASE:: CHANGE TEAM INFO
+	*	CHANGE TEAM INFO : Nothing done
 	*/
-	
 	public function changeTeamInfo()
 	{
 	
 	}
 	
 	/**
-	*	USE CASE:: ADD NEW PLAYER
+	*	ADD NEW PLAYER : Show view to select team
 	*/
-	
-	public function addPlayer()		//DONE
+	public function addPlayer()		
 	{
-		//Select any of the existing Teams
-		//$result=$this->tournament_model->get_active_tournament()->row_array();
-		//$tournament_id=$result['tournament_id
+		/// Select any of the existing Teams
 		
 		$query=$this->team_model->get_all_teams();
 
@@ -144,7 +146,10 @@ class Team extends CI_Controller {
 		$this->load->view('addPlayer',$data);
 	}
 	
-	public function addPlayer_1()	//DONE
+	/**
+	*	ADD NEW PLAYER : Show view to input player info
+	*/
+	public function addPlayer_1()	
 	{
 		$team_id = $_POST['team_id'];
 		$data['team_name']=$this->team_model->get_team_name($team_id);
@@ -160,7 +165,10 @@ class Team extends CI_Controller {
 		$this->load->view('addPlayer',$data);
 	}
 	
-	public function addPlayer_2()	//DONE
+	/**
+	*	ADD NEW PLAYER : Process user input
+	*/
+	public function addPlayer_2()	
 	{
 		$player_data['player_id']='';
 		$player_data['price']=$this->input->post('price');
@@ -181,20 +189,20 @@ class Team extends CI_Controller {
 		$this->load->view('status_message',$data);
 	}
 	
-	/**
-	*	USE CASE:: CHANGE PLAYER INFO
-	*/
+	
+	/*
 	
 	public function changePlayerInfo()
 	{
 	
 	}
 	
-	/**
-	*	USE CASE:: UPDATE TEAM SHEET
 	*/
 	
-	public function updateTeamSheet()	//done
+	/**
+	*	UPDATE TEAM SHEET : Show view to select team
+	*/
+	public function updateTeamSheet()
 	{
 		$tid=$this->tournament_model->get_active_tournament_id();
 		if($tid==NULL)
@@ -210,7 +218,10 @@ class Team extends CI_Controller {
 		}
 	}
 
-	public function updateTeamSheet_1()	//done
+	/**
+	*	UPDATE TEAM SHEET : Show view to select players
+	*/
+	public function updateTeamSheet_1()
 	{
 		$team_id = $_POST['team_id'];
 		$data['team_name']=$this->team_model->get_team_name($team_id);
@@ -228,7 +239,10 @@ class Team extends CI_Controller {
 		$this->load->view('updateTeamSheet',$data);
 	}
 
-	public function updateTeamSheet_2()	//done
+	/**
+	*	UPDATE TEAM SHEET : Process user input
+	*/
+	public function updateTeamSheet_2()
 	{
 		$players=$_SESSION['players'];
 		

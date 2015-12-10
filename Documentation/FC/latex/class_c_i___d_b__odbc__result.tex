@@ -1,0 +1,134 @@
+\hypertarget{class_c_i___d_b__odbc__result}{}\section{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result Class Reference}
+\label{class_c_i___d_b__odbc__result}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_i___d_b__odbc__result}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_a218657c303ee499b97710ab0cd2f5d6e}{num\+\_\+rows} ()
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_af831bf363e4d7d661a717a4932af449d}{num\+\_\+fields} ()
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_a50b54eb4ea7cfd039740f532988ea776}{list\+\_\+fields} ()
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_a84bffd65e53902ade1591716749a33e3}{field\+\_\+data} ()
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_aad2d98d6beb3d6095405356c6107b473}{free\+\_\+result} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_a43a9a92817f1334a1c10752ec44275a0}{\+\_\+fetch\+\_\+assoc} ()
+\item 
+\hyperlink{class_c_i___d_b__odbc__result_ac0acae0a13c8bfe4c34198813ecf43a0}{\+\_\+fetch\+\_\+object} (\$class\+\_\+name= \textquotesingle{}std\+Class\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__odbc__result_a43a9a92817f1334a1c10752ec44275a0}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!\+\_\+fetch\+\_\+assoc@{\+\_\+fetch\+\_\+assoc}}
+\index{\+\_\+fetch\+\_\+assoc@{\+\_\+fetch\+\_\+assoc}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{\+\_\+fetch\+\_\+assoc()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+fetch\+\_\+assoc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__odbc__result_a43a9a92817f1334a1c10752ec44275a0}
+Result -\/ associative array
+
+Returns the result set as an array
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_ac0acae0a13c8bfe4c34198813ecf43a0}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!\+\_\+fetch\+\_\+object@{\+\_\+fetch\+\_\+object}}
+\index{\+\_\+fetch\+\_\+object@{\+\_\+fetch\+\_\+object}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{\+\_\+fetch\+\_\+object(\$class\+\_\+name= \textquotesingle{}std\+Class\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+fetch\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\+\_\+name = {\ttfamily \textquotesingle{}stdClass\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__odbc__result_ac0acae0a13c8bfe4c34198813ecf43a0}
+Result -\/ object
+
+Returns the result set as an object
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$class\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_a84bffd65e53902ade1591716749a33e3}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!field\+\_\+data@{field\+\_\+data}}
+\index{field\+\_\+data@{field\+\_\+data}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{field\+\_\+data()}]{\setlength{\rightskip}{0pt plus 5cm}field\+\_\+data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__odbc__result_a84bffd65e53902ade1591716749a33e3}
+Field data
+
+Generates an array of objects containing field meta-\/data
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_aad2d98d6beb3d6095405356c6107b473}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!free\+\_\+result@{free\+\_\+result}}
+\index{free\+\_\+result@{free\+\_\+result}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{free\+\_\+result()}]{\setlength{\rightskip}{0pt plus 5cm}free\+\_\+result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__odbc__result_aad2d98d6beb3d6095405356c6107b473}
+Free the result
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_a50b54eb4ea7cfd039740f532988ea776}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!list\+\_\+fields@{list\+\_\+fields}}
+\index{list\+\_\+fields@{list\+\_\+fields}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{list\+\_\+fields()}]{\setlength{\rightskip}{0pt plus 5cm}list\+\_\+fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__odbc__result_a50b54eb4ea7cfd039740f532988ea776}
+Fetch Field Names
+
+Generates an array of column names
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_af831bf363e4d7d661a717a4932af449d}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!num\+\_\+fields@{num\+\_\+fields}}
+\index{num\+\_\+fields@{num\+\_\+fields}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{num\+\_\+fields()}]{\setlength{\rightskip}{0pt plus 5cm}num\+\_\+fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__odbc__result_af831bf363e4d7d661a717a4932af449d}
+Number of fields in the result set
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__odbc__result_a218657c303ee499b97710ab0cd2f5d6e}{}\index{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}!num\+\_\+rows@{num\+\_\+rows}}
+\index{num\+\_\+rows@{num\+\_\+rows}!C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result@{C\+I\+\_\+\+D\+B\+\_\+odbc\+\_\+result}}
+\subsubsection[{num\+\_\+rows()}]{\setlength{\rightskip}{0pt plus 5cm}num\+\_\+rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__odbc__result_a218657c303ee499b97710ab0cd2f5d6e}
+Number of rows in the result set
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/database/drivers/odbc/\hyperlink{odbc__result_8php}{odbc\+\_\+result.\+php}\end{DoxyCompactItemize}

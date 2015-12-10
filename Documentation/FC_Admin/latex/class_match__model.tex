@@ -1,0 +1,179 @@
+\hypertarget{class_match__model}{}\section{Match\+\_\+model Class Reference}
+\label{class_match__model}\index{Match\+\_\+model@{Match\+\_\+model}}
+Inheritance diagram for Match\+\_\+model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_match__model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_match__model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_match__model_af3e2fa219f3317391f8505b4fe790ada}{get\+\_\+upcoming\+\_\+match} (\$tournament\+\_\+id)
+\item 
+\hyperlink{class_match__model_a06064e208741b99d4c8f634bef3086b0}{update\+\_\+motm\+\_\+id} (\$match\+\_\+id, \$player\+\_\+id)
+\item 
+\hyperlink{class_match__model_ad797156fec1526814d0e7afa9922f453}{create\+\_\+match} (\$data)
+\item 
+\hyperlink{class_match__model_a0a059fea5654ff79dbd2aa1cc038e5e1}{get\+\_\+match\+\_\+info} (\$match\+\_\+id)
+\item 
+\hyperlink{class_match__model_ac88138156abfb53bfa57a299d788b43e}{update\+\_\+match} (\$data)
+\begin{DoxyCompactList}\small\item\em Update information of a particular match. \end{DoxyCompactList}\item 
+\hyperlink{class_match__model_a4ae724b3cc404915f9b4d33753278590}{update\+\_\+match\+\_\+points} (\$data)
+\begin{DoxyCompactList}\small\item\em Update match statistics and so, point calculations of a particular match. \end{DoxyCompactList}\item 
+\hyperlink{class_match__model_a3d20cfb9dc9afbd3bc39f748dd421edd}{update\+\_\+match\+\_\+summary} (\$match\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Update match summary (total runs, wickets, overs for both home \& away teams) of a particular match. \end{DoxyCompactList}\item 
+\hyperlink{class_match__model_a80b0690e93edb4cb42c30f473724f0c7}{create\+\_\+player\+\_\+match\+\_\+points} (\$player\+\_\+id, \$match\+\_\+id)
+\item 
+\hyperlink{class_match__model_a4044fc0d4f237bb5785973b5b8e798c6}{create\+\_\+user\+\_\+match\+\_\+team} (\$user\+\_\+id, \$match\+\_\+id)
+\item 
+\hyperlink{class_match__model_ac6009e4ee467d728010e3745943c08b1}{update\+\_\+motm\+\_\+point} (\$match\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Database operations for {\ttfamily match} entity 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_match__model_a095c5d389db211932136b53f25f39685}{}\index{Match\+\_\+model@{Match\+\_\+model}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a095c5d389db211932136b53f25f39685}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_match__model_ad797156fec1526814d0e7afa9922f453}{}\index{Match\+\_\+model@{Match\+\_\+model}!create\+\_\+match@{create\+\_\+match}}
+\index{create\+\_\+match@{create\+\_\+match}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{create\+\_\+match(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_match__model_ad797156fec1526814d0e7afa9922f453}
+I\+N\+S\+E\+R\+T operation in {\ttfamily match} table \hypertarget{class_match__model_a80b0690e93edb4cb42c30f473724f0c7}{}\index{Match\+\_\+model@{Match\+\_\+model}!create\+\_\+player\+\_\+match\+\_\+points@{create\+\_\+player\+\_\+match\+\_\+points}}
+\index{create\+\_\+player\+\_\+match\+\_\+points@{create\+\_\+player\+\_\+match\+\_\+points}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{create\+\_\+player\+\_\+match\+\_\+points(\$player\+\_\+id, \$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+player\+\_\+match\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{}]{\$player\+\_\+id, }
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a80b0690e93edb4cb42c30f473724f0c7}
+Initialize point calculation data for a player (of a particular match) with default values \hypertarget{class_match__model_a4044fc0d4f237bb5785973b5b8e798c6}{}\index{Match\+\_\+model@{Match\+\_\+model}!create\+\_\+user\+\_\+match\+\_\+team@{create\+\_\+user\+\_\+match\+\_\+team}}
+\index{create\+\_\+user\+\_\+match\+\_\+team@{create\+\_\+user\+\_\+match\+\_\+team}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{create\+\_\+user\+\_\+match\+\_\+team(\$user\+\_\+id, \$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}create\+\_\+user\+\_\+match\+\_\+team (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+\_\+id, }
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a4044fc0d4f237bb5785973b5b8e798c6}
+Initialize user match team with the previous user team 
+\begin{DoxyEnumerate}
+\item G\+E\+T P\+R\+E\+V\+I\+O\+U\+S M\+A\+T\+C\+H I\+D
+\item G\+E\+T P\+R\+E\+V\+I\+O\+U\+S U\+S\+E\+R M\+A\+T\+C\+H T\+E\+A\+M
+\item G\+E\+T P\+R\+E\+V\+I\+O\+U\+S C\+A\+P\+T\+A\+I\+N I\+D
+\end{DoxyEnumerate}
+
+3(a). S\+E\+T N\+E\+W C\+A\+P\+T\+A\+I\+N \+:= O\+L\+D C\+A\+P\+T\+A\+I\+N
+
+
+\begin{DoxyEnumerate}
+\item G\+E\+T P\+R\+E\+V\+I\+O\+U\+S M\+A\+T\+C\+H T\+E\+A\+M I\+D
+\end{DoxyEnumerate}
+
+4(a). G\+E\+T A\+L\+L P\+R\+E\+V\+I\+O\+U\+S U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S
+
+4(b). C\+R\+E\+A\+T\+E U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M
+
+
+\begin{DoxyEnumerate}
+\item G\+E\+T N\+E\+W U\+S\+E\+R M\+A\+T\+C\+H T\+E\+A\+M I\+D
+\item S\+E\+T A\+L\+L P\+L\+A\+Y\+E\+R\+S D\+A\+T\+A (S\+E\+T N\+E\+W M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S \+:= A\+L\+L P\+R\+E\+V\+I\+O\+U\+S U\+S\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+E\+A\+M\+\_\+\+P\+L\+A\+Y\+E\+R\+S ) 
+\end{DoxyEnumerate}\hypertarget{class_match__model_a0a059fea5654ff79dbd2aa1cc038e5e1}{}\index{Match\+\_\+model@{Match\+\_\+model}!get\+\_\+match\+\_\+info@{get\+\_\+match\+\_\+info}}
+\index{get\+\_\+match\+\_\+info@{get\+\_\+match\+\_\+info}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{get\+\_\+match\+\_\+info(\$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+match\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a0a059fea5654ff79dbd2aa1cc038e5e1}
+Get information of a match (by match\+\_\+id) \hypertarget{class_match__model_af3e2fa219f3317391f8505b4fe790ada}{}\index{Match\+\_\+model@{Match\+\_\+model}!get\+\_\+upcoming\+\_\+match@{get\+\_\+upcoming\+\_\+match}}
+\index{get\+\_\+upcoming\+\_\+match@{get\+\_\+upcoming\+\_\+match}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{get\+\_\+upcoming\+\_\+match(\$tournament\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+upcoming\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$tournament\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_af3e2fa219f3317391f8505b4fe790ada}
+Get next match information (not started , will be shown in admin homepage to start) \hypertarget{class_match__model_ac88138156abfb53bfa57a299d788b43e}{}\index{Match\+\_\+model@{Match\+\_\+model}!update\+\_\+match@{update\+\_\+match}}
+\index{update\+\_\+match@{update\+\_\+match}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{update\+\_\+match(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+match (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_match__model_ac88138156abfb53bfa57a299d788b43e}
+
+
+Update information of a particular match. 
+
+Input\+: \$data \+: array(\textquotesingle{}match\+\_\+id\textquotesingle{}=$>$?,\textquotesingle{}start\+\_\+time\textquotesingle{}=$>$?) \hypertarget{class_match__model_a4ae724b3cc404915f9b4d33753278590}{}\index{Match\+\_\+model@{Match\+\_\+model}!update\+\_\+match\+\_\+points@{update\+\_\+match\+\_\+points}}
+\index{update\+\_\+match\+\_\+points@{update\+\_\+match\+\_\+points}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{update\+\_\+match\+\_\+points(\$data)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+match\+\_\+points (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a4ae724b3cc404915f9b4d33753278590}
+
+
+Update match statistics and so, point calculations of a particular match. 
+
+Input\+: \$data \+: array(\textquotesingle{}runs\+\_\+scored\textquotesingle{}=$>$?,\textquotesingle{}balls\+\_\+played\textquotesingle{}=$>$? , \textquotesingle{}fours\textquotesingle{}=$>$? , \textquotesingle{}sixes\textquotesingle{}=$>$? , etc) \hypertarget{class_match__model_a3d20cfb9dc9afbd3bc39f748dd421edd}{}\index{Match\+\_\+model@{Match\+\_\+model}!update\+\_\+match\+\_\+summary@{update\+\_\+match\+\_\+summary}}
+\index{update\+\_\+match\+\_\+summary@{update\+\_\+match\+\_\+summary}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{update\+\_\+match\+\_\+summary(\$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+match\+\_\+summary (
+\begin{DoxyParamCaption}
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a3d20cfb9dc9afbd3bc39f748dd421edd}
+
+
+Update match summary (total runs, wickets, overs for both home \& away teams) of a particular match. 
+
+
+\begin{DoxyEnumerate}
+\item G\+E\+T H\+O\+M\+E T\+E\+A\+M I\+D, A\+W\+A\+Y T\+E\+A\+M I\+D
+\end{DoxyEnumerate}
+
+1(a). G\+E\+T A\+L\+L H\+O\+M\+E A\+N\+D A\+W\+A\+Y T\+E\+A\+M P\+L\+A\+Y\+E\+R\+S I\+N T\+H\+E T\+O\+U\+R\+N\+A\+M\+E\+N\+T
+
+
+\begin{DoxyEnumerate}
+\item S\+A\+V\+E H\+O\+M\+E T\+E\+A\+M S\+U\+M\+M\+A\+R\+Y
+\item S\+A\+V\+E A\+W\+A\+Y T\+E\+A\+M S\+U\+M\+M\+A\+R\+Y
+\item U\+P\+D\+A\+T\+E R\+E\+C\+O\+R\+D\+S 
+\end{DoxyEnumerate}\hypertarget{class_match__model_a06064e208741b99d4c8f634bef3086b0}{}\index{Match\+\_\+model@{Match\+\_\+model}!update\+\_\+motm\+\_\+id@{update\+\_\+motm\+\_\+id}}
+\index{update\+\_\+motm\+\_\+id@{update\+\_\+motm\+\_\+id}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{update\+\_\+motm\+\_\+id(\$match\+\_\+id, \$player\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+motm\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{}]{\$match\+\_\+id, }
+\item[{}]{\$player\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_a06064e208741b99d4c8f634bef3086b0}
+Update man of the match id for a particular match \hypertarget{class_match__model_ac6009e4ee467d728010e3745943c08b1}{}\index{Match\+\_\+model@{Match\+\_\+model}!update\+\_\+motm\+\_\+point@{update\+\_\+motm\+\_\+point}}
+\index{update\+\_\+motm\+\_\+point@{update\+\_\+motm\+\_\+point}!Match\+\_\+model@{Match\+\_\+model}}
+\subsubsection[{update\+\_\+motm\+\_\+point(\$match\+\_\+id)}]{\setlength{\rightskip}{0pt plus 5cm}update\+\_\+motm\+\_\+point (
+\begin{DoxyParamCaption}
+\item[{}]{\$match\+\_\+id}
+\end{DoxyParamCaption}
+)}\label{class_match__model_ac6009e4ee467d728010e3745943c08b1}
+T\+H\+I\+S F\+U\+N\+C\+T\+I\+O\+N W\+I\+L\+L O\+N\+L\+Y B\+E C\+A\+L\+L\+E\+D F\+R\+O\+M U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+O\+I\+N\+T N\+O E\+X\+T\+E\+R\+N\+A\+L U\+S\+E 
+\begin{DoxyEnumerate}
+\item Reset previous man of the match point
+\item G\+E\+T M\+O\+T\+M\+\_\+\+I\+D F\+R\+O\+M M\+A\+T\+C\+H
+\item G\+E\+T M\+O\+T\+M\+\_\+\+B\+O\+N\+U\+S\+\_\+\+P\+O\+N\+T F\+R\+O\+M C\+O\+N\+S\+T\+A\+N\+T\+S T\+A\+B\+L\+E
+\item S\+E\+T M\+O\+T\+M\+\_\+\+B\+O\+N\+U\+S\+\_\+\+P\+O\+N\+T F\+O\+R T\+H\+E P\+L\+A\+Y\+E\+R I\+N P\+L\+A\+Y\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+P\+O\+I\+N\+T T\+A\+B\+L\+E 
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/application/models/\hyperlink{_match__model_8php}{Match\+\_\+model.\+php}\end{DoxyCompactItemize}

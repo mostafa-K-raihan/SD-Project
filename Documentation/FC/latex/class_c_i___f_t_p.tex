@@ -1,0 +1,468 @@
+\hypertarget{class_c_i___f_t_p}{}\section{C\+I\+\_\+\+F\+T\+P Class Reference}
+\label{class_c_i___f_t_p}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___f_t_p_af7f9493844d2d66e924e3c1df51ce616}{\+\_\+\+\_\+construct} (\$config=array())
+\item 
+\hyperlink{class_c_i___f_t_p_a481385e36d920f5a5005ace05c6cd016}{initialize} (\$config=array())
+\item 
+\hyperlink{class_c_i___f_t_p_ab2827759611aaaf0c59e69661122c534}{connect} (\$config=array())
+\item 
+\hyperlink{class_c_i___f_t_p_a81098bf710d7879da8d69130f136475b}{changedir} (\$path, \$suppress\+\_\+debug=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___f_t_p_a077f5ce3771d83b8196e07ccc27e49ff}{mkdir} (\$path, \$permissions=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___f_t_p_a4f3394c26215f6abd2b92ad311684e1f}{upload} (\$locpath, \$rempath, \$mode= \textquotesingle{}auto\textquotesingle{}, \$permissions=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___f_t_p_af51fa642fa0d4ae454c8c1850d282f65}{download} (\$rempath, \$locpath, \$mode= \textquotesingle{}auto\textquotesingle{})
+\item 
+\hyperlink{class_c_i___f_t_p_aa670f7340bb15f61d481f4b3c64bd9dc}{rename} (\$old\+\_\+file, \$new\+\_\+file, \$\hyperlink{class_c_i___f_t_p_acb1443339c3058c83b79f0f503630920}{move}=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___f_t_p_acb1443339c3058c83b79f0f503630920}{move} (\$old\+\_\+file, \$new\+\_\+file)
+\item 
+\hyperlink{class_c_i___f_t_p_aad793fb503643d98b58426421718e18a}{delete\+\_\+file} (\$filepath)
+\item 
+\hyperlink{class_c_i___f_t_p_af09b3ab08984b145506dcff4f75a051c}{delete\+\_\+dir} (\$filepath)
+\item 
+\hyperlink{class_c_i___f_t_p_a9af83eefaf53c7362e7108d1f82bf1ab}{chmod} (\$path, \$perm)
+\item 
+\hyperlink{class_c_i___f_t_p_a4a8692d7ea935946366a916a3013652e}{list\+\_\+files} (\$path= \textquotesingle{}.\textquotesingle{})
+\item 
+\hyperlink{class_c_i___f_t_p_aea2de30bbdf050cb607bbc5a36772bf3}{mirror} (\$locpath, \$rempath)
+\item 
+\hyperlink{class_c_i___f_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e}{close} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___f_t_p_a8bf9ffb42ed554b203b55377d1fc9aa4}{\$hostname} = \textquotesingle{}\textquotesingle{}
+\item 
+\hyperlink{class_c_i___f_t_p_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username} = \textquotesingle{}\textquotesingle{}
+\item 
+\hyperlink{class_c_i___f_t_p_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password} = \textquotesingle{}\textquotesingle{}
+\item 
+\hyperlink{class_c_i___f_t_p_aa0787efab4b22e8a212882f3409d4c77}{\$port} = 21
+\item 
+\hyperlink{class_c_i___f_t_p_a9fb61732ea9189fa2be5574ad3576d9c}{\$passive} = T\+R\+U\+E
+\item 
+\hyperlink{class_c_i___f_t_p_a85ae3e64cd40e9564adceb010085e9dd}{\$debug} = F\+A\+L\+S\+E
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___f_t_p_a95562e7b8a41561f4b0b525d9c7fe701}{\+\_\+login} ()
+\item 
+\hyperlink{class_c_i___f_t_p_af20c08e4b61fe028e032b388cd73936a}{\+\_\+is\+\_\+conn} ()
+\item 
+\hyperlink{class_c_i___f_t_p_ab06ef33f96f03cafbb8f2bb6d695ef1f}{\+\_\+getext} (\$filename)
+\item 
+\hyperlink{class_c_i___f_t_p_aacd9d6628615078d8df9aab1fe70e391}{\+\_\+settype} (\$ext)
+\item 
+\hyperlink{class_c_i___f_t_p_ac618e7d56614851d2c54aa096e1bcace}{\+\_\+error} (\$line)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___f_t_p_a16c23f1dcbfed2f2759f5e54f604106d}{\$conn\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___f_t_p_af7f9493844d2d66e924e3c1df51ce616}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+\+\_\+construct(\$config=array())}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$config = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_af7f9493844d2d66e924e3c1df51ce616}
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___f_t_p_ac618e7d56614851d2c54aa096e1bcace}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+error@{\+\_\+error}}
+\index{\+\_\+error@{\+\_\+error}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+error(\$line)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{}]{\$line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_ac618e7d56614851d2c54aa096e1bcace}
+Display error message
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_ab06ef33f96f03cafbb8f2bb6d695ef1f}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+getext@{\+\_\+getext}}
+\index{\+\_\+getext@{\+\_\+getext}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+getext(\$filename)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+getext (
+\begin{DoxyParamCaption}
+\item[{}]{\$filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_ab06ef33f96f03cafbb8f2bb6d695ef1f}
+Extract the file extension
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_af20c08e4b61fe028e032b388cd73936a}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+is\+\_\+conn@{\+\_\+is\+\_\+conn}}
+\index{\+\_\+is\+\_\+conn@{\+\_\+is\+\_\+conn}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+is\+\_\+conn()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+is\+\_\+conn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_af20c08e4b61fe028e032b388cd73936a}
+Validates the connection I\+D
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a95562e7b8a41561f4b0b525d9c7fe701}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+login@{\+\_\+login}}
+\index{\+\_\+login@{\+\_\+login}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+login()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+login (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_a95562e7b8a41561f4b0b525d9c7fe701}
+F\+T\+P Login
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_aacd9d6628615078d8df9aab1fe70e391}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\+\_\+settype@{\+\_\+settype}}
+\index{\+\_\+settype@{\+\_\+settype}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\+\_\+settype(\$ext)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+settype (
+\begin{DoxyParamCaption}
+\item[{}]{\$ext}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_aacd9d6628615078d8df9aab1fe70e391}
+Set the upload type
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$ext} & Filename extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a81098bf710d7879da8d69130f136475b}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!changedir@{changedir}}
+\index{changedir@{changedir}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{changedir(\$path, \$suppress\+\_\+debug=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}changedir (
+\begin{DoxyParamCaption}
+\item[{}]{\$path, }
+\item[{}]{\$suppress\+\_\+debug = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a81098bf710d7879da8d69130f136475b}
+Change directory
+
+The second parameter lets us momentarily turn off debugging so that this function can be used to test for the existence of a folder without throwing an error. There\textquotesingle{}s no F\+T\+P equivalent to is\+\_\+dir() so we do it by trying to change to a particular directory. Internally, this parameter is only used by the \char`\"{}mirror\char`\"{} function below.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$path} & \\
+\hline
+bool & {\em \$suppress\+\_\+debug} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a9af83eefaf53c7362e7108d1f82bf1ab}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!chmod@{chmod}}
+\index{chmod@{chmod}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{chmod(\$path, \$perm)}]{\setlength{\rightskip}{0pt plus 5cm}chmod (
+\begin{DoxyParamCaption}
+\item[{}]{\$path, }
+\item[{}]{\$perm}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a9af83eefaf53c7362e7108d1f82bf1ab}
+Set file permissions
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$path} & File path \\
+\hline
+int & {\em \$perm} & Permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!close@{close}}
+\index{close@{close}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{close()}]{\setlength{\rightskip}{0pt plus 5cm}close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_aa69c8bf1f1dcf4e72552efff1fe3e87e}
+Close the connection
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_ab2827759611aaaf0c59e69661122c534}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!connect@{connect}}
+\index{connect@{connect}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{connect(\$config=array())}]{\setlength{\rightskip}{0pt plus 5cm}connect (
+\begin{DoxyParamCaption}
+\item[{}]{\$config = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_ab2827759611aaaf0c59e69661122c534}
+F\+T\+P Connect
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$config} & Connection values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_af09b3ab08984b145506dcff4f75a051c}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!delete\+\_\+dir@{delete\+\_\+dir}}
+\index{delete\+\_\+dir@{delete\+\_\+dir}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{delete\+\_\+dir(\$filepath)}]{\setlength{\rightskip}{0pt plus 5cm}delete\+\_\+dir (
+\begin{DoxyParamCaption}
+\item[{}]{\$filepath}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_af09b3ab08984b145506dcff4f75a051c}
+Delete a folder and recursively delete everything (including sub-\/folders) containted within it.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filepath} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_aad793fb503643d98b58426421718e18a}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!delete\+\_\+file@{delete\+\_\+file}}
+\index{delete\+\_\+file@{delete\+\_\+file}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{delete\+\_\+file(\$filepath)}]{\setlength{\rightskip}{0pt plus 5cm}delete\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{}]{\$filepath}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_aad793fb503643d98b58426421718e18a}
+Rename (or move) a file
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filepath} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_af51fa642fa0d4ae454c8c1850d282f65}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!download@{download}}
+\index{download@{download}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{download(\$rempath, \$locpath, \$mode= \textquotesingle{}auto\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}download (
+\begin{DoxyParamCaption}
+\item[{}]{\$rempath, }
+\item[{}]{\$locpath, }
+\item[{}]{\$mode = {\ttfamily \textquotesingle{}auto\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_af51fa642fa0d4ae454c8c1850d282f65}
+Download a file from a remote server to the local server
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$rempath} & \\
+\hline
+string & {\em \$locpath} & \\
+\hline
+string & {\em \$mode} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a481385e36d920f5a5005ace05c6cd016}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!initialize@{initialize}}
+\index{initialize@{initialize}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{initialize(\$config=array())}]{\setlength{\rightskip}{0pt plus 5cm}initialize (
+\begin{DoxyParamCaption}
+\item[{}]{\$config = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a481385e36d920f5a5005ace05c6cd016}
+Initialize preferences
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a4a8692d7ea935946366a916a3013652e}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!list\+\_\+files@{list\+\_\+files}}
+\index{list\+\_\+files@{list\+\_\+files}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{list\+\_\+files(\$path= \textquotesingle{}.\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}list\+\_\+files (
+\begin{DoxyParamCaption}
+\item[{}]{\$path = {\ttfamily \textquotesingle{}.\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a4a8692d7ea935946366a916a3013652e}
+F\+T\+P List files in the specified directory
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_aea2de30bbdf050cb607bbc5a36772bf3}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!mirror@{mirror}}
+\index{mirror@{mirror}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{mirror(\$locpath, \$rempath)}]{\setlength{\rightskip}{0pt plus 5cm}mirror (
+\begin{DoxyParamCaption}
+\item[{}]{\$locpath, }
+\item[{}]{\$rempath}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_aea2de30bbdf050cb607bbc5a36772bf3}
+Read a directory and recreate it remotely
+
+This function recursively reads a folder and everything it contains (including sub-\/folders) and creates a mirror via F\+T\+P based on it. Whatever the directory structure of the original file path will be recreated on the server.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$locpath} & Path to source with trailing slash \\
+\hline
+string & {\em \$rempath} & Path to destination -\/ include the base folder with trailing slash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a077f5ce3771d83b8196e07ccc27e49ff}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{mkdir(\$path, \$permissions=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}mkdir (
+\begin{DoxyParamCaption}
+\item[{}]{\$path, }
+\item[{}]{\$permissions = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a077f5ce3771d83b8196e07ccc27e49ff}
+Create a directory
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$path} & \\
+\hline
+int & {\em \$permissions} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_acb1443339c3058c83b79f0f503630920}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!move@{move}}
+\index{move@{move}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{move(\$old\+\_\+file, \$new\+\_\+file)}]{\setlength{\rightskip}{0pt plus 5cm}move (
+\begin{DoxyParamCaption}
+\item[{}]{\$old\+\_\+file, }
+\item[{}]{\$new\+\_\+file}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_acb1443339c3058c83b79f0f503630920}
+Move a file
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$old\+\_\+file} & \\
+\hline
+string & {\em \$new\+\_\+file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_aa670f7340bb15f61d481f4b3c64bd9dc}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!rename@{rename}}
+\index{rename@{rename}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{rename(\$old\+\_\+file, \$new\+\_\+file, \$move=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}rename (
+\begin{DoxyParamCaption}
+\item[{}]{\$old\+\_\+file, }
+\item[{}]{\$new\+\_\+file, }
+\item[{}]{\$move = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_aa670f7340bb15f61d481f4b3c64bd9dc}
+Rename (or move) a file
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$old\+\_\+file} & \\
+\hline
+string & {\em \$new\+\_\+file} & \\
+\hline
+bool & {\em \$move} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___f_t_p_a4f3394c26215f6abd2b92ad311684e1f}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!upload@{upload}}
+\index{upload@{upload}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{upload(\$locpath, \$rempath, \$mode= \textquotesingle{}auto\textquotesingle{}, \$permissions=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}upload (
+\begin{DoxyParamCaption}
+\item[{}]{\$locpath, }
+\item[{}]{\$rempath, }
+\item[{}]{\$mode = {\ttfamily \textquotesingle{}auto\textquotesingle{}}, }
+\item[{}]{\$permissions = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___f_t_p_a4f3394c26215f6abd2b92ad311684e1f}
+Upload a file to the server
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$locpath} & \\
+\hline
+string & {\em \$rempath} & \\
+\hline
+string & {\em \$mode} & \\
+\hline
+int & {\em \$permissions} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___f_t_p_a16c23f1dcbfed2f2759f5e54f604106d}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$conn\+\_\+id@{\$conn\+\_\+id}}
+\index{\$conn\+\_\+id@{\$conn\+\_\+id}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$conn\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}\$conn\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___f_t_p_a16c23f1dcbfed2f2759f5e54f604106d}
+\hypertarget{class_c_i___f_t_p_a85ae3e64cd40e9564adceb010085e9dd}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$debug@{\$debug}}
+\index{\$debug@{\$debug}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$debug}]{\setlength{\rightskip}{0pt plus 5cm}\$debug = F\+A\+L\+S\+E}\label{class_c_i___f_t_p_a85ae3e64cd40e9564adceb010085e9dd}
+\hypertarget{class_c_i___f_t_p_a8bf9ffb42ed554b203b55377d1fc9aa4}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$hostname@{\$hostname}}
+\index{\$hostname@{\$hostname}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$hostname}]{\setlength{\rightskip}{0pt plus 5cm}\$hostname = \textquotesingle{}\textquotesingle{}}\label{class_c_i___f_t_p_a8bf9ffb42ed554b203b55377d1fc9aa4}
+\hypertarget{class_c_i___f_t_p_a9fb61732ea9189fa2be5574ad3576d9c}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$passive@{\$passive}}
+\index{\$passive@{\$passive}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$passive}]{\setlength{\rightskip}{0pt plus 5cm}\$passive = T\+R\+U\+E}\label{class_c_i___f_t_p_a9fb61732ea9189fa2be5574ad3576d9c}
+\hypertarget{class_c_i___f_t_p_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$password@{\$password}}
+\index{\$password@{\$password}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$password}]{\setlength{\rightskip}{0pt plus 5cm}\$password = \textquotesingle{}\textquotesingle{}}\label{class_c_i___f_t_p_a607686ef9f99ea7c42f4f3dd3dbb2b0d}
+\hypertarget{class_c_i___f_t_p_aa0787efab4b22e8a212882f3409d4c77}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$port@{\$port}}
+\index{\$port@{\$port}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$port}]{\setlength{\rightskip}{0pt plus 5cm}\$port = 21}\label{class_c_i___f_t_p_aa0787efab4b22e8a212882f3409d4c77}
+\hypertarget{class_c_i___f_t_p_a0eb82aa5f81cf845de4b36cd653c42cf}{}\index{C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}!\$username@{\$username}}
+\index{\$username@{\$username}!C\+I\+\_\+\+F\+T\+P@{C\+I\+\_\+\+F\+T\+P}}
+\subsubsection[{\$username}]{\setlength{\rightskip}{0pt plus 5cm}\$username = \textquotesingle{}\textquotesingle{}}\label{class_c_i___f_t_p_a0eb82aa5f81cf845de4b36cd653c42cf}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/libraries/\hyperlink{_ftp_8php}{Ftp.\+php}\end{DoxyCompactItemize}

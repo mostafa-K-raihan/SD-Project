@@ -1,0 +1,67 @@
+\hypertarget{class_mock___core___input}{}\section{Mock\+\_\+\+Core\+\_\+\+Input Class Reference}
+\label{class_mock___core___input}\index{Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}}
+Inheritance diagram for Mock\+\_\+\+Core\+\_\+\+Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mock___core___input}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mock___core___input_abebb937d5ee2c231fde76cbddafd6db5}{\+\_\+\+\_\+construct} (\$security, \$utf8)
+\item 
+\hyperlink{class_mock___core___input_a6b0d2534be43c7a3b582e27707011c42}{fetch\+\_\+from\+\_\+array} (\$array, \$index= \textquotesingle{}\textquotesingle{}, \$xss\+\_\+clean=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_mock___core___input_a70c1e8a081ef955c1a52164634d4f66e}{is\+\_\+cli\+\_\+request} ()
+\item 
+\hyperlink{class_mock___core___input_a83c2703c91959192f759992ad5640b67}{\+\_\+\+\_\+set} (\$name, \$value)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mock___core___input_abebb937d5ee2c231fde76cbddafd6db5}{}\index{Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}}
+\subsubsection[{\+\_\+\+\_\+construct(\$security, \$utf8)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$security, }
+\item[{}]{\$utf8}
+\end{DoxyParamCaption}
+)}\label{class_mock___core___input_abebb937d5ee2c231fde76cbddafd6db5}
+Since we use G\+L\+O\+B\+A\+L to fetch Security and Utf8 classes, we need to use inversion of control to mock up the same process within \hyperlink{class_c_i___input}{C\+I\+\_\+\+Input} class constructor.
+
+\hyperlink{class_c_i___input_a095c5d389db211932136b53f25f39685}{C\+I\+\_\+\+Input\+::\+\_\+\+\_\+construct()} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mock___core___input_a83c2703c91959192f759992ad5640b67}{}\index{Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}!\+\_\+\+\_\+set@{\+\_\+\+\_\+set}}
+\index{\+\_\+\+\_\+set@{\+\_\+\+\_\+set}!Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}}
+\subsubsection[{\+\_\+\+\_\+set(\$name, \$value)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{}]{\$name, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}\label{class_mock___core___input_a83c2703c91959192f759992ad5640b67}
+\hypertarget{class_mock___core___input_a6b0d2534be43c7a3b582e27707011c42}{}\index{Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}!fetch\+\_\+from\+\_\+array@{fetch\+\_\+from\+\_\+array}}
+\index{fetch\+\_\+from\+\_\+array@{fetch\+\_\+from\+\_\+array}!Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}}
+\subsubsection[{fetch\+\_\+from\+\_\+array(\$array, \$index= \textquotesingle{}\textquotesingle{}, \$xss\+\_\+clean=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}fetch\+\_\+from\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{}]{\$array, }
+\item[{}]{\$index = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$xss\+\_\+clean = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_mock___core___input_a6b0d2534be43c7a3b582e27707011c42}
+\hypertarget{class_mock___core___input_a70c1e8a081ef955c1a52164634d4f66e}{}\index{Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}!is\+\_\+cli\+\_\+request@{is\+\_\+cli\+\_\+request}}
+\index{is\+\_\+cli\+\_\+request@{is\+\_\+cli\+\_\+request}!Mock\+\_\+\+Core\+\_\+\+Input@{Mock\+\_\+\+Core\+\_\+\+Input}}
+\subsubsection[{is\+\_\+cli\+\_\+request()}]{\setlength{\rightskip}{0pt plus 5cm}is\+\_\+cli\+\_\+request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_mock___core___input_a70c1e8a081ef955c1a52164634d4f66e}
+Lie about being a C\+L\+I request
+
+We take advantage of this in libraries/\+Session\+\_\+test 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/tests/mocks/core/\hyperlink{tests_2mocks_2core_2_input_8php}{input.\+php}\end{DoxyCompactItemize}

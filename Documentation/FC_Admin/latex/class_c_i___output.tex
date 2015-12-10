@@ -1,0 +1,424 @@
+\hypertarget{class_c_i___output}{}\section{C\+I\+\_\+\+Output Class Reference}
+\label{class_c_i___output}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___output_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_c_i___output_aa6c3f8688f804de4f1af8a462fffb922}{get\+\_\+output} ()
+\item 
+\hyperlink{class_c_i___output_afcff30d791a8006216f5c2fe93a95983}{set\+\_\+output} (\$output)
+\item 
+\hyperlink{class_c_i___output_a7c79b8239d6ecbba0c8fdd00bb619651}{append\+\_\+output} (\$output)
+\item 
+\hyperlink{class_c_i___output_a270389a1636faa81eda5ef3fa900ea25}{set\+\_\+header} (\$header, \$replace=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___output_a7e04aad8dafeec2b8626285e81231f0c}{set\+\_\+content\+\_\+type} (\$mime\+\_\+type, \$charset=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___output_a4d8c59d65c47c9146dbc1c7d0c4eccf2}{get\+\_\+content\+\_\+type} ()
+\item 
+\hyperlink{class_c_i___output_afc84ca7f4f93817160ea738f2f899a74}{get\+\_\+header} (\$header)
+\item 
+\hyperlink{class_c_i___output_ae5416517aea15ac6c9136ce83002002f}{set\+\_\+status\+\_\+header} (\$code=200, \$text= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___output_a7bd693db25952e1b074630f52ee67500}{enable\+\_\+profiler} (\$val=T\+R\+U\+E)
+\item 
+\hyperlink{class_c_i___output_ac5e50de443748cf3d356d29eba2caaaf}{set\+\_\+profiler\+\_\+sections} (\$sections)
+\item 
+\hyperlink{class_c_i___output_a6eae3cd828cf30926d44f1ab6011f939}{cache} (\$time)
+\item 
+\hyperlink{class_c_i___output_a16a22fa40f70c2b611fa9dd7e2a63ef1}{\+\_\+display} (\$output= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___output_a772aa9eb3f60f66fa194443ca0bdd8a4}{\+\_\+write\+\_\+cache} (\$output)
+\item 
+\hyperlink{class_c_i___output_acce78bdac02df9ab196a9c5939f6c4ab}{\+\_\+display\+\_\+cache} (\&\$C\+F\+G, \&\$U\+R\+I)
+\item 
+\hyperlink{class_c_i___output_a68c59ea9ca0ede1a05bc588c2da49b56}{delete\+\_\+cache} (\$uri= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___output_acd24befdfc26233abfbdc62071dcd58b}{set\+\_\+cache\+\_\+header} (\$last\+\_\+modified, \$expiration)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___output_aa1b5049c03b9ef373af010aa3cda17a3}{\$final\+\_\+output}
+\item 
+\hyperlink{class_c_i___output_a4a65b5005fdb96d5bdac5d642a022f16}{\$cache\+\_\+expiration} = 0
+\item 
+\hyperlink{class_c_i___output_a52500036ee807241b8b4b7e2367c49ef}{\$headers} = array()
+\item 
+\hyperlink{class_c_i___output_a2ce7d338d1fd0f0d971ba6213ac298a2}{\$mimes} = array()
+\item 
+\hyperlink{class_c_i___output_a85f3ab9485440090efd4e0ae9a070747}{\$enable\+\_\+profiler} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___output_a254d73d122352494697cdba0c509086d}{\$parse\+\_\+exec\+\_\+vars} = T\+R\+U\+E
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___output_a4d1985caafb49b059e3ca3dedfee257a}{\$mime\+\_\+type} = \textquotesingle{}text/html\textquotesingle{}
+\item 
+\hyperlink{class_c_i___output_a76d91b71069ec82a31b4d12643e0ca40}{\$\+\_\+zlib\+\_\+oc} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___output_a9b8f5f282f8cf7b10d1b03b219df1386}{\$\+\_\+compress\+\_\+output} = F\+A\+L\+S\+E
+\item 
+\hyperlink{class_c_i___output_a4d239124375bbbdb9a4f5a0260505c40}{\$\+\_\+profiler\+\_\+sections} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___output_a095c5d389db211932136b53f25f39685}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a095c5d389db211932136b53f25f39685}
+Class constructor
+
+Determines whether z\+Lib output compression will be used.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___output_a16a22fa40f70c2b611fa9dd7e2a63ef1}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\+\_\+display@{\+\_\+display}}
+\index{\+\_\+display@{\+\_\+display}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\+\_\+display(\$output= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{}]{\$output = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a16a22fa40f70c2b611fa9dd7e2a63ef1}
+Display Output
+
+Processes and sends finalized output data to the browser along with any server headers and profile data. It also stops benchmark timers so the page rendering speed and memory usage can be shown.
+
+Note\+: All \char`\"{}view\char`\"{} data is automatically put into \$this-\/$>$final\+\_\+output by controller class.
+
+\hyperlink{class_c_i___output_aa1b5049c03b9ef373af010aa3cda17a3}{C\+I\+\_\+\+Output\+::\$final\+\_\+output} 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$output} & Output data override \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_acce78bdac02df9ab196a9c5939f6c4ab}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\+\_\+display\+\_\+cache@{\+\_\+display\+\_\+cache}}
+\index{\+\_\+display\+\_\+cache@{\+\_\+display\+\_\+cache}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\+\_\+display\+\_\+cache(\&\$\+C\+F\+G, \&\$\+U\+R\+I)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+display\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$\+C\+F\+G, }
+\item[{\&}]{\$\+U\+R\+I}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_acce78bdac02df9ab196a9c5939f6c4ab}
+Update/serve cached output
+
+\hyperlink{class_c_i___config}{C\+I\+\_\+\+Config}  \hyperlink{class_c_i___u_r_i}{C\+I\+\_\+\+U\+R\+I}
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \&\$\+C\+F\+G} & \hyperlink{class_c_i___config}{C\+I\+\_\+\+Config} class instance \\
+\hline
+object & {\em \&\$\+U\+R\+I} & \hyperlink{class_c_i___u_r_i}{C\+I\+\_\+\+U\+R\+I} class instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool T\+R\+U\+E on success or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a772aa9eb3f60f66fa194443ca0bdd8a4}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\+\_\+write\+\_\+cache@{\+\_\+write\+\_\+cache}}
+\index{\+\_\+write\+\_\+cache@{\+\_\+write\+\_\+cache}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\+\_\+write\+\_\+cache(\$output)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+write\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{}]{\$output}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a772aa9eb3f60f66fa194443ca0bdd8a4}
+Write Cache
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$output} & Output data to cache \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a7c79b8239d6ecbba0c8fdd00bb619651}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!append\+\_\+output@{append\+\_\+output}}
+\index{append\+\_\+output@{append\+\_\+output}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{append\+\_\+output(\$output)}]{\setlength{\rightskip}{0pt plus 5cm}append\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{}]{\$output}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a7c79b8239d6ecbba0c8fdd00bb619651}
+Append Output
+
+Appends data onto the output string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$output} & Data to append \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a6eae3cd828cf30926d44f1ab6011f939}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!cache@{cache}}
+\index{cache@{cache}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{cache(\$time)}]{\setlength{\rightskip}{0pt plus 5cm}cache (
+\begin{DoxyParamCaption}
+\item[{}]{\$time}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a6eae3cd828cf30926d44f1ab6011f939}
+Set Cache
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$time} & Cache expiration time in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a68c59ea9ca0ede1a05bc588c2da49b56}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!delete\+\_\+cache@{delete\+\_\+cache}}
+\index{delete\+\_\+cache@{delete\+\_\+cache}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{delete\+\_\+cache(\$uri= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}delete\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{}]{\$uri = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a68c59ea9ca0ede1a05bc588c2da49b56}
+Delete cache
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$uri} & U\+R\+I string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a7bd693db25952e1b074630f52ee67500}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!enable\+\_\+profiler@{enable\+\_\+profiler}}
+\index{enable\+\_\+profiler@{enable\+\_\+profiler}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{enable\+\_\+profiler(\$val=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}enable\+\_\+profiler (
+\begin{DoxyParamCaption}
+\item[{}]{\$val = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a7bd693db25952e1b074630f52ee67500}
+Enable/disable Profiler
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$val} & T\+R\+U\+E to enable or F\+A\+L\+S\+E to disable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a4d8c59d65c47c9146dbc1c7d0c4eccf2}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!get\+\_\+content\+\_\+type@{get\+\_\+content\+\_\+type}}
+\index{get\+\_\+content\+\_\+type@{get\+\_\+content\+\_\+type}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{get\+\_\+content\+\_\+type()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+content\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a4d8c59d65c47c9146dbc1c7d0c4eccf2}
+Get Current Content-\/\+Type Header
+
+\begin{DoxyReturn}{Returns}
+string \textquotesingle{}text/html\textquotesingle{}, if not already set 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_afc84ca7f4f93817160ea738f2f899a74}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!get\+\_\+header@{get\+\_\+header}}
+\index{get\+\_\+header@{get\+\_\+header}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{get\+\_\+header(\$header)}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{}]{\$header}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_afc84ca7f4f93817160ea738f2f899a74}
+Get Header
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$header\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_aa6c3f8688f804de4f1af8a462fffb922}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!get\+\_\+output@{get\+\_\+output}}
+\index{get\+\_\+output@{get\+\_\+output}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{get\+\_\+output()}]{\setlength{\rightskip}{0pt plus 5cm}get\+\_\+output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_aa6c3f8688f804de4f1af8a462fffb922}
+Get Output
+
+Returns the current output string.
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_acd24befdfc26233abfbdc62071dcd58b}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+cache\+\_\+header@{set\+\_\+cache\+\_\+header}}
+\index{set\+\_\+cache\+\_\+header@{set\+\_\+cache\+\_\+header}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+cache\+\_\+header(\$last\+\_\+modified, \$expiration)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+cache\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{}]{\$last\+\_\+modified, }
+\item[{}]{\$expiration}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_acd24befdfc26233abfbdc62071dcd58b}
+Set Cache Header
+
+Set the H\+T\+T\+P headers to match the server-\/side file cache settings in order to reduce bandwidth.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$last\+\_\+modified} & Timestamp of when the page was last modified \\
+\hline
+int & {\em \$expiration} & Timestamp of when should the requested page expire from cache \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a7e04aad8dafeec2b8626285e81231f0c}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+content\+\_\+type@{set\+\_\+content\+\_\+type}}
+\index{set\+\_\+content\+\_\+type@{set\+\_\+content\+\_\+type}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+content\+\_\+type(\$mime\+\_\+type, \$charset=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+content\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{}]{\$mime\+\_\+type, }
+\item[{}]{\$charset = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a7e04aad8dafeec2b8626285e81231f0c}
+Set Content-\/\+Type Header
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$mime\+\_\+type} & Extension of the file we\textquotesingle{}re outputting \\
+\hline
+string & {\em \$charset} & Character set (default\+: N\+U\+L\+L) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_a270389a1636faa81eda5ef3fa900ea25}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+header@{set\+\_\+header}}
+\index{set\+\_\+header@{set\+\_\+header}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+header(\$header, \$replace=\+T\+R\+U\+E)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{}]{\$header, }
+\item[{}]{\$replace = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_a270389a1636faa81eda5ef3fa900ea25}
+Set Header
+
+Lets you set a server header which will be sent with the final output.
+
+Note\+: If a file is cached, headers will not be sent. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]We need to figure out how to permit headers to be cached.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$header} & Header \\
+\hline
+bool & {\em \$replace} & Whether to replace the old header value, if already set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_afcff30d791a8006216f5c2fe93a95983}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+output@{set\+\_\+output}}
+\index{set\+\_\+output@{set\+\_\+output}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+output(\$output)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{}]{\$output}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_afcff30d791a8006216f5c2fe93a95983}
+Set Output
+
+Sets the output string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$output} & Output data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_ac5e50de443748cf3d356d29eba2caaaf}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+profiler\+\_\+sections@{set\+\_\+profiler\+\_\+sections}}
+\index{set\+\_\+profiler\+\_\+sections@{set\+\_\+profiler\+\_\+sections}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+profiler\+\_\+sections(\$sections)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+profiler\+\_\+sections (
+\begin{DoxyParamCaption}
+\item[{}]{\$sections}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_ac5e50de443748cf3d356d29eba2caaaf}
+Set Profiler Sections
+
+Allows override of default/config settings for Profiler section display.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$sections} & Profiler sections \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+\hypertarget{class_c_i___output_ae5416517aea15ac6c9136ce83002002f}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!set\+\_\+status\+\_\+header@{set\+\_\+status\+\_\+header}}
+\index{set\+\_\+status\+\_\+header@{set\+\_\+status\+\_\+header}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{set\+\_\+status\+\_\+header(\$code=200, \$text= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+status\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{}]{\$code = {\ttfamily 200}, }
+\item[{}]{\$text = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___output_ae5416517aea15ac6c9136ce83002002f}
+Set H\+T\+T\+P Status Header
+
+As of version 1.\+7.\+2, this is an alias for common function \hyperlink{class_c_i___output_ae5416517aea15ac6c9136ce83002002f}{set\+\_\+status\+\_\+header()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$code} & Status code (default\+: 200) \\
+\hline
+string & {\em \$text} & Optional message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_c_i___output}{C\+I\+\_\+\+Output} 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___output_a9b8f5f282f8cf7b10d1b03b219df1386}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$\+\_\+compress\+\_\+output@{\$\+\_\+compress\+\_\+output}}
+\index{\$\+\_\+compress\+\_\+output@{\$\+\_\+compress\+\_\+output}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$\+\_\+compress\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+compress\+\_\+output = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___output_a9b8f5f282f8cf7b10d1b03b219df1386}
+\hypertarget{class_c_i___output_a4d239124375bbbdb9a4f5a0260505c40}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$\+\_\+profiler\+\_\+sections@{\$\+\_\+profiler\+\_\+sections}}
+\index{\$\+\_\+profiler\+\_\+sections@{\$\+\_\+profiler\+\_\+sections}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$\+\_\+profiler\+\_\+sections}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+profiler\+\_\+sections = array()\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___output_a4d239124375bbbdb9a4f5a0260505c40}
+\hypertarget{class_c_i___output_a76d91b71069ec82a31b4d12643e0ca40}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$\+\_\+zlib\+\_\+oc@{\$\+\_\+zlib\+\_\+oc}}
+\index{\$\+\_\+zlib\+\_\+oc@{\$\+\_\+zlib\+\_\+oc}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$\+\_\+zlib\+\_\+oc}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+zlib\+\_\+oc = F\+A\+L\+S\+E\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___output_a76d91b71069ec82a31b4d12643e0ca40}
+\hypertarget{class_c_i___output_a4a65b5005fdb96d5bdac5d642a022f16}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$cache\+\_\+expiration@{\$cache\+\_\+expiration}}
+\index{\$cache\+\_\+expiration@{\$cache\+\_\+expiration}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$cache\+\_\+expiration}]{\setlength{\rightskip}{0pt plus 5cm}\$cache\+\_\+expiration = 0}\label{class_c_i___output_a4a65b5005fdb96d5bdac5d642a022f16}
+\hypertarget{class_c_i___output_a85f3ab9485440090efd4e0ae9a070747}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$enable\+\_\+profiler@{\$enable\+\_\+profiler}}
+\index{\$enable\+\_\+profiler@{\$enable\+\_\+profiler}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$enable\+\_\+profiler}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf enable\+\_\+profiler} = F\+A\+L\+S\+E}\label{class_c_i___output_a85f3ab9485440090efd4e0ae9a070747}
+\hypertarget{class_c_i___output_aa1b5049c03b9ef373af010aa3cda17a3}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$final\+\_\+output@{\$final\+\_\+output}}
+\index{\$final\+\_\+output@{\$final\+\_\+output}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$final\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}\$final\+\_\+output}\label{class_c_i___output_aa1b5049c03b9ef373af010aa3cda17a3}
+\hypertarget{class_c_i___output_a52500036ee807241b8b4b7e2367c49ef}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$headers@{\$headers}}
+\index{\$headers@{\$headers}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$headers}]{\setlength{\rightskip}{0pt plus 5cm}\$headers = array()}\label{class_c_i___output_a52500036ee807241b8b4b7e2367c49ef}
+\hypertarget{class_c_i___output_a4d1985caafb49b059e3ca3dedfee257a}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$mime\+\_\+type@{\$mime\+\_\+type}}
+\index{\$mime\+\_\+type@{\$mime\+\_\+type}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$mime\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}\$mime\+\_\+type = \textquotesingle{}text/html\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___output_a4d1985caafb49b059e3ca3dedfee257a}
+\hypertarget{class_c_i___output_a2ce7d338d1fd0f0d971ba6213ac298a2}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$mimes@{\$mimes}}
+\index{\$mimes@{\$mimes}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$mimes}]{\setlength{\rightskip}{0pt plus 5cm}\$mimes = array()}\label{class_c_i___output_a2ce7d338d1fd0f0d971ba6213ac298a2}
+\hypertarget{class_c_i___output_a254d73d122352494697cdba0c509086d}{}\index{C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}!\$parse\+\_\+exec\+\_\+vars@{\$parse\+\_\+exec\+\_\+vars}}
+\index{\$parse\+\_\+exec\+\_\+vars@{\$parse\+\_\+exec\+\_\+vars}!C\+I\+\_\+\+Output@{C\+I\+\_\+\+Output}}
+\subsubsection[{\$parse\+\_\+exec\+\_\+vars}]{\setlength{\rightskip}{0pt plus 5cm}\$parse\+\_\+exec\+\_\+vars = T\+R\+U\+E}\label{class_c_i___output_a254d73d122352494697cdba0c509086d}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C\+\_\+\+Admin/system/core/\hyperlink{_output_8php}{Output.\+php}\end{DoxyCompactItemize}

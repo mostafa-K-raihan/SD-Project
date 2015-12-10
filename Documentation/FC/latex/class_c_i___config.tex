@@ -1,0 +1,233 @@
+\hypertarget{class_c_i___config}{}\section{C\+I\+\_\+\+Config Class Reference}
+\label{class_c_i___config}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___config_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_c_i___config_a0a60e9c6f42437ae6516365cde24f43d}{load} (\$file= \textquotesingle{}\textquotesingle{}, \$use\+\_\+sections=F\+A\+L\+S\+E, \$fail\+\_\+gracefully=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___config_accce7538d9763368e5955daf97d28f42}{item} (\$item, \$index= \textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_c_i___config_abead21ebddc51d12402b5320d531eb1f}{slash\+\_\+item} (\$\hyperlink{class_c_i___config_accce7538d9763368e5955daf97d28f42}{item})
+\item 
+\hyperlink{class_c_i___config_a27c522d1498342673d688ca8c66f97c8}{site\+\_\+url} (\$uri= \textquotesingle{}\textquotesingle{}, \$protocol=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___config_a1241d7d7395d349f0c93237d71194771}{base\+\_\+url} (\$uri= \textquotesingle{}\textquotesingle{}, \$protocol=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_i___config_a71e857f8dd38c230f1ce11bacf177ba8}{system\+\_\+url} ()
+\item 
+\hyperlink{class_c_i___config_a3cbd3bcacb546d42f5dd12213df48627}{set\+\_\+item} (\$\hyperlink{class_c_i___config_accce7538d9763368e5955daf97d28f42}{item}, \$value)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___config_a49c7011be9c979d9174c52a8b83e5d8e}{\$config} = array()
+\item 
+\hyperlink{class_c_i___config_a908e9ad52a5d1956d360689452f6bdbe}{\$is\+\_\+loaded} = array()
+\item 
+\hyperlink{class_c_i___config_a5f47dbd2111b5bb6c91ece69fefebf26}{\$\+\_\+config\+\_\+paths} = array(\hyperlink{_bootstrap_8php_a45cc636071e9edf22e5709d3c18bc84f}{A\+P\+P\+P\+A\+T\+H})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___config_a8a0a35d53f0904d9f655e82804b9998d}{\+\_\+uri\+\_\+string} (\$uri)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___config_a095c5d389db211932136b53f25f39685}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{\+\_\+\+\_\+construct()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a095c5d389db211932136b53f25f39685}
+Class constructor
+
+Sets the \$config data from the primary config.\+php file as a class variable.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___config_a8a0a35d53f0904d9f655e82804b9998d}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!\+\_\+uri\+\_\+string@{\+\_\+uri\+\_\+string}}
+\index{\+\_\+uri\+\_\+string@{\+\_\+uri\+\_\+string}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{\+\_\+uri\+\_\+string(\$uri)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+uri\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{}]{\$uri}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___config_a8a0a35d53f0904d9f655e82804b9998d}
+Build U\+R\+I string
+
+-\/by \hyperlink{class_c_i___config_a27c522d1498342673d688ca8c66f97c8}{C\+I\+\_\+\+Config\+::site\+\_\+url()} -\/by \hyperlink{class_c_i___config_a1241d7d7395d349f0c93237d71194771}{C\+I\+\_\+\+Config\+::base\+\_\+url()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string$\vert$string\mbox{[}$\,$\mbox{]}} & \$uri U\+R\+I string or an array of segments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_a1241d7d7395d349f0c93237d71194771}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!base\+\_\+url@{base\+\_\+url}}
+\index{base\+\_\+url@{base\+\_\+url}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{base\+\_\+url(\$uri= \textquotesingle{}\textquotesingle{}, \$protocol=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}base\+\_\+url (
+\begin{DoxyParamCaption}
+\item[{}]{\$uri = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$protocol = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a1241d7d7395d349f0c93237d71194771}
+Base U\+R\+L
+
+Returns base\+\_\+url \mbox{[}. uri\+\_\+string\mbox{]}
+
+\hyperlink{class_c_i___config_a8a0a35d53f0904d9f655e82804b9998d}{C\+I\+\_\+\+Config\+::\+\_\+uri\+\_\+string()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em string$\vert$string\mbox{[}$\,$\mbox{]}} & \$uri U\+R\+I string or an array of segments \\
+\hline
+string & {\em \$protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_accce7538d9763368e5955daf97d28f42}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!item@{item}}
+\index{item@{item}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{item(\$item, \$index= \textquotesingle{}\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}item (
+\begin{DoxyParamCaption}
+\item[{}]{\$item, }
+\item[{}]{\$index = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_accce7538d9763368e5955daf97d28f42}
+Fetch a config file item
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$item} & Config item name \\
+\hline
+string & {\em \$index} & Index name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$null The configuration item or N\+U\+L\+L if the item doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_a0a60e9c6f42437ae6516365cde24f43d}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!load@{load}}
+\index{load@{load}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{load(\$file= \textquotesingle{}\textquotesingle{}, \$use\+\_\+sections=\+F\+A\+L\+S\+E, \$fail\+\_\+gracefully=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}load (
+\begin{DoxyParamCaption}
+\item[{}]{\$file = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$use\+\_\+sections = {\ttfamily FALSE}, }
+\item[{}]{\$fail\+\_\+gracefully = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a0a60e9c6f42437ae6516365cde24f43d}
+Load Config File
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file} & Configuration file name \\
+\hline
+bool & {\em \$use\+\_\+sections} & Whether configuration values should be loaded into their own section \\
+\hline
+bool & {\em \$fail\+\_\+gracefully} & Whether to just return F\+A\+L\+S\+E or display an error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool T\+R\+U\+E if the file was loaded correctly or F\+A\+L\+S\+E on failure 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_a3cbd3bcacb546d42f5dd12213df48627}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!set\+\_\+item@{set\+\_\+item}}
+\index{set\+\_\+item@{set\+\_\+item}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{set\+\_\+item(\$item, \$value)}]{\setlength{\rightskip}{0pt plus 5cm}set\+\_\+item (
+\begin{DoxyParamCaption}
+\item[{}]{\$item, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a3cbd3bcacb546d42f5dd12213df48627}
+Set a config file item
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$item} & Config item key \\
+\hline
+string & {\em \$value} & Config item value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_a27c522d1498342673d688ca8c66f97c8}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!site\+\_\+url@{site\+\_\+url}}
+\index{site\+\_\+url@{site\+\_\+url}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{site\+\_\+url(\$uri= \textquotesingle{}\textquotesingle{}, \$protocol=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}site\+\_\+url (
+\begin{DoxyParamCaption}
+\item[{}]{\$uri = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$protocol = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a27c522d1498342673d688ca8c66f97c8}
+Site U\+R\+L
+
+Returns base\+\_\+url . index\+\_\+page \mbox{[}. uri\+\_\+string\mbox{]}
+
+\hyperlink{class_c_i___config_a8a0a35d53f0904d9f655e82804b9998d}{C\+I\+\_\+\+Config\+::\+\_\+uri\+\_\+string()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em string$\vert$string\mbox{[}$\,$\mbox{]}} & \$uri U\+R\+I string or an array of segments \\
+\hline
+string & {\em \$protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_abead21ebddc51d12402b5320d531eb1f}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!slash\+\_\+item@{slash\+\_\+item}}
+\index{slash\+\_\+item@{slash\+\_\+item}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{slash\+\_\+item(\$item)}]{\setlength{\rightskip}{0pt plus 5cm}slash\+\_\+item (
+\begin{DoxyParamCaption}
+\item[{}]{\$item}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_abead21ebddc51d12402b5320d531eb1f}
+Fetch a config file item with slash appended (if not empty)
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$item} & Config item name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$null The configuration item or N\+U\+L\+L if the item doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\hypertarget{class_c_i___config_a71e857f8dd38c230f1ce11bacf177ba8}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!system\+\_\+url@{system\+\_\+url}}
+\index{system\+\_\+url@{system\+\_\+url}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{system\+\_\+url()}]{\setlength{\rightskip}{0pt plus 5cm}system\+\_\+url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_i___config_a71e857f8dd38c230f1ce11bacf177ba8}
+System U\+R\+L
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]3.\+0.\+0 Encourages insecure practices \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\end{DoxyRefDesc}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___config_a5f47dbd2111b5bb6c91ece69fefebf26}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!\$\+\_\+config\+\_\+paths@{\$\+\_\+config\+\_\+paths}}
+\index{\$\+\_\+config\+\_\+paths@{\$\+\_\+config\+\_\+paths}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{\$\+\_\+config\+\_\+paths}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+config\+\_\+paths = array({\bf A\+P\+P\+P\+A\+T\+H})}\label{class_c_i___config_a5f47dbd2111b5bb6c91ece69fefebf26}
+\hypertarget{class_c_i___config_a49c7011be9c979d9174c52a8b83e5d8e}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!\$config@{\$config}}
+\index{\$config@{\$config}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}\$config = array()}\label{class_c_i___config_a49c7011be9c979d9174c52a8b83e5d8e}
+\hypertarget{class_c_i___config_a908e9ad52a5d1956d360689452f6bdbe}{}\index{C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}!\$is\+\_\+loaded@{\$is\+\_\+loaded}}
+\index{\$is\+\_\+loaded@{\$is\+\_\+loaded}!C\+I\+\_\+\+Config@{C\+I\+\_\+\+Config}}
+\subsubsection[{\$is\+\_\+loaded}]{\setlength{\rightskip}{0pt plus 5cm}\$is\+\_\+loaded = array()}\label{class_c_i___config_a908e9ad52a5d1956d360689452f6bdbe}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/core/\hyperlink{system_2core_2config_8php}{Config.\+php}\end{DoxyCompactItemize}

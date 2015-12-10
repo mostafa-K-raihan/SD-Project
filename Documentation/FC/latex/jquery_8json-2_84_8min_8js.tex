@@ -1,0 +1,97 @@
+\hypertarget{jquery_8json-2_84_8min_8js}{}\section{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/jquery.json-\/2.4.min.\+js File Reference}
+\label{jquery_8json-2_84_8min_8js}\index{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/jquery.\+json-\/2.\+4.\+min.\+js@{D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/assets/js/jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a0bfb64d001b5544c94b8420c3a8f426a}{if} (\$.is\+Array(o))
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a1a372d6f05f22dc23e96d07c4bd28293}{if} (typeof o===\textquotesingle{}object\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+var \hyperlink{jquery_8json-2_84_8min_8js_a07247c5ae15cb483ef7b2039b9197dfb}{escape}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a8b16b1e1994f9c318702b801bd3b8420}{pairs} =\mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a2c2f3aab0e995e6fa08e34055abb4c44}{eval\+J\+S\+O\+N} =typeof J\+S\+O\+N===\textquotesingle{}object\textquotesingle{}\&\&J\+S\+O\+N.\+parse?J\+S\+O\+N.\+parse\+:function(str)\{return eval(\textquotesingle{}(\textquotesingle{}+str+\textquotesingle{})\textquotesingle{});\}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a2445973cacc5a60c85bc69c811f00341}{secure\+Eval\+J\+S\+O\+N}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_aa584fd247f1b28833fd9a071fc66980a}{quote\+String}
+\item 
+\hyperlink{jquery_8json-2_84_8min_8js_a2b1d6f9c448e3ce72f4e1865d6e38d2c}{j\+Query}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{jquery_8json-2_84_8min_8js_a0bfb64d001b5544c94b8420c3a8f426a}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{if(\$.\+is\+Array(o))}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{}]{\$.o}
+\end{DoxyParamCaption}
+)}\label{jquery_8json-2_84_8min_8js_a0bfb64d001b5544c94b8420c3a8f426a}
+\hypertarget{jquery_8json-2_84_8min_8js_a1a372d6f05f22dc23e96d07c4bd28293}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{if(typeof o===\textquotesingle{}object\textquotesingle{})}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{typeof}]{o = {\ttfamily ==\textquotesingle{}object\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{jquery_8json-2_84_8min_8js_a1a372d6f05f22dc23e96d07c4bd28293}
+
+
+\subsection{Variable Documentation}
+\hypertarget{jquery_8json-2_84_8min_8js_a07247c5ae15cb483ef7b2039b9197dfb}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!escape@{escape}}
+\index{escape@{escape}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}var escape}\label{jquery_8json-2_84_8min_8js_a07247c5ae15cb483ef7b2039b9197dfb}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=/[\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)x00-\(\backslash\)x1f\(\backslash\)x7f-\(\backslash\)x9f]/g,meta=\{'\(\backslash\)b':'\(\backslash\)\(\backslash\)b','\(\backslash\)t':'\(\backslash\)\(\backslash\)t','\(\backslash\)n':'\(\backslash\)\(\backslash\)n','\(\backslash\)f':'\(\backslash\)\(\backslash\)f','\(\backslash\)r':'\(\backslash\)\(\backslash\)r','"}\textcolor{charliteral}{':'}\(\backslash\)\(\backslash\)\textcolor{stringliteral}{"','\(\backslash\)\(\backslash\)':'\(\backslash\)\(\backslash\)
+      \(\backslash\)\(\backslash\)'\},hasOwn=Object.prototype.hasOwnProperty;$.toJSON=typeof
+       JSON==='object'&&JSON.stringify?JSON.stringify:function(o)\{if(o===null)\{return'null';\}}
+\textcolor{stringliteral}{var pairs,k,name,val,type=$.type(o);if(type==='undefined')\{return undefined;\}}
+\textcolor{stringliteral}{if(type==='number'||type==='boolean')\{return String(o);\}}
+\textcolor{stringliteral}{if(type==='string')\{return $.quoteString(o);\}}
+\textcolor{stringliteral}{if(typeof o.toJSON==='function')\{return $.toJSON(o.toJSON());\}}
+\textcolor{stringliteral}{if(type==='date')\{var
+       month=o.getUTCMonth()+1,day=o.getUTCDate(),year=o.getUTCFullYear(),hours=o.getUTCHours
+      (),minutes=o.getUTCMinutes(),seconds=o.getUTCSeconds(),milli=o.getUTCMilliseconds();if(month<10)\{month='0'+month;\}}
+\textcolor{stringliteral}{if(day<10)\{day='0'+day;\}}
+\textcolor{stringliteral}{if(hours<10)\{hours='0'+hours;\}}
+\textcolor{stringliteral}{if(minutes<10)\{minutes='0'+minutes;\}}
+\textcolor{stringliteral}{if(seconds<10)\{seconds='0'+seconds;\}}
+\textcolor{stringliteral}{if(milli<100)\{milli='0'+milli;\}}
+\textcolor{stringliteral}{if(milli<10)\{milli='0'+milli;\}}
+\textcolor{stringliteral}{return'"}\textcolor{stringliteral}{'+year+'}-\textcolor{stringliteral}{'+month+'}-\textcolor{stringliteral}{'+day+'}T\textcolor{stringliteral}{'+}
+\textcolor{stringliteral}{hours+'}:\textcolor{stringliteral}{'+minutes+'}:\textcolor{stringliteral}{'+seconds+'}.\textcolor{stringliteral}{'+milli+'}Z\textcolor{stringliteral}{"'}
+\end{DoxyCode}
+j\+Query J\+S\+O\+N plugin 2.\+4.\+0 $\vert$ code.\+google.\+com/p/jquery-\/json \hypertarget{jquery_8json-2_84_8min_8js_a2c2f3aab0e995e6fa08e34055abb4c44}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!eval\+J\+S\+O\+N@{eval\+J\+S\+O\+N}}
+\index{eval\+J\+S\+O\+N@{eval\+J\+S\+O\+N}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{eval\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}eval\+J\+S\+O\+N =typeof J\+S\+O\+N===\textquotesingle{}object\textquotesingle{}\&\&J\+S\+O\+N.\+parse?J\+S\+O\+N.\+parse\+:function(str)\{return eval(\textquotesingle{}(\textquotesingle{}+str+\textquotesingle{})\textquotesingle{});\}}\label{jquery_8json-2_84_8min_8js_a2c2f3aab0e995e6fa08e34055abb4c44}
+\hypertarget{jquery_8json-2_84_8min_8js_a2b1d6f9c448e3ce72f4e1865d6e38d2c}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!j\+Query@{j\+Query}}
+\index{j\+Query@{j\+Query}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{j\+Query}]{\setlength{\rightskip}{0pt plus 5cm}j\+Query}\label{jquery_8json-2_84_8min_8js_a2b1d6f9c448e3ce72f4e1865d6e38d2c}
+\hypertarget{jquery_8json-2_84_8min_8js_a8b16b1e1994f9c318702b801bd3b8420}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!pairs@{pairs}}
+\index{pairs@{pairs}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{pairs}]{\setlength{\rightskip}{0pt plus 5cm}pairs =\mbox{[}$\,$\mbox{]}}\label{jquery_8json-2_84_8min_8js_a8b16b1e1994f9c318702b801bd3b8420}
+\hypertarget{jquery_8json-2_84_8min_8js_aa584fd247f1b28833fd9a071fc66980a}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!quote\+String@{quote\+String}}
+\index{quote\+String@{quote\+String}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{quote\+String}]{\setlength{\rightskip}{0pt plus 5cm}quote\+String}\label{jquery_8json-2_84_8min_8js_aa584fd247f1b28833fd9a071fc66980a}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=\textcolor{keyword}{function}(str)\{\textcolor{keywordflow}{if}(str.match(\hyperlink{jquery_8json-2_84_8min_8js_a07247c5ae15cb483ef7b2039b9197dfb}{escape}))\{\textcolor{keywordflow}{return}\textcolor{charliteral}{'"'}+str.replace(\hyperlink{jquery_8json-2_84_8min_8js_a07247c5ae15cb483ef7b2039b9197dfb}{escape},\textcolor{keyword}{function}(
+      \hyperlink{bootstrap_8min_8js_ae8f6b400ed3390908c5cdeebed3a82b9}{a})\{var \hyperlink{bootstrap_8min_8js_ad9d1ac02e33c4aed62ad517a7cb8b3fb}{c}=meta[\hyperlink{bootstrap_8min_8js_ae8f6b400ed3390908c5cdeebed3a82b9}{a}];\textcolor{keywordflow}{if}(typeof c===\textcolor{stringliteral}{'string'})\{\textcolor{keywordflow}{return} \hyperlink{bootstrap_8min_8js_ad9d1ac02e33c4aed62ad517a7cb8b3fb}{c};\}
+c=\hyperlink{bootstrap_8min_8js_ae8f6b400ed3390908c5cdeebed3a82b9}{a}.charCodeAt();\textcolor{keywordflow}{return}\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)u00'}+Math.floor(c/16).toString(16)+(c%16).toString(16);\})+\textcolor{charliteral}{'"'};\}
+\textcolor{keywordflow}{return}\textcolor{charliteral}{'"'}+str+\textcolor{charliteral}{'"'};\}
+\end{DoxyCode}
+\hypertarget{jquery_8json-2_84_8min_8js_a2445973cacc5a60c85bc69c811f00341}{}\index{jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}!secure\+Eval\+J\+S\+O\+N@{secure\+Eval\+J\+S\+O\+N}}
+\index{secure\+Eval\+J\+S\+O\+N@{secure\+Eval\+J\+S\+O\+N}!jquery.\+json-\/2.\+4.\+min.\+js@{jquery.\+json-\/2.\+4.\+min.\+js}}
+\subsubsection[{secure\+Eval\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}secure\+Eval\+J\+S\+O\+N}\label{jquery_8json-2_84_8min_8js_a2445973cacc5a60c85bc69c811f00341}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=typeof JSON===\textcolor{stringliteral}{'object'}&&JSON.parse?JSON.parse:\textcolor{keyword}{function}(str)\{var filtered=str.replace(/\(\backslash\)\(\backslash\)[\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)/
+      bfnrtu]/g,'@').replace(/"}[^\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)n\(\backslash\)r]*"}|\textcolor{keyword}{true}|\textcolor{keyword}{false}|null|-?\(\backslash\)\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}+(?:\(\backslash\).\(\backslash\)\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}*)?(?:[eE][+\(\backslash\)-]?\(\backslash\)\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}+)?/g,\textcolor{charliteral}{']'}).replace(/(?:^|:|,)(?:\(\backslash\)
+      s*\(\backslash\)[)+/g,\textcolor{stringliteral}{''});\textcolor{keywordflow}{if}(/^[\(\backslash\)],:\{\}\(\backslash\)s]*$/.test(filtered))\{\textcolor{keywordflow}{return} eval(\textcolor{charliteral}{'('}+str+\textcolor{charliteral}{')'});\}
+\textcolor{keywordflow}{throw} \textcolor{keyword}{new} SyntaxError(\textcolor{stringliteral}{'Error parsing JSON, source is not valid.'});\}
+\end{DoxyCode}

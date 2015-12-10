@@ -1,0 +1,172 @@
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver}{}\section{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver Class Reference}
+\label{class_c_i___d_b__pdo__sqlite__driver}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_c_i___d_b__pdo__sqlite__driver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_a9162320adff1a1a4afd7f2372f753a3e}{\+\_\+\+\_\+construct} (\$params)
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_aef08cd376b16b24608100ca0e3f2f85b}{list\+\_\+fields} (\$table)
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_a90355121e1ed009e0efdbd544ab56efa}{field\+\_\+data} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_a1322ca756348b11d080cb7a4f590de15}{\$subdriver} = \textquotesingle{}sqlite\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_a435c0f3ce54fe7daa178baa8532ebd54}{\+\_\+list\+\_\+tables} (\$prefix\+\_\+limit=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_ae0adf73984daf2d42ad29b66c484c82b}{\+\_\+replace} (\$table, \$keys, \$values)
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_aa029600528fc1ce660a23ff4b4667f95}{\+\_\+truncate} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_i___d_b__pdo__sqlite__driver_a10213aa6e05f6d924d3277bb1d2fea00}{\$\+\_\+random\+\_\+keyword} = \textquotesingle{} R\+A\+N\+D\+O\+M()\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_a9162320adff1a1a4afd7f2372f753a3e}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\+\_\+\+\_\+construct(\$params)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$params}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__sqlite__driver_a9162320adff1a1a4afd7f2372f753a3e}
+Class constructor
+
+Builds the D\+S\+N if not already set.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_a435c0f3ce54fe7daa178baa8532ebd54}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}}
+\index{\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\+\_\+list\+\_\+tables(\$prefix\+\_\+limit=\+F\+A\+L\+S\+E)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+list\+\_\+tables (
+\begin{DoxyParamCaption}
+\item[{}]{\$prefix\+\_\+limit = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__sqlite__driver_a435c0f3ce54fe7daa178baa8532ebd54}
+Show table query
+
+Generates a platform-\/specific query string so that the table names can be fetched
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$prefix\+\_\+limit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_ae0adf73984daf2d42ad29b66c484c82b}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\+\_\+replace@{\+\_\+replace}}
+\index{\+\_\+replace@{\+\_\+replace}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\+\_\+replace(\$table, \$keys, \$values)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+replace (
+\begin{DoxyParamCaption}
+\item[{}]{\$table, }
+\item[{}]{\$keys, }
+\item[{}]{\$values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__sqlite__driver_ae0adf73984daf2d42ad29b66c484c82b}
+Replace statement
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+array & {\em \$keys} & I\+N\+S\+E\+R\+T keys \\
+\hline
+array & {\em \$values} & I\+N\+S\+E\+R\+T values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_aa029600528fc1ce660a23ff4b4667f95}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\+\_\+truncate@{\+\_\+truncate}}
+\index{\+\_\+truncate@{\+\_\+truncate}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\+\_\+truncate(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+truncate (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__sqlite__driver_aa029600528fc1ce660a23ff4b4667f95}
+Truncate statement
+
+Generates a platform-\/specific truncate string from the supplied data
+
+If the database does not support the T\+R\+U\+N\+C\+A\+T\+E statement, then this method maps to \textquotesingle{}D\+E\+L\+E\+T\+E F\+R\+O\+M table\textquotesingle{}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_a90355121e1ed009e0efdbd544ab56efa}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!field\+\_\+data@{field\+\_\+data}}
+\index{field\+\_\+data@{field\+\_\+data}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{field\+\_\+data(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}field\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__sqlite__driver_a90355121e1ed009e0efdbd544ab56efa}
+Returns an object with field data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_aef08cd376b16b24608100ca0e3f2f85b}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!list\+\_\+fields@{list\+\_\+fields}}
+\index{list\+\_\+fields@{list\+\_\+fields}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{list\+\_\+fields(\$table)}]{\setlength{\rightskip}{0pt plus 5cm}list\+\_\+fields (
+\begin{DoxyParamCaption}
+\item[{}]{\$table}
+\end{DoxyParamCaption}
+)}\label{class_c_i___d_b__pdo__sqlite__driver_aef08cd376b16b24608100ca0e3f2f85b}
+Fetch Field Names
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & Table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_a10213aa6e05f6d924d3277bb1d2fea00}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\$\+\_\+random\+\_\+keyword@{\$\+\_\+random\+\_\+keyword}}
+\index{\$\+\_\+random\+\_\+keyword@{\$\+\_\+random\+\_\+keyword}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\$\+\_\+random\+\_\+keyword}]{\setlength{\rightskip}{0pt plus 5cm}\$\+\_\+random\+\_\+keyword = \textquotesingle{} R\+A\+N\+D\+O\+M()\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_i___d_b__pdo__sqlite__driver_a10213aa6e05f6d924d3277bb1d2fea00}
+\hypertarget{class_c_i___d_b__pdo__sqlite__driver_a1322ca756348b11d080cb7a4f590de15}{}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}!\$subdriver@{\$subdriver}}
+\index{\$subdriver@{\$subdriver}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+sqlite\+\_\+driver}}
+\subsubsection[{\$subdriver}]{\setlength{\rightskip}{0pt plus 5cm}\$subdriver = \textquotesingle{}sqlite\textquotesingle{}}\label{class_c_i___d_b__pdo__sqlite__driver_a1322ca756348b11d080cb7a4f590de15}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/xampp/htdocs/\+S\+D\+\_\+\+Git/\+L3\+T2/\+F\+C/system/database/drivers/pdo/subdrivers/\hyperlink{pdo__sqlite__driver_8php}{pdo\+\_\+sqlite\+\_\+driver.\+php}\end{DoxyCompactItemize}

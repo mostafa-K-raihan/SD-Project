@@ -34,9 +34,11 @@ class Stat extends CI_Controller {
 		}  
      }
 	 
+	/**
+		Default: Show Bargraphs
+	*/	
 	public function index()
 	{
-		//$this->load->view('stat');
 		$this->per_category_per_team_stat();
 	}
 	
@@ -84,9 +86,6 @@ class Stat extends CI_Controller {
 		
 			array_push($playerData,$p);
 			
-			//test codes
-			//print_r($p);
-			//echo '<br><br>';
 		}
 		
 		$multiSort = array();
@@ -96,14 +95,6 @@ class Stat extends CI_Controller {
 		}
 		array_multisort($multiSort, SORT_DESC, $playerData);
 			
-		//print_r($playerData);
-		//echo '<br><br>';
-		/*foreach($playerData as $pd)
-		{
-			print_r($pd);
-			//echo $pd['points'];
-			echo '<br>';
-		}*/
 		$data['playerData']=$playerData;
 		$this->load->view('playerByplayerStat',$data);
 	}
@@ -188,7 +179,6 @@ class Stat extends CI_Controller {
 			
 		foreach($categories as $cat)
 		{
-			//echo $cat.'<br>';
 			
 			/// 1.1. Find all player's id of that team only
 			$players = $this->tournament_model-> get_tournament_players_by_category($cat)->result_array();
@@ -262,6 +252,9 @@ class Stat extends CI_Controller {
 		$this->load->view('BargraphView',$data);
 	}
 	
+	/**
+		Show match by match user points - also show detailed information on click
+	*/
 	public function stat_per_match()
 	{
 		/**
@@ -290,23 +283,15 @@ class Stat extends CI_Controller {
 				array_push($temp,$r);
 			}
 			
-			/**
-			TEST BLOCK
-			*/
-			//$r['points'] = $this->user_model->get_user_match_point_v2($_SESSION['user_id'],101);
-			//$r['detail'] = $this->detail_match_point(101); 
-			//array_push($temp,$r);
-			
-			/**
-			END OF TEST BLOCK
-			*/
-			
 			$data['result'] = $temp;
 			
 			$this->load->view('matchByMatchStat',$data);
 		}
 	}
 	
+	/**
+		Get detailed information (point contribution of each player) for that match
+	*/
 	public function detail_match_point($match_id)
 	{
 		$user_id = $_SESSION['user_id'];
@@ -328,7 +313,7 @@ class Stat extends CI_Controller {
 				2. FIND ALL PLAYERS OF THE USER TEAM
 			*/
 			
-			/// required data : player_name, team , category , player_id
+			// required data : player_name, team , category , player_id
 			$temp = $this->stat_model->get_user_player_by_match($user_match_team_id);
 			$total_point = 0;
 					
@@ -372,7 +357,6 @@ class Stat extends CI_Controller {
 			/**
 				2. FIND ALL PLAYERS OF THE USER TEAM
 			*/
-			/// required data : player_name, team , category , player_id
 			$temp = $this->stat_model->get_user_player_by_match($user_match_team_id);
 			$total_point = 0;
 			
@@ -391,16 +375,12 @@ class Stat extends CI_Controller {
 				
 				$total_point += $t['match_point'];
 				
-				//echo '<pre>';
-				//print_r($t);
-				//echo '</pre>';
 				
 				array_push($match_data,$t);
 			}
 			
 			print_r($match_data);
 			
-			//echo $total_point;
 		}
 		else
 		{
