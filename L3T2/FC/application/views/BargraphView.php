@@ -111,7 +111,7 @@
 	  ]
 	});
 	
-	var offset = 10;
+	var offset = 50/jArray1.length;
 	var init = 0;
 	for(var i=0;i<jArray1.length;i++){
 		chart1.options.data[0].dataPoints.push({x:init+=offset, y: jArray1[i]['teamPoint'], label: jArray1[i]['team_name']}); // Add a new dataPoint to dataPoints array
