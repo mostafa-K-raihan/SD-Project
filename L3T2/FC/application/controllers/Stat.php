@@ -98,12 +98,14 @@ class Stat extends CI_Controller {
 			
 		//print_r($playerData);
 		//echo '<br><br>';
-		foreach($playerData as $pd)
+		/*foreach($playerData as $pd)
 		{
 			print_r($pd);
 			//echo $pd['points'];
 			echo '<br>';
-		}
+		}*/
+		$data['playerData']=$playerData;
+		$this->load->view('playerByplayerStat',$data);
 	}
 	
 	/**
