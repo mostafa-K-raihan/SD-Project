@@ -318,11 +318,9 @@ class Stat extends CI_Controller {
 		$captain_id = $temp['captain_id'];
 		$user_match_team_id = $temp['user_match_team_id'];
 		
-		if($captain_id==-1 or $user_match_team_id==-1)
-		{
-			return -1;
-		}
-		else
+		$match_data = array();
+			
+		if($captain_id!=-1 and $user_match_team_id!=-1)
 		{
 			/**
 				2. FIND ALL PLAYERS OF THE USER TEAM
@@ -331,9 +329,7 @@ class Stat extends CI_Controller {
 			/// required data : player_name, team , category , player_id
 			$temp = $this->stat_model->get_user_player_by_match($user_match_team_id);
 			$total_point = 0;
-				
-			$match_data = array();
-				
+					
 			foreach($temp as $t)
 			{
 				$t['is_captain']=0;
@@ -349,9 +345,8 @@ class Stat extends CI_Controller {
 					
 				array_push($match_data,$t);
 			}
-				
-			return $match_data;
 		}
+		return $match_data;
 	}
 	
 	/**

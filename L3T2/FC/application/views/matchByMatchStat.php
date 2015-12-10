@@ -12,7 +12,7 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url("assets/css/image.css"); ?>"/>
     <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
 	<link href="<?php echo base_url("assets/css/bootstrap-responsive.css"); ?>" rel="stylesheet" media="screen">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<!--<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">-->
 	<link href="<?php echo base_url("assets/css/hosting.css"); ?>" rel="stylesheet" media="all">
 	
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-1.11.2.min.js"); ?>"></script>
@@ -30,6 +30,18 @@
 		}
 		body{
 			background-color: #f9f9f9;
+		}
+		mark.red{
+			color: red;
+		}
+		mark.green{
+			color: green;
+		}
+		mark.vs{
+			color: #399;
+		}
+		table th{
+			text-align:center;
 		}
 	</style>
 	
@@ -88,12 +100,12 @@ echo'
 <div>
       <div class="col-md-2"></div>
       <div class="col-md-8"> 
-        <table class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered" id="table0" style ="table-layout:fixed; text-align:center">
           <thead>
-            <th>Time</th>
-            <th>Home Team
-            Vs Away Team </th>
-			<th>Earned Points</th>
+            <th style="text-align:center">Time</th>
+            <th style="text-align:center"><mark class="blue">Home Team
+            <mark class="vs"> vs <mark class="blue">Away Team</mark> </th>
+			<th style="text-align:center">Earned Points</th>
           </thead>
           <tbody>';
           $c2="active";
@@ -107,14 +119,46 @@ echo'
             else if($c%4==2)$d=$c3;
             else if($c%4==3)$d=$c4;
 			
-			
+			//print_r($result[0]['detail']);
           echo'  <tr class='.$d.'>
               <td>'.$r['Time'].'</td>
-              <td><font color="blue">'.$r['Home Team'].'</font> vs <font color="blue">'.$r['Away Team'].'</font></td>
+              <td><font color="blue">'.$r['Home Team'].'</font> <font color="#399">vs</font> <font color="blue">'.$r['Away Team'].'</font></td>
 			  <td>'.$r['points'].'</td>
-            </tr>';
+            </tr>
+			<tr class="prevRow"><div class="slidethis"><td colspan="3"><p>Detailed Stat</p>';
+					if(count($r['detail'])==0)
+					{
+						echo '<font color="red">No Data Available</font>';
+					}
+					else
+					{
+						if($r['is_captain']==1)
+						{
+							$r['name']=$r['name']." (Captain) ";
+						}
+						
+						echo '<table class="table table-hover" id="table1">
+						<thead>
+							<th>Player Name</th>
+							<th>Category</th>
+							<th>Player Team</th>
+							<th>Point</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>'.$r['name'].'</td>
+								<td>'.$r['player_cat'].'</td>
+								<td>'.$r['team_name'].'</td>
+								<td>'.$r['match_point'].'</td>
+							</tr>
+						</tbody>
+					</table>';
+					
+					}
+					
+				echo'</td></div></tr>';
 			
-			/**
+			/*
 			//ON CLICK EXPAND
 			if($r['detail']==-1)
 			{
@@ -136,7 +180,22 @@ echo'
         </table>
       </div>
       <div class="col-md-2"></div>
-  </div>
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>';
+  </div>';
 ?>
+<script type="text/javascript">
+$(function() {
+    $(".prevRow").find("td[colspan=3]").hide();
+    $("#table0").click(function(event) {
+        event.stopPropagation();
+        var $target = $(event.target);
+        if ( $target.closest("td").attr("colspan") > 1 ) {
+            $target.slideUp();
+        } else {
+			//$("td[colspan=3]").hide();
+            $target.closest("tr").next().find("td[colspan=3]").slideToggle();
+        }                    
+    });
+});
+
+</script>
+</body>
