@@ -1,7 +1,7 @@
 <head>
 <style>
 		body{
-			background-color: white;
+			background-color: teal;
 		}
 	</style>
 	
@@ -22,10 +22,12 @@ echo'
         <table class="table table-hover table-bordered">
           <thead>
             <th>Time</th>
-            <th>Home Team </th>
-            <th>Runs/Wickets (Overs )</th>
-			<th>Away Team </th>
-			<th>Runs/Wickets (Overs)</th>
+            <th>Team 1</th>
+            <th>Runs</th>
+            <th>Overs</th>
+			<th>Team 2</th>
+			<th>Runs</th>
+            <th>Overs</th>
           </thead>
           <tbody>';
           $c2="active";
@@ -38,14 +40,14 @@ echo'
             else if($c%4==1)$d=$c2;
             else if($c%4==2)$d=$c3;
             else if($c%4==3)$d=$c4;
-			
-			
           echo'  <tr class='.$d.'>
               <td>'.$r['Time'].'</td>
               <td>'.$r['Home Team'].'</td>
-              <td>'.$r['RUNS'].'/'.$r['Wickets'].'('.$r['Overs'].'.'.$r['Balls'].')</td>
+              <td>'.$r['RUNS'].'/'.$r['Wickets'].'</td>
+              <td>'.$r['Overs'].'.'.$r['Balls'].'</td>
 			  <td>'.$r['Away Team'].'</td>
-			   <td>'.$r['RUNS2'].'/'.$r['Wickets2'].'('.$r['Overs2'].'.'.$r['Balls2'].')</td>
+			   <td>'.$r['RUNS2'].'/'.$r['Wickets2'].'</td>
+              <td>'.$r['Overs2'].'.'.$r['Balls2'].'</td>
 			  
               
             </tr>';
@@ -83,9 +85,7 @@ echo'
 				</tr>';
 			}
 			
-			
           }
-		  
           echo'</tbody>
         </table>
       </div>

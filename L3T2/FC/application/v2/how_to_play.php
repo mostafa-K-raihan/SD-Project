@@ -122,7 +122,7 @@
 		
 		</ul>
 		<div class="tab-content">
-			<div class="tab-pane active" id="howToPlay" style="color: black">
+			<div class="tab-pane active" id="howToPlay" style="color: white">
 				<h3>Creating Your Team</h3>
 				<p> From each team you can only choose minimum three players </p>
 				
@@ -149,7 +149,7 @@
 				<p>If captain does not play there will be <strong style="font:monospace; font-size:20px"><i>no captain's double point allocation.</i></strong><br> So choose wisely.</p>
 			</div>
 			
-			<div class="tab-pane" id="Scoring" style="color:black">
+			<div class="tab-pane" id="Scoring" style="color:white">
 				
 				<label style="font-size:30px">Batting Points</label>
 				<table class = "table table-striped table table-bordered" id="pointTable">
