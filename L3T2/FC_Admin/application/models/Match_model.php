@@ -154,7 +154,7 @@ class Match_model extends CI_Model
 			$temp2=$query->row_array();
 			$away_runs+=$temp2['runs_conceded'];
 			$away_balls+=$temp2['balls_bowled'];
-			$away_wickets+=$temp2['wickets_taken'];
+			$away_wickets+=$temp2['wickets_taken']+$temp2['stumpings']+$temp2['run_outs'];
 		}
 
 		/// 4. UPDATE RECORDS

@@ -663,19 +663,14 @@ class User extends CI_Controller {
 		define("MAX_TEAM_VALUE",10000);
 		define("MAX_FROM_SAME_TEAM",3);
 		
+		
 		//! allowed team combinations
 		$team_config=array(
 			array(
 				"wk"=>1,
-				"bat"=>5,
-				"bowl"=>3,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>5,
+				"bat"=>4,
 				"bowl"=>4,
-				"all"=>1
+				"all"=>2
 			),
 			array(
 				"wk"=>1,
@@ -685,27 +680,9 @@ class User extends CI_Controller {
 			),
 			array(
 				"wk"=>1,
-				"bat"=>4,
+				"bat"=>5,
 				"bowl"=>4,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>4,
-				"bowl"=>3,
-				"all"=>3
-			),
-			array(
-				"wk"=>1,
-				"bat"=>3,
-				"bowl"=>5,
-				"all"=>2
-			),
-			array(
-				"wk"=>1,
-				"bat"=>3,
-				"bowl"=>4,
-				"all"=>3
+				"all"=>1
 			)
 		);
 		

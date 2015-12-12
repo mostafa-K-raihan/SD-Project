@@ -46,14 +46,15 @@ class Stat_model extends CI_Model
 	}
 	
 	/**
-		Return 'match_id' and corresponding 'captain_id' s in which the given player was in the user's team.
+		Return 'match_id' and corresponding 'captain_id' s in which the given player was in the user's team (in current tournament).
 		If No such entry, return -1
 	*/
 	public function get_user_team_match_id($user_id,$player_id)
 	{
-		$sql='SELECT umt.match_id, umt.captain_id FROM `user_match_team_player` umtp, user_match_team umt
+		$sql='SELECT umt.match_id, umt.captain_id FROM `user_match_team_player` umtp, user_match_team umt, `match` m
 		WHERE umt.user_id=? and
 		umt.user_match_team_id = umtp.user_match_team_id and
+		umt.match_id = m.match_id and m.tournament_id = current_tournament() and 
 		umtp.player_id=?';
 		$temp=$this->db->query($sql,array($user_id,$player_id));
 		

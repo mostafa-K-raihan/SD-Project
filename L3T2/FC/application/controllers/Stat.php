@@ -269,8 +269,8 @@ class Stat extends CI_Controller {
 				'success'=>false,
 				'fail_message'=>"No Previous Match"
 			);
-			$this->load->view('templates/header2');
-			$this->load->view('status_message_Before_login',$data);
+			//$this->load->view('templates/header2');
+			$this->load->view('status_message',$data);
 		}
 		else
 		{

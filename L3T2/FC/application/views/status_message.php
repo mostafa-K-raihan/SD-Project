@@ -50,8 +50,8 @@
         <li><a href="<?php echo site_url('user/schedules'); ?>">Schedules </a></li>
         <li class="active"><a href="<?php echo site_url('user/results'); ?>">Results </a></li>
         
-		<li><a href="<?php echo site_url('user/howToPlay'); ?>">How To Play</a></li>
-		<li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>
+		<li><a href="<?php echo site_url('user/howToPlay'); ?>">Rules and Scoring</a></li>
+		<!--<li><a href="<?php echo site_url('user/howToPlay'); ?>">Scoring</a></li>-->
 		
         
         <li><a href="<?php echo site_url('user/changeTeam'); ?>">Change Team </a></li>

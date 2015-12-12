@@ -82,9 +82,12 @@ class Admin_model extends CI_Model
 		$sql='SELECT `user_id` FROM `user_tournament` WHERE `tournament_id`=?';
 		$users=$this->db->query($sql,$cur_tour)->result_array();
 		
-		/// 4(a). FOR EACH USER , create a default match team
 		foreach($users as $u)
 		{
+			/// 4(a). Update NULL entries in user phase transfer table
+			$sql = 'UPDATE `user_phase_transfer` SET transfers_made = 0 WHERE user_id = ? and IFNULL(transfers_made,0) = 0';
+			$this->db->query($sql,array($u['user_id']));
+			/// 4(b). FOR EACH USER , create a default match team
 			$val = $this->match_model->create_user_match_team($u['user_id'], $match_id);
 		}
 		return true;
